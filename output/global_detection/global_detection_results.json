@@ -1,0 +1,87 @@
+[
+  {
+    "class_name": "Shaft_large",
+    "center_u": 373.68,
+    "center_v": 195.45,
+    "bbox_x": 347,
+    "bbox_y": 168,
+    "bbox_w": 55,
+    "bbox_h": 54,
+    "area_px": 1571.0,
+    "yaw_deg": -57.65,
+    "confidence": "low",
+    "rule_note": "only one shaft candidate detected; large label is provisional",
+    "type_certain": false,
+    "classification_status": "uncertain",
+    "classification_reason": "shaft set incomplete or large/small rotated-area separation below 8%",
+    "classification_set_complete": false,
+    "shaft_size_margin_ratio": null,
+    "gear_outer_radius_px": null,
+    "gear_inner_square_center": null,
+    "grasp_hint_2d": null,
+    "rect_width_px": 43.59,
+    "rect_height_px": 39.03,
+    "long_side_px": 43.59,
+    "short_side_px": 39.03,
+    "edge_midpoints_2d": [
+      [
+        361.8778381347656,
+        214.4559783935547
+      ],
+      [
+        357.0531005859375,
+        185.60031127929688
+      ],
+      [
+        385.2021789550781,
+        177.62806701660156
+      ],
+      [
+        390.02691650390625,
+        206.48373413085938
+      ]
+    ],
+    "grasp_candidates_2d": [
+      [
+        373.5400085449219,
+        196.04202270507812
+      ],
+      [
+        378.67136431308336,
+        187.93988174556097
+      ],
+      [
+        368.4086527767604,
+        204.14416366459528
+      ]
+    ],
+    "base_contour_area": null,
+    "base_rotated_rect": null,
+    "base_hole_candidates_2d": null,
+    "base_insert_holes_2d": null,
+    "hole_name": null,
+    "hole_radius_px": null,
+    "hole_ellipse_major_px": null,
+    "hole_ellipse_minor_px": null,
+    "hole_circularity": null,
+    "hole_boundary_distance_px": null,
+    "hole_assignment_confidence": null,
+    "hole_size_margin_ratio": null,
+    "hole_assignment_rule": null,
+    "detected_hole_count": null,
+    "expected_hole_count": null,
+    "center_px": null,
+    "center_camera_on_table_m": null,
+    "camera_x_m": null,
+    "camera_y_m": null,
+    "camera_z_m": null,
+    "camera_frame_id": null,
+    "depth_valid": null,
+    "depth_m": null,
+    "depth_source": null,
+    "ray_table_intersection_valid": null,
+    "ray_table_intersection_reason": null,
+    "table_z_m": null,
+    "used_depth_source": null
+  }
+]

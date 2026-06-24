@@ -1,0 +1,8 @@
+source,label,center_u,center_v,area_px,bbox,yaw_deg,note
+realsense_pic/base_0.4.png,base_hole_1_left_top,135.0,144.0,17203.4,"(61, 70, 148, 148)",,Hough circle inside black base ROI
+realsense_pic/base_0.4.png,base_hole_2_right_top,399.0,303.0,17671.5,"(324, 228, 150, 150)",,Hough circle inside black base ROI
+realsense_pic/base_0.4.png,base_hole_3_lower,307.0,368.0,18626.5,"(230, 291, 154, 154)",,Hough circle inside black base ROI
+realsense_pic/Gear_0.4.png,gear_grasp_midpoint,350.89,243.06,109814.0,,0.0,red HSV gear; grasp_features_not_reliable; geometric fallback across inner hub
+realsense_pic/Shaft+screw_0.4.png,Shaft_small,503.71,180.05,11612.0,"(380, 115, 246, 124)",-12.29,CLAHE + Canny/adaptive threshold + minAreaRect
+realsense_pic/Shaft+screw_0.4.png,Screw,521.66,379.5,1129.5,"(495, 349, 57, 68)",69.78,CLAHE + Canny/adaptive threshold + minAreaRect
+realsense_pic/Shaft+screw_0.4.png,Shaft_small,566.42,362.11,1260.0,"(543, 328, 49, 70)",80.34,CLAHE + Canny/adaptive threshold + minAreaRect

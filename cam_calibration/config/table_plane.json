@@ -1,0 +1,8 @@
+{
+  "status": "template_not_measured",
+  "equation": "n_base^T * P_base + d = 0",
+  "n_base": null,
+  "d": null,
+  "units": "meter"
+}
+

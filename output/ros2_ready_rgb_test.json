@@ -1,0 +1,349 @@
+{
+  "timestamp_sec": 1780996284.6119194,
+  "frame_id": "camera_color_optical_frame",
+  "image_width": 640,
+  "image_height": 480,
+  "coordinate_type": "pixel_2d_and_camera_3d",
+  "detections": [
+    {
+      "instance_name": "screw",
+      "class_name": "screw",
+      "center_u": 385.94,
+      "center_v": 371.55,
+      "bbox_x": 372,
+      "bbox_y": 354,
+      "bbox_w": 29,
+      "bbox_h": 36,
+      "area_px": 689.0,
+      "yaw_deg": 48.37,
+      "confidence": "high",
+      "rule_note": "small red component; compact non-gear geometry",
+      "box_points": [
+        [
+          388.0413818359375,
+          393.2965393066406
+        ],
+        [
+          364.2069091796875,
+          366.4827575683594
+        ],
+        [
+          382.8896484375,
+          349.8758850097656
+        ],
+        [
+          406.72412109375,
+          376.6896667480469
+        ]
+      ],
+      "depth_valid": false,
+      "depth_m": null,
+      "depth_valid_count": 0,
+      "depth_source": null,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    },
+    {
+      "instance_name": "gear_compound",
+      "class_name": "gear_compound",
+      "center_u": 233.91,
+      "center_v": 397.26,
+      "bbox_x": 151,
+      "bbox_y": 317,
+      "bbox_w": 165,
+      "bbox_h": 163,
+      "area_px": 19472.5,
+      "yaw_deg": -48.81,
+      "confidence": "medium",
+      "rule_note": "large remaining gear with few through-holes; size/structure fallback, not y-position only",
+      "box_points": [
+        [
+          238.38937377929688,
+          511.84075927734375
+        ],
+        [
+          118.03538513183594,
+          406.531005859375
+        ],
+        [
+          225.94686889648438,
+          283.20355224609375
+        ],
+        [
+          346.30084228515625,
+          388.5133056640625
+        ]
+      ],
+      "depth_valid": false,
+      "depth_m": null,
+      "depth_valid_count": 0,
+      "depth_source": null,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    },
+    {
+      "instance_name": "gear_small",
+      "class_name": "gear_small",
+      "center_u": 197.67,
+      "center_v": 115.56,
+      "bbox_x": 144,
+      "bbox_y": 62,
+      "bbox_w": 106,
+      "bbox_h": 106,
+      "area_px": 7696.0,
+      "yaw_deg": 53.62,
+      "confidence": "high",
+      "rule_note": "smallest gear candidate; central-hole evidence included",
+      "box_points": [
+        [
+          185.9263916015625,
+          188.68580627441406
+        ],
+        [
+          122.81329345703125,
+          103.03231811523438
+        ],
+        [
+          205.02154541015625,
+          42.45780944824219
+        ],
+        [
+          268.1346435546875,
+          128.11129760742188
+        ]
+      ],
+      "depth_valid": false,
+      "depth_m": null,
+      "depth_valid_count": 0,
+      "depth_source": null,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    },
+    {
+      "instance_name": "gear_large",
+      "class_name": "gear_large",
+      "center_u": 361.91,
+      "center_v": 100.53,
+      "bbox_x": 274,
+      "bbox_y": 12,
+      "bbox_w": 174,
+      "bbox_h": 175,
+      "area_px": 21697.0,
+      "yaw_deg": -39.47,
+      "confidence": "high",
+      "rule_note": "largest multi-hole gear; 3 significant holes",
+      "box_points": [
+        [
+          348.40826416015625,
+          219.7814483642578
+        ],
+        [
+          239.72784423828125,
+          87.81239318847656
+        ],
+        [
+          373.06390380859375,
+          -21.993789672851562
+        ],
+        [
+          481.74432373046875,
+          109.97526550292969
+        ]
+      ],
+      "depth_valid": false,
+      "depth_m": null,
+      "depth_valid_count": 0,
+      "depth_source": null,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    },
+    {
+      "instance_name": "shaft_large",
+      "class_name": "shaft_large",
+      "center_u": 185.24,
+      "center_v": 237.33,
+      "bbox_x": 159,
+      "bbox_y": 214,
+      "bbox_w": 52,
+      "bbox_h": 46,
+      "area_px": 1600.0,
+      "yaw_deg": 17.1,
+      "confidence": "high",
+      "rule_note": "largest valid dark rectangular component; circular holes rejected",
+      "box_points": [
+        [
+          204.29190063476562,
+          262.5513610839844
+        ],
+        [
+          157.98379516601562,
+          248.30270385742188
+        ],
+        [
+          168.83786010742188,
+          213.02700805664062
+        ],
+        [
+          215.14596557617188,
+          227.27566528320312
+        ]
+      ],
+      "depth_valid": false,
+      "depth_m": null,
+      "depth_valid_count": 0,
+      "depth_source": null,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    },
+    {
+      "instance_name": "shaft_small",
+      "class_name": "shaft_small",
+      "center_u": 469.89,
+      "center_v": 171.99,
+      "bbox_x": 450,
+      "bbox_y": 153,
+      "bbox_w": 41,
+      "bbox_h": 39,
+      "area_px": 1201.5,
+      "yaw_deg": 9.46,
+      "confidence": "high",
+      "rule_note": "smaller valid dark rectangular component; circular holes rejected",
+      "box_points": [
+        [
+          485.1891784667969,
+          192.8648681640625
+        ],
+        [
+          448.3783874511719,
+          186.729736328125
+        ],
+        [
+          454.2973327636719,
+          151.21621704101562
+        ],
+        [
+          491.1081237792969,
+          157.35134887695312
+        ]
+      ],
+      "depth_valid": false,
+      "depth_m": null,
+      "depth_valid_count": 0,
+      "depth_source": null,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    },
+    {
+      "instance_name": "base",
+      "class_name": "base",
+      "center_u": 352.96,
+      "center_v": 257.19,
+      "bbox_x": 209,
+      "bbox_y": 171,
+      "bbox_w": 301,
+      "bbox_h": 172,
+      "area_px": 22496.5,
+      "yaw_deg": 15.03,
+      "confidence": "high",
+      "rule_note": "largest neutral-gray object; black insert holes detected separately",
+      "box_points": [
+        [
+          475.91400146484375,
+          379.245361328125
+        ],
+        [
+          194.23443603515625,
+          303.626708984375
+        ],
+        [
+          234.29327392578125,
+          154.4075927734375
+        ],
+        [
+          515.9728393554688,
+          230.0262451171875
+        ]
+      ],
+      "depth_valid": false,
+      "depth_m": null,
+      "depth_valid_count": 0,
+      "depth_source": null,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    }
+  ],
+  "base_holes": {
+    "hole_l": {
+      "name": "hole_l",
+      "center_u": 266.09,
+      "center_v": 200.22,
+      "radius_px": 10.26,
+      "area_px": 297.5,
+      "confidence": "high",
+      "rule_note": "black insert-hole contour inside base ROI; pixel center from black-mask moments",
+      "depth_valid": false,
+      "depth_m": null,
+      "depth_valid_count": 0,
+      "depth_source": null,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    },
+    "hole_m": {
+      "name": "hole_m",
+      "center_u": 334.5,
+      "center_v": 309.96,
+      "radius_px": 11.72,
+      "area_px": 295.5,
+      "confidence": "high",
+      "rule_note": "black insert-hole contour inside base ROI; pixel center from black-mask moments",
+      "depth_valid": false,
+      "depth_m": null,
+      "depth_valid_count": 0,
+      "depth_source": null,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    },
+    "hole_r": {
+      "name": "hole_r",
+      "center_u": 441.22,
+      "center_v": 242.39,
+      "radius_px": 12.76,
+      "area_px": 424.0,
+      "confidence": "high",
+      "rule_note": "black insert-hole contour inside base ROI; pixel center from black-mask moments",
+      "depth_valid": false,
+      "depth_m": null,
+      "depth_valid_count": 0,
+      "depth_source": null,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    }
+  },
+  "status": {
+    "ok": true,
+    "warnings": [
+      "no depth file supplied; result contains pixel coordinates only"
+    ],
+    "errors": []
+  }
+}

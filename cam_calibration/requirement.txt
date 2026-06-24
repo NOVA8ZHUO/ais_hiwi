@@ -1,0 +1,303 @@
+我现在有一个 RealSense D435 / D435i 相机，用 Python、pyrealsense2、OpenCV、NumPy、Matplotlib、Jupyter Notebook 做机械臂视觉实验。请你帮我写 4 个独立的 Jupyter Notebook，用于系统性验证和校准 RealSense 深度信息。每一个 notebook 对应一个实验步骤。请注意：每个 notebook 内部要分成很多清晰的 cell/block，每个 block 前面要有 Markdown 说明，让我可以一小步一小步运行和检查结果。不要把所有逻辑写成一个很长的 cell。
+
+我的相机是 RealSense D435/D435i，使用 aligned RGB-D，也就是把 depth 对齐到 color。图像分辨率默认用 640×480，30 fps。请优先使用 pyrealsense2 直接采集实时数据。所有数据保存成 npz/csv/png，方便后续 notebook 使用。代码要尽量模块化，包含必要的异常处理和可视化。
+
+请生成以下 4 个 notebook：
+
+1. 01_depth_noise_fixed_camera.ipynb
+   目标：固定相机，验证 RealSense depth 的随机噪声和稳定性。
+
+实验设置：
+相机固定在 30–40 cm 高度，拍静止工作台或者标定板。对同一个像素点或者小 patch 连续采集 100 帧，统计 depth 的均值、标准差、最大值、最小值、峰峰值、有效帧比例。判断同一个点的 depth 自己是否稳定。
+
+Notebook 结构请按以下 block 写：
+
+Block 1：导入库和参数设置
+包括 pyrealsense2、numpy、cv2、matplotlib、pandas、time、os。参数包括 width=640, height=480, fps=30, num_frames=100, patch_size=7, output_dir。
+
+Block 2：启动 RealSense pipeline
+启动 color 和 depth stream，设置 align_to_color，获取 depth_scale，获取 color intrinsics。打印 intrinsics，包括 fx, fy, cx, cy。
+
+Block 3：预览 RGB 和 aligned depth
+实时显示一帧 color 和 depth colormap。允许我检查画面是否正常。保存一张预览图。
+
+Block 4：选择测试点
+支持两种方式：
+A. 我手动输入像素点 px, py；
+B. 在 RGB 图上用鼠标点击选择点。
+选择后在图上画出 patch 区域。
+
+Block 5：连续采集 100 帧
+对每一帧，在 selected pixel 周围取 patch_size×patch_size 的 depth。忽略 0 depth。保存：
+single_pixel_depth_list；
+patch_median_depth_list；
+patch_mean_depth_list；
+valid_pixel_ratio_list。
+注意 depth 单位统一转换为 meter。
+
+Block 6：统计和可视化
+输出 single pixel 和 patch median 两组统计：
+mean、std、min、max、peak_to_peak、valid_frame_ratio。
+画 depth vs frame index 曲线。
+画 histogram。
+比较 single pixel 和 patch median 的稳定性。
+
+Block 7：保存结果
+保存 csv 和 npz，包括每帧数据、选择点、patch_size、intrinsics、depth_scale。保存图像结果到 output_dir。
+
+Block 8：结论提示
+根据 std 和 peak_to_peak 自动打印一个简单判断：
+如果 patch median 的 std 很小，例如小于 2 mm，说明静态噪声较小；
+如果 std 或 peak_to_peak 很大，说明该表面/距离/光照下 depth 不稳定，后续线性回归校准意义有限，应先做 median/filter/材质优化。
+
+2. 02_charuco_depth_scale_calibration.ipynb
+   目标：用 ChArUco board 验证 RealSense depth scale，并拟合 D_corr = a * D_meas + b。
+
+实验设置：
+使用 ChArUco board。通过 RGB 图像检测 ChArUco 角点，用 OpenCV solvePnP 得到 board 到 color camera 的 pose。因为 ChArUco board 的几何尺寸已知，所以每个角点在 camera 坐标下的真实 Z 可以作为 D_true。然后从 aligned depth 中读取同一角点附近的 D_meas。最后拟合 D_corr = a * D_meas + b，并比较修正前后的误差。
+
+我的 ChArUco 参数请写成可以修改的变量：
+dictionary = cv2.aruco.DICT_5X5_100
+squares_x = 可修改
+squares_y = 可修改
+square_length_m = 可修改，例如 0.030 或 0.035
+marker_length_m = 可修改，例如 0.022 或 0.026
+
+Notebook 结构请按以下 block 写：
+
+Block 1：导入库和参数设置
+包括 OpenCV aruco 模块检查。如果 cv2.aruco 不可用，打印明确错误，提示需要 opencv-contrib-python。
+
+Block 2：启动 RealSense pipeline 并获取 color intrinsics
+使用 aligned depth to color。构建 camera_matrix 和 dist_coeffs。RealSense 如果没有 distortion，可以先用 zeros，但要打印提醒。
+
+Block 3：创建 ChArUco board 对象
+用指定 dictionary、squares_x、squares_y、square_length_m、marker_length_m 创建 board。注意兼容不同 OpenCV 版本的 API。
+
+Block 4：实时预览和检测 ChArUco
+显示 RGB 图像，检测 ArUco markers 和 ChArUco corners。把检测到的角点画出来。打印检测到的 corner 数量。
+
+Block 5：采集多帧数据
+采集多个相机位姿下的数据。每次我按键保存当前帧。每个样本保存：
+color image；
+aligned depth；
+detected charuco corner pixel；
+corner id；
+rvec, tvec；
+D_true；
+D_meas。
+D_meas 不要只取单点，要在角点周围 patch_size×patch_size 取 median，忽略 0 depth。
+
+Block 6：计算 D_true
+通过 solvePnP 得到 board pose 后，把每个 ChArUco 角点的 board 坐标变换到 camera 坐标，取其 Z 分量作为 D_true。注意单位是 meter。
+
+Block 7：构造回归数据
+收集所有角点的 D_meas 和 D_true。过滤掉无效 depth、过大误差、角点太靠近图像边缘的点。输出有效样本数量。
+
+Block 8：拟合线性模型
+拟合：
+D_corr = a * D_meas + b
+用 numpy.linalg.lstsq 或 sklearn LinearRegression，如果 sklearn 不存在就用 numpy。
+输出 a 和 b。
+
+Block 9：评估修正效果
+计算修正前误差：
+err_before = D_meas - D_true
+修正后误差：
+err_after = D_corr - D_true
+输出 mean error、std、MAE、RMSE、max abs error。
+画：
+D_meas vs D_true scatter；
+D_corr vs D_true scatter；
+err_before histogram；
+err_after histogram；
+error vs D_true。
+
+Block 10：保存校准参数
+保存 depth_calibration_linear.json，包含 a, b, units, date, board parameters, camera intrinsics。保存 csv/npz 和所有图。
+
+Block 11：结论提示
+如果 RMSE 明显下降，打印“存在系统性 depth scale/bias，可以在后续 pipeline 中使用 D_corr”。如果下降不明显，打印“主要问题可能不是全局 scale/bias，而是局部噪声、材质、边缘、对齐误差”。
+
+3. 03_robot_table_plane_system_validation.ipynb
+   目标：手眼标定完成后，用机械臂 + 工作台平面做系统级验证。检查 hand-eye + depth + intrinsics + alignment 的整体误差，并验证 D_corr 是否改善结果。
+
+实验设置：
+已知或者可输入：
+T_ee_cam 或 T_cam_ee；
+机器人每一帧的 T_base_ee；
+工作台平面在 robot base 下的方程：
+n_base^T * P_base + d = 0。
+如果还没有平面方程，notebook 中提供一个 block，让我输入至少 3 个机器人 TCP 接触工作台的点，并拟合平面。
+
+Notebook 结构请按以下 block 写：
+
+Block 1：导入库和参数设置
+包括 numpy、cv2、pandas、matplotlib、json、os。参数包括 patch_size、sample_grid、output_dir。
+
+Block 2：加载 depth calibration 参数
+从 02 得到的 depth_calibration_linear.json 读取 a,b。如果没有这个文件，也允许设置 use_depth_correction=False。
+
+Block 3：输入或加载手眼标定结果
+允许我手动填入 4×4 的 T_ee_cam。如果我有 T_cam_ee，也提供自动求逆。打印并检查矩阵是否合法。
+
+Block 4：输入或拟合工作台平面
+两种方式：
+A. 直接输入 n_base 和 d；
+B. 输入多个 TCP 接触点 P_base，拟合平面。
+拟合后归一化 n_base，打印平面方程。可视化点到平面的 residual。
+
+Block 5：输入或加载机器人位姿 T_base_ee
+为了方便，先支持从 json/csv 读取多个 T_base_ee。每个样本对应一帧 RGB-D 数据。如果没有连接机器人 API，就让代码从文件读取，不要强制接机器人。
+
+Block 6：采集或加载 RealSense RGB-D 数据
+支持实时采集当前帧，也支持加载之前保存的 aligned depth npy/npz。每一帧与一个 T_base_ee 对应。
+
+Block 7：从 depth 图中采样多个像素点
+在图像中设置 grid，例如中心区域 5×5 或 7×7 网格。每个像素点用 patch median 读取 D_meas。忽略 0 depth 和无效 patch。
+
+Block 8：反投影到 camera 坐标
+使用 intrinsics：
+X = (px - cx) / fx * D
+Y = (py - cy) / fy * D
+Z = D
+同时计算修正前 P_cam_meas 和修正后 P_cam_corr。
+
+Block 9：变换到 robot base
+使用：
+P_base = T_base_ee * T_ee_cam * P_cam
+分别计算修正前和修正后的 P_base。
+
+Block 10：计算工作台平面 residual
+对每个点计算：
+r = n_base^T * P_base + d
+输出修正前和修正后的 residual statistics：
+mean、std、MAE、RMSE、max abs。
+画 residual histogram；
+画 residual vs image x；
+画 residual vs image y；
+画 residual vs measured depth。
+
+Block 11：根据平面几何反推每个像素的 D_true
+对于每个像素，计算相机射线：
+q = [(px-cx)/fx, (py-cy)/fy, 1]^T
+已知：
+T_base_cam = T_base_ee * T_ee_cam
+其中 R_base_cam 和 t_base_cam 已知。
+工作台平面：
+n_base^T * P_base + d = 0
+计算：
+D_true = - (n_base^T * t_base_cam + d) / (n_base^T * R_base_cam * q)
+然后与 D_meas 比较，也可以重新拟合 D_corr = a * D_meas + b。
+注意处理分母接近 0 的情况。
+
+Block 12：保存系统验证结果
+保存 csv/npz/json 和图。包括每个采样点的 px, py, D_meas, D_corr, D_true, residual_before, residual_after, T_base_ee index。
+
+Block 13：结论提示
+如果 depth correction 让 plane residual 明显下降，说明 D 校正确实改善系统 3D。
+如果 residual 仍大，可能是 hand-eye 标定误差、工作台平面不准、depth-color alignment、局部 depth 噪声、相机内参或采样点不在真实桌面上。
+
+4. 04_part_task_specific_z_calibration.ipynb
+   目标：对具体零件做 task-specific 校准，重点校准抓取点的 z / 下降高度，而不是幻想 RealSense 每个局部深度都完美。
+
+实验设置：
+每个零件放在已知工作台平面上。已知每个零件的高度 h_part。真实顶部高度可以由工作台平面 + 零件高度得到。视觉检测出抓取点 pixel，然后读取该点附近 depth，转换到 camera，再通过 hand-eye 转换到 robot base。比较视觉测得的抓取点 z 与真实顶部高度之间的误差。
+
+需要支持的零件类型：
+base
+Gear_compound
+Gear_large
+Gear_small
+Screw
+Shaft_large
+Shaft_small
+
+Notebook 结构请按以下 block 写：
+
+Block 1：导入库和参数设置
+包括 numpy、cv2、pandas、matplotlib、json、os。参数包括 patch_size、output_dir、use_depth_correction。
+
+Block 2：加载相机内参、depth calibration、手眼标定、工作台平面
+读取前面 notebook 保存的 json。如果没有文件，允许手动输入。打印所有关键参数。
+
+Block 3：定义零件高度配置
+用一个 dict 保存每种零件的高度 h_part_m，例如：
+part_heights = {
+"Gear_large": ...,
+"Gear_small": ...,
+"Gear_compound": ...,
+"Screw": ...,
+"Shaft_large": ...,
+"Shaft_small": ...,
+"base": ...
+}
+先留空或示例值，让我自己填写真实高度。代码必须检查是否填写，否则提醒。
+
+Block 4：采集或加载 RGB-D 图像
+支持 RealSense 实时采集一帧 aligned RGB-D，也支持加载保存的数据。
+
+Block 5：输入抓取点 pixel
+为了先验证校准，不要求自动检测。请支持：
+A. 手动输入 px, py 和 part_name；
+B. 在图上点击选择抓取点，并手动选择 part_name。
+后续我可以再把它接入已有视觉检测 pipeline。
+
+Block 6：读取抓取点 depth
+在抓取点周围取 patch median depth，忽略 0 depth。也保存 single pixel depth 用于对比。可视化 patch 区域。
+
+Block 7：计算 P_cam 和 P_base
+用原始 D_meas 和校正后 D_corr 分别反投影到 camera 坐标，再通过：
+P_base = T_base_ee * T_ee_cam * P_cam
+得到 P_grasp_base_meas 和 P_grasp_base_corr。
+
+Block 8：计算该抓取点对应的真实顶部高度
+如果工作台是水平平面，可以用 Z_top_base = Z_table_base + h_part。
+如果使用一般平面方程，请实现更通用的方式：
+对于抓取点的 base 坐标 x,y，在工作台平面上求对应 z_table，然后 z_top = z_table + h_part。
+注意如果 robot base 的 z 方向定义不同，请在参数里允许设置 height_sign = +1 或 -1。
+即：
+z_top = z_table + height_sign * h_part。
+
+Block 9：计算 z residual
+比较：
+z_error_before = z_meas_before - z_top
+z_error_after = z_meas_after - z_top
+输出 mm 单位的误差。
+如果重复采集多个点，保存所有样本并统计每个 part 的 mean/std/MAE/RMSE。
+
+Block 10：可视化
+显示 RGB 图上的抓取点和 patch；
+画每个零件的 z_error_before / z_error_after；
+画误差 histogram；
+画误差随 D_meas 的变化。
+
+Block 11：拟合 task-specific z correction
+如果每个零件有多组样本，拟合一个简单的修正模型：
+z_top_true = alpha_part * z_meas + beta_part
+或者只拟合每个零件一个 z_offset：
+z_corrected = z_meas + offset_part
+输出每个 part 的 offset_part。
+请优先实现 offset_part，因为它更稳定、更容易解释。
+
+Block 12：保存 task-specific correction
+保存 part_z_offsets.json，包括每个 part 的 z_offset、样本数量、误差统计。后续抓取下降时可以使用。
+
+Block 13：结论提示
+如果某个零件的 z error 稳定为固定偏差，可以用 offset_part 修正。
+如果某个零件误差波动很大，说明该零件表面/边缘/材质导致 depth 不稳定，应改用顶部颜色检测、CAD 高度、工作台平面高度、慢速下降或力控，而不是依赖 RealSense 单点深度。
+
+总体代码要求：
+
+1. 每个 notebook 都要从上到下可以逐步运行。
+2. 每个 notebook 都要有 Markdown cell 解释当前 block 目的、输入、输出。
+3. 每个 notebook 都要保存中间结果，方便下一个 notebook 读取。
+4. 所有深度单位统一使用 meter，输出统计时额外显示 mm。
+5. 不要只读取单个像素 depth，默认使用 patch median，并和 single pixel 对比。
+6. 所有无效 depth = 0 的点必须过滤。
+7. 所有图像采集都要有可视化检查。
+8. 尽量避免复杂依赖，优先使用 pyrealsense2、opencv-contrib-python、numpy、pandas、matplotlib。
+9. 不要强行依赖机器人 API。和机器人相关的数据先设计成从 json/csv 手动输入或读取，这样我可以先离线验证。
+10. 请在每个 notebook 开头写清楚需要我手动填写的参数，例如 ChArUco board 尺寸、T_ee_cam、工作台平面、part heights、T_base_ee 文件路径等。
+11. 请在输出结果中明确告诉我：当前误差主要像是随机噪声、系统性 depth scale/bias、hand-eye误差，还是 task-specific 零件表面误差。
+12. 请生成完整 notebook 文件，而不是只给零散代码片段。

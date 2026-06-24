@@ -1,0 +1,6 @@
+name: xinyu_zhuo
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+prefix: /home/masais/miniconda3/envs/xinyu_zhuo

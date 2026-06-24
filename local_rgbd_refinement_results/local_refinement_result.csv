@@ -1,0 +1,5 @@
+﻿timestamp_sec,target_type,result_type,point_name,u,v,radius_px,yaw_deg,depth_valid,depth_m,depth_source,top_surface_depth_m,top_surface_area_px,camera_x_m,camera_y_m,camera_z_m,camera_frame_id,confidence,rule_note
+1782206704.146018,gear_large,grasp,gear_center,404.420490953918,280.51642269838055,,,False,0.4490000307559967,center_window_median,0.4270000159740448,1280,,,,camera_color_optical_frame,low,fallback because two grasp markers were not detected; grasp may be unreliable
+1782206704.146018,gear_large,grasp,grasp_left,369.5,310.0,,,True,0.4280000329017639,,0.4270000159740448,1280,,,,camera_color_optical_frame,low,fallback because two grasp markers were not detected; grasp may be unreliable
+1782206704.146018,gear_large,grasp,grasp_right,421.0,246.0,,,True,0.42600002884864807,,0.4270000159740448,1280,,,,camera_color_optical_frame,low,fallback because two grasp markers were not detected; grasp may be unreliable
+1782206704.146018,gear_large,grasp,grasp_midpoint,395.25,278.0,,,True,0.427000030875206,,0.4270000159740448,1280,,,,camera_color_optical_frame,low,fallback because two grasp markers were not detected; grasp may be unreliable

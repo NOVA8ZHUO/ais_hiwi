@@ -1,0 +1,156 @@
+{
+  "timestamp_sec": 1782206704.146018,
+  "target_type": "gear_large",
+  "frame_id": "camera_color_optical_frame",
+  "camera_frame_id": "camera_color_optical_frame",
+  "image_width": 640,
+  "image_height": 480,
+  "result_type": "grasp",
+  "pixel_points": {
+    "gear_center": {
+      "name": "gear_center",
+      "u": 404.420490953918,
+      "v": 280.51642269838055
+    },
+    "grasp_left": {
+      "u": 369.5,
+      "v": 310.0
+    },
+    "grasp_right": {
+      "u": 421.0,
+      "v": 246.0
+    },
+    "grasp_midpoint": {
+      "u": 395.25,
+      "v": 278.0
+    }
+  },
+  "camera_points": {
+    "gear_center": {
+      "depth_m": 0.4490000307559967,
+      "depth_valid": false,
+      "depth_valid_count": 49,
+      "depth_source": "center_window_median",
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    },
+    "grasp_left": {
+      "depth_valid": true,
+      "depth_m": 0.4280000329017639,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    },
+    "grasp_right": {
+      "depth_valid": true,
+      "depth_m": 0.42600002884864807,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    },
+    "grasp_midpoint": {
+      "depth_valid": true,
+      "depth_m": 0.427000030875206,
+      "camera_x_m": null,
+      "camera_y_m": null,
+      "camera_z_m": null,
+      "camera_frame_id": "camera_color_optical_frame"
+    }
+  },
+  "top_surface_components": [
+    {
+      "area_px": 728,
+      "bbox": [
+        399,
+        239,
+        45,
+        39
+      ],
+      "center": [
+        424.2448425292969,
+        256.6015930175781
+      ],
+      "long_side_px": 52.00237274169922,
+      "short_side_px": 20.196548461914062,
+      "aspect_ratio": 2.5748148422372,
+      "angle_deg": -51.07246017456055,
+      "depth_m": 0.42600002884864807,
+      "depth_valid_count": 686
+    },
+    {
+      "area_px": 552,
+      "bbox": [
+        359,
+        289,
+        32,
+        34
+      ],
+      "center": [
+        373.923095703125,
+        305.6153869628906
+      ],
+      "long_side_px": 41.675662994384766,
+      "short_side_px": 17.861000061035156,
+      "aspect_ratio": 2.33333311975642,
+      "angle_deg": -29.744882583618164,
+      "depth_m": 0.4280000329017639,
+      "depth_valid_count": 533
+    }
+  ],
+  "top_surface_depth_m": 0.4270000159740448,
+  "top_surface_valid_count": 1219,
+  "top_surface_area_px": 1280,
+  "grasp_left_depth_m": 0.4280000329017639,
+  "grasp_right_depth_m": 0.42600002884864807,
+  "grasp_midpoint_depth_m": 0.427000030875206,
+  "depth_source": "top_surface_component_median",
+  "depth_valid": true,
+  "confidence": "low",
+  "rule_note": "fallback because two grasp markers were not detected; grasp may be unreliable",
+  "depth_notes": "Raw aligned depth only. Smaller depth means a higher surface. Each grasp depth is the median inside its selected top protrusion.",
+  "status": "ok",
+  "warnings": [],
+  "grasp_left": {
+    "u": 369.5,
+    "v": 310.0,
+    "depth_valid": true,
+    "depth_m": 0.4280000329017639,
+    "camera_x_m": null,
+    "camera_y_m": null,
+    "camera_z_m": null,
+    "camera_frame_id": "camera_color_optical_frame"
+  },
+  "grasp_right": {
+    "u": 421.0,
+    "v": 246.0,
+    "depth_valid": true,
+    "depth_m": 0.42600002884864807,
+    "camera_x_m": null,
+    "camera_y_m": null,
+    "camera_z_m": null,
+    "camera_frame_id": "camera_color_optical_frame"
+  },
+  "grasp_midpoint": {
+    "u": 395.25,
+    "v": 278.0,
+    "depth_m": 0.427000030875206,
+    "depth_valid": true,
+    "depth_valid_count": 2,
+    "depth_source": "grasp_endpoint_depth_median",
+    "camera_x_m": null,
+    "camera_y_m": null,
+    "camera_z_m": null,
+    "camera_frame_id": "camera_color_optical_frame"
+  },
+  "grasp_line_yaw_deg_image": -51.17680118260422,
+  "grasp_line_length_px": 82.14773277455684,
+  "gripper_finger_line_yaw_deg_image": -51.17680118260422,
+  "yaw_frame": "image_pixel_frame",
+  "yaw_definition": "line from grasp_left to grasp_right; gripper finger line should be parallel to this line",
+  "yaw_source": "gear_depth_or_rgb_geometry_fallback",
+  "debug_notes": "image-frame yaw computed from grasp_left to grasp_right; source=gear_depth_or_rgb_geometry_fallback; no hand-eye or robot-base yaw applied"
+}
