@@ -1,0 +1,111 @@
+[
+  {
+    "image": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/global_rgb_fixed_01_20260703_124310.png",
+    "output_dir": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_01_20260703_124310",
+    "num_results": 6,
+    "classes": [
+      "Gear_small",
+      "Gear_large",
+      "Gear_large",
+      "Gear_compound",
+      "Shaft_large",
+      "Shaft_small"
+    ],
+    "has_base": false,
+    "base_hole_count": 0,
+    "gear_count": 4,
+    "screw_count": 0,
+    "shaft_count": 2,
+    "json": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_01_20260703_124310/results.json",
+    "annotated": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_01_20260703_124310/annotated.png",
+    "debug": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_01_20260703_124310/debug_masks.png"
+  },
+  {
+    "image": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/global_rgb_fixed_02_20260703_124311.png",
+    "output_dir": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_02_20260703_124311",
+    "num_results": 7,
+    "classes": [
+      "Gear_small",
+      "Gear_large",
+      "Gear_small",
+      "Gear_large",
+      "Gear_compound",
+      "Shaft_large",
+      "Shaft_small"
+    ],
+    "has_base": false,
+    "base_hole_count": 0,
+    "gear_count": 5,
+    "screw_count": 0,
+    "shaft_count": 2,
+    "json": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_02_20260703_124311/results.json",
+    "annotated": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_02_20260703_124311/annotated.png",
+    "debug": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_02_20260703_124311/debug_masks.png"
+  },
+  {
+    "image": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/global_rgb_fixed_03_20260703_124312.png",
+    "output_dir": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_03_20260703_124312",
+    "num_results": 7,
+    "classes": [
+      "Gear_small",
+      "Gear_large",
+      "Gear_small",
+      "Gear_large",
+      "Gear_compound",
+      "Shaft_large",
+      "Shaft_small"
+    ],
+    "has_base": false,
+    "base_hole_count": 0,
+    "gear_count": 5,
+    "screw_count": 0,
+    "shaft_count": 2,
+    "json": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_03_20260703_124312/results.json",
+    "annotated": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_03_20260703_124312/annotated.png",
+    "debug": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_03_20260703_124312/debug_masks.png"
+  },
+  {
+    "image": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/global_rgb_fixed_04_20260703_124313.png",
+    "output_dir": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_04_20260703_124313",
+    "num_results": 7,
+    "classes": [
+      "Gear_small",
+      "Gear_large",
+      "Gear_small",
+      "Gear_large",
+      "Gear_compound",
+      "Shaft_large",
+      "Shaft_small"
+    ],
+    "has_base": false,
+    "base_hole_count": 0,
+    "gear_count": 5,
+    "screw_count": 0,
+    "shaft_count": 2,
+    "json": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_04_20260703_124313/results.json",
+    "annotated": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_04_20260703_124313/annotated.png",
+    "debug": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_04_20260703_124313/debug_masks.png"
+  },
+  {
+    "image": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/global_rgb_fixed_05_20260703_124314.png",
+    "output_dir": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_05_20260703_124314",
+    "num_results": 7,
+    "classes": [
+      "Gear_small",
+      "Gear_large",
+      "Gear_small",
+      "Gear_large",
+      "Gear_compound",
+      "Shaft_large",
+      "Shaft_small"
+    ],
+    "has_base": false,
+    "base_hole_count": 0,
+    "gear_count": 5,
+    "screw_count": 0,
+    "shaft_count": 2,
+    "json": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_05_20260703_124314/results.json",
+    "annotated": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_05_20260703_124314/annotated.png",
+    "debug": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp320_20260703_124308/offline_eval_from_notebook/global_rgb_fixed_05_20260703_124314/debug_masks.png"
+  }
+]

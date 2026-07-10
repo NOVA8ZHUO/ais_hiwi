@@ -8,6 +8,7 @@ does no robot motion; it only publishes base-frame part centers.
 from __future__ import annotations
 
 from dataclasses import dataclass
+import itertools
 import math
 from pathlib import Path
 import sys
@@ -109,14 +110,23 @@ class GlobalPartDetector:
         return cv2.erode(mask, self._kernel(7))
 
     def _red_mask(self, image: np.ndarray, work_mask: np.ndarray) -> np.ndarray:
-        hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+        segmentation_image = cv2.bilateralFilter(image, 5, 35, 35)
+        hsv = cv2.cvtColor(segmentation_image, cv2.COLOR_BGR2HSV)
         red = cv2.bitwise_or(
-            cv2.inRange(hsv, (0, 90, 55), (12, 255, 255)),
-            cv2.inRange(hsv, (168, 90, 55), (179, 255, 255)),
+            cv2.inRange(hsv, (0, 50, 40), (12, 255, 255)),
+            cv2.inRange(hsv, (168, 50, 40), (179, 255, 255)),
         )
+        blue, green, red_channel = cv2.split(segmentation_image)
+        red_dominant = (
+            (red_channel.astype(np.int16) >= green.astype(np.int16) + 8)
+            & (red_channel.astype(np.int16) >= blue.astype(np.int16) + 8)
+        )
+        red[~red_dominant] = 0
         red = cv2.bitwise_and(red, work_mask)
         red = cv2.morphologyEx(red, cv2.MORPH_OPEN, self._kernel(3))
-        red = cv2.morphologyEx(red, cv2.MORPH_CLOSE, self._kernel(7))
+        red = cv2.morphologyEx(red, cv2.MORPH_CLOSE, self._kernel(7), iterations=2)
+        red = cv2.dilate(red, self._kernel(3), iterations=1)
+        red = cv2.bitwise_and(red, work_mask)
         return self._remove_small(red, 180)
 
     def _black_mask(self, image: np.ndarray, work_mask: np.ndarray) -> np.ndarray:
@@ -138,12 +148,13 @@ class GlobalPartDetector:
         _, saturation, value = cv2.split(hsv)
         lightness, a_channel, b_channel = cv2.split(lab)
         silver = (
-            (np.abs(a_channel.astype(np.int16) - 128) <= 30)
-            & (np.abs(b_channel.astype(np.int16) - 128) <= 38)
-            & (saturation <= 50)
-            & (value >= 70)
-            & (value <= 175)
-            & (lightness <= 168)
+            (np.abs(a_channel.astype(np.int16) - 128) <= 35)
+            & (np.abs(b_channel.astype(np.int16) - 128) <= 45)
+            & (saturation <= 95)
+            & (value >= 85)
+            & (value <= 245)
+            & (lightness >= 95)
+            & (lightness <= 235)
         )
         mask = cv2.bitwise_and(np.uint8(silver) * 255, work_mask)
         exclusion = cv2.dilate(cv2.bitwise_or(red_mask, black_mask), self._kernel(7))
@@ -151,6 +162,26 @@ class GlobalPartDetector:
         mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, self._kernel(3))
         mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, self._kernel(11))
         return self._remove_small(mask, 250)
+
+    def _white_shaft_mask(self, image: np.ndarray, work_mask: np.ndarray) -> np.ndarray:
+        hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+        lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
+        _, saturation, value = cv2.split(hsv)
+        lightness, a_channel, b_channel = cv2.split(lab)
+        neutral = (
+            (np.abs(a_channel.astype(np.int16) - 128) <= 28)
+            & (np.abs(b_channel.astype(np.int16) - 128) <= 35)
+        )
+        white = (
+            neutral
+            & (saturation <= 85)
+            & (value >= 118)
+            & (lightness >= 118)
+        )
+        mask = cv2.bitwise_and(np.uint8(white) * 255, work_mask)
+        mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, self._kernel(3))
+        mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, self._kernel(5))
+        return self._remove_small(mask, 80)
 
     @staticmethod
     def _holes_inside(contour: np.ndarray, object_mask: np.ndarray) -> int:
@@ -169,7 +200,7 @@ class GlobalPartDetector:
             if not 180 <= area <= 30000:
                 continue
             _, _, width, height = cv2.boundingRect(contour)
-            if area <= 1500 and max(width, height) <= 55:
+            if area <= 1500 and max(width, height) <= 65:
                 center = cv2.minAreaRect(contour)[0]
                 screw.append(GlobalDetection("screw", center, contour, "high"))
             elif area >= 2500:
@@ -238,24 +269,44 @@ class GlobalPartDetector:
             (_, _), radius = cv2.minEnclosingCircle(contour)
             u, v = self._center(contour)
             boundary = cv2.pointPolygonTest(base.contour, (u, v), True)
-            if not (
-                80 <= area <= 2000
-                and 5.0 <= radius <= 30.0
-                and circularity >= 0.50
-                and aspect >= 0.40
-                and boundary >= 3.0
-            ):
-                continue
+            fill_ratio = area / (math.pi * radius * radius) if radius > 1e-6 else 0.0
+            ellipse_aspect = aspect
             if len(contour) >= 5:
-                (_, _), ellipse_size, _ = cv2.fitEllipse(contour)
-                ellipse_minor = float(min(ellipse_size))
+                try:
+                    (_, _), ellipse_size, _ = cv2.fitEllipse(contour)
+                    ellipse_major = float(max(ellipse_size))
+                    ellipse_minor = float(min(ellipse_size))
+                    ellipse_aspect = ellipse_minor / max(ellipse_major, 1e-6)
+                except cv2.error:
+                    (_, _), rect_size, _ = cv2.minAreaRect(contour)
+                    ellipse_minor = float(min(rect_size))
             else:
                 (_, _), rect_size, _ = cv2.minAreaRect(contour)
                 ellipse_minor = float(min(rect_size))
-            candidates.append(
-                (circularity + aspect, u, v, radius, ellipse_minor, contour)
+            if not (
+                100 <= area <= 2000
+                and 5.0 <= radius <= 30.0
+                and circularity >= 0.65
+                and aspect >= 0.48
+                and ellipse_aspect >= 0.62
+                and fill_ratio >= 0.50
+                and boundary >= 3.0
+            ):
+                continue
+            candidates.append((circularity + aspect + ellipse_aspect, u, v, radius, ellipse_minor, contour))
+        selected = list(
+            max(
+                itertools.combinations(candidates, 3),
+                key=lambda items: (
+                    sum(item[0] for item in items)
+                    + min(
+                        math.hypot(a[1] - b[1], a[2] - b[2])
+                        for a, b in itertools.combinations(items, 2)
+                    )
+                    / 45.0
+                ),
             )
-        selected = sorted(candidates, key=lambda item: item[0], reverse=True)[:3]
+        ) if len(candidates) >= 3 else candidates[:]
         if len(selected) != 3:
             return []
         named_holes = assign_base_hole_names(
@@ -269,31 +320,74 @@ class GlobalPartDetector:
             for name, item in named_holes.items()
         ]
 
-    def _detect_shafts(
-        self, image: np.ndarray, black_mask: np.ndarray
-    ) -> list[GlobalDetection]:
-        contours, _ = cv2.findContours(black_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        candidates: list[tuple[float, np.ndarray]] = []
-        for contour in contours:
-            area = float(cv2.contourArea(contour))
-            if not 550 <= area <= 4200:
-                continue
-            (_, _), (width, height), _ = cv2.minAreaRect(contour)
-            long_side, short_side = max(width, height), min(width, height)
-            rect_area = float(width * height)
-            rectangularity = area / rect_area if rect_area > 0 else 0.0
-            if rectangularity < 0.68 or long_side > 90 or short_side < 18:
-                continue
-            perimeter = float(cv2.arcLength(contour, True))
-            circularity = 4 * math.pi * area / (perimeter * perimeter) if perimeter else 0
-            if circularity >= 0.86:
-                continue
-            candidates.append((rect_area, contour))
-        candidates.sort(key=lambda item: item[0], reverse=True)
+    def _score_white_shaft(
+        self, contour: np.ndarray, image_shape: tuple[int, ...], relaxed: bool
+    ) -> tuple[float, float, np.ndarray] | None:
+        area = float(cv2.contourArea(contour))
+        min_area = 180 if relaxed else 420
+        min_rectangularity = 0.36 if relaxed else 0.58
+        min_short_side = 8 if relaxed else 14
+        min_score = 2.05 if relaxed else 2.55
+        if not min_area <= area <= 5000:
+            return None
+        x, y, width, height = cv2.boundingRect(contour)
+        if (
+            x <= 5
+            or y <= 5
+            or x + width >= image_shape[1] - 5
+            or y + height >= image_shape[0] - 5
+        ):
+            return None
+        (_, _), (rect_width, rect_height), _ = cv2.minAreaRect(contour)
+        long_side, short_side = max(rect_width, rect_height), min(rect_width, rect_height)
+        rect_area = float(rect_width * rect_height)
+        if rect_area <= 0.0:
+            return None
+        rectangularity = area / rect_area
+        aspect_ratio = long_side / max(short_side, 1e-6)
+        perimeter = float(cv2.arcLength(contour, True))
+        circularity = 4 * math.pi * area / (perimeter * perimeter) if perimeter else 0
+        if (
+            circularity >= 0.86
+            or rectangularity < min_rectangularity
+            or long_side > 120
+            or short_side < min_short_side
+            or aspect_ratio > 4.2
+        ):
+            return None
+        score = (
+            min(area / 900.0, 1.5)
+            + min(rectangularity / max(min_rectangularity, 1e-6), 1.6)
+            + min(short_side / max(min_short_side, 1e-6), 1.4)
+            + max(0.0, 1.0 - max(aspect_ratio - 2.2, 0.0) / 2.0)
+            - (0.25 if relaxed else 0.0)
+        )
+        if score < min_score:
+            return None
+        return score, rect_area, contour
+
+    def _detect_shafts(self, image: np.ndarray, white_mask: np.ndarray) -> list[GlobalDetection]:
+        shaft_candidates: list[tuple[float, float, np.ndarray]] = []
+        for close_size, relaxed in ((5, False), (7, True)):
+            mask = cv2.morphologyEx(white_mask, cv2.MORPH_CLOSE, self._kernel(close_size))
+            if relaxed:
+                mask = cv2.dilate(mask, self._kernel(3), iterations=1)
+            contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            for contour in contours:
+                candidate = self._score_white_shaft(contour, image.shape, relaxed)
+                if candidate is not None:
+                    shaft_candidates.append(candidate)
+        deduplicated: list[tuple[float, float, np.ndarray]] = []
+        for candidate in sorted(shaft_candidates, key=lambda item: (item[0], item[1]), reverse=True):
+            center = np.asarray(self._center(candidate[2]), dtype=float)
+            if all(np.linalg.norm(center - np.asarray(self._center(item[2]), dtype=float)) >= 12.0 for item in deduplicated):
+                deduplicated.append(candidate)
+        candidates = sorted(deduplicated, key=lambda item: item[1], reverse=True)[:2]
         results = []
-        for index, (_, contour) in enumerate(candidates[:2]):
+        type_certain = len(candidates) == 2 and (candidates[0][1] - candidates[1][1]) / max(candidates[0][1], 1e-6) >= 0.08
+        for index, (_, _, contour) in enumerate(candidates):
             name = "shaft_large" if index == 0 else "shaft_small"
-            confidence = "high" if len(candidates) >= 2 else "low"
+            confidence = "high" if type_certain else "medium"
             results.append(GlobalDetection(name, self._center(contour), contour, confidence))
         return results
 
@@ -324,12 +418,19 @@ class GlobalPartDetector:
         work_mask = self._work_mask(image)
         red_mask = self._red_mask(image, work_mask)
         black_mask = self._black_mask(image, work_mask)
+        white_shaft_mask = self._white_shaft_mask(image, work_mask)
         silver_mask = self._silver_mask(image, work_mask, red_mask, black_mask)
         base = self._detect_base(image, silver_mask)
 
-        shaft_mask = black_mask.copy()
+        shaft_mask = white_shaft_mask.copy()
+        red_object_exclusion = np.zeros_like(shaft_mask)
+        red_contours, _ = cv2.findContours(red_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        if red_contours:
+            cv2.drawContours(red_object_exclusion, red_contours, -1, 255, cv2.FILLED)
+            red_object_exclusion = cv2.dilate(red_object_exclusion, self._kernel(15))
+            shaft_mask[red_object_exclusion > 0] = 0
         if base is not None:
-            base_region = np.zeros_like(black_mask)
+            base_region = np.zeros_like(shaft_mask)
             cv2.drawContours(base_region, [base.contour], -1, 255, cv2.FILLED)
             base_region = cv2.dilate(base_region, self._kernel(3))
             shaft_mask[base_region > 0] = 0
@@ -343,6 +444,8 @@ class GlobalPartDetector:
             "work_mask": work_mask,
             "red_mask": red_mask,
             "black_mask": black_mask,
+            "white_shaft_mask": white_shaft_mask,
+            "shaft_mask": shaft_mask,
             "silver_mask": silver_mask,
         }
 

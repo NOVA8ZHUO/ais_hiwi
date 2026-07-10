@@ -1,0 +1,14 @@
+__pycache__/
+**/__pycache__/
+**pycache**/
+.ipynb_checkpoints/
+*.bag
+*.mp4
+*.avi
+*.log
+build/
+install/
+log/
+.venv/
+env/
+*.pyc

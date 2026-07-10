@@ -1,156 +1,188 @@
 {
-  "timestamp_sec": 1782206704.146018,
-  "target_type": "gear_large",
+  "timestamp_sec": 1783696002.696982,
+  "target_type": "gear_compound",
   "frame_id": "camera_color_optical_frame",
-  "camera_frame_id": "camera_color_optical_frame",
   "image_width": 640,
   "image_height": 480,
-  "result_type": "grasp",
+  "status": "ok",
+  "warnings": [],
   "pixel_points": {
     "gear_center": {
-      "name": "gear_center",
-      "u": 404.420490953918,
-      "v": 280.51642269838055
+      "u": 304.3098517725143,
+      "v": 303.33132762091594
     },
     "grasp_left": {
-      "u": 369.5,
-      "v": 310.0
+      "u": 218.70470578037595,
+      "v": 307.06892901275353
     },
     "grasp_right": {
-      "u": 421.0,
-      "v": 246.0
+      "u": 389.9149977646527,
+      "v": 299.59372622907836
     },
     "grasp_midpoint": {
-      "u": 395.25,
-      "v": 278.0
+      "u": 304.3098517725143,
+      "v": 303.33132762091594
     }
   },
   "camera_points": {
     "gear_center": {
-      "depth_m": 0.4490000307559967,
-      "depth_valid": false,
-      "depth_valid_count": 49,
-      "depth_source": "center_window_median",
-      "camera_x_m": null,
-      "camera_y_m": null,
-      "camera_z_m": null,
+      "depth_valid": true,
+      "depth_m": 0.3460000157356262,
+      "camera_x_m": -0.012327882163875512,
+      "camera_y_m": 0.025183117090848344,
+      "camera_z_m": 0.3460000157356262,
       "camera_frame_id": "camera_color_optical_frame"
     },
     "grasp_left": {
       "depth_valid": true,
-      "depth_m": 0.4280000329017639,
-      "camera_x_m": null,
-      "camera_y_m": null,
-      "camera_z_m": null,
+      "depth_m": 0.3330000042915344,
+      "camera_x_m": -0.058896507366190336,
+      "camera_y_m": 0.026293063775456732,
+      "camera_z_m": 0.3330000042915344,
       "camera_frame_id": "camera_color_optical_frame"
     },
     "grasp_right": {
       "depth_valid": true,
-      "depth_m": 0.42600002884864807,
-      "camera_x_m": null,
-      "camera_y_m": null,
-      "camera_z_m": null,
+      "depth_m": 0.33500000834465027,
+      "camera_x_m": 0.035378330797948714,
+      "camera_y_m": 0.022314014127280183,
+      "camera_z_m": 0.33500000834465027,
       "camera_frame_id": "camera_color_optical_frame"
     },
     "grasp_midpoint": {
       "depth_valid": true,
-      "depth_m": 0.427000030875206,
-      "camera_x_m": null,
-      "camera_y_m": null,
-      "camera_z_m": null,
+      "depth_m": 0.33400000631809235,
+      "camera_x_m": -0.011900325240936557,
+      "camera_y_m": 0.024309713540242892,
+      "camera_z_m": 0.33400000631809235,
       "camera_frame_id": "camera_color_optical_frame"
     }
   },
-  "top_surface_components": [
-    {
-      "area_px": 728,
-      "bbox": [
-        399,
-        239,
-        45,
-        39
-      ],
-      "center": [
-        424.2448425292969,
-        256.6015930175781
-      ],
-      "long_side_px": 52.00237274169922,
-      "short_side_px": 20.196548461914062,
-      "aspect_ratio": 2.5748148422372,
-      "angle_deg": -51.07246017456055,
-      "depth_m": 0.42600002884864807,
-      "depth_valid_count": 686
-    },
-    {
-      "area_px": 552,
-      "bbox": [
-        359,
-        289,
-        32,
-        34
-      ],
-      "center": [
-        373.923095703125,
-        305.6153869628906
-      ],
-      "long_side_px": 41.675662994384766,
-      "short_side_px": 17.861000061035156,
-      "aspect_ratio": 2.33333311975642,
-      "angle_deg": -29.744882583618164,
-      "depth_m": 0.4280000329017639,
-      "depth_valid_count": 533
-    }
+  "gear_compound_center_source": "selected_contours_mask_outer_boundary_fit",
+  "gear_compound_outer_contour_center": [
+    294.4984648110052,
+    286.7958688442
   ],
-  "top_surface_depth_m": 0.4270000159740448,
-  "top_surface_valid_count": 1219,
-  "top_surface_area_px": 1280,
-  "grasp_left_depth_m": 0.4280000329017639,
-  "grasp_right_depth_m": 0.42600002884864807,
-  "grasp_midpoint_depth_m": 0.427000030875206,
-  "depth_source": "top_surface_component_median",
-  "depth_valid": true,
-  "confidence": "low",
-  "rule_note": "fallback because two grasp markers were not detected; grasp may be unreliable",
-  "depth_notes": "Raw aligned depth only. Smaller depth means a higher surface. Each grasp depth is the median inside its selected top protrusion.",
-  "status": "ok",
-  "warnings": [],
+  "gear_compound_selected_mask_circle_center": [
+    311.5,
+    311.5
+  ],
+  "gear_compound_selected_mask_ellipse_center": [
+    295.7820739746094,
+    295.0318298339844
+  ],
+  "gear_compound_selected_mask_moment_center": [
+    294.61125881400994,
+    287.45187179021417
+  ],
+  "gear_compound_used_center": [
+    304.3098517725143,
+    303.33132762091594
+  ],
+  "gear_compound_center_hole": {
+    "center": [
+      345.5498046875,
+      325.9854736328125
+    ],
+    "radius_px": 12.500198364257812,
+    "circularity": 0.7536127398054306,
+    "aspect": 0.88,
+    "fill_ratio": 0.61011702561769,
+    "center_offset_px": 47.05256685834009
+  },
+  "gear_compound_candidate_source": "depth_anomaly_inner_gear",
+  "gear_compound_circle_pair_score": 5085.638281080265,
+  "gear_compound_circle_depth_score": 6.999999284744263,
+  "gear_compound_circle_red_score": 0.0,
+  "gear_compound_circle_handle_rgb_score": 0.0,
+  "gear_compound_cad_cutout_black_score": 0.0,
+  "gear_compound_cad_cutout_red_penalty": 0.0,
+  "gear_compound_circle_axis_deg": 177.5,
+  "gear_compound_raw_pad_pair": {
+    "raw_pad_left": [
+      265.22924164566854,
+      305.03762390849397
+    ],
+    "raw_pad_right": [
+      343.3904618993601,
+      301.6250313333379
+    ]
+  },
+  "gear_compound_large_style_axis_fallback": null,
+  "gear_compound_centered_grasp_line": {
+    "extended_left": [
+      183.3460585227536,
+      308.61272089199076
+    ],
+    "extended_right": [
+      425.27364502227505,
+      298.0499343498411
+    ],
+    "direction_mode": "raw_pad_axis",
+    "direction_unit": [
+      0.9990482215818579,
+      -0.04361938736533588
+    ],
+    "line_shift_error_px": 0.0,
+    "line_shift_error_ratio": 0.0,
+    "contact_half_length_px": 85.68670074462891,
+    "extended_half_length_px": 121.07903366088867
+  },
+  "result_type": "grasp",
   "grasp_left": {
-    "u": 369.5,
-    "v": 310.0,
+    "u": 218.70470578037595,
+    "v": 307.06892901275353,
+    "depth_m": 0.3330000042915344,
     "depth_valid": true,
-    "depth_m": 0.4280000329017639,
-    "camera_x_m": null,
-    "camera_y_m": null,
-    "camera_z_m": null,
+    "depth_valid_count": 421,
+    "depth_source": "raw_pad_neighbor_red_surface_median",
+    "camera_x_m": -0.058896507366190336,
+    "camera_y_m": 0.026293063775456732,
+    "camera_z_m": 0.3330000042915344,
     "camera_frame_id": "camera_color_optical_frame"
   },
   "grasp_right": {
-    "u": 421.0,
-    "v": 246.0,
+    "u": 389.9149977646527,
+    "v": 299.59372622907836,
+    "depth_m": 0.33500000834465027,
     "depth_valid": true,
-    "depth_m": 0.42600002884864807,
-    "camera_x_m": null,
-    "camera_y_m": null,
-    "camera_z_m": null,
+    "depth_valid_count": 391,
+    "depth_source": "raw_pad_neighbor_red_surface_median",
+    "camera_x_m": 0.035378330797948714,
+    "camera_y_m": 0.022314014127280183,
+    "camera_z_m": 0.33500000834465027,
     "camera_frame_id": "camera_color_optical_frame"
   },
   "grasp_midpoint": {
-    "u": 395.25,
-    "v": 278.0,
-    "depth_m": 0.427000030875206,
+    "u": 304.3098517725143,
+    "v": 303.33132762091594,
+    "depth_m": 0.33400000631809235,
     "depth_valid": true,
     "depth_valid_count": 2,
     "depth_source": "grasp_endpoint_depth_median",
-    "camera_x_m": null,
-    "camera_y_m": null,
-    "camera_z_m": null,
+    "camera_x_m": -0.011900325240936557,
+    "camera_y_m": 0.024309713540242892,
+    "camera_z_m": 0.33400000631809235,
     "camera_frame_id": "camera_color_optical_frame"
   },
-  "grasp_line_yaw_deg_image": -51.17680118260422,
-  "grasp_line_length_px": 82.14773277455684,
-  "gripper_finger_line_yaw_deg_image": -51.17680118260422,
+  "grasp_line_yaw_deg_image": -2.499999999999995,
+  "grasp_line_length_px": 171.37340148925784,
+  "gripper_finger_line_yaw_deg_image": -2.499999999999995,
   "yaw_frame": "image_pixel_frame",
   "yaw_definition": "line from grasp_left to grasp_right; gripper finger line should be parallel to this line",
-  "yaw_source": "gear_depth_or_rgb_geometry_fallback",
-  "debug_notes": "image-frame yaw computed from grasp_left to grasp_right; source=gear_depth_or_rgb_geometry_fallback; no hand-eye or robot-base yaw applied"
+  "yaw_source": "gear_compound_depth_anomaly_inner_gear_centered",
+  "confidence": "high",
+  "rule_note": "gear_compound inner depth-anomaly pair determines grasp direction; final line is forced through gear center; shift_error_px=0.0; selected by gear_compound structure score among 3 red gear candidates",
+  "debug_notes": "image-frame yaw computed from grasp_left to grasp_right; source=gear_compound_depth_anomaly_inner_gear_centered; no hand-eye or robot-base yaw applied",
+  "gear_candidate_count": 3,
+  "gear_structured_candidate_count": 1,
+  "gear_selected_candidate_index": 0,
+  "gear_selected_candidate_area_px": 59547.5,
+  "gear_selected_structure_score": 5085.638281080265,
+  "gear_selection_reason": "gear_compound_structure_score_over_red_contours",
+  "gear_candidate_areas_px": [
+    59547.5,
+    20050.0,
+    2743.0
+  ]
 }

@@ -1,0 +1,187 @@
+[
+  {
+    "image": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/global_rgb_fixed_01_20260703_122021.png",
+    "output_dir": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_01_20260703_122021",
+    "num_results": 5,
+    "classes": [
+      "Gear_large",
+      "Screw",
+      "Gear_large",
+      "Gear_large",
+      "Gear_compound"
+    ],
+    "centers": {
+      "Gear_large#0": [
+        157.51,
+        413.43
+      ],
+      "Screw#1": [
+        473.25,
+        327.25
+      ],
+      "Gear_large#2": [
+        288.59,
+        346.78
+      ],
+      "Gear_large#3": [
+        145.84,
+        219.36
+      ],
+      "Gear_compound#4": [
+        456.57,
+        122.88
+      ]
+    },
+    "json": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_01_20260703_122021/results.json",
+    "annotated": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_01_20260703_122021/annotated.png",
+    "debug": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_01_20260703_122021/debug_masks.png"
+  },
+  {
+    "image": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/global_rgb_fixed_02_20260703_122022.png",
+    "output_dir": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_02_20260703_122022",
+    "num_results": 5,
+    "classes": [
+      "Gear_large",
+      "Screw",
+      "Gear_large",
+      "Gear_large",
+      "Gear_compound"
+    ],
+    "centers": {
+      "Gear_large#0": [
+        157.39,
+        413.07
+      ],
+      "Screw#1": [
+        473.5,
+        327.5
+      ],
+      "Gear_large#2": [
+        340.67,
+        382.4
+      ],
+      "Gear_large#3": [
+        145.83,
+        219.22
+      ],
+      "Gear_compound#4": [
+        456.73,
+        123.08
+      ]
+    },
+    "json": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_02_20260703_122022/results.json",
+    "annotated": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_02_20260703_122022/annotated.png",
+    "debug": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_02_20260703_122022/debug_masks.png"
+  },
+  {
+    "image": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/global_rgb_fixed_03_20260703_122023.png",
+    "output_dir": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_03_20260703_122023",
+    "num_results": 5,
+    "classes": [
+      "Gear_large",
+      "Screw",
+      "Gear_large",
+      "Gear_large",
+      "Gear_compound"
+    ],
+    "centers": {
+      "Gear_large#0": [
+        157.47,
+        413.29
+      ],
+      "Screw#1": [
+        473.25,
+        327.25
+      ],
+      "Gear_large#2": [
+        288.0,
+        346.45
+      ],
+      "Gear_large#3": [
+        145.81,
+        219.15
+      ],
+      "Gear_compound#4": [
+        456.76,
+        123.0
+      ]
+    },
+    "json": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_03_20260703_122023/results.json",
+    "annotated": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_03_20260703_122023/annotated.png",
+    "debug": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_03_20260703_122023/debug_masks.png"
+  },
+  {
+    "image": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/global_rgb_fixed_04_20260703_122024.png",
+    "output_dir": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_04_20260703_122024",
+    "num_results": 5,
+    "classes": [
+      "Gear_large",
+      "Screw",
+      "Gear_large",
+      "Gear_large",
+      "Gear_compound"
+    ],
+    "centers": {
+      "Gear_large#0": [
+        157.42,
+        413.38
+      ],
+      "Screw#1": [
+        473.25,
+        327.25
+      ],
+      "Gear_large#2": [
+        340.63,
+        382.18
+      ],
+      "Gear_large#3": [
+        145.82,
+        219.01
+      ],
+      "Gear_compound#4": [
+        456.87,
+        122.91
+      ]
+    },
+    "json": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_04_20260703_122024/results.json",
+    "annotated": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_04_20260703_122024/annotated.png",
+    "debug": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_04_20260703_122024/debug_masks.png"
+  },
+  {
+    "image": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/global_rgb_fixed_05_20260703_122025.png",
+    "output_dir": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_05_20260703_122025",
+    "num_results": 5,
+    "classes": [
+      "Gear_large",
+      "Screw",
+      "Gear_large",
+      "Gear_large",
+      "Gear_compound"
+    ],
+    "centers": {
+      "Gear_large#0": [
+        157.73,
+        413.34
+      ],
+      "Screw#1": [
+        473.5,
+        327.5
+      ],
+      "Gear_large#2": [
+        340.61,
+        382.18
+      ],
+      "Gear_large#3": [
+        145.92,
+        219.07
+      ],
+      "Gear_compound#4": [
+        456.71,
+        122.9
+      ]
+    },
+    "json": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_05_20260703_122025/results.json",
+    "annotated": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_05_20260703_122025/annotated.png",
+    "debug": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_fixed_20260703_122019/offline_eval_from_notebook/global_rgb_fixed_05_20260703_122025/debug_masks.png"
+  }
+]

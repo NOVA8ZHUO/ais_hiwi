@@ -115,6 +115,24 @@ class LocalGraspDetector:
         )
 
     @classmethod
+    def _white_shaft_mask(cls, image: np.ndarray) -> np.ndarray:
+        hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+        lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
+        _, saturation, value = cv2.split(hsv)
+        lightness, a_channel, b_channel = cv2.split(lab)
+        neutral = (
+            (np.abs(a_channel.astype(np.int16) - 128) <= 32)
+            & (np.abs(b_channel.astype(np.int16) - 128) <= 40)
+        )
+        white = (
+            neutral
+            & (saturation <= 95)
+            & (value >= 130)
+            & (lightness >= 135)
+        )
+        return cls._clean(np.uint8(white) * 255, 3, 5)
+
+    @classmethod
     def _silver_masks(cls, image: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
         hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
         lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
@@ -320,8 +338,10 @@ class LocalGraspDetector:
         self, image: np.ndarray, depth_image_m: np.ndarray, part_key: str
     ) -> LocalDetection | None:
         center_roi = self._center_roi(image.shape)
-        black = self._black_mask(image)
-        contours, _ = cv2.findContours(black, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        shaft_mask = self._white_shaft_mask(image)
+        contours, _ = cv2.findContours(
+            shaft_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+        )
         candidates = []
         for contour in contours:
             area = float(cv2.contourArea(contour))
@@ -336,9 +356,16 @@ class LocalGraspDetector:
         if not candidates:
             return None
         candidates.sort(key=lambda item: item[0], reverse=True)
-        # The local view is already centered on the requested shaft. Match the
-        # notebook: select the dominant valid rectangle, not the smallest blob.
-        selected = candidates[0]
+        if part_key == "shaft_small" and len(candidates) >= 2:
+            selected = candidates[1]
+            selection_reason = "two_or_more_shafts_detected_select_smallest_area"
+        else:
+            selected = candidates[0]
+            selection_reason = (
+                "two_or_more_shafts_detected_select_largest_area"
+                if part_key == "shaft_large" and len(candidates) >= 2
+                else "single_or_dominant_shaft_candidate"
+            )
         _, contour, rect, rectangularity = selected
         box = cv2.boxPoints(rect).astype(np.float64)
         edges = []
@@ -369,10 +396,10 @@ class LocalGraspDetector:
             grasp_right_uv=tuple(side_midpoints[1]),
             grasp_midpoint_uv=tuple(map(float, rect[0])),
             confidence="high" if rectangularity >= 0.72 else "medium",
-            source="shaft_minAreaRect_long_edge_midpoints",
+            source=f"{selection_reason}:white_shaft_minAreaRect_long_edge_midpoints",
             debug_images={
                 "target_center_roi": center_roi,
-                "shaft_black_mask": black,
+                "shaft_mask": shaft_mask,
                 "selected_mask": selected_mask,
             },
             depth_overrides_m=depth_overrides,

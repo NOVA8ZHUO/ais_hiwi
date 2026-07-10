@@ -398,6 +398,18 @@ def save_hand_eye_sample(sample_id, T_base_gripper, warmup_frames=30):
     config = rs.config()
     camera_serial = intrinsics.get("serial_number")
     if camera_serial:
+        context = rs.context()
+        connected_serials = [
+            device.get_info(rs.camera_info.serial_number)
+            for device in context.query_devices()
+        ]
+        if str(camera_serial) not in connected_serials:
+            raise RuntimeError(
+                f"内参 serial_number={camera_serial} 未连接。"
+                f"当前可见 RealSense: {connected_serials}。"
+                "请重新运行 Block 3/4 更新 camera_intrinsics.json，"
+                "或关闭占用相机的程序。"
+            )
         config.enable_device(str(camera_serial))
     config.enable_stream(
         rs.stream.color, expected_size[0], expected_size[1], rs.format.bgr8, 30

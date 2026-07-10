@@ -4,7 +4,7 @@ global_vision_force_adapter:
     base_frame: panda_link0
     ee_frame: panda_hand
     camera_frame: camera_color_optical_frame
-    handeye_yaml_path: /home/masais/Xinyu/cam_calibration/outputs/03_hand_eye/hand_eye_result.npz
+    handeye_yaml_path: /home/jingyun/Xinyu/ais_hiwi/cam_calibration/hand_eye_result.npz
     publish_rate: 2.0
     topic_prefix: /vision/global
     debug_view: false
@@ -36,11 +36,11 @@ local_vision_force_adapter:
     base_frame: panda_link0
     ee_frame: panda_hand
     camera_frame: camera_color_optical_frame
-    handeye_yaml_path: /home/masais/Xinyu/cam_calibration/outputs/03_hand_eye/hand_eye_result.npz
+    handeye_yaml_path: /home/jingyun/Xinyu/ais_hiwi/cam_calibration/hand_eye_result.npz
     publish_rate: 5.0
     topic_prefix: /vision/local
     debug_view: false
-    gripper_axis_mode: y_parallel  # x_parallel or y_parallel; verify on robot.
+    gripper_axis_mode: x_parallel  # x_parallel or y_parallel; verify on robot.
     min_valid_depth_points: 5
     depth_window: 7
     tf_timeout_sec: 0.2

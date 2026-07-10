@@ -1,0 +1,142 @@
+{
+  "capture_timestamp": "20260703_125114",
+  "purpose": "global_rgb_part_detection fixed RGB camera parameter validation",
+  "stream_settings": {
+    "width": 640,
+    "height": 480,
+    "fps": 30,
+    "format": "bgr8"
+  },
+  "rgb_settings_requested": {
+    "enable_auto_exposure": false,
+    "auto_exposure_priority": 0,
+    "power_line_frequency": 1,
+    "exposure": 260,
+    "gain": 96,
+    "enable_auto_white_balance": false,
+    "white_balance": 4600,
+    "brightness": 0,
+    "contrast": 45,
+    "saturation": 40,
+    "sharpness": 35,
+    "gamma": 300
+  },
+  "rgb_settings_apply_results": {
+    "enable_auto_exposure": {
+      "requested": false,
+      "actual": 0.0,
+      "status": "ok"
+    },
+    "auto_exposure_priority": {
+      "requested": 0,
+      "actual": 0.0,
+      "status": "ok"
+    },
+    "power_line_frequency": {
+      "requested": 1,
+      "actual": 1.0,
+      "status": "ok"
+    },
+    "exposure": {
+      "requested": 260,
+      "actual": 260.0,
+      "status": "ok"
+    },
+    "gain": {
+      "requested": 96,
+      "actual": 96.0,
+      "status": "ok"
+    },
+    "enable_auto_white_balance": {
+      "requested": false,
+      "actual": 0.0,
+      "status": "ok"
+    },
+    "white_balance": {
+      "requested": 4600,
+      "actual": 4600.0,
+      "status": "ok"
+    },
+    "brightness": {
+      "requested": 0,
+      "actual": 0.0,
+      "status": "ok"
+    },
+    "contrast": {
+      "requested": 45,
+      "actual": 45.0,
+      "status": "ok"
+    },
+    "saturation": {
+      "requested": 40,
+      "actual": 40.0,
+      "status": "ok"
+    },
+    "sharpness": {
+      "requested": 35,
+      "actual": 35.0,
+      "status": "ok"
+    },
+    "gamma": {
+      "requested": 300,
+      "actual": 300.0,
+      "status": "ok"
+    }
+  },
+  "rgb_settings_current_after_capture": {
+    "enable_auto_exposure": 0.0,
+    "auto_exposure_priority": 0.0,
+    "power_line_frequency": 1.0,
+    "exposure": 260.0,
+    "gain": 96.0,
+    "enable_auto_white_balance": 0.0,
+    "white_balance": 4600.0,
+    "brightness": 0.0,
+    "contrast": 45.0,
+    "saturation": 40.0,
+    "sharpness": 35.0,
+    "gamma": 300.0
+  },
+  "sensor_name": "RGB Camera",
+  "saved_images": [
+    {
+      "index": 1,
+      "path": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp260_sat40_gamma300_br0_ct45_20260703_125114/global_rgb_fixed_01_20260703_125115.png",
+      "frame_timestamp_ms": 1783075875931.7915,
+      "stats": {
+        "bgr_mean_b": 28.28640299479167,
+        "bgr_mean_g": 32.15744140625,
+        "bgr_mean_r": 51.346585286458335,
+        "hsv_mean_s": 112.10761067708333,
+        "hsv_mean_v": 51.56612955729167,
+        "lab_mean_l": 37.059130859375
+      }
+    },
+    {
+      "index": 2,
+      "path": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp260_sat40_gamma300_br0_ct45_20260703_125114/global_rgb_fixed_02_20260703_125117.png",
+      "frame_timestamp_ms": 1783075877030.565,
+      "stats": {
+        "bgr_mean_b": 28.3390625,
+        "bgr_mean_g": 32.21453776041667,
+        "bgr_mean_r": 51.44676106770833,
+        "hsv_mean_s": 112.314736328125,
+        "hsv_mean_v": 51.658206380208334,
+        "lab_mean_l": 37.116702473958334
+      }
+    },
+    {
+      "index": 3,
+      "path": "/home/jingyun/Xinyu/ais_hiwi/realsense_tuning_results/global_rgb_exp260_sat40_gamma300_br0_ct45_20260703_125114/global_rgb_fixed_03_20260703_125118.png",
+      "frame_timestamp_ms": 1783075878031.0195,
+      "stats": {
+        "bgr_mean_b": 28.2584765625,
+        "bgr_mean_g": 32.21298828125,
+        "bgr_mean_r": 51.33512044270833,
+        "hsv_mean_s": 112.28030598958334,
+        "hsv_mean_v": 51.55319986979167,
+        "lab_mean_l": 37.072454427083336
+      }
+    }
+  ]
+}
