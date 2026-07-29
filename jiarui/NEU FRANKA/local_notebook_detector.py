@@ -1,35 +1,20 @@
-#!/usr/bin/env python3
-# Generated from local_rgbd_grasp_refinement.ipynb by extract_notebook_cores.py.
-# Do not edit the notebook to update this file; rerun the extractor.
+# AUTO-EXTRACTED FROM local_rgbd_grasp_refinement.ipynb. DO NOT RETUNE HERE.
+# Source SHA256: a4dcee3296bc8e61301815b5b1c13516294a240761beb9f337e16dd54277a59e
+# Cells: 2,4,5,7,9,11,13,15,17,19,21 and save_local_outputs from cell 23.
 
 from __future__ import annotations
 
 import csv
-
-
 import itertools
-
-
 import json
-
-
 import math
-
-
 import time
-
-
 from pathlib import Path
-
-
 from typing import Any
 
-
 import cv2
-
-
+import matplotlib.pyplot as plt
 import numpy as np
-
 
 try:
     import pyrealsense2 as rs
@@ -38,378 +23,177 @@ except ImportError:
     rs = None
     REALSENSE_AVAILABLE = False
 
-
 CAMERA_FRAME_ID = "camera_color_optical_frame"
-
-
 VALID_TARGET_TYPES = {
     "base", "gear_large", "gear_small", "gear_compound",
     "shaft_large", "shaft_small", "screw",
 }
 
-
-INPUT_MODE = "offline"
-
-
-TARGET_TYPE = "gear_small"
-
-
+# Input selection.
+INPUT_MODE = "live"  # "offline" or "live"
+TARGET_TYPE = "shaft_small"  # Must be in VALID_TARGET_TYPES.
+# Painted-black grasp-marker samples:
+# gear_small:    20260610_141104
+# screw:         20260610_141142
+# gear_large:    20260610_141237
+# gear_compound: 20260610_141258
 OFFLINE_COLOR_PATH = Path("realsense_pic/realsense_color_20260615_170349.png")
-
-
 OFFLINE_DEPTH_PATH = Path("realsense_pic/realsense_depth_raw_20260615_170349.npy")
 
-
+# Existing saved RealSense raw files are uint16 millimeters. Multiplying by
+# 0.001 converts them to meters. Set to 1.0 when the .npy already stores meters.
 OFFLINE_DEPTH_SCALE_TO_M = 0.001
 
-
+# Fill these with the color intrinsics captured at the same resolution.
+# Keep None to test pixel detection without producing misleading 3D values.
 OFFLINE_INTRINSICS = None
-
+# Example structure only:
+# OFFLINE_INTRINSICS = {"fx": ..., "fy": ..., "ppx": ..., "ppy": ...}
 
 LIVE_WIDTH = 640
-
-
 LIVE_HEIGHT = 480
-
-
 LIVE_FPS = 30
-
-
 LIVE_WARMUP_FRAMES = 20
 
-
 OUTPUT_DIR = Path("local_rgbd_refinement_results")
-
-
 OUTPUT_JSON = OUTPUT_DIR / "local_refinement_result.json"
-
-
 OUTPUT_CSV = OUTPUT_DIR / "local_refinement_result.csv"
-
-
 OUTPUT_ANNOTATED = OUTPUT_DIR / "local_refinement_annotated.png"
+# ROS packaging adaptation: directories are created only by save_local_outputs,
+# not as an import side effect. No detector input, threshold, or result changes.
 
-
-RED_LOW_1 = np.array([0, 70, 40], dtype=np.uint8)
-
-
+# Red target segmentation.
+# Keep saturated red gears separate from the lower-saturation warm cast that
+# the Shaft_small supplemental white branch accepts.
+RED_MIN_SATURATION = 160
+RED_LOW_1 = np.array([0, RED_MIN_SATURATION, 40], dtype=np.uint8)
 RED_HIGH_1 = np.array([12, 255, 255], dtype=np.uint8)
-
-
-RED_LOW_2 = np.array([165, 70, 40], dtype=np.uint8)
-
-
+RED_LOW_2 = np.array([165, RED_MIN_SATURATION, 40], dtype=np.uint8)
 RED_HIGH_2 = np.array([179, 255, 255], dtype=np.uint8)
-
-
 RED_OPEN_KERNEL = 3
-
-
 RED_CLOSE_KERNEL = 9
-
-
 GEAR_MIN_AREA_PX = 2500
-
-
 SCREW_MIN_AREA_PX = 120
-
-
 SCREW_MAX_AREA_PX = 6000
-
-
 SCREW_MAX_DIM_PX = 130
+# ROS Local target association: Commander has already centred the calibrated
+# camera ray over the frozen Global Screw before enabling this detector.  A
+# screw candidate must therefore be close to the color-camera principal point;
+# in-workspace gears are not allowed to replace it merely by having more area.
+SCREW_CENTER_ROI_HALF_WIDTH_RATIO = 0.20
+SCREW_CENTER_ROI_HALF_HEIGHT_RATIO = 0.20
 
-
+# Black target segmentation.
 BLACK_MAX_VALUE = 95
 
-
+# White shaft segmentation on the new black work background.
 SHAFT_WHITE_MAX_SATURATION = 95
-
-
 SHAFT_WHITE_MIN_VALUE = 130
-
-
 SHAFT_WHITE_MIN_L = 135
-
-
 SHAFT_WHITE_LAB_A_TOL = 32
-
-
 SHAFT_WHITE_LAB_B_TOL = 40
-
-
 SHAFT_WHITE_OPEN_KERNEL = 3
-
-
 SHAFT_WHITE_CLOSE_KERNEL = 5
+# Shaft_small only: tolerate the stable warm/red cast seen under the fixed
+# Local camera profile.  Shaft_large deliberately keeps the original neutral
+# white mask because its current detection is reliable and less ROI-constrained.
+SHAFT_SMALL_CAST_MAX_SATURATION = 150
+SHAFT_SMALL_CAST_MIN_VALUE = 115
+SHAFT_SMALL_CAST_MIN_L = 115
+SHAFT_SMALL_CAST_LAB_A_TOL = 45
+SHAFT_SMALL_CAST_LAB_B_TOL = 45
 
-
+# Painted grasp-marker segmentation. This is separate from shaft segmentation:
+# gear markers are thin black strips, while the screw marker is a wider patch.
 BLACK_GRASP_MARKER_MAX_VALUE = 100
-
-
 BLACK_GRASP_MARKER_OPEN_KERNEL = 3
-
-
 BLACK_GRASP_MARKER_CLOSE_KERNEL = 3
-
-
 GEAR_BLACK_MARKER_CENTER_RADIUS_RATIO = 0.56
-
-
 GEAR_BLACK_MARKER_MIN_AREA_PX = 100
-
-
 GEAR_BLACK_MARKER_MAX_AREA_PX = 1800
-
-
 GEAR_BLACK_MARKER_MIN_ASPECT_RATIO = 4.0
-
-
 GEAR_BLACK_MARKER_MIN_LONG_SIDE_PX = 20
-
-
 GEAR_BLACK_MARKER_MAX_LONG_SIDE_PX = 100
-
-
 GEAR_BLACK_MARKER_MAX_PARALLEL_ANGLE_DEG = 18
-
-
 GEAR_BLACK_MARKER_MAX_AXIS_DOT = 0.42
-
-
 GEAR_BLACK_MARKER_MIN_SEPARATION_PX = 20
-
-
 GEAR_SMALL_SQUARE_MIN_AREA_PX = 250
-
-
 GEAR_SMALL_SQUARE_MAX_AREA_RATIO = 0.18
-
-
 GEAR_SMALL_SQUARE_MIN_RECTANGULARITY = 0.62
-
-
 GEAR_SMALL_SQUARE_MIN_ASPECT = 0.58
-
-
 GEAR_SMALL_SQUARE_CENTER_RADIUS_RATIO = 0.45
-
-
 GEAR_SMALL_CAD_HANDLE_EDGE_MODE = "long"
-
-
 GEAR_SMALL_CAD_SIDE_PAIR_SCORE_WEIGHT = 3.0
-
-
 GEAR_SMALL_SQUARE_GRASP_OFFSET_RATIO = 0.55
-
-
 GEAR_SMALL_SQUARE_STRIP_WIDTH_RATIO = 0.38
-
-
 GEAR_SMALL_SQUARE_DEPTH_PATCH_RADIUS = 7
-
-
 GEAR_SMALL_SQUARE_DEPTH_BUMP_MIN_M = 0.002
-
-
 GEAR_SMALL_SQUARE_DEPTH_SCORE_WEIGHT = 4.0
-
-
 GEAR_SMALL_SQUARE_RAISED_SCORE_WEIGHT = 2.0
-
-
 GEAR_SMALL_SQUARE_DEPTH_VALID_SCORE_WEIGHT = 1.2
-
-
 GEAR_SMALL_SQUARE_SHADOW_LUMA_DELTA = 22
-
-
 GEAR_SMALL_SQUARE_SHADOW_SCORE_WEIGHT = 1.0
-
-
 GEAR_SMALL_SQUARE_RED_SCORE_WEIGHT = 1.0
-
-
 GEAR_LARGE_SQUARE_MIN_AREA_PX = 350
-
-
 GEAR_LARGE_SQUARE_MAX_AREA_RATIO = 0.12
-
-
 GEAR_LARGE_SQUARE_MIN_RECTANGULARITY = 0.58
-
-
 GEAR_LARGE_SQUARE_MIN_ASPECT = 0.55
-
-
 GEAR_LARGE_SQUARE_CENTER_RADIUS_RATIO = 0.35
-
-
 GEAR_LARGE_CUTOUT_MIN_AREA_PX = 500
-
-
 GEAR_LARGE_CUTOUT_MIN_PROJECTION_RATIO = 0.70
-
-
 GEAR_LARGE_CUTOUT_MAX_PROJECTION_RATIO = 3.20
-
-
 GEAR_LARGE_CUTOUT_MAX_LATERAL_RATIO = 1.60
-
-
 GEAR_LARGE_SQUARE_TO_CUTOUT_MID_RATIO = 0.50
-
-
 GEAR_LARGE_SQUARE_GRASP_OFFSET_RATIO = 0.65
-
-
 GEAR_LARGE_DEPTH_PATCH_RADIUS = 8
-
-
 GEAR_LARGE_DEPTH_VALID_MIN_FRACTION = 0.30
-
-
 GEAR_LARGE_DEPTH_BUMP_MIN_M = 0.002
-
-
 GEAR_LARGE_DEPTH_SCORE_WEIGHT = 4.0
-
-
 GEAR_LARGE_DEPTH_VALID_SCORE_WEIGHT = 1.5
-
-
 GEAR_LARGE_RED_SCORE_WEIGHT = 1.0
-
-
 GEAR_LARGE_HANDLE_RGB_SCORE_WEIGHT = 2.5
-
-
 GEAR_LARGE_HANDLE_LUMA_PERCENTILE_LOW = 35
-
-
 GEAR_LARGE_HANDLE_LUMA_PERCENTILE_HIGH = 90
-
-
 GEAR_LARGE_HANDLE_EDGE_SCORE_WEIGHT = 0.8
-
-
 GEAR_COMPOUND_CENTER_HOLE_MIN_AREA_PX = 180
-
-
 GEAR_COMPOUND_CENTER_HOLE_MAX_AREA_RATIO = 0.08
-
-
 GEAR_COMPOUND_CENTER_HOLE_MIN_CIRCULARITY = 0.55
-
-
 GEAR_COMPOUND_CENTER_HOLE_MIN_ASPECT = 0.55
-
-
 GEAR_COMPOUND_CENTER_HOLE_RADIUS_RATIO = 0.36
-
-
 GEAR_COMPOUND_AXIS_SAMPLES = 18
-
-
 GEAR_COMPOUND_GRASP_RADIUS_RATIO = 0.42
-
-
 GEAR_COMPOUND_HANDLE_CENTER_RADIUS_RATIO = 0.34
-
-
 GEAR_COMPOUND_HANDLE_WINDOW_LENGTH_RATIO = 0.26
-
-
 GEAR_COMPOUND_HANDLE_WINDOW_WIDTH_RATIO = 0.11
-
-
 GEAR_COMPOUND_BLACK_MARKER_SCORE_WEIGHT = 0.0
-
-
 GEAR_COMPOUND_DEPTH_VALID_SCORE_WEIGHT = 1.2
-
-
 GEAR_COMPOUND_GRASP_MIN_HOLE_RADIUS_RATIO = 2.8
-
-
 GEAR_COMPOUND_SCORE_PROBE_RADIUS_RATIO = 0.72
-
-
 GEAR_COMPOUND_DEPTH_PATCH_RADIUS = 9
-
-
 GEAR_COMPOUND_EXPANDED_DEPTH_PATCH_RADIUS = 16
-
-
 GEAR_COMPOUND_CENTER_SHIFT_DEPTH_RATIO = 0.25
-
-
 GEAR_COMPOUND_HANDLE_MIN_PIXELS = 12
-
-
 GEAR_COMPOUND_DEPTH_BUMP_MIN_M = 0.002
-
-
 GEAR_COMPOUND_DEPTH_SCORE_WEIGHT = 4.0
-
-
 GEAR_COMPOUND_HANDLE_RGB_SCORE_WEIGHT = 2.3
-
-
 GEAR_COMPOUND_RED_SCORE_WEIGHT = 2.0
-
-
 GEAR_COMPOUND_BLACK_CUTOUT_PENALTY_WEIGHT = 2.5
-
-
 GEAR_COMPOUND_HANDLE_MIN_RED_FRACTION = 0.28
-
-
 GEAR_COMPOUND_HANDLE_LUMA_PERCENTILE_LOW = 35
-
-
 GEAR_COMPOUND_HANDLE_LUMA_PERCENTILE_HIGH = 90
-
-
 GEAR_COMPOUND_HANDLE_EDGE_SCORE_WEIGHT = 0.8
-
-
 GEAR_COMPOUND_CAD_CUTOUT_RADIUS_RATIO = 0.38
-
-
 GEAR_COMPOUND_CAD_CUTOUT_WINDOW_LENGTH_RATIO = 0.24
-
-
 GEAR_COMPOUND_CAD_CUTOUT_WINDOW_WIDTH_RATIO = 0.13
-
-
 GEAR_COMPOUND_CAD_CUTOUT_SCORE_WEIGHT = 3.0
-
-
 GEAR_COMPOUND_CAD_CUTOUT_RED_PENALTY_WEIGHT = 1.5
-
-
 GEAR_COMPOUND_ANOMALY_MIN_RADIUS_RATIO = 0.15
-
-
 GEAR_COMPOUND_ANOMALY_MAX_RADIUS_RATIO = 0.46
-
-
 GEAR_COMPOUND_ANOMALY_MIN_AREA_PX = 16
-
-
 GEAR_COMPOUND_ANOMALY_MAX_AREA_RATIO = 0.18
-
-
 GEAR_COMPOUND_ANOMALY_DEPTH_DELTA_M = 0.0010
-
-
 GEAR_COMPOUND_ANOMALY_OPPOSITE_DOT_MAX = -0.25
-
-
 GEAR_COMPOUND_ANOMALY_PAIR_CENTER_MAX_RATIO = 0.22
-
 
 GEAR_CENTERED_GRASP_LINE_CONFIG = {
     "gear_compound": {
@@ -421,251 +205,111 @@ GEAR_CENTERED_GRASP_LINE_CONFIG = {
         "max_line_shift_error_ratio": 0.22,
     },
 }
-
-
 SCREW_BLACK_MARKER_MIN_AREA_PX = 250
-
-
 SCREW_BLACK_MARKER_MAX_AREA_PX = 5000
-
-
 SCREW_BLACK_MARKER_MIN_ASPECT_RATIO = 1.30
-
-
 SCREW_BLACK_MARKER_MAX_CENTER_OFFSET_RATIO = 0.42
-
-
 BLACK_MARKER_EDGE_RATIO = 0.46
 
-
 SHAFT_MIN_AREA_PX = 350
-
-
 SHAFT_MAX_AREA_PX = 30000
-
-
 SHAFT_MIN_RECTANGULARITY = 0.55
+# Shaft_small uses the same segmentation, area and rectangularity limits as
+# Shaft_large.  Its target-centred square ROI and near-square shape constraint
+# reject elongated silver-Base fragments before area-rank selection.
+SHAFT_SMALL_SQUARE_MAX_ASPECT_RATIO = 1.65
+SHAFT_SMALL_ORIENTATION_AMBIGUOUS_MAX_ASPECT_RATIO = 1.25
+SHAFT_SMALL_ROI_HALF_SIZE_RATIO = 0.38
+SHAFT_SMALL_IMAGE_BORDER_MARGIN_PX = 8
+_SHAFT_SMALL_PREVIOUS_YAW_DEG = None
 
-
+# Neutral silver base segmentation.
 SILVER_MAX_SATURATION = 75
-
-
 SILVER_MIN_VALUE = 45
-
-
 SILVER_MAX_VALUE = 210
-
-
 SILVER_MAX_L = 205
-
-
 SILVER_LAB_A_TOL = 34
-
-
 SILVER_LAB_B_TOL = 42
-
-
 BASE_MIN_AREA_PX = 5000
 
-
+# Base black-hole filtering.
 HOLE_MIN_AREA_PX = 180
-
-
 HOLE_MAX_AREA_PX = 12000
-
-
 HOLE_MIN_RADIUS_PX = 18
-
-
 HOLE_MAX_RADIUS_PX = 75
-
-
 HOLE_MIN_CIRCULARITY = 0.66
-
-
 HOLE_MIN_ASPECT_RATIO = 0.55
-
-
 HOLE_MIN_ELLIPSE_ASPECT_RATIO = 0.72
-
-
 HOLE_MIN_ENCLOSING_FILL_RATIO = 0.58
-
-
 HOLE_MAX_ENCLOSING_TO_EQUIV_RADIUS = 1.18
-
-
 HOLE_SLOT_RECTANGULARITY_REJECT = 0.86
-
-
 HOLE_MIN_SILVER_RING_FRACTION = 0.12
-
-
 HOLE_IMAGE_BORDER_MARGIN_PX = 8
-
-
 HOLE_RING_INNER_PAD_PX = 3
-
-
 HOLE_RING_OUTER_PAD_PX = 13
-
-
 HOLE_HOUGH_MIN_DISTANCE_PX = 45
-
-
 HOLE_HOUGH_PARAM2 = 18
-
-
 HOLE_HOUGH_DARK_MAX_VALUE = 135
-
-
 HOLE_HOUGH_MIN_DARK_FRACTION = 0.35
-
-
 HOLE_CENTER_CORE_RADIUS_RATIO = 0.45
-
-
 HOLE_CENTER_STRICT_DARK_MAX_VALUE = 85
-
-
 HOLE_CENTER_MIN_STRICT_DARK_FRACTION = 0.30
-
-
 HOLE_HOUGH_CORE_MIN_RADIUS_PX = 12
-
-
 HOLE_HOUGH_CORE_MAX_CENTER_OFFSET_RATIO = 0.45
-
-
 HOLE_DUPLICATE_CENTER_DISTANCE_PX = 35
-
-
 HOLE_GEOMETRY_MIN_SEPARATION_RATIO = 0.16
-
-
 HOLE_GEOMETRY_MAX_SLOT_ASPECT_RATIO = 1.35
-
-
 HOLE_GEOMETRY_MIN_TRIANGLE_AREA_RATIO = 0.018
-
-
 HOLE_GEOMETRY_MAX_CANDIDATES = 8
-
-
 HOLE_GEOMETRY_MAX_RADIUS_RATIO = 1.30
-
-
 HOLE_GEOMETRY_RADIUS_SCORE_WEIGHT = 0.35
-
-
 HOLE_HOUGH_MAX_ENCLOSING_TO_EQUIV_RADIUS = 1.35
-
-
 HOLE_FINAL_MAX_ENCLOSING_TO_EQUIV_RADIUS = 1.15
-
-
 BASE_HOLE_TEMPLATE_CAD_MM = {
     "hole_small": np.array([0.0, 0.0], dtype=np.float64),
     "hole_large": np.array([127.0, 0.182], dtype=np.float64),
     "hole_screw": np.array([44.292, -44.292], dtype=np.float64),
 }
-
-
 BASE_SLOT_TEMPLATE_CAD_MM = {
     "slot_left": np.array([0.0, -65.0], dtype=np.float64),
     "slot_right": np.array([65.0, 0.0], dtype=np.float64),
 }
-
-
 BASE_HOLE_TEMPLATE_MAX_FIT_ERROR_RATIO = 0.16
-
-
 BASE_HOLE_TEMPLATE_SCORE_WEIGHT = 0.75
-
-
 HOLE_LABEL_SIZE_SCORE_WEIGHT = 0.70
-
-
 HOLE_LABEL_LARGE_SMALL_MARGIN_FOR_FULL_SCORE = 0.20
-
-
 BASE_SLOT_TEMPLATE_REJECT_RADIUS_RATIO = 0.18
-
-
 BASE_SLOT_TEMPLATE_SCORE_PENALTY = 0.85
-
-
 HOLE_CENTER_REFINE_ROI_RADIUS_FACTOR = 1.35
-
-
 HOLE_CENTER_REFINE_DARK_MAX_VALUE = 80
-
-
 HOLE_CENTER_REFINE_MIN_AREA_PX = 80
-
-
 HOLE_CENTER_REFINE_MAX_SHIFT_RATIO = 0.35
-
-
 HOLE_CENTER_REFINE_TEMPLATE_WEIGHT = 0.85
 
-
+# Depth sampling and top-surface extraction.
 POINT_DEPTH_WINDOW = 7
-
-
 MIN_VALID_DEPTH_M = 0.05
-
-
 MAX_VALID_DEPTH_M = 2.0
-
-
 TOP_SURFACE_PERCENTILE = 20
-
-
 TOP_SURFACE_MIN_VALID_COUNT = 50
-
-
 TOP_SURFACE_OPEN_KERNEL = 3
-
-
 TOP_SURFACE_CLOSE_KERNEL = 7
-
-
 TOP_SURFACE_DETREND_PLANE = True
 
-
+# Gear top protrusion selection. The inner radius explicitly excludes outer teeth.
 GEAR_INNER_RADIUS_RATIO = 0.46
-
-
 GEAR_TOP_COMPONENT_MIN_AREA_PX = 80
-
-
 GEAR_TOP_COMPONENT_ERODE_PX = 3
-
-
 GEAR_MIN_COMPONENT_SEPARATION_PX = 12
 
-
+# Screw top-bar grasp geometry.
 SCREW_TOP_MIN_AREA_PX = 80
-
-
 SCREW_TOP_CENTER_ROI_RATIO = 0.55
-
-
 SCREW_TOP_DEPTH_TOLERANCE_M = 0.0005
-
-
 SCREW_TOP_MIN_ASPECT_RATIO = 1.25
-
-
 SCREW_TOP_MAX_CENTER_OFFSET_RATIO = 0.22
-
-
 SCREW_GRASP_SHORT_AXIS_RATIO = 0.45
-
-
 SCREW_MIN_GRASP_SEPARATION_PX = 8
-
 
 DRAW_COLORS = {
     "contour": (0, 220, 0),
@@ -679,6 +323,9 @@ DRAW_COLORS = {
     "selected_top": (255, 255, 0),
 }
 
+print("pyrealsense2 available:", REALSENSE_AVAILABLE)
+print("Target:", TARGET_TYPE)
+print("3D output frame:", CAMERA_FRAME_ID)
 
 def start_realsense_pipeline(
     width: int = LIVE_WIDTH,
@@ -752,24 +399,20 @@ def capture_live_once():
     finally:
         pipeline.stop()
 
+# Optional fixed RealSense RGB-D settings for the current experiment setup.
+# Run this cell before live/capture cells to use the tuned fixed camera parameters.
+# To restore the original notebook behavior, restart the kernel and do not run this cell.
 
 FIXED_REALSENSE_RGBD_SETTINGS_ENABLED = True
-
-
 FIXED_REALSENSE_DEPTH_FILTERS_ENABLED = True
-
-
 FIXED_DEPTH_DISPLAY_MIN_M = 0.15
-
-
 FIXED_DEPTH_DISPLAY_MAX_M = 1.20
-
 
 FIXED_RGB_SETTINGS = {
     "enable_auto_exposure": False,
     "auto_exposure_priority": 0,
     "power_line_frequency": 1,  # 50 Hz
-    "exposure": 200,
+    "exposure": 220,
     "gain": 96,
     "enable_auto_white_balance": False,
     "white_balance": 4600,
@@ -779,7 +422,6 @@ FIXED_RGB_SETTINGS = {
     "sharpness": 35,
     "gamma": 300,
 }
-
 
 FIXED_DEPTH_SETTINGS = {
     "enable_auto_exposure": False,
@@ -791,7 +433,8 @@ FIXED_DEPTH_SETTINGS = {
     "visual_preset": 4,
 }
 
-
+# Match the tuning notebook post-processing: mild spatial + temporal filters,
+# no hole filling. This still produces metric depth, not a visualization colormap.
 FIXED_DEPTH_FILTER_SETTINGS = {
     "enable_spatial": True,
     "enable_temporal": True,
@@ -873,7 +516,6 @@ def apply_fixed_realsense_depth_filters(depth_frame, filters):
     for _, filter_obj in filters:
         filtered = filter_obj.process(filtered)
     return filtered
-
 
 def _valid_depth_values(values: np.ndarray) -> np.ndarray:
     values = np.asarray(values, dtype=np.float64)
@@ -997,6 +639,7 @@ def point_with_window_depth(name, u, v, depth_image_m, intrinsics, window=7):
     )
 
 
+
 def extract_top_surface_mask(
     depth_image_m,
     object_mask,
@@ -1090,7 +733,6 @@ def extract_top_surface_mask(
     })
     return top_surface_mask, valid_depth_mask, metadata
 
-
 def load_offline_rgbd(
     color_path=OFFLINE_COLOR_PATH,
     depth_path=OFFLINE_DEPTH_PATH,
@@ -1161,7 +803,7 @@ def make_black_mask(image):
     return clean_mask(mask, 3, 7)
 
 
-def make_white_shaft_mask(image):
+def make_white_shaft_mask(image, allow_small_color_cast=False):
     """Segment the current white shaft parts against the black background."""
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
@@ -1174,6 +816,21 @@ def make_white_shaft_mask(image):
         & (np.abs(a_ch.astype(np.int16) - 128) <= SHAFT_WHITE_LAB_A_TOL)
         & (np.abs(b_ch.astype(np.int16) - 128) <= SHAFT_WHITE_LAB_B_TOL)
     )
+    if allow_small_color_cast:
+        warm_cast_white = (
+            (saturation <= SHAFT_SMALL_CAST_MAX_SATURATION)
+            & (value >= SHAFT_SMALL_CAST_MIN_VALUE)
+            & (l_ch >= SHAFT_SMALL_CAST_MIN_L)
+            & (
+                np.abs(a_ch.astype(np.int16) - 128)
+                <= SHAFT_SMALL_CAST_LAB_A_TOL
+            )
+            & (
+                np.abs(b_ch.astype(np.int16) - 128)
+                <= SHAFT_SMALL_CAST_LAB_B_TOL
+            )
+        )
+        neutral_white |= warm_cast_white
     return clean_mask(
         np.uint8(neutral_white) * 255,
         SHAFT_WHITE_OPEN_KERNEL,
@@ -1248,7 +905,6 @@ def failed_result(target_type, image, warning):
         "warnings": [str(warning)],
     }
 
-
 def detect_base_holes_local(color_image_bgr, depth_image_m, intrinsics):
     """Detect true black hole centers; sample depth from surrounding silver ring."""
     silver_raw = make_silver_mask(color_image_bgr)
@@ -1269,9 +925,47 @@ def detect_base_holes_local(color_image_bgr, depth_image_m, intrinsics):
             "selected_contours_mask": np.zeros(color_image_bgr.shape[:2], np.uint8),
         }
 
-    base_contour = max(candidates, key=cv2.contourArea)
+    normalized_intrinsics = _normalize_intrinsics(intrinsics)
+    image_height, image_width = silver_raw.shape[:2]
+    target_u = (
+        float(normalized_intrinsics["ppx"])
+        if normalized_intrinsics is not None else 0.5 * image_width
+    )
+    target_v = (
+        float(normalized_intrinsics["ppy"])
+        if normalized_intrinsics is not None else 0.5 * image_height
+    )
+
+    def base_association_score(contour):
+        # Commander enables Base detection only after the calibrated camera ray
+        # has been aimed at the frozen Global Base (or its hole_screw target).
+        # A contour containing that principal point is always preferred. If
+        # none contains it, use the closest contour boundary. Area is only a
+        # tie-breaker and can no longer make a remote white machine surface win.
+        signed_distance = float(
+            cv2.pointPolygonTest(contour, (target_u, target_v), True)
+        )
+        area = float(cv2.contourArea(contour))
+        if signed_distance >= 0.0:
+            return (0, -signed_distance, -area)
+        return (1, -signed_distance, -area)
+
+    base_contour = min(candidates, key=base_association_score)
+    base_candidate_mask = np.zeros(color_image_bgr.shape[:2], dtype=np.uint8)
+    cv2.drawContours(base_candidate_mask, candidates, -1, 255, 2)
     base_mask = np.zeros(color_image_bgr.shape[:2], dtype=np.uint8)
     cv2.drawContours(base_mask, [base_contour], -1, 255, cv2.FILLED)
+    base_principal_point_mask = np.zeros(
+        color_image_bgr.shape[:2], dtype=np.uint8
+    )
+    cv2.drawMarker(
+        base_principal_point_mask,
+        (int(round(target_u)), int(round(target_v))),
+        255,
+        cv2.MARKER_CROSS,
+        25,
+        2,
+    )
     black_mask = make_black_mask(color_image_bgr)
     gray_holes = cv2.cvtColor(color_image_bgr, cv2.COLOR_BGR2GRAY)
     # Restrict black components to the detected base ROI. External shafts disappear.
@@ -2156,6 +1850,8 @@ def detect_base_holes_local(color_image_bgr, depth_image_m, intrinsics):
     debug = {
         "red_mask": np.zeros_like(base_mask),
         "black_mask": black_mask,
+        "base_roi_candidates": base_candidate_mask,
+        "base_principal_point": base_principal_point_mask,
         "base_mask": base_mask,
         "hole_search_mask": hole_search_mask,
         "selected_contours_mask": selected_mask,
@@ -2165,7 +1861,6 @@ def detect_base_holes_local(color_image_bgr, depth_image_m, intrinsics):
         "depth_boss_candidates_mask": depth_boss_candidates_mask,
     }
     return result, debug
-
 
 def _largest_contour(mask, min_area=1):
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -2987,7 +2682,6 @@ def detect_gear_grasp_local(
     }
     return result, debug
 
-
 def _rect_long_axis(rect):
     (_, _), (width, height), angle = rect
     yaw = float(angle if width >= height else angle + 90.0)
@@ -2995,40 +2689,185 @@ def _rect_long_axis(rect):
     return yaw
 
 
+def _normalize_axis_yaw_deg(yaw_deg):
+    return float(((float(yaw_deg) + 90.0) % 180.0) - 90.0)
+
+
+def _axis_yaw_distance_deg(first_deg, second_deg):
+    return abs(_normalize_axis_yaw_deg(float(first_deg) - float(second_deg)))
+
+
+def _ordered_axis_points(first, second):
+    first = np.asarray(first, dtype=np.float64)
+    second = np.asarray(second, dtype=np.float64)
+    delta = second - first
+    if abs(delta[0]) >= abs(delta[1]):
+        return (first, second) if first[0] <= second[0] else (second, first)
+    return (first, second) if first[1] <= second[1] else (second, first)
+
+
+def _axis_option(first, second, source):
+    left, right = _ordered_axis_points(first, second)
+    yaw_deg = _normalize_axis_yaw_deg(
+        math.degrees(math.atan2(right[1] - left[1], right[0] - left[0]))
+    )
+    return {
+        "left": left,
+        "right": right,
+        "yaw_deg": yaw_deg,
+        "source": str(source),
+    }
+
+
+def reset_shaft_small_orientation_state():
+    global _SHAFT_SMALL_PREVIOUS_YAW_DEG
+    _SHAFT_SMALL_PREVIOUS_YAW_DEG = None
+
+
 def detect_shaft_grasp_local(
     color_image_bgr, depth_image_m, intrinsics, target_type
 ):
-    shaft_mask = make_white_shaft_mask(color_image_bgr)
+    shaft_mask = make_white_shaft_mask(
+        color_image_bgr,
+        allow_small_color_cast=(target_type == "shaft_small"),
+    )
     contours, _ = cv2.findContours(
         shaft_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
     )
+    image_height, image_width = shaft_mask.shape[:2]
+    image_center = np.array(
+        [0.5 * image_width, 0.5 * image_height], dtype=np.float64
+    )
+    roi_half_size_px = float(
+        SHAFT_SMALL_ROI_HALF_SIZE_RATIO * min(image_width, image_height)
+    )
+    target_roi_mask = np.zeros_like(shaft_mask)
+    roi_min = np.floor(image_center - roi_half_size_px).astype(int)
+    roi_max = np.ceil(image_center + roi_half_size_px).astype(int)
+    cv2.rectangle(
+        target_roi_mask,
+        (int(max(0, roi_min[0])), int(max(0, roi_min[1]))),
+        (int(min(image_width - 1, roi_max[0])), int(min(image_height - 1, roi_max[1]))),
+        255,
+        cv2.FILLED,
+    )
+    candidate_mask = np.zeros_like(shaft_mask)
+    rejected_mask = np.zeros_like(shaft_mask)
     candidates = []
+    rejected_candidates = []
     for contour in contours:
         area = float(cv2.contourArea(contour))
         if not SHAFT_MIN_AREA_PX <= area <= SHAFT_MAX_AREA_PX:
+            cv2.drawContours(rejected_mask, [contour], -1, 255, cv2.FILLED)
+            rejected_candidates.append({
+                "area_px": area,
+                "rejection_reasons": ["area_out_of_range"],
+            })
             continue
         rect = cv2.minAreaRect(contour)
-        (_, _), (rw, rh), _ = rect
+        (cx, cy), (rw, rh), _ = rect
         rect_area = float(rw * rh)
         rectangularity = area / rect_area if rect_area > 0 else 0.0
-        if rectangularity >= SHAFT_MIN_RECTANGULARITY:
-            candidates.append((area, contour, rect, rectangularity))
+        short_side = float(min(rw, rh))
+        long_side = float(max(rw, rh))
+        aspect_ratio = long_side / max(short_side, 1e-6)
+        center_distance_px = float(
+            np.linalg.norm(np.array([cx, cy], dtype=np.float64) - image_center)
+        )
+        box = cv2.boxPoints(rect)
+        margin = float(SHAFT_SMALL_IMAGE_BORDER_MARGIN_PX)
+        touches_border = bool(
+            np.any(box[:, 0] < margin)
+            or np.any(box[:, 0] > image_width - 1 - margin)
+            or np.any(box[:, 1] < margin)
+            or np.any(box[:, 1] > image_height - 1 - margin)
+        )
+        geometry_ok = rectangularity >= SHAFT_MIN_RECTANGULARITY
+        small_target_ok = bool(
+            target_type != "shaft_small"
+            or (
+                aspect_ratio <= SHAFT_SMALL_SQUARE_MAX_ASPECT_RATIO
+                and abs(cx - image_center[0]) <= roi_half_size_px
+                and abs(cy - image_center[1]) <= roi_half_size_px
+                and not touches_border
+            )
+        )
+        record = {
+            "area": area,
+            "contour": contour,
+            "rect": rect,
+            "rectangularity": rectangularity,
+            "short_side": short_side,
+            "long_side": long_side,
+            "aspect_ratio": aspect_ratio,
+            "center_distance_px": center_distance_px,
+            "touches_border": touches_border,
+        }
+        rejection_reasons = []
+        if not geometry_ok:
+            rejection_reasons.append("rectangularity_below_minimum")
+        if target_type == "shaft_small":
+            if aspect_ratio > SHAFT_SMALL_SQUARE_MAX_ASPECT_RATIO:
+                rejection_reasons.append("aspect_ratio_above_small_limit")
+            if (
+                abs(cx - image_center[0]) > roi_half_size_px
+                or abs(cy - image_center[1]) > roi_half_size_px
+            ):
+                rejection_reasons.append("center_outside_square_roi")
+            if touches_border:
+                rejection_reasons.append("touches_image_border")
+        if geometry_ok and small_target_ok:
+            candidates.append(record)
+            cv2.drawContours(candidate_mask, [contour], -1, 255, cv2.FILLED)
+        else:
+            cv2.drawContours(rejected_mask, [contour], -1, 255, cv2.FILLED)
+            rejected_candidates.append({
+                "area_px": float(area),
+                "rectangularity": float(rectangularity),
+                "short_side_px": float(short_side),
+                "long_side_px": float(long_side),
+                "aspect_ratio": float(aspect_ratio),
+                "center_u": float(cx),
+                "center_v": float(cy),
+                "center_distance_px": float(center_distance_px),
+                "touches_border": bool(touches_border),
+                "rejection_reasons": rejection_reasons,
+            })
     if not candidates:
-        return failed_result(target_type, color_image_bgr, "white shaft contour not detected"), {
+        warning = (
+            "small shaft contour not detected inside target-centered ROI"
+            if target_type == "shaft_small"
+            else "white shaft contour not detected"
+        )
+        result = failed_result(target_type, color_image_bgr, warning)
+        result.update({
+            "shaft_candidate_count": 0,
+            "shaft_target_roi_center": [float(image_center[0]), float(image_center[1])],
+            "shaft_target_roi_half_size_px": float(roi_half_size_px),
+            "shaft_rejected_candidates": rejected_candidates,
+        })
+        return result, {
             "red_mask": np.zeros_like(shaft_mask),
             "black_mask": make_black_mask(color_image_bgr),
             "shaft_mask": shaft_mask,
             "shaft_black_mask": shaft_mask,
+            "shaft_target_roi_mask": target_roi_mask,
+            "shaft_candidate_mask": candidate_mask,
+            "shaft_rejected_mask": rejected_mask,
             "base_mask": np.zeros_like(shaft_mask),
             "hole_search_mask": np.zeros_like(shaft_mask),
             "selected_contours_mask": np.zeros_like(shaft_mask),
         }
 
-    candidates.sort(key=lambda item: item[0], reverse=True)
-    if target_type == "shaft_small" and len(candidates) >= 2:
-        selected_rank = 2
-        selection_reason = "two_or_more_shafts_detected_select_smallest_area"
-        area, contour, rect, rectangularity = candidates[1]
+    candidates.sort(key=lambda item: item["area"], reverse=True)
+    if target_type == "shaft_small":
+        selected_rank = 2 if len(candidates) >= 2 else 1
+        selected = candidates[selected_rank - 1]
+        selection_reason = (
+            "target_square_roi_with_interference_select_second_largest_area"
+            if len(candidates) >= 2
+            else "single_target_square_small_shaft_candidate"
+        )
     else:
         selected_rank = 1
         selection_reason = (
@@ -3036,19 +2875,66 @@ def detect_shaft_grasp_local(
             if target_type == "shaft_large" and len(candidates) >= 2
             else "single_or_dominant_shaft_candidate"
         )
-        area, contour, rect, rectangularity = candidates[0]
+        selected = candidates[0]
+    area = selected["area"]
+    contour = selected["contour"]
+    rect = selected["rect"]
+    rectangularity = selected["rectangularity"]
     (cx, cy), (rw, rh), raw_angle = rect
     box = cv2.boxPoints(rect).astype(np.float64)
     edge_data = []
     for index in range(4):
         p1, p2 = box[index], box[(index + 1) % 4]
-        edge_data.append((float(np.linalg.norm(p2 - p1)), (p1 + p2) / 2.0))
+        edge_data.append({
+            "index": int(index),
+            "length": float(np.linalg.norm(p2 - p1)),
+            "midpoint": (p1 + p2) / 2.0,
+        })
     # Midpoints of the two long rectangle edges are opposite contact points.
-    long_edge_midpoints = [item[1] for item in sorted(edge_data, reverse=True, key=lambda x: x[0])[:2]]
-    long_edge_midpoints = sorted(long_edge_midpoints, key=lambda p: (p[0], p[1]))
-    left, right = long_edge_midpoints
+    long_edges = sorted(edge_data, reverse=True, key=lambda item: item["length"])[:2]
+    legacy_option = _axis_option(
+        long_edges[0]["midpoint"],
+        long_edges[1]["midpoint"],
+        "minAreaRect_long_edge_midpoints",
+    )
+    axis_options = [
+        _axis_option(
+            edge_data[0]["midpoint"], edge_data[2]["midpoint"],
+            "rectangle_edge_pair_0_2",
+        ),
+        _axis_option(
+            edge_data[1]["midpoint"], edge_data[3]["midpoint"],
+            "rectangle_edge_pair_1_3",
+        ),
+    ]
+    orientation_ambiguous = bool(
+        target_type == "shaft_small"
+        and selected["aspect_ratio"]
+        <= SHAFT_SMALL_ORIENTATION_AMBIGUOUS_MAX_ASPECT_RATIO
+    )
+    global _SHAFT_SMALL_PREVIOUS_YAW_DEG
+    previous_yaw_deg = _SHAFT_SMALL_PREVIOUS_YAW_DEG
+    if orientation_ambiguous and previous_yaw_deg is not None:
+        selected_axis = min(
+            axis_options,
+            key=lambda option: _axis_yaw_distance_deg(
+                option["yaw_deg"], previous_yaw_deg
+            ),
+        )
+        orientation_source = "nearest_previous_equivalent_square_axis"
+    else:
+        selected_axis = legacy_option
+        orientation_source = (
+            "initial_square_axis_from_minAreaRect"
+            if orientation_ambiguous
+            else "unambiguous_minAreaRect_axis"
+        )
+    left = selected_axis["left"]
+    right = selected_axis["right"]
+    if target_type == "shaft_small":
+        _SHAFT_SMALL_PREVIOUS_YAW_DEG = float(selected_axis["yaw_deg"])
     midpoint = np.array([cx, cy], dtype=np.float64)
-    yaw_deg = _rect_long_axis(rect)
+    yaw_deg = float(selected_axis["yaw_deg"])
 
     selected_mask = np.zeros_like(shaft_mask)
     cv2.drawContours(selected_mask, [contour], -1, 255, cv2.FILLED)
@@ -3105,7 +2991,32 @@ def detect_shaft_grasp_local(
         "shaft_candidate_count": int(len(candidates)),
         "shaft_selected_area_rank": int(selected_rank),
         "shaft_selection_reason": selection_reason,
-        "shaft_candidate_areas_px": [float(item[0]) for item in candidates],
+        "shaft_candidate_areas_px": [float(item["area"]) for item in candidates],
+        "shaft_candidate_metrics": [
+            {
+                "area_px": float(item["area"]),
+                "rectangularity": float(item["rectangularity"]),
+                "short_side_px": float(item["short_side"]),
+                "long_side_px": float(item["long_side"]),
+                "aspect_ratio": float(item["aspect_ratio"]),
+                "center_distance_px": float(item["center_distance_px"]),
+                "touches_border": bool(item["touches_border"]),
+            }
+            for item in candidates
+        ],
+        "shaft_rejected_candidates": rejected_candidates,
+        "shaft_target_roi_center": [float(image_center[0]), float(image_center[1])],
+        "shaft_target_roi_half_size_px": float(roi_half_size_px),
+        "shaft_orientation_ambiguous": bool(orientation_ambiguous),
+        "shaft_orientation_aspect_ratio": float(selected["aspect_ratio"]),
+        "shaft_orientation_previous_yaw_deg": (
+            None if previous_yaw_deg is None else float(previous_yaw_deg)
+        ),
+        "shaft_orientation_selected_yaw_deg": float(yaw_deg),
+        "shaft_orientation_source": orientation_source,
+        "shaft_orientation_axis_options_deg": [
+            float(option["yaw_deg"]) for option in axis_options
+        ],
         "rect_angle_deg": float(raw_angle),
         "rect_box_points": [[float(x), float(y)] for x, y in box],
         "confidence": "high" if rectangularity >= 0.72 else "medium",
@@ -3126,12 +3037,14 @@ def detect_shaft_grasp_local(
         "black_mask": make_black_mask(color_image_bgr),
         "shaft_mask": shaft_mask,
         "shaft_black_mask": shaft_mask,
+        "shaft_target_roi_mask": target_roi_mask,
+        "shaft_candidate_mask": candidate_mask,
+        "shaft_rejected_mask": rejected_mask,
         "base_mask": np.zeros_like(shaft_mask),
         "hole_search_mask": np.zeros_like(shaft_mask),
         "selected_contours_mask": selected_mask,
     }
     return result, debug
-
 
 def _rect_axis_vectors(rect):
     box = cv2.boxPoints(rect).astype(np.float64)
@@ -3822,7 +3735,6 @@ def detect_screw_grasp_local(color_image_bgr, depth_image_m, intrinsics):
     }
     return result, debug
 
-
 def _draw_text(image, text, position, color=(255, 255, 255), scale=0.45):
     x, y = int(position[0]), int(position[1])
     cv2.putText(
@@ -3991,7 +3903,6 @@ def draw_local_refinement(color_image_bgr, result, debug_images):
     )
     return annotated
 
-
 def run_local_refinement(
     color_image_bgr, depth_image_m, intrinsics, target_type
 ):
@@ -4030,57 +3941,41 @@ def run_local_refinement(
     debug["annotated_result"] = annotated.copy()
     return result, annotated, debug
 
-
+# Unified image-frame grasp-line orientation and marker-first detectors.
+# This cell intentionally runs after the original detector definitions so the
+# established center/depth fallback behavior remains available.
 GRIPPER_YAW_OFFSET_DEG = 0.0
 
-
 USE_GRASP_MARKER_FOR_GEAR = True
-
-
 USE_GRASP_MARKER_FOR_SCREW = False
-
-
-SCREW_GRASP_EXTENSION_RATIO = 0.30
-
-
+SCREW_GRASP_EXTENSION_RATIO = 0.30  # Extend grasp points outward for an opened gripper.
 GRASP_MARKER_COLOR = "black"
-
-
 MARKER_HSV_LOWER = np.array([0, 0, 0], dtype=np.uint8)
-
-
+# Keep only the dense black core. V=80 rejects the observed red-part shadows
+# (typically V>=81) while retaining the painted marker cores.
 MARKER_HSV_UPPER = np.array([179, 255, 80], dtype=np.uint8)
-
-
 MARKER_MIN_AREA = 30
-
-
 MARKER_MAX_AREA = 5000
-
-
 MARKER_ROI_DILATE_PX = 7
 
-
 YAW_FRAME = "image_pixel_frame"
-
-
 GRASP_YAW_DEFINITION = (
     "line from grasp_left to grasp_right; gripper finger line should be "
     "parallel to this line"
 )
-
-
 SCREW_YAW_DEFINITION = (
     "grasp_left-grasp_right line connects the centers of the two long edges "
     "of the depth-detected top bar, shifted through the red screw center; "
     "gripper finger line should be parallel to this line"
 )
-
-
 SHAFT_YAW_DEFINITION = (
     "grasp_left-grasp_right line connects two opposite side midpoints; "
     "gripper finger line should be parallel to this line"
 )
+
+_depth_gear_fallback = _detect_gear_grasp_depth_fallback
+_depth_screw_fallback = _detect_screw_grasp_depth_fallback
+_original_shaft_detector = detect_shaft_grasp_local
 
 
 def compute_grasp_line_pose(
@@ -4373,6 +4268,7 @@ def _gear_compound_depth_anomaly_pair(
     }
 
 
+
 def _gear_compound_large_style_axis_fallback(
     color_image_bgr, depth_image_m, intrinsics, red_mask, contour,
     object_mask, gear_center, gear_radius
@@ -4448,6 +4344,7 @@ def _gear_compound_large_style_axis_fallback(
     }
 
 
+
 def _legacy_point(result, name):
     pixel = result.get("pixel_points", {}).get(name, {})
     camera = result.get("camera_points", {}).get(name, {})
@@ -4479,6 +4376,7 @@ def _unified_grasp_result(result, left, right, intrinsics, depth_image_m,
         "grasp_left": left,
         "grasp_right": right,
         "grasp_midpoint": midpoint,
+        "depth_valid": bool(midpoint["depth_valid"]),
         "grasp_line_yaw_deg_image": pose["grasp_line_yaw_deg_image"],
         "grasp_line_length_px": pose["grasp_line_length_px"],
         "gripper_finger_line_yaw_deg_image": pose[
@@ -5620,11 +5518,51 @@ def detect_gear_grasp_local(color_image_bgr, depth_image_m, intrinsics, target_t
     contour = _select_gear_contour(component_mask, target_type)
     contour_candidates = _gear_contour_candidates(component_mask, target_type)
     empty = np.zeros_like(red_mask)
-    if target_type == "gear_small" and contour is not None:
-        square_result, square_debug = _gear_small_square_grasp(
-            color_image_bgr, depth_image_m, intrinsics, red_mask, contour
-        )
-        if square_result is not None and square_result.get("status") == "ok":
+    if target_type == "gear_small" and contour_candidates:
+        structured = []
+        attempted_square_mask = np.zeros_like(red_mask)
+        attempted_contours_mask = np.zeros_like(red_mask)
+        for candidate_index, candidate in enumerate(contour_candidates):
+            square_result, square_debug = _gear_small_square_grasp(
+                color_image_bgr, depth_image_m, intrinsics,
+                red_mask, candidate["contour"],
+            )
+            attempted_square_mask = cv2.bitwise_or(
+                attempted_square_mask,
+                square_debug.get("gear_square_hole_mask", empty),
+            )
+            attempted_contours_mask = cv2.bitwise_or(
+                attempted_contours_mask,
+                square_debug.get("selected_contours_mask", empty),
+            )
+            if square_result is None or square_result.get("status") != "ok":
+                continue
+            structure_score = float(
+                square_result.get("gear_small_square_pair_score", -float("inf"))
+            )
+            structured.append((
+                structure_score, candidate["area_px"], candidate_index,
+                candidate, square_result, square_debug,
+            ))
+        if structured:
+            (
+                structure_score, _, candidate_index, candidate,
+                square_result, square_debug,
+            ) = max(structured, key=lambda item: (item[0], item[1]))
+            square_result["gear_candidate_count"] = int(len(contour_candidates))
+            square_result["gear_structured_candidate_count"] = int(len(structured))
+            square_result["gear_selected_candidate_index"] = int(candidate_index)
+            square_result["gear_selected_candidate_area_px"] = float(
+                candidate["area_px"]
+            )
+            square_result["gear_selected_structure_score"] = float(structure_score)
+            square_result["gear_selection_reason"] = (
+                "gear_small_center_square_structure_score_over_red_contours"
+            )
+            square_result["gear_candidate_areas_px"] = [
+                float(item["area_px"]) for item in contour_candidates
+            ]
+            square_debug["gear_component_mask"] = component_mask
             return square_result, square_debug
 
     if target_type in ("gear_large", "gear_compound") and contour_candidates:
@@ -5669,7 +5607,11 @@ def detect_gear_grasp_local(color_image_bgr, depth_image_m, intrinsics, target_t
             structured_debug["gear_component_mask"] = component_mask
             return structured_result, structured_debug
 
-    if contour is not None and USE_GRASP_MARKER_FOR_GEAR:
+    if (
+        target_type != "gear_small"
+        and contour is not None
+        and USE_GRASP_MARKER_FOR_GEAR
+    ):
         filled = np.zeros_like(red_mask)
         cv2.drawContours(filled, [contour], -1, 255, cv2.FILLED)
         # Strict object ROI prevents black background/shafts from becoming markers.
@@ -5715,6 +5657,40 @@ def detect_gear_grasp_local(color_image_bgr, depth_image_m, intrinsics, target_t
                 "gear_selected_markers": selected_mask,
                 "selected_contours_mask": filled,
             }
+    if target_type == "gear_small":
+        result = failed_result(
+            target_type,
+            color_image_bgr,
+            "no red gear candidate passed the required center-square structure; "
+            "unsafe generic depth fallback is disabled for gear_small",
+        )
+        result.update({
+            "gear_candidate_count": int(len(contour_candidates)),
+            "gear_structured_candidate_count": 0,
+            "gear_candidate_areas_px": [
+                float(item["area_px"]) for item in contour_candidates
+            ],
+            "gear_selection_reason": "gear_small_structure_required_fail_closed",
+        })
+        return result, {
+            "gear_red_mask": red_mask,
+            "gear_component_mask": component_mask,
+            "gear_square_hole_mask": (
+                attempted_square_mask if contour_candidates else empty
+            ),
+            "gear_square_grasp_candidates": empty,
+            "gear_marker_mask": (
+                empty if contour is None else cv2.bitwise_and(
+                    make_grasp_marker_mask(color_image_bgr),
+                    attempted_contours_mask,
+                )
+            ),
+            "gear_selected_markers": empty,
+            "selected_contours_mask": (
+                attempted_contours_mask if contour_candidates else empty
+            ),
+        }
+
     fallback, debug = _depth_gear_fallback(
         color_image_bgr, depth_image_m, intrinsics, target_type
     )
@@ -5758,6 +5734,25 @@ def detect_screw_grasp_local(color_image_bgr, depth_image_m, intrinsics):
     """Detect screw grasp from the raw-depth top bar, without black marker help."""
     red_mask = make_red_mask(color_image_bgr)
     contours, _ = cv2.findContours(red_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    height_px, width_px = red_mask.shape[:2]
+    normalized_intrinsics = _normalize_intrinsics(intrinsics)
+    target_u = (
+        float(normalized_intrinsics["ppx"])
+        if normalized_intrinsics is not None else 0.5 * width_px
+    )
+    target_v = (
+        float(normalized_intrinsics["ppy"])
+        if normalized_intrinsics is not None else 0.5 * height_px
+    )
+    roi_half_width = max(1.0, SCREW_CENTER_ROI_HALF_WIDTH_RATIO * width_px)
+    roi_half_height = max(1.0, SCREW_CENTER_ROI_HALF_HEIGHT_RATIO * height_px)
+    center_roi_mask = np.zeros_like(red_mask)
+    cv2.ellipse(
+        center_roi_mask,
+        (int(round(target_u)), int(round(target_v))),
+        (int(round(roi_half_width)), int(round(roi_half_height))),
+        0, 0, 360, 255, cv2.FILLED,
+    )
     candidates = []
     for candidate in contours:
         _, _, width, height = cv2.boundingRect(candidate)
@@ -5766,19 +5761,131 @@ def detect_screw_grasp_local(color_image_bgr, depth_image_m, intrinsics):
             SCREW_MIN_AREA_PX <= area <= SCREW_MAX_AREA_PX
             and max(width, height) <= SCREW_MAX_DIM_PX
         ):
-            candidates.append(candidate)
+            center = np.asarray(contour_center(candidate), dtype=np.float64)
+            du = (float(center[0]) - target_u) / roi_half_width
+            dv = (float(center[1]) - target_v) / roi_half_height
+            center_distance_score = du * du + dv * dv
+            if center_distance_score <= 1.0:
+                candidates.append((center_distance_score, -area, candidate))
     empty = np.zeros_like(red_mask)
 
+    if not candidates:
+        failed = failed_result(
+            "screw", color_image_bgr,
+            "no size-valid red screw contour inside the camera-centred ROI",
+        )
+        return failed, {
+            "red_mask": red_mask,
+            "screw_center_target_roi": center_roi_mask,
+            "screw_center_roi_candidates": empty,
+            "selected_contours_mask": empty,
+            "selected_grasp_components": empty,
+        }
+
+    # Association is determined only by proximity to the calibrated optical
+    # centre. Area is a tie-breaker, never the primary selector.
+    _, _, selected_contour = min(candidates, key=lambda item: (item[0], item[1]))
+    selected_object_mask = np.zeros_like(red_mask)
+    cv2.drawContours(selected_object_mask, [selected_contour], -1, 255, cv2.FILLED)
+    detector_color = np.empty_like(color_image_bgr)
+    detector_color[:] = (0, 255, 0)
+    detector_color[selected_object_mask > 0] = color_image_bgr[selected_object_mask > 0]
+    detector_depth = None
+    if depth_image_m is not None:
+        detector_depth = np.asarray(depth_image_m).copy()
+        detector_depth[selected_object_mask == 0] = 0.0
+    # Downstream screw branches now see exactly the associated centre candidate,
+    # so a peripheral gear cannot win their historical max-area selection.
+    candidates = [selected_contour]
+
     depth_result, debug = _depth_screw_fallback(
-        color_image_bgr, depth_image_m, intrinsics
+        detector_color, detector_depth, intrinsics
     )
+    debug["red_mask_full_workspace"] = red_mask
+    debug["screw_center_target_roi"] = center_roi_mask
+    debug["screw_center_roi_candidates"] = cv2.bitwise_and(
+        red_mask, center_roi_mask
+    )
+    debug["screw_center_selected_candidate"] = selected_object_mask
     debug["screw_marker_mask"] = empty
     debug["black_marker_mask"] = empty
     debug["black_marker_search_mask"] = empty
     debug["black_marker_candidates"] = empty
     debug["selected_black_markers"] = empty
 
+    def center_only_fallback(reason):
+        """Return a fixed-axis grasp whose only measured feature is screw centre."""
+        if not candidates:
+            return None
+        contour = max(candidates, key=cv2.contourArea)
+        screw_center = np.asarray(contour_center(contour), dtype=np.float64)
+        contour_mask = np.zeros_like(red_mask)
+        cv2.drawContours(contour_mask, [contour], -1, 255, cv2.FILLED)
+        center_point = _point_from_region(
+            "grasp_midpoint",
+            screw_center,
+            contour_mask,
+            detector_depth,
+            intrinsics,
+            None,
+            "screw_red_contour_median",
+        )
+        if center_point.get("depth_m") is None:
+            return None
+        half_offset = 0.5 * SCREW_MIN_GRASP_SEPARATION_PX
+        left_uv = screw_center + np.array([-half_offset, 0.0], dtype=np.float64)
+        right_uv = screw_center + np.array([half_offset, 0.0], dtype=np.float64)
+        left = add_camera_xyz_to_point(
+            {"name": "grasp_left", "u": float(left_uv[0]), "v": float(left_uv[1])},
+            center_point["depth_m"], intrinsics,
+            center_point.get("depth_valid_count", 0),
+            "screw_center_depth_fixed_axis",
+        )
+        right = add_camera_xyz_to_point(
+            {"name": "grasp_right", "u": float(right_uv[0]), "v": float(right_uv[1])},
+            center_point["depth_m"], intrinsics,
+            center_point.get("depth_valid_count", 0),
+            "screw_center_depth_fixed_axis",
+        )
+        fallback = {
+            "timestamp_sec": float(time.time()),
+            "target_type": "screw",
+            "frame_id": CAMERA_FRAME_ID,
+            "image_width": int(color_image_bgr.shape[1]),
+            "image_height": int(color_image_bgr.shape[0]),
+            "status": "ok",
+            "warnings": [str(reason)],
+            "screw_grasp_center_source": "red_mask_contour_center",
+            "screw_grasp_direction_source": "fixed_axis_for_circular_part",
+        }
+        fallback = _unified_grasp_result(
+            fallback, left, right, intrinsics, detector_depth,
+            "screw_center_only_fixed_axis", "medium",
+            "raised top-bar yaw is optional for circular screw; stable red "
+            "contour centre and contour-median depth define the grasp position",
+            SCREW_YAW_DEFINITION,
+        )
+        fallback["grasp_midpoint"] = center_point
+        fallback["depth_valid"] = True
+        fallback.setdefault("pixel_points", {})["grasp_midpoint"] = {
+            "u": float(screw_center[0]), "v": float(screw_center[1])
+        }
+        fallback.setdefault("camera_points", {})["grasp_midpoint"] = {
+            key: center_point.get(key) for key in (
+                "depth_valid", "depth_m", "camera_x_m", "camera_y_m",
+                "camera_z_m", "camera_frame_id"
+            )
+        }
+        debug["selected_contours_mask"] = contour_mask
+        debug["selected_grasp_components"] = contour_mask
+        return fallback
+
     if depth_result.get("status") != "ok":
+        fallback = center_only_fallback(
+            "screw raised top-bar detection failed; using stable centre fallback"
+        )
+        if fallback is not None:
+            return fallback, debug
         return depth_result, debug
 
     points = depth_result.get("pixel_points", {})
@@ -5821,6 +5928,12 @@ def detect_screw_grasp_local(color_image_bgr, depth_image_m, intrinsics):
 
     top_depth = depth_result.get("top_surface_depth_m")
     top_count = int(depth_result.get("top_surface_valid_count") or 0)
+    if top_depth is None or top_count <= 0:
+        fallback = center_only_fallback(
+            "screw raised top-bar depth unavailable; using stable centre fallback"
+        )
+        if fallback is not None:
+            return fallback, debug
     depth_source = (
         "screw_depth_top_bar_median_centered_grasp"
         if top_depth is not None else "screw_depth_top_bar_unavailable"
@@ -5851,7 +5964,7 @@ def detect_screw_grasp_local(color_image_bgr, depth_image_m, intrinsics):
     ]
 
     result = _unified_grasp_result(
-        depth_result, left, right, intrinsics, depth_image_m,
+        depth_result, left, right, intrinsics, detector_depth,
         "screw_depth_top_bar_centered_short_axis", confidence,
         "black marker disabled; raw depth selects the raised rectangular top bar, "
         "then the line between the two long-edge centers is shifted through the red screw center",
@@ -5880,6 +5993,10 @@ def detect_base_holes_with_orientation(color_image_bgr, depth_image_m, intrinsic
         result["base_hole_frame_yaw_deg_image"] = None
     result["debug_notes"] = "base-hole image orientation only; not a gripper grasp yaw"
     return result, debug
+
+
+_original_base_detector = detect_base_holes_local
+detect_base_holes_local = detect_base_holes_with_orientation
 
 
 def draw_local_refinement(color_image_bgr, result, debug_images):
@@ -5976,461 +6093,4 @@ def save_local_outputs(
         "json": str(json_path),
         "csv": str(csv_path),
         "annotated": str(annotated_path),
-    }
-
-
-import time
-
-
-def run_realsense_local_refinement_live(target_type=TARGET_TYPE):
-    """Show the existing local detector on aligned live RGB-D and keep the latest result in memory."""
-    try:
-        import pyrealsense2 as rs_live
-    except ImportError:
-        print(
-            "pyrealsense2 is not installed. Install the RealSense Python "
-            "package before running this cell."
-        )
-        return
-
-    if target_type not in VALID_TARGET_TYPES:
-        print(
-            f"Unsupported TARGET_TYPE={target_type!r}. "
-            f"Choose one of: {sorted(VALID_TARGET_TYPES)}"
-        )
-        return
-
-    window_name = "RealSense Local Grasp Refinement Live"
-    pipeline = rs_live.pipeline()
-    config = rs_live.config()
-    config.enable_stream(
-        rs_live.stream.color, 640, 480, rs_live.format.bgr8, 30
-    )
-    config.enable_stream(
-        rs_live.stream.depth, 640, 480, rs_live.format.z16, 30
-    )
-
-    pipeline_started = False
-    paused = False
-    display_mode_index = 0
-    previous_gray = None
-    stable_frame_count = 0
-    previous_time = None
-    fps = 0.0
-    last_base_views = {}
-    last_available_modes = []
-    last_mode_name = "annotated_result"
-    latest_result = None
-    latest_annotated = None
-    latest_debug_images = None
-    last_status = {
-        "motion_score": 0.0,
-        "state": "MOVING",
-        "confidence": "unknown",
-        "depth_valid": False,
-    }
-
-    try:
-        try:
-            profile = pipeline.start(config)
-            pipeline_started = True
-            color_sensor = profile.get_device().first_color_sensor()
-            if color_sensor is not None:
-                if color_sensor.supports(rs_live.option.power_line_frequency):
-                    color_sensor.set_option(rs_live.option.power_line_frequency, 1)
-                if color_sensor.supports(rs_live.option.brightness):
-                    color_sensor.set_option(rs_live.option.brightness, -60)
-            fixed_settings = globals().get("apply_fixed_realsense_rgbd_settings")
-            if callable(fixed_settings):
-                fixed_settings(profile, rs_live)
-            create_depth_filters = globals().get("create_fixed_realsense_depth_filters")
-            depth_filters = (
-                create_depth_filters(rs_live) if callable(create_depth_filters) else []
-            )
-            align_to_color = rs_live.align(rs_live.stream.color)
-            depth_scale = float(
-                profile.get_device()
-                .first_depth_sensor()
-                .get_depth_scale()
-            )
-        except Exception as exc:
-            print(
-                "Could not start RealSense D435i. Check that the camera is "
-                f"connected and not used by another process. Details: {exc}"
-            )
-            return
-
-        print(
-            f"Local live target: {target_type}. "
-            "Controls: q/ESC quit, space pause/resume, d cycle debug views."
-        )
-        cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
-
-        # Allow auto-exposure to settle before evaluating motion and detection.
-        for _ in range(max(1, int(LIVE_WARMUP_FRAMES))):
-            pipeline.wait_for_frames(timeout_ms=5000)
-
-        while True:
-            if not paused:
-                frames = pipeline.wait_for_frames(timeout_ms=5000)
-                aligned_frames = align_to_color.process(frames)
-                color_frame = aligned_frames.get_color_frame()
-                depth_frame = aligned_frames.get_depth_frame()
-                if not color_frame or not depth_frame:
-                    print("Aligned color/depth frame unavailable; retrying.")
-                    continue
-                apply_depth_filters = globals().get("apply_fixed_realsense_depth_filters")
-                if depth_filters and callable(apply_depth_filters):
-                    depth_frame = apply_depth_filters(depth_frame, depth_filters)
-
-                color_bgr = np.asanyarray(color_frame.get_data()).copy()
-                depth_raw = np.asanyarray(depth_frame.get_data())
-                depth_image_m = (
-                    depth_raw.astype(np.float32) * depth_scale
-                )
-                color_intr = (
-                    color_frame.profile
-                    .as_video_stream_profile()
-                    .intrinsics
-                )
-                intrinsics = {
-                    "fx": float(color_intr.fx),
-                    "fy": float(color_intr.fy),
-                    "ppx": float(color_intr.ppx),
-                    "ppy": float(color_intr.ppy),
-                }
-
-                result, annotated, debug_images = run_local_refinement(
-                    color_bgr,
-                    depth_image_m,
-                    intrinsics,
-                    target_type,
-                )
-                latest_result = result
-                latest_annotated = annotated.copy()
-                latest_debug_images = {
-                    name: image.copy() if isinstance(image, np.ndarray) else image
-                    for name, image in debug_images.items()
-                }
-
-                gray = cv2.cvtColor(color_bgr, cv2.COLOR_BGR2GRAY)
-                if previous_gray is None:
-                    motion_score = 0.0
-                    stable_frame_count = 0
-                else:
-                    motion_score = float(
-                        cv2.mean(
-                            cv2.absdiff(gray, previous_gray)
-                        )[0]
-                    )
-                    stable_frame_count = (
-                        stable_frame_count + 1
-                        if motion_score < 2.0
-                        else 0
-                    )
-                previous_gray = gray
-                state = (
-                    "STABLE"
-                    if stable_frame_count >= 10
-                    else "MOVING"
-                )
-
-                now = time.perf_counter()
-                if previous_time is not None:
-                    instant_fps = 1.0 / max(
-                        now - previous_time, 1e-6
-                    )
-                    fps = (
-                        instant_fps
-                        if fps <= 0.0
-                        else 0.85 * fps + 0.15 * instant_fps
-                    )
-                previous_time = now
-
-                base_views = {
-                    "annotated_result": annotated,
-                    "color_image": color_bgr,
-                }
-                for name, image in debug_images.items():
-                    if (
-                        isinstance(image, np.ndarray)
-                        and image.size > 0
-                    ):
-                        base_views[name] = image
-
-                # This depth colormap is display-only. Detection and XYZ use
-                # aligned metric depth_image_m above. Use the same fixed range
-                # as realsense_depth_parameter_tuning.ipynb for fair comparison.
-                display_min_m = globals().get("FIXED_DEPTH_DISPLAY_MIN_M", 0.15)
-                display_max_m = globals().get("FIXED_DEPTH_DISPLAY_MAX_M", 1.20)
-                valid_depth = (
-                    np.isfinite(depth_image_m)
-                    & (depth_image_m > display_min_m)
-                    & (depth_image_m < display_max_m)
-                )
-                clipped_depth = np.clip(depth_image_m, display_min_m, display_max_m)
-                depth_display = np.uint8(
-                    255.0 * (clipped_depth - display_min_m)
-                    / max(display_max_m - display_min_m, 1e-6)
-                )
-                depth_colormap = cv2.applyColorMap(depth_display, cv2.COLORMAP_TURBO)
-                depth_colormap[~valid_depth] = (0, 0, 0)
-                base_views["depth_colormap_display_only"] = depth_colormap
-
-                preferred_modes = [
-                    "annotated_result",
-                    "color_image",
-                    "red_mask",
-                    "black_mask",
-                    "shaft_mask",
-                    "shaft_black_mask",
-                    "object_mask",
-                    "black_marker_mask",
-                    "black_marker_search_mask",
-                    "black_marker_candidates",
-                    "selected_black_markers",
-                    "base_mask",
-                    "hole_search_mask",
-                    "depth_invalid_mask",
-                    "depth_boss_candidates_mask",
-                    "depth_hole_candidates_mask",
-                    "final_hole_mask",
-                    "valid_depth_mask",
-                    "top_surface_mask",
-                    "top_surface_components",
-                    "selected_grasp_components",
-                    "selected_contours_mask",
-                    "depth_colormap_display_only",
-                ]
-                available_modes = [
-                    name
-                    for name in preferred_modes
-                    if name in base_views
-                ]
-                for name in base_views:
-                    if name not in available_modes:
-                        available_modes.append(name)
-                display_mode_index %= len(available_modes)
-
-                last_base_views = base_views
-                last_available_modes = available_modes
-                last_mode_name = available_modes[display_mode_index]
-                last_status = {
-                    "motion_score": motion_score,
-                    "state": state,
-                    "confidence": result.get(
-                        "confidence", "unknown"
-                    ),
-                    "depth_valid": bool(
-                        result.get("depth_valid", False)
-                    ),
-                }
-
-            if not last_base_views:
-                continue
-
-            if not paused and last_available_modes:
-                display_mode_index %= len(last_available_modes)
-                last_mode_name = last_available_modes[
-                    display_mode_index
-                ]
-            view = last_base_views[last_mode_name]
-            if view.ndim == 2:
-                view = cv2.cvtColor(view, cv2.COLOR_GRAY2BGR)
-            else:
-                view = view.copy()
-
-            state = last_status["state"]
-            status_color = (
-                (40, 220, 40)
-                if state == "STABLE"
-                else (0, 165, 255)
-            )
-            status_text = (
-                f"FPS {fps:5.1f}  target {target_type}  "
-                f"{state}  motion {last_status['motion_score']:.2f}"
-            )
-            result_text = (
-                f"confidence {last_status['confidence']}  "
-                f"depth_valid {last_status['depth_valid']}  "
-                f"view {last_mode_name}"
-            )
-            cv2.putText(
-                view,
-                status_text,
-                (10, 24),
-                cv2.FONT_HERSHEY_SIMPLEX,
-                0.52,
-                (0, 0, 0),
-                3,
-                cv2.LINE_AA,
-            )
-            cv2.putText(
-                view,
-                status_text,
-                (10, 24),
-                cv2.FONT_HERSHEY_SIMPLEX,
-                0.52,
-                status_color,
-                1,
-                cv2.LINE_AA,
-            )
-            cv2.putText(
-                view,
-                result_text,
-                (10, 47),
-                cv2.FONT_HERSHEY_SIMPLEX,
-                0.46,
-                (255, 255, 255),
-                1,
-                cv2.LINE_AA,
-            )
-            if paused:
-                cv2.putText(
-                    view,
-                    "PAUSED",
-                    (10, 72),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.65,
-                    (0, 0, 255),
-                    2,
-                    cv2.LINE_AA,
-                )
-
-            cv2.imshow(window_name, view)
-            key = cv2.waitKey(1 if not paused else 30) & 0xFF
-            if key in (ord("q"), 27):
-                break
-            if key == ord(" "):
-                paused = not paused
-                print(
-                    "Local live view paused."
-                    if paused
-                    else "Local live view resumed."
-                )
-            elif key == ord("d") and last_available_modes:
-                display_mode_index = (
-                    display_mode_index + 1
-                ) % len(last_available_modes)
-                last_mode_name = last_available_modes[
-                    display_mode_index
-                ]
-
-    except KeyboardInterrupt:
-        print("Local live detection interrupted.")
-    except Exception as exc:
-        print(f"RealSense local live detection stopped: {exc}")
-    finally:
-        global last_live_result, last_live_annotated_image, last_live_debug_images, result_dict
-        if latest_result is not None:
-            last_live_result = latest_result
-            last_live_annotated_image = latest_annotated
-            last_live_debug_images = latest_debug_images
-            result_dict = latest_result
-            print("Latest live result stored in `last_live_result` and `result_dict`.")
-        if pipeline_started:
-            pipeline.stop()
-        cv2.destroyAllWindows()
-        print("RealSense local live detection closed.")
-
-
-POINT_ROLE = {
-    "gear_center": "center",
-    "rect_center": "center",
-    "screw_center": "center",
-    "top_surface_center": "center/top_surface",
-    "hole_large": "base_hole",
-    "hole_small": "base_hole",
-    "hole_screw": "base_hole",
-    "grasp_left": "grasp",
-    "grasp_right": "grasp",
-    "grasp_midpoint": "grasp",
-}
-
-
-HAND_EYE_RESULT_PATH = Path("cam_calibration/config/hand_eye_result.json")
-
-
-T_BASE_GRIPPER = None
-
-
-GRIPPER_BASE_YAW_OFFSET_DEG = 0.0
-
-
-T_BASE_GRIPPER = np.array([
-    [0.996839988, -0.079426334, -0.001222903, 0.475983832],
-    [-0.079288381, -0.995810072, 0.045559338, 0.021302204],
-    [-0.004836390, -0.045318408, -0.998960886, 0.434017867],
-    [0.000000000, 0.000000000, 0.000000000, 1.000000000],
-
-], dtype=np.float64)
-
-
-def _validated_transform_for_yaw(T, name):
-    matrix = np.asarray(T, dtype=np.float64)
-    if matrix.shape != (4, 4) or not np.all(np.isfinite(matrix)):
-        raise ValueError(f"{name} must be a finite 4x4 matrix")
-    if not np.allclose(matrix[3], [0.0, 0.0, 0.0, 1.0], atol=1e-6):
-        raise ValueError(f"{name} has an invalid homogeneous last row")
-    rotation = matrix[:3, :3]
-    if not np.allclose(rotation.T @ rotation, np.eye(3), atol=1e-3):
-        raise ValueError(f"{name} rotation is not orthonormal")
-    if not np.isclose(np.linalg.det(rotation), 1.0, atol=1e-3):
-        raise ValueError(f"{name} rotation determinant must be +1")
-    return matrix
-
-
-def _camera_xyz_from_grasp_result(grasp_result, point_name):
-    point = grasp_result.get(point_name) or {}
-    if not point:
-        point = (grasp_result.get("camera_points") or {}).get(point_name) or {}
-    xyz = [point.get("camera_x_m"), point.get("camera_y_m"), point.get("camera_z_m")]
-    if any(value is None for value in xyz):
-        raise ValueError(
-            f"{point_name} has no valid camera XYZ; run detection with aligned raw depth "
-            "and real color intrinsics first"
-        )
-    xyz = np.asarray(xyz, dtype=np.float64)
-    if not np.all(np.isfinite(xyz)):
-        raise ValueError(f"{point_name} camera XYZ contains invalid values")
-    return xyz
-
-
-def compute_grasp_yaw_in_base(
-    grasp_result, T_base_gripper, T_gripper_camera, yaw_offset_deg=0.0
-):
-    """Transform both grasp endpoints and compute their line yaw in base XY."""
-    T_bg = _validated_transform_for_yaw(T_base_gripper, "T_base_gripper")
-    T_gc = _validated_transform_for_yaw(T_gripper_camera, "T_gripper_camera")
-    T_base_camera = T_bg @ T_gc
-
-    left_camera = _camera_xyz_from_grasp_result(grasp_result, "grasp_left")
-    right_camera = _camera_xyz_from_grasp_result(grasp_result, "grasp_right")
-    left_base = (T_base_camera @ np.r_[left_camera, 1.0])[:3]
-    right_base = (T_base_camera @ np.r_[right_camera, 1.0])[:3]
-    line_base = right_base - left_base
-    line_xy_length = float(np.hypot(line_base[0], line_base[1]))
-    if line_xy_length < 1e-6:
-        raise ValueError("transformed grasp line has near-zero length in base XY")
-
-    yaw_directed = float(np.degrees(np.arctan2(line_base[1], line_base[0])))
-    yaw_directed = float(((yaw_directed + yaw_offset_deg + 180.0) % 360.0) - 180.0)
-    # A parallel-finger line is an axis: yaw and yaw+180 degrees are equivalent.
-    yaw_axis = float(((yaw_directed + 90.0) % 180.0) - 90.0)
-    midpoint_base = 0.5 * (left_base + right_base)
-    return {
-        "target_type": grasp_result.get("target_type"),
-        "grasp_left_base_m": [float(x) for x in left_base],
-        "grasp_right_base_m": [float(x) for x in right_base],
-        "grasp_midpoint_base_m": [float(x) for x in midpoint_base],
-        "grasp_line_vector_base_m": [float(x) for x in line_base],
-        "grasp_line_length_base_xy_m": line_xy_length,
-        "yaw_base_deg_directed": yaw_directed,
-        "yaw_base_deg_axis": yaw_axis,
-        "yaw_frame": "robot_base_xy_frame",
-        "yaw_definition": (
-            "atan2(right_base_y-left_base_y, right_base_x-left_base_x); "
-            "gripper finger line should be parallel to this line"
-        ),
-        "yaw_offset_deg": float(yaw_offset_deg),
     }

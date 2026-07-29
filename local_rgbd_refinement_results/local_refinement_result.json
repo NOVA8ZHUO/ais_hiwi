@@ -1,188 +1,79 @@
 {
-  "timestamp_sec": 1783696002.696982,
-  "target_type": "gear_compound",
+  "timestamp_sec": 1784296355.3342998,
+  "target_type": "base",
   "frame_id": "camera_color_optical_frame",
   "image_width": 640,
   "image_height": 480,
-  "status": "ok",
-  "warnings": [],
+  "result_type": "base_holes",
   "pixel_points": {
-    "gear_center": {
-      "u": 304.3098517725143,
-      "v": 303.33132762091594
+    "hole_small": {
+      "name": "hole_small",
+      "u": 334.5087889050153,
+      "v": 120.36332849540398,
+      "radius_px": 20.60161590576172,
+      "confidence": "medium"
     },
-    "grasp_left": {
-      "u": 218.70470578037595,
-      "v": 307.06892901275353
+    "hole_large": {
+      "name": "hole_large",
+      "u": 506.8326128722382,
+      "v": 394.38940922190204,
+      "radius_px": 23.85133171081543,
+      "confidence": "medium"
     },
-    "grasp_right": {
-      "u": 389.9149977646527,
-      "v": 299.59372622907836
-    },
-    "grasp_midpoint": {
-      "u": 304.3098517725143,
-      "v": 303.33132762091594
+    "hole_screw": {
+      "name": "hole_screw",
+      "u": 291.5585072738773,
+      "v": 347.1571790006325,
+      "radius_px": 9.844989700317383,
+      "confidence": "high"
     }
   },
   "camera_points": {
-    "gear_center": {
+    "hole_small": {
+      "depth_m": 0.3370000123977661,
       "depth_valid": true,
-      "depth_m": 0.3460000157356262,
-      "camera_x_m": -0.012327882163875512,
-      "camera_y_m": 0.025183117090848344,
-      "camera_z_m": 0.3460000157356262,
+      "depth_valid_count": 1797,
+      "depth_source": "ring_median_around_hole",
+      "camera_x_m": 0.00478349976738607,
+      "camera_y_m": -0.07733558645551343,
+      "camera_z_m": 0.3370000123977661,
       "camera_frame_id": "camera_color_optical_frame"
     },
-    "grasp_left": {
+    "hole_large": {
+      "depth_m": 0.33800002932548523,
       "depth_valid": true,
-      "depth_m": 0.3330000042915344,
-      "camera_x_m": -0.058896507366190336,
-      "camera_y_m": 0.026293063775456732,
-      "camera_z_m": 0.3330000042915344,
+      "depth_valid_count": 2004,
+      "depth_source": "ring_median_around_hole",
+      "camera_x_m": 0.10089465684330551,
+      "camera_y_m": 0.07544598599119659,
+      "camera_z_m": 0.33800002932548523,
       "camera_frame_id": "camera_color_optical_frame"
     },
-    "grasp_right": {
+    "hole_screw": {
+      "depth_m": 0.3360000252723694,
       "depth_valid": true,
-      "depth_m": 0.33500000834465027,
-      "camera_x_m": 0.035378330797948714,
-      "camera_y_m": 0.022314014127280183,
-      "camera_z_m": 0.33500000834465027,
-      "camera_frame_id": "camera_color_optical_frame"
-    },
-    "grasp_midpoint": {
-      "depth_valid": true,
-      "depth_m": 0.33400000631809235,
-      "camera_x_m": -0.011900325240936557,
-      "camera_y_m": 0.024309713540242892,
-      "camera_z_m": 0.33400000631809235,
+      "depth_valid_count": 459,
+      "depth_source": "ring_median_around_hole",
+      "camera_x_m": -0.019040339675282316,
+      "camera_y_m": 0.048782018776549446,
+      "camera_z_m": 0.3360000252723694,
       "camera_frame_id": "camera_color_optical_frame"
     }
   },
-  "gear_compound_center_source": "selected_contours_mask_outer_boundary_fit",
-  "gear_compound_outer_contour_center": [
-    294.4984648110052,
-    286.7958688442
-  ],
-  "gear_compound_selected_mask_circle_center": [
-    311.5,
-    311.5
-  ],
-  "gear_compound_selected_mask_ellipse_center": [
-    295.7820739746094,
-    295.0318298339844
-  ],
-  "gear_compound_selected_mask_moment_center": [
-    294.61125881400994,
-    287.45187179021417
-  ],
-  "gear_compound_used_center": [
-    304.3098517725143,
-    303.33132762091594
-  ],
-  "gear_compound_center_hole": {
-    "center": [
-      345.5498046875,
-      325.9854736328125
-    ],
-    "radius_px": 12.500198364257812,
-    "circularity": 0.7536127398054306,
-    "aspect": 0.88,
-    "fill_ratio": 0.61011702561769,
-    "center_offset_px": 47.05256685834009
-  },
-  "gear_compound_candidate_source": "depth_anomaly_inner_gear",
-  "gear_compound_circle_pair_score": 5085.638281080265,
-  "gear_compound_circle_depth_score": 6.999999284744263,
-  "gear_compound_circle_red_score": 0.0,
-  "gear_compound_circle_handle_rgb_score": 0.0,
-  "gear_compound_cad_cutout_black_score": 0.0,
-  "gear_compound_cad_cutout_red_penalty": 0.0,
-  "gear_compound_circle_axis_deg": 177.5,
-  "gear_compound_raw_pad_pair": {
-    "raw_pad_left": [
-      265.22924164566854,
-      305.03762390849397
-    ],
-    "raw_pad_right": [
-      343.3904618993601,
-      301.6250313333379
-    ]
-  },
-  "gear_compound_large_style_axis_fallback": null,
-  "gear_compound_centered_grasp_line": {
-    "extended_left": [
-      183.3460585227536,
-      308.61272089199076
-    ],
-    "extended_right": [
-      425.27364502227505,
-      298.0499343498411
-    ],
-    "direction_mode": "raw_pad_axis",
-    "direction_unit": [
-      0.9990482215818579,
-      -0.04361938736533588
-    ],
-    "line_shift_error_px": 0.0,
-    "line_shift_error_ratio": 0.0,
-    "contact_half_length_px": 85.68670074462891,
-    "extended_half_length_px": 121.07903366088867
-  },
-  "result_type": "grasp",
-  "grasp_left": {
-    "u": 218.70470578037595,
-    "v": 307.06892901275353,
-    "depth_m": 0.3330000042915344,
-    "depth_valid": true,
-    "depth_valid_count": 421,
-    "depth_source": "raw_pad_neighbor_red_surface_median",
-    "camera_x_m": -0.058896507366190336,
-    "camera_y_m": 0.026293063775456732,
-    "camera_z_m": 0.3330000042915344,
-    "camera_frame_id": "camera_color_optical_frame"
-  },
-  "grasp_right": {
-    "u": 389.9149977646527,
-    "v": 299.59372622907836,
-    "depth_m": 0.33500000834465027,
-    "depth_valid": true,
-    "depth_valid_count": 391,
-    "depth_source": "raw_pad_neighbor_red_surface_median",
-    "camera_x_m": 0.035378330797948714,
-    "camera_y_m": 0.022314014127280183,
-    "camera_z_m": 0.33500000834465027,
-    "camera_frame_id": "camera_color_optical_frame"
-  },
-  "grasp_midpoint": {
-    "u": 304.3098517725143,
-    "v": 303.33132762091594,
-    "depth_m": 0.33400000631809235,
-    "depth_valid": true,
-    "depth_valid_count": 2,
-    "depth_source": "grasp_endpoint_depth_median",
-    "camera_x_m": -0.011900325240936557,
-    "camera_y_m": 0.024309713540242892,
-    "camera_z_m": 0.33400000631809235,
-    "camera_frame_id": "camera_color_optical_frame"
-  },
-  "grasp_line_yaw_deg_image": -2.499999999999995,
-  "grasp_line_length_px": 171.37340148925784,
-  "gripper_finger_line_yaw_deg_image": -2.499999999999995,
-  "yaw_frame": "image_pixel_frame",
-  "yaw_definition": "line from grasp_left to grasp_right; gripper finger line should be parallel to this line",
-  "yaw_source": "gear_compound_depth_anomaly_inner_gear_centered",
+  "yaw_deg": null,
   "confidence": "high",
-  "rule_note": "gear_compound inner depth-anomaly pair determines grasp direction; final line is forced through gear center; shift_error_px=0.0; selected by gear_compound structure score among 3 red gear candidates",
-  "debug_notes": "image-frame yaw computed from grasp_left to grasp_right; source=gear_compound_depth_anomaly_inner_gear_centered; no hand-eye or robot-base yaw applied",
-  "gear_candidate_count": 3,
-  "gear_structured_candidate_count": 1,
-  "gear_selected_candidate_index": 0,
-  "gear_selected_candidate_area_px": 59547.5,
-  "gear_selected_structure_score": 5085.638281080265,
-  "gear_selection_reason": "gear_compound_structure_score_over_red_contours",
-  "gear_candidate_areas_px": [
-    59547.5,
-    20050.0,
-    2743.0
-  ]
+  "rule_note": "silver base ROI; true black connected components inside base; circular dark-core holes are matched to a lightweight STEP-derived three-hole template for stable hole_small/hole_large/hole_screw naming; base_hole_source=raw_depth_candidate_template; radius is weak naming evidence only",
+  "base_hole_source": "raw_depth_candidate_template",
+  "depth_hole_match_info": {
+    "depth_template_fit_error_ratio": 0.09736792950145211,
+    "depth_template_score": 16.359671753353524,
+    "depth_candidate_count": 3,
+    "weak_radius_size_score": 0.07252778033109383,
+    "hole_large_boss_nearness_score": 0.14857138906206402
+  },
+  "depth_notes": "Hole pixel is the black-hole center. Depth is not read at the hole center; it is the median of the surrounding silver ring. Raw depth invalid cores are preferred for pixel centers when the three circular boss holes are visible.",
+  "status": "ok",
+  "warnings": [],
+  "base_hole_frame_yaw_deg_image": 57.835887528370336,
+  "debug_notes": "base-hole image orientation only; not a gripper grasp yaw"
 }

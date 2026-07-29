@@ -1,187 +1,25 @@
 [
   {
-    "class_name": "Screw",
-    "center_u": 277.7,
-    "center_v": 378.6,
-    "bbox_x": 258,
-    "bbox_y": 357,
-    "bbox_w": 38,
-    "bbox_h": 44,
-    "area_px": 1017.5,
-    "yaw_deg": -63.43,
-    "confidence": "high",
-    "rule_note": "small red component; compact non-gear geometry; center from red outer-shape minAreaRect",
-    "type_certain": true,
-    "classification_status": "certain",
-    "classification_reason": "small red component; compact non-gear geometry",
-    "classification_set_complete": null,
-    "gear_outer_radius_px": null,
-    "gear_inner_square_center": null,
-    "grasp_hint_2d": null,
-    "rect_width_px": null,
-    "rect_height_px": null,
-    "long_side_px": null,
-    "short_side_px": null,
-    "edge_midpoints_2d": null,
-    "grasp_candidates_2d": null,
-    "base_contour_area": null,
-    "base_rotated_rect": null,
-    "base_hole_candidates_2d": null,
-    "center_px": [
-      277.7,
-      378.6
-    ],
-    "camera_x_m": -0.05417885281458604,
-    "camera_y_m": 0.13428760476316465,
-    "camera_z_m": 0.6812182599203891,
-    "camera_frame_id": "camera_color_optical_frame",
-    "depth_valid": true,
-    "depth_m": 0.6812182599203891,
-    "depth_source": "rgb_ray_table_intersection",
-    "ray_table_intersection_valid": true,
-    "ray_table_intersection_reason": null,
-    "table_z_m": 0.0,
-    "center_camera_on_table_m": [
-      -0.05417885281458604,
-      0.13428760476316465,
-      0.6812182599203891
-    ],
-    "used_depth_source": "rgb_ray_table_intersection"
-  },
-  {
     "class_name": "Gear_compound",
-    "center_u": 381.86,
-    "center_v": 281.91,
-    "bbox_x": 303,
-    "bbox_y": 202,
-    "bbox_w": 160,
-    "bbox_h": 157,
-    "area_px": 17938.5,
-    "yaw_deg": 45.0,
-    "confidence": "medium",
-    "rule_note": "large remaining gear with few through-holes; size/structure fallback, not y-position only; center from inner square",
-    "type_certain": true,
-    "classification_status": "certain",
-    "classification_reason": "all three gear candidates detected; label refined jointly by hole structure and relative size",
-    "classification_set_complete": true,
-    "gear_outer_radius_px": 80.4,
-    "gear_inner_square_center": [
-      381.8555304740406,
-      281.91497366440933
-    ],
-    "grasp_hint_2d": [
-      381.86,
-      281.91
-    ],
-    "rect_width_px": null,
-    "rect_height_px": null,
-    "long_side_px": null,
-    "short_side_px": null,
-    "edge_midpoints_2d": null,
-    "grasp_candidates_2d": null,
-    "base_contour_area": null,
-    "base_rotated_rect": null,
-    "base_hole_candidates_2d": null,
-    "center_px": [
-      381.86,
-      281.91
-    ],
-    "camera_x_m": 0.06087343129135851,
-    "camera_y_m": 0.024658148740010932,
-    "camera_z_m": 0.6593933912225592,
-    "camera_frame_id": "camera_color_optical_frame",
-    "depth_valid": true,
-    "depth_m": 0.6593933912225592,
-    "depth_source": "rgb_ray_table_intersection",
-    "ray_table_intersection_valid": true,
-    "ray_table_intersection_reason": null,
-    "table_z_m": 0.0,
-    "center_camera_on_table_m": [
-      0.06087343129135851,
-      0.024658148740010932,
-      0.6593933912225592
-    ],
-    "used_depth_source": "rgb_ray_table_intersection"
-  },
-  {
-    "class_name": "Gear_small",
-    "center_u": 334.68,
-    "center_v": 139.25,
-    "bbox_x": 282,
-    "bbox_y": 83,
-    "bbox_w": 107,
-    "bbox_h": 110,
-    "area_px": 7791.5,
-    "yaw_deg": 48.81,
-    "confidence": "high",
-    "rule_note": "smallest gear candidate; central-hole evidence included; center from inner square",
-    "type_certain": true,
-    "classification_status": "certain",
-    "classification_reason": "all three gear candidates detected; label refined jointly by hole structure and relative size",
-    "classification_set_complete": true,
-    "gear_outer_radius_px": 55.01,
-    "gear_inner_square_center": [
-      334.6828427472819,
-      139.25165738530893
-    ],
-    "grasp_hint_2d": [
-      334.68,
-      139.25
-    ],
-    "rect_width_px": null,
-    "rect_height_px": null,
-    "long_side_px": null,
-    "short_side_px": null,
-    "edge_midpoints_2d": null,
-    "grasp_candidates_2d": null,
-    "base_contour_area": null,
-    "base_rotated_rect": null,
-    "base_hole_candidates_2d": null,
-    "center_px": [
-      334.68,
-      139.25
-    ],
-    "camera_x_m": 0.009387408084230123,
-    "camera_y_m": -0.12857423807548496,
-    "camera_z_m": 0.6484433771996725,
-    "camera_frame_id": "camera_color_optical_frame",
-    "depth_valid": true,
-    "depth_m": 0.6484433771996725,
-    "depth_source": "rgb_ray_table_intersection",
-    "ray_table_intersection_valid": true,
-    "ray_table_intersection_reason": null,
-    "table_z_m": 0.0,
-    "center_camera_on_table_m": [
-      0.009387408084230123,
-      -0.12857423807548496,
-      0.6484433771996725
-    ],
-    "used_depth_source": "rgb_ray_table_intersection"
-  },
-  {
-    "class_name": "Gear_large",
-    "center_u": 542.96,
-    "center_v": 162.06,
-    "bbox_x": 451,
-    "bbox_y": 70,
-    "bbox_w": 167,
-    "bbox_h": 182,
-    "area_px": 22948.0,
+    "center_u": 590.52,
+    "center_v": 195.22,
+    "bbox_x": 546,
+    "bbox_y": 99,
+    "bbox_w": 72,
+    "bbox_h": 190,
+    "area_px": 8936.5,
     "yaw_deg": -90.0,
-    "confidence": "high",
-    "rule_note": "largest multi-hole gear; 5 significant holes; center from inner square",
-    "type_certain": true,
-    "classification_status": "certain",
-    "classification_reason": "all three gear candidates detected; label refined jointly by hole structure and relative size",
-    "classification_set_complete": true,
-    "gear_outer_radius_px": 93.89,
-    "gear_inner_square_center": [
-      542.9578877005348,
-      162.06216577540107
-    ],
+    "confidence": "medium",
+    "rule_note": "large gear-like contour; compound structure inferred by size and few through-holes",
+    "type_certain": false,
+    "classification_status": "uncertain",
+    "classification_reason": "only 1 of 3 expected gear candidates detected; class_name is an absolute-geometry best guess",
+    "classification_set_complete": false,
+    "gear_outer_radius_px": 94.69,
+    "gear_inner_square_center": null,
     "grasp_hint_2d": [
-      542.96,
-      162.06
+      590.52,
+      195.22
     ],
     "rect_width_px": null,
     "rect_height_px": null,
@@ -193,196 +31,36 @@
     "base_rotated_rect": null,
     "base_hole_candidates_2d": null,
     "center_px": [
-      542.96,
-      162.06
+      590.52,
+      195.22
     ],
-    "camera_x_m": 0.22606401665223255,
-    "camera_y_m": -0.10138119988813743,
-    "camera_z_m": 0.6312696335548547,
+    "camera_x_m": 0.27517393984247507,
+    "camera_y_m": -0.06669690348780527,
+    "camera_z_m": 0.6302980203929172,
     "camera_frame_id": "camera_color_optical_frame",
     "depth_valid": true,
-    "depth_m": 0.6312696335548547,
+    "depth_m": 0.6302980203929172,
     "depth_source": "rgb_ray_table_intersection",
     "ray_table_intersection_valid": true,
     "ray_table_intersection_reason": null,
     "table_z_m": 0.0,
     "center_camera_on_table_m": [
-      0.22606401665223255,
-      -0.10138119988813743,
-      0.6312696335548547
-    ],
-    "used_depth_source": "rgb_ray_table_intersection"
-  },
-  {
-    "class_name": "Shaft_large",
-    "center_u": 204.58,
-    "center_v": 396.5,
-    "bbox_x": 184,
-    "bbox_y": 373,
-    "bbox_w": 43,
-    "bbox_h": 45,
-    "area_px": 993.0,
-    "yaw_deg": 33.69,
-    "confidence": "high",
-    "rule_note": "largest of two valid white rectangular components; white rectangular component with smaller rotated area; shaft_score=5.00, rectangularity=0.87, aspect=1.09",
-    "type_certain": true,
-    "classification_status": "certain",
-    "classification_reason": "two shaft candidates detected with sufficient rotated-area separation",
-    "classification_set_complete": true,
-    "gear_outer_radius_px": null,
-    "gear_inner_square_center": null,
-    "grasp_hint_2d": null,
-    "rect_width_px": 32.45,
-    "rect_height_px": 35.22,
-    "long_side_px": 35.22,
-    "short_side_px": 32.45,
-    "edge_midpoints_2d": [
-      [
-        196.73077392578125,
-        409.15380859375
-      ],
-      [
-        191.07693481445312,
-        385.88458251953125
-      ],
-      [
-        214.73077392578125,
-        382.15380859375
-      ],
-      [
-        220.38461303710938,
-        405.42303466796875
-      ]
-    ],
-    "grasp_candidates_2d": [
-      [
-        205.73077392578125,
-        395.65380859375
-      ],
-      [
-        212.1784657252488,
-        399.95227037531436
-      ],
-      [
-        199.2830821263137,
-        391.35534681218564
-      ]
-    ],
-    "base_contour_area": null,
-    "base_rotated_rect": null,
-    "base_hole_candidates_2d": null,
-    "shaft_size_margin_ratio": 0.2213,
-    "center_px": [
-      204.58,
-      396.5
-    ],
-    "camera_x_m": -0.13837161215253357,
-    "camera_y_m": 0.15671064414616942,
-    "camera_z_m": 0.6912697887334661,
-    "camera_frame_id": "camera_color_optical_frame",
-    "depth_valid": true,
-    "depth_m": 0.6912697887334661,
-    "depth_source": "rgb_ray_table_intersection",
-    "ray_table_intersection_valid": true,
-    "ray_table_intersection_reason": null,
-    "table_z_m": 0.0,
-    "center_camera_on_table_m": [
-      -0.13837161215253357,
-      0.15671064414616942,
-      0.6912697887334661
-    ],
-    "used_depth_source": "rgb_ray_table_intersection"
-  },
-  {
-    "class_name": "Shaft_small",
-    "center_u": 241.94,
-    "center_v": 244.23,
-    "bbox_x": 227,
-    "bbox_y": 229,
-    "bbox_w": 32,
-    "bbox_h": 31,
-    "area_px": 817.5,
-    "yaw_deg": -4.4,
-    "confidence": "high",
-    "rule_note": "smaller of two valid white rectangular components; white rectangular component with smaller rotated area; shaft_score=4.89, rectangularity=0.92, aspect=1.01",
-    "type_certain": true,
-    "classification_status": "certain",
-    "classification_reason": "two shaft candidates detected with sufficient rotated-area separation",
-    "classification_set_complete": true,
-    "gear_outer_radius_px": null,
-    "gear_inner_square_center": null,
-    "grasp_hint_2d": null,
-    "rect_width_px": 29.99,
-    "rect_height_px": 29.68,
-    "long_side_px": 29.99,
-    "short_side_px": 29.68,
-    "edge_midpoints_2d": [
-      [
-        227.09703063964844,
-        245.26174926757812
-      ],
-      [
-        240.90879821777344,
-        229.314697265625
-      ],
-      [
-        256.99700927734375,
-        242.96176147460938
-      ],
-      [
-        243.1852569580078,
-        258.9088134765625
-      ]
-    ],
-    "grasp_candidates_2d": [
-      [
-        242.04702758789062,
-        244.11175537109375
-      ],
-      [
-        248.62502795625898,
-        243.60575532803458
-      ],
-      [
-        235.46902721952227,
-        244.61775541415292
-      ]
-    ],
-    "base_contour_area": null,
-    "base_rotated_rect": null,
-    "base_hole_candidates_2d": null,
-    "shaft_size_margin_ratio": 0.2213,
-    "center_px": [
-      241.94,
-      244.23
-    ],
-    "camera_x_m": -0.09272077798004734,
-    "camera_y_m": -0.01663425888841147,
-    "camera_z_m": 0.6693125557330643,
-    "camera_frame_id": "camera_color_optical_frame",
-    "depth_valid": true,
-    "depth_m": 0.6693125557330643,
-    "depth_source": "rgb_ray_table_intersection",
-    "ray_table_intersection_valid": true,
-    "ray_table_intersection_reason": null,
-    "table_z_m": 0.0,
-    "center_camera_on_table_m": [
-      -0.09272077798004734,
-      -0.01663425888841147,
-      0.6693125557330643
+      0.27517393984247507,
+      -0.06669690348780527,
+      0.6302980203929172
     ],
     "used_depth_source": "rgb_ray_table_intersection"
   },
   {
     "class_name": "Base",
-    "center_u": 164.43,
-    "center_v": 216.75,
-    "bbox_x": 87,
-    "bbox_y": 101,
-    "bbox_w": 153,
-    "bbox_h": 237,
-    "area_px": 16922.5,
-    "yaw_deg": 46.97,
+    "center_u": 117.96,
+    "center_v": 260.23,
+    "bbox_x": 23,
+    "bbox_y": 0,
+    "bbox_w": 229,
+    "bbox_h": 480,
+    "area_px": 49350.0,
+    "yaw_deg": -87.06,
     "confidence": "high",
     "rule_note": "largest neutral-gray object; border-tolerant base candidate; black insert holes detected separately",
     "type_certain": true,
@@ -398,236 +76,56 @@
     "short_side_px": null,
     "edge_midpoints_2d": null,
     "grasp_candidates_2d": null,
-    "base_contour_area": 16922.5,
+    "base_contour_area": 49350.0,
     "base_rotated_rect": {
       "center": [
-        197.83255004882812,
-        222.85630798339844
+        132.5245819091797,
+        239.27047729492188
       ],
       "size": [
-        182.81256103515625,
-        183.9822540283203
+        490.0483093261719,
+        219.50640869140625
       ],
-      "yaw_deg": 46.97493362426758,
+      "yaw_deg": -87.06432342529297,
       "box_points": [
         [
-          193.77674865722656,
-          352.4750671386719
+          229.58489990234375,
+          489.59405517578125
         ],
         [
-          68.24227905273438,
-          217.97389221191406
+          10.366540908813477,
+          478.35211181640625
         ],
         [
-          201.8883514404297,
-          93.237548828125
+          35.464263916015625,
+          -11.0531005859375
         ],
         [
-          327.4228210449219,
-          227.7387237548828
+          254.6826171875,
+          0.1888427734375
         ]
       ]
     },
     "base_hole_candidates_2d": null,
     "base_insert_holes_2d": [],
     "center_px": [
-      164.43,
-      216.75
+      117.96,
+      260.23
     ],
-    "camera_x_m": -0.17960686070291557,
-    "camera_y_m": -0.047360481262503085,
-    "camera_z_m": 0.6741691634483656,
+    "camera_x_m": -0.23473905686856783,
+    "camera_y_m": 0.0010807071803690116,
+    "camera_z_m": 0.684208372556582,
     "camera_frame_id": "camera_color_optical_frame",
     "depth_valid": true,
-    "depth_m": 0.6741691634483656,
+    "depth_m": 0.684208372556582,
     "depth_source": "rgb_ray_table_intersection",
     "ray_table_intersection_valid": true,
     "ray_table_intersection_reason": null,
     "table_z_m": 0.0,
     "center_camera_on_table_m": [
-      -0.17960686070291557,
-      -0.047360481262503085,
-      0.6741691634483656
-    ],
-    "used_depth_source": "rgb_ray_table_intersection"
-  },
-  {
-    "class_name": "base_hole_large",
-    "center_u": 190.83,
-    "center_v": 310.73,
-    "bbox_x": 179,
-    "bbox_y": 299,
-    "bbox_w": 25,
-    "bbox_h": 24,
-    "area_px": 438.0,
-    "yaw_deg": null,
-    "confidence": "high",
-    "rule_note": "dark insert-hole contour inside base ROI; center from ellipse/circle fit",
-    "type_certain": true,
-    "classification_status": "certain",
-    "classification_reason": "all three holes detected with sufficient large/small size separation",
-    "classification_set_complete": true,
-    "gear_outer_radius_px": null,
-    "gear_inner_square_center": null,
-    "grasp_hint_2d": null,
-    "rect_width_px": null,
-    "rect_height_px": null,
-    "long_side_px": null,
-    "short_side_px": null,
-    "edge_midpoints_2d": null,
-    "grasp_candidates_2d": null,
-    "base_contour_area": null,
-    "base_rotated_rect": null,
-    "base_hole_candidates_2d": null,
-    "hole_name": "hole_large",
-    "hole_radius_px": 12.5,
-    "hole_ellipse_major_px": 24.45,
-    "hole_ellipse_minor_px": 23.32,
-    "hole_circularity": 0.9141,
-    "hole_boundary_distance_px": 25.43,
-    "hole_assignment_confidence": "high",
-    "detected_hole_count": 3,
-    "expected_hole_count": 3,
-    "hole_size_margin_ratio": 0.1276,
-    "hole_assignment_rule": "middle hole among the three base holes is screw; remaining holes use ellipse-minor diameter first and silver-ring support as tie-breaker",
-    "center_px": [
-      190.83,
-      310.73
-    ],
-    "camera_x_m": -0.1520823339592201,
-    "camera_y_m": 0.05801040716718081,
-    "camera_z_m": 0.6824248357583973,
-    "camera_frame_id": "camera_color_optical_frame",
-    "depth_valid": true,
-    "depth_m": 0.6824248357583973,
-    "depth_source": "rgb_ray_table_intersection",
-    "ray_table_intersection_valid": true,
-    "ray_table_intersection_reason": null,
-    "table_z_m": 0.0,
-    "center_camera_on_table_m": [
-      -0.1520823339592201,
-      0.05801040716718081,
-      0.6824248357583973
-    ],
-    "used_depth_source": "rgb_ray_table_intersection"
-  },
-  {
-    "class_name": "base_hole_small",
-    "center_u": 201.65,
-    "center_v": 132.82,
-    "bbox_x": 191,
-    "bbox_y": 122,
-    "bbox_w": 23,
-    "bbox_h": 22,
-    "area_px": 352.5,
-    "yaw_deg": null,
-    "confidence": "high",
-    "rule_note": "dark insert-hole contour inside base ROI; center from ellipse/circle fit",
-    "type_certain": true,
-    "classification_status": "certain",
-    "classification_reason": "all three holes detected with sufficient large/small size separation",
-    "classification_set_complete": true,
-    "gear_outer_radius_px": null,
-    "gear_inner_square_center": null,
-    "grasp_hint_2d": null,
-    "rect_width_px": null,
-    "rect_height_px": null,
-    "long_side_px": null,
-    "short_side_px": null,
-    "edge_midpoints_2d": null,
-    "grasp_candidates_2d": null,
-    "base_contour_area": null,
-    "base_rotated_rect": null,
-    "base_hole_candidates_2d": null,
-    "hole_name": "hole_small",
-    "hole_radius_px": 11.8,
-    "hole_ellipse_major_px": 22.68,
-    "hole_ellipse_minor_px": 20.34,
-    "hole_circularity": 0.8232,
-    "hole_boundary_distance_px": 20.2,
-    "hole_assignment_confidence": "high",
-    "detected_hole_count": 3,
-    "expected_hole_count": 3,
-    "hole_size_margin_ratio": 0.1276,
-    "hole_assignment_rule": "middle hole among the three base holes is screw; remaining holes use ellipse-minor diameter first and silver-ring support as tie-breaker",
-    "center_px": [
-      201.65,
-      132.82
-    ],
-    "camera_x_m": -0.1354702072544814,
-    "camera_y_m": -0.13804708115277226,
-    "camera_z_m": 0.660816431659123,
-    "camera_frame_id": "camera_color_optical_frame",
-    "depth_valid": true,
-    "depth_m": 0.660816431659123,
-    "depth_source": "rgb_ray_table_intersection",
-    "ray_table_intersection_valid": true,
-    "ray_table_intersection_reason": null,
-    "table_z_m": 0.0,
-    "center_camera_on_table_m": [
-      -0.1354702072544814,
-      -0.13804708115277226,
-      0.660816431659123
-    ],
-    "used_depth_source": "rgb_ray_table_intersection"
-  },
-  {
-    "class_name": "base_hole_screw",
-    "center_u": 109.49,
-    "center_v": 217.7,
-    "bbox_x": 98,
-    "bbox_y": 207,
-    "bbox_w": 24,
-    "bbox_h": 22,
-    "area_px": 389.5,
-    "yaw_deg": null,
-    "confidence": "high",
-    "rule_note": "dark insert-hole contour inside base ROI; center from ellipse/circle fit",
-    "type_certain": true,
-    "classification_status": "certain",
-    "classification_reason": "all three holes detected with sufficient large/small size separation",
-    "classification_set_complete": true,
-    "gear_outer_radius_px": null,
-    "gear_inner_square_center": null,
-    "grasp_hint_2d": null,
-    "rect_width_px": null,
-    "rect_height_px": null,
-    "long_side_px": null,
-    "short_side_px": null,
-    "edge_midpoints_2d": null,
-    "grasp_candidates_2d": null,
-    "base_contour_area": null,
-    "base_rotated_rect": null,
-    "base_hole_candidates_2d": null,
-    "hole_name": "hole_screw",
-    "hole_radius_px": 12.1,
-    "hole_ellipse_major_px": 23.87,
-    "hole_ellipse_minor_px": 21.06,
-    "hole_circularity": 0.862,
-    "hole_boundary_distance_px": 21.44,
-    "hole_assignment_confidence": "high",
-    "detected_hole_count": 3,
-    "expected_hole_count": 3,
-    "hole_size_margin_ratio": 0.1276,
-    "hole_assignment_rule": "middle hole among the three base holes is screw; remaining holes use ellipse-minor diameter first and silver-ring support as tie-breaker",
-    "center_px": [
-      109.49,
-      217.7
-    ],
-    "camera_x_m": -0.24281874179424578,
-    "camera_y_m": -0.04670692674341681,
-    "camera_z_m": 0.6800586852125999,
-    "camera_frame_id": "camera_color_optical_frame",
-    "depth_valid": true,
-    "depth_m": 0.6800586852125999,
-    "depth_source": "rgb_ray_table_intersection",
-    "ray_table_intersection_valid": true,
-    "ray_table_intersection_reason": null,
-    "table_z_m": 0.0,
-    "center_camera_on_table_m": [
-      -0.24281874179424578,
-      -0.04670692674341681,
-      0.6800586852125999
+      -0.23473905686856783,
+      0.0010807071803690116,
+      0.684208372556582
     ],
     "used_depth_source": "rgb_ray_table_intersection"
   }

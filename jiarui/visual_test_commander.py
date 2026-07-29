@@ -9,11 +9,26 @@ from geometry_msgs.msg import PoseStamped
 from control_msgs.action import GripperCommand  
 from moveit_msgs.msg import MoveItErrorCodes, Constraints, PositionConstraint, OrientationConstraint, BoundingVolume
 from shape_msgs.msg import SolidPrimitive       
+from rcl_interfaces.srv import SetParameters
+from rclpy.parameter import Parameter
 from vision_common import force_control_part_name
 
 '''
 测试从视觉系统直接输出的坐标进行机械臂控制
 '''
+
+BASE_HOLE_BY_INSERT_PART = {
+    "Shaft_small": "hole_small",
+    "Shaft_large": "hole_large",
+    "Screw": "hole_screw",
+}
+
+# Existing force_control placement tool heights above the detected base plane.
+ASSEMBLY_TOOL_HEIGHT_BY_PART_M = {
+    "Shaft_small": 0.17,
+    "Shaft_large": 0.19,
+    "Screw": 0.22,
+}
 
 class VisionTestCommander(Node):
     def __init__(self):
@@ -27,8 +42,15 @@ class VisionTestCommander(Node):
         self.local_subs = {}   # 存储不同零件的 local 订阅器
         
         # 2. 控制参数
-        self.CAMERA_HAND_OFFSET = 0.05     # 视觉坐标到机械臂末端的偏移
         self.LOCAL_OB_HIGHT = 0.4           # 局部观测的悬停高度
+
+        self.declare_parameter("local_vision_node", "/local_vision_force_adapter")
+        self.declare_parameter("target_part", "Shaft_large")
+        self.declare_parameter("execute_assembly_descent", False)
+        local_node = str(self.get_parameter("local_vision_node").value).rstrip("/")
+        self._local_parameter_client = self.create_client(
+            SetParameters, f"{local_node}/set_parameters"
+        )
 
         self._arm_client = ActionClient(self, MoveGroup, 'move_action')
         self._gripper_client = ActionClient(self, GripperCommand, '/panda_gripper/gripper_action') 
@@ -98,6 +120,50 @@ class VisionTestCommander(Node):
             rclpy.spin_once(self, timeout_sec=0.1)
             
         return self.global_pose_buffer[target_part_name]
+
+    def wait_for_global_part_and_base(self, target_part_name: str):
+        """Acquire target and Base from the same running Global stage."""
+        names = (target_part_name, "Base")
+        for name in names:
+            self._ensure_subscriptions(name)
+            self.global_pose_buffer.pop(name, None)
+        self.get_logger().info(
+            f"⏳ 等待 Global 同时提供 {target_part_name} 与 Base..."
+        )
+        while rclpy.ok() and any(
+            name not in self.global_pose_buffer for name in names
+        ):
+            rclpy.spin_once(self, timeout_sec=0.1)
+        return tuple(self.global_pose_buffer[name] for name in names)
+
+    def set_local_detection_target(self, target_part: str, hole_target: str):
+        """Switch Local detector and require the ROS parameter update to succeed."""
+        if not self._local_parameter_client.wait_for_service(timeout_sec=20.0):
+            raise RuntimeError(
+                "Local vision parameter service is unavailable; start the Local stage"
+            )
+        request = SetParameters.Request()
+        request.parameters = [
+            Parameter("target_part", value=target_part).to_parameter_msg(),
+            Parameter("base_hole_target", value=hole_target).to_parameter_msg(),
+        ]
+        future = self._local_parameter_client.call_async(request)
+        rclpy.spin_until_future_complete(self, future)
+        response = future.result()
+        if response is None or len(response.results) != 2:
+            raise RuntimeError("Local vision returned an incomplete parameter response")
+        failures = [
+            result.reason or "parameter rejected"
+            for result in response.results
+            if not result.successful
+        ]
+        if failures:
+            raise RuntimeError("Local target switch failed: " + "; ".join(failures))
+        self.local_pose_buffer.clear()
+        self.get_logger().info(
+            f"✅ Local 检测目标已切换: target_part={target_part}, "
+            f"base_hole_target={hole_target}"
+        )
 
     def wait_for_local_data(self, target_part_name: str) -> PoseStamped:
         """阻塞等待直到获取指定零件的局部位姿"""
@@ -205,6 +271,12 @@ class VisionTestCommander(Node):
         # Accept notebook-style aliases such as Gear_large, but always subscribe
         # to the canonical force-control topic name Gear_large_handle.
         target_part_name = force_control_part_name(target_part_name)
+        if target_part_name not in BASE_HOLE_BY_INSERT_PART:
+            raise ValueError(
+                "Base/hole Local 装配阶段只适用于 Shaft_small、Shaft_large、Screw；"
+                "齿轮应以相应 Shaft 为装配目标，不能映射到 Base hole"
+            )
+        assembly_hole = BASE_HOLE_BY_INSERT_PART[target_part_name]
         
         self.send_gripper_goal(position=0.08)  # 
         # STATE 0: 移至全局高位视角
@@ -212,9 +284,13 @@ class VisionTestCommander(Node):
         self.move_to_pose(x=0.4, y=0.0, z=0.6) # 默认垂直向下
         
         # STATE 1: 等待全局视觉输出粗略 XYZ
-        global_pose_msg = self.wait_for_global_data(target_part_name)
+        global_pose_msg, global_base_pose_msg = self.wait_for_global_part_and_base(
+            target_part_name
+        )
         
-        g_x = global_pose_msg.pose.position.x + self.CAMERA_HAND_OFFSET
+        # Global PoseStamped is already in panda_link0; never add a fixed
+        # camera-to-hand offset here.
+        g_x = global_pose_msg.pose.position.x
         g_y = global_pose_msg.pose.position.y
         g_z = self.LOCAL_OB_HIGHT
 
@@ -248,13 +324,67 @@ class VisionTestCommander(Node):
 
         self.move_to_pose(l_x, l_y, l_z, q_w, q_x, q_y, q_z)  # 抓取后抬起到悬停高度
 
+        # STATE 6: Use cached Global Base pose to bring the camera over the base.
+        self.get_logger().info("\n--- STATE 6: 移至 Base 上方进行装配孔 Local 检测 ---")
+        base_x = global_base_pose_msg.pose.position.x
+        base_y = global_base_pose_msg.pose.position.y
+        self.move_to_pose(base_x, base_y, self.LOCAL_OB_HIGHT)
+
+        # The same Local stage is switched at runtime. Its adapter clears the
+        # old consensus and publishes only the requested semantic hole.
+        self.set_local_detection_target("Base", assembly_hole)
+        hole_pose_msg = self.wait_for_local_data(assembly_hole)
+        hole_pose = hole_pose_msg.pose
+        h_x = hole_pose.position.x
+        h_y = hole_pose.position.y
+        # Base-hole notebook output defines a position, not a grasp yaw. Keep
+        # the already verified tool-down grasp orientation while carrying the
+        # part; do not interpret the hole's legal identity quaternion as a TCP
+        # assembly orientation.
+        h_qx, h_qy, h_qz, h_qw = q_x, q_y, q_z, q_w
+
+        # STATE 7: Always verify alignment above the hole first.
+        self.get_logger().info(
+            f"\n--- STATE 7: 对准装配孔 {assembly_hole} 上方 ---"
+        )
+        self.move_to_pose(
+            h_x, h_y, self.LOCAL_OB_HIGHT, h_qw, h_qx, h_qy, h_qz
+        )
+
+        # Physical descent is explicitly gated. The target heights are copied
+        # from force_control.py; no new insertion offset is invented here.
+        if bool(self.get_parameter("execute_assembly_descent").value):
+            target_tool_z = (
+                hole_pose.position.z
+                + ASSEMBLY_TOOL_HEIGHT_BY_PART_M[target_part_name]
+            )
+            self.get_logger().warning(
+                f"执行装配下降: target_tool_z={target_tool_z:.3f} m"
+            )
+            self.move_to_pose(
+                h_x, h_y, target_tool_z, h_qw, h_qx, h_qy, h_qz,
+                use_linear=True, vel=0.10, acc=0.03,
+            )
+            self.send_gripper_goal(position=0.08)
+            self.move_to_pose(
+                h_x, h_y, self.LOCAL_OB_HIGHT, h_qw, h_qx, h_qy, h_qz
+            )
+            self.get_logger().info("🎉 Base/hole Local 装配阶段完成")
+        else:
+            self.get_logger().warning(
+                "已完成装配孔视觉对准，但 execute_assembly_descent=false，"
+                "未执行物理下降和释放"
+            )
+
 def main(args=None):
     rclpy.init(args=args)
     commander = VisionTestCommander()
         
     try:
-        # 传入的字符串会被动态拼装进 Topic 中： /vision/global/Shaft_large/pose
-        commander.run_assembly_test(target_part_name="Shaft_large")
+        # The name is normalized before topic construction.
+        commander.run_assembly_test(
+            target_part_name=str(commander.get_parameter("target_part").value)
+        )
     except KeyboardInterrupt:
         pass
     finally:

@@ -29,8 +29,38 @@ class VisionTestCommander(Node):
         self._arm_client = ActionClient(self, MoveGroup, 'move_action')
         self._gripper_client = ActionClient(self, GripperCommand, '/panda_gripper/gripper_action') 
 
-        self._arm_client.wait_for_server()
-        self._gripper_client.wait_for_server()
+        self.get_logger().info("等待 MoveIt action /move_action ...")
+        if not self._arm_client.wait_for_server(timeout_sec=10.0):
+            raise RuntimeError(
+                "10 秒内未发现 /move_action。请先启动 Franka MoveIt，并确认 ROS_DOMAIN_ID 一致。"
+            )
+
+        # Direct-pose movement does not use the gripper. Do not block startup
+        # when the optional gripper action is absent or has a different name.
+        if self._gripper_client.wait_for_server(timeout_sec=0.2):
+            self.get_logger().info("检测到可选夹爪 action /panda_gripper/gripper_action")
+        else:
+            self.get_logger().warning(
+                "未检测到可选夹爪 action；本次直接位姿移动不使用夹爪，可继续。"
+            )
+
+        # Direct-pose test parameters. Override them with --ros-args -p ...
+        # so recorded vision coordinates can be tested without editing source.
+        direct_pose_defaults = {
+            "target_x": 0.357124617,
+            "target_y": 0.000100923,
+            "target_z": 0.696015951,
+            "target_q_x": 1.0,
+            "target_q_y": 0.0,
+            "target_q_z": 0.0,
+            "target_q_w": 0.0,
+            "target_frame": "panda_link0",
+            "use_linear": False,
+            "velocity_scale": 0.05,
+            "acceleration_scale": 0.02,
+        }
+        for name, value in direct_pose_defaults.items():
+            self.declare_parameter(name, value)
 
         self.get_logger().info("✅ 纯控制端测试节点已启动，等待视觉坐标注入...")
 
@@ -79,8 +109,8 @@ class VisionTestCommander(Node):
         if abs(q_norm - 1.0) > 1e-3:
             self.get_logger().warning("WARNING: target quaternion norm is not close to 1.")
         if abs(q_x - 1.0) < 1e-9 and abs(q_y) < 1e-9 and abs(q_z) < 1e-9 and abs(q_w) < 1e-9:
-            self.get_logger().warning(
-                "WARNING: fixed quaternion [1,0,0,0] in ROS xyzw may not be a valid top-down reachable observation pose for Franka. IK may fail even if the target position is reachable."
+            self.get_logger().info(
+                "Using the workflow's fixed tool-down quaternion [1,0,0,0] in ROS xyzw."
             )
         if abs(q_w - 1.0) < 1e-9 and abs(q_x) < 1e-9 and abs(q_y) < 1e-9 and abs(q_z) < 1e-9:
             self.get_logger().warning(
@@ -186,8 +216,8 @@ class VisionTestCommander(Node):
         else:
             goal_msg.request.pipeline_id = "ompl"
             goal_msg.request.planner_id = "RRTConnectkConfigDefault"
-            goal_msg.request.max_velocity_scaling_factor = 0.5
-            goal_msg.request.max_acceleration_scaling_factor = 0.5
+            goal_msg.request.max_velocity_scaling_factor = vel
+            goal_msg.request.max_acceleration_scaling_factor = acc
 
         # 位置约束
         c1 = Constraints()
@@ -198,7 +228,7 @@ class VisionTestCommander(Node):
         bv = BoundingVolume()
         sp = SolidPrimitive()
         sp.type = SolidPrimitive.SPHERE
-        sp.dimensions = [0.001] 
+        sp.dimensions = [0.002]
         bv.primitives.append(sp)
         
         target_pose = PoseStamped()
@@ -218,9 +248,9 @@ class VisionTestCommander(Node):
         oc.orientation.x = q_x
         oc.orientation.y = q_y
         oc.orientation.z = q_z
-        oc.absolute_x_axis_tolerance = 0.01
-        oc.absolute_y_axis_tolerance = 0.01
-        oc.absolute_z_axis_tolerance = 0.01
+        oc.absolute_x_axis_tolerance = 0.03
+        oc.absolute_y_axis_tolerance = 0.03
+        oc.absolute_z_axis_tolerance = 0.03
         oc.weight = 1.0 
         c1.orientation_constraints.append(oc)
 
@@ -326,9 +356,28 @@ def main(args=None):
     rclpy.init(args=args)
     commander = VisionTestCommander()
     
-    target_position = [0.249680, -0.199175, 0.200000]
-    target_quat_xyzw = [0.818363, 0.574702, 0.0, 0.0]
-    target_frame = "world"
+    # Use a safe hover Z for vision-coordinate checks. A Local PoseStamped
+    # quaternion is planar object yaw, not a complete panda_hand orientation;
+    # keep the default tool-down quaternion unless it has been converted first.
+    target_position = [
+        float(commander.get_parameter("target_x").value),
+        float(commander.get_parameter("target_y").value),
+        float(commander.get_parameter("target_z").value),
+    ]
+    target_quat_xyzw = [
+        float(commander.get_parameter("target_q_x").value),
+        float(commander.get_parameter("target_q_y").value),
+        float(commander.get_parameter("target_q_z").value),
+        float(commander.get_parameter("target_q_w").value),
+    ]
+    target_frame = str(commander.get_parameter("target_frame").value)
+    use_linear = bool(commander.get_parameter("use_linear").value)
+    velocity_scale = float(
+        commander.get_parameter("velocity_scale").value
+    )
+    acceleration_scale = float(
+        commander.get_parameter("acceleration_scale").value
+    )
 
 
     try:
@@ -336,7 +385,7 @@ def main(args=None):
         commander.get_logger().info(
             f"move_to_link0_pose, 目标位置: {target_position}, 姿态 ROS xyzw: {target_quat_xyzw}, frame: {target_frame}"
         )
-        commander.move_to_pose(
+        moved = commander.move_to_pose(
             target_position[0],
             target_position[1],
             target_position[2],
@@ -344,8 +393,16 @@ def main(args=None):
             q_x=target_quat_xyzw[0],
             q_y=target_quat_xyzw[1],
             q_z=target_quat_xyzw[2],
+            use_linear=use_linear,
+            vel=velocity_scale,
+            acc=acceleration_scale,
+            max_retries=1,
             target_frame=target_frame,
         )
+        if moved:
+            commander.get_logger().info("目标运动由 MoveIt 报告为 SUCCESS。")
+        else:
+            commander.get_logger().error("目标运动未成功，机械臂未被确认移动到目标位置。")
     except KeyboardInterrupt:
         pass
     finally:
@@ -358,6 +415,6 @@ if __name__ == '__main__':
 
 
 
-# source /opt/ros/humble/setup.bash
+
 
 # python3 move_to_link0_pose.py

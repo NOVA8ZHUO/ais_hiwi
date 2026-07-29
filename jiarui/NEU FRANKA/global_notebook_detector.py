@@ -1,8 +1,6 @@
-#!/usr/bin/env python3
-# Generated from global_rgb_part_detection.ipynb by extract_notebook_cores.py.
-# Do not edit the notebook to update this file; rerun the extractor.
-
-from __future__ import annotations
+# AUTO-EXTRACTED FROM global_rgb_part_detection.ipynb. DO NOT RETUNE HERE.
+# Source SHA256: 5efe1218b3b6ed8c2b0e5440c678e969df769cbd4febb946f98cc2785bb85bef
+# Cells: 1,3,5,7,9,11,13,15,17 plus detect_live_frame_bgr from cell 22.
 
 """Rule-based global RGB detection for mechanical parts on a white worktable.
 
@@ -13,28 +11,17 @@ The detector intentionally uses only RGB data. It is organized so the masks and
 geometry thresholds can later be reused in an RGB-D eye-in-hand workflow.
 """
 
+from __future__ import annotations
 
 import csv
-
-
 import itertools
-
-
 import json
-
-
 import math
-
-
 from pathlib import Path
-
-
 from typing import Any
 
-
 import cv2
-
-
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -48,17 +35,11 @@ def find_project_root() -> Path:
 
 
 ROOT = find_project_root()
-
-
 IMAGE_PATH = Path("realsense_pic") / "realsense_color_20260618_135941.png"
-
-
 OUTPUT_DIR = ROOT / "output" / "global_detection"
 
-
+# Manual mask is preferred for the current fixed global camera view.
 USE_MANUAL_WORK_AREA = True
-
-
 MANUAL_WORK_AREA_POLYGON = np.array(
     [
         [20, 0],
@@ -68,280 +49,124 @@ MANUAL_WORK_AREA_POLYGON = np.array(
     ],
     dtype=np.int32,
 )
-
-
 WORK_MASK_ERODE_PX = 3
 
-
+# Red segmentation: OpenCV hue range is [0, 179].
+# Lower S/V thresholds make dark-red Gear_large teeth survive dim lighting.
 RED_MIN_SATURATION = 50
-
-
 RED_MIN_VALUE = 40
-
-
 RED_MIN_CHANNEL_MARGIN = 8
-
-
 RED_HSV_LOW_1 = (0, RED_MIN_SATURATION, RED_MIN_VALUE)
-
-
 RED_HSV_HIGH_1 = (12, 255, 255)
-
-
 RED_HSV_LOW_2 = (168, RED_MIN_SATURATION, RED_MIN_VALUE)
-
-
 RED_HSV_HIGH_2 = (179, 255, 255)
-
-
 USE_RED_MASK_DENOISE = True
-
-
 RED_DENOISE_DIAMETER = 5
-
-
 RED_DENOISE_SIGMA_COLOR = 35
-
-
 RED_DENOISE_SIGMA_SPACE = 35
-
-
 RED_OPEN_KERNEL_SIZE = 3
-
-
 RED_CLOSE_KERNEL_SIZE = 7
-
-
 RED_CLOSE_ITERATIONS = 2
-
-
 RED_DILATE_KERNEL_SIZE = 3
-
-
 RED_DILATE_ITERATIONS = 1
-
-
 RED_MIN_AREA_PX = 180
-
-
 RED_MAX_AREA_PX = 30000
-
-
+# Gear contours are much larger than the screw. This rejects thin red base
+# reflections/fragments without changing the three real gear thresholds.
 RED_GEAR_MIN_AREA_PX = 2500
-
-
 RED_SCREW_MAX_AREA_PX = 1500
-
-
 RED_SCREW_MAX_DIM_PX = 65
-
-
 RED_SCREW_MIN_AREA_PX = 260
-
-
 RED_SCREW_MIN_CIRCULARITY = 0.42
-
-
 RED_SCREW_MIN_EXTENT = 0.30
-
-
 RED_SCREW_MIN_DISTANCE_FROM_SHAFT_PX = 24.0
-
-
 RED_HOLE_MIN_AREA_PX = 90
-
-
 RED_GEAR_SMALL_MAX_EQ_DIAMETER_PX = 125
 
-
+# White shaft segmentation and filtering.
 WHITE_SHAFT_MAX_SATURATION = 85
-
-
 WHITE_SHAFT_MIN_VALUE = 118
-
-
 WHITE_SHAFT_MIN_L = 118
-
-
 WHITE_SHAFT_LAB_A_TOLERANCE = 28
-
-
 WHITE_SHAFT_LAB_B_TOLERANCE = 35
-
-
+# White shaft geometry is intentionally independent from black-object filters.
+# The small shaft can be dim/partially segmented under fixed global RGB settings,
+# so strict candidates are preferred but a relaxed fallback is allowed.
 WHITE_SHAFT_STRICT_MIN_AREA_PX = 420
-
-
 WHITE_SHAFT_RELAXED_MIN_AREA_PX = 180
-
-
 WHITE_SHAFT_MAX_AREA_PX = 5000
-
-
 WHITE_SHAFT_STRICT_MIN_RECTANGULARITY = 0.58
-
-
 WHITE_SHAFT_RELAXED_MIN_RECTANGULARITY = 0.36
-
-
 WHITE_SHAFT_STRICT_MIN_SHORT_SIDE_PX = 14
-
-
 WHITE_SHAFT_RELAXED_MIN_SHORT_SIDE_PX = 8
-
-
 WHITE_SHAFT_MAX_LONG_SIDE_PX = 120
-
-
 WHITE_SHAFT_MAX_ASPECT_RATIO = 4.2
-
-
 WHITE_SHAFT_MIN_SCORE = 2.55
-
-
 WHITE_SHAFT_RELAXED_MIN_SCORE = 2.05
 
-
+# Black object segmentation for insert-hole detection.
 BLACK_MAX_VALUE = 82
-
-
 BLACK_MIN_AREA_PX = 550
-
-
 BLACK_MAX_AREA_PX = 4200
-
-
 BLACK_MIN_RECTANGULARITY = 0.68
-
-
 BLACK_MAX_LONG_SIDE_PX = 90
-
-
 BLACK_MIN_SHORT_SIDE_PX = 18
-
-
 BLACK_MAX_CIRCULARITY_FOR_ROUND_BLOB = 0.86
-
-
 EXPECTED_SHAFT_COUNT = 2
 
-
+# True black insert-hole filtering inside the detected base contour.
+# This threshold is intentionally separate from BLACK_MAX_VALUE. Base holes can
+# look brighter under the silver-base illumination, while shaft segmentation
+# should remain strict.
 BASE_INSERT_HOLE_MAX_VALUE = 100
-
-
 BASE_INSERT_HOLE_OPEN_KERNEL = 3
-
-
 BASE_INSERT_HOLE_CLOSE_KERNEL = 3
-
-
 BASE_INSERT_HOLE_MIN_AREA = 220
-
-
 BASE_INSERT_HOLE_MAX_AREA = 2000
-
-
 BASE_INSERT_HOLE_MIN_RADIUS = 5.0
-
-
 BASE_INSERT_HOLE_MAX_RADIUS = 30.0
-
-
 BASE_INSERT_HOLE_MIN_CIRCULARITY = 0.74
-
-
 BASE_INSERT_HOLE_MIN_ASPECT_RATIO = 0.55
-
-
 BASE_INSERT_HOLE_MIN_ELLIPSE_ASPECT_RATIO = 0.62
-
-
 BASE_INSERT_HOLE_MIN_ENCLOSING_FILL_RATIO = 0.50
-
-
 BASE_INSERT_HOLE_MIN_RING_SCORE = 0.22
-
-
 BASE_INSERT_HOLE_MIN_BOUNDARY_DISTANCE = 3.0
-
-
 BASE_INSERT_HOLE_EXPECTED_COUNT = 3
 
-
+# Perspective fallback used only when the strict contour rules find fewer
+# than three holes. It accepts a moderately elongated dark core, then chooses
+# the candidate farthest from already accepted holes.
 BASE_INSERT_HOLE_RELAXED_MIN_AREA = 100
-
-
 BASE_INSERT_HOLE_RELAXED_MIN_CIRCULARITY = 0.65
-
-
 BASE_INSERT_HOLE_RELAXED_MIN_ASPECT_RATIO = 0.48
-
-
 BASE_INSERT_HOLE_RELAXED_MIN_DISTANCE_PX = 35.0
 
-
+# Silver base segmentation.
 SILVER_MAX_SATURATION = 95
-
-
 SILVER_MIN_VALUE = 85
-
-
 SILVER_MAX_VALUE = 245
-
-
 SILVER_MIN_L = 95
-
-
 SILVER_MAX_L = 235
-
-
 SILVER_LAB_A_TOLERANCE = 35
-
-
 SILVER_LAB_B_TOLERANCE = 45
-
-
 BASE_MIN_AREA_PX = 5000
-
-
 BASE_MAX_AREA_PX = 60000
-
-
 BASE_HOLE_MIN_RADIUS_PX = 12
-
-
 BASE_HOLE_MAX_RADIUS_PX = 31
-
-
 BASE_HOLE_HOUGH_PARAM2 = 18
 
-
+# General filtering.
 IMAGE_BORDER_MARGIN_PX = 5
-
-
 MASK_EXCLUSION_DILATE_PX = 7
-
-
 BASE_MIN_BORDER_VISIBLE_AREA_PX = 3200
-
-
 BASE_MIN_BORDER_RECT_AREA_PX = 9000
-
-
 BASE_BLACK_EXCLUSION_MAX_COMPONENT_AREA_PX = 2600
 
-
+# Output files.
 ANNOTATED_PATH = OUTPUT_DIR / "global_detection_result_black_holes.png"
-
-
 DEBUG_PATH = OUTPUT_DIR / "global_detection_debug_black_holes.png"
-
-
 CSV_PATH = OUTPUT_DIR / "global_detection_results.csv"
-
-
 JSON_PATH = OUTPUT_DIR / "global_detection_results.json"
-
 
 def load_image(path: str | Path) -> np.ndarray:
     """Load a BGR image from common project-relative locations."""
@@ -402,7 +227,6 @@ def create_work_area_mask(image: np.ndarray) -> np.ndarray:
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (size, size))
         mask = cv2.erode(mask, kernel, iterations=1)
     return mask
-
 
 def _odd_kernel(size: int) -> np.ndarray:
     size = max(1, int(size))
@@ -761,7 +585,6 @@ def _new_result(
         "_features": features,
     }
 
-
 def classify_red_part(
     contour: np.ndarray, image: np.ndarray, red_mask: np.ndarray | None = None
 ) -> tuple[str, str, str]:
@@ -912,7 +735,6 @@ def detect_red_parts(
             ]
 
     return candidates
-
 
 def classify_shaft(contour: np.ndarray) -> tuple[str, str, str]:
     """Provide a provisional shaft label; relative size is refined jointly."""
@@ -1114,7 +936,6 @@ def detect_white_shafts(
         )
         shaft["confidence"] = "high" if shaft_types_separated else shaft["confidence"]
     return shaft_candidates
-
 
 def detect_base_insert_holes_from_black_mask(
     image: np.ndarray,
@@ -1590,7 +1411,6 @@ def detect_silver_base(
     result["base_insert_holes_2d"] = []
     return [result]
 
-
 CLASS_COLORS = {
     "Gear_large": (20, 20, 255),
     "Gear_small": (0, 110, 255),
@@ -1704,7 +1524,6 @@ def show_and_save_debug(
     figure.tight_layout()
     figure.savefig(DEBUG_PATH, dpi=160, bbox_inches="tight")
     plt.show()
-
 
 OUTPUT_FIELDS = [
     "class_name", "center_u", "center_v",
@@ -1874,15 +1693,6 @@ def main() -> tuple[list[dict[str, Any]], dict[str, np.ndarray]]:
     }
 
 
-import time
-
-
-import numpy as np
-
-
-import cv2
-
-
 def detect_live_frame_bgr(color_bgr):
     """Run the existing notebook detection pipeline without saving anything."""
     work_mask = create_work_area_mask(color_bgr)
@@ -1958,542 +1768,3 @@ def detect_live_frame_bgr(color_bgr):
         "hole_candidate_debug": hole_candidate_debug,
     }
     return annotated, results, debug_views
-
-
-def run_realsense_global_detection_live():
-    """Open RealSense live view and keep the last frame as DETECTION_RESULTS.
-
-    After quitting with q/ESC, downstream cells use the final live frame instead
-    of the offline IMAGE_PATH result.
-    """
-    try:
-        import pyrealsense2 as rs
-    except ImportError:
-        print(
-            "pyrealsense2 is not installed. Install the RealSense Python "
-            "package before running this cell."
-        )
-        return
-
-    window_name = "RealSense Global Detection Live"
-    pipeline = rs.pipeline()
-    config = rs.config()
-    config.enable_stream(
-        rs.stream.color, 640, 480, rs.format.bgr8, 30
-    )
-
-    pipeline_started = False
-    previous_gray = None
-    stable_frame_count = 0
-    paused = False
-    display_mode_index = 0
-    last_display = None
-    last_results = []
-    last_color_bgr = None
-    last_annotated = None
-    last_debug_views = None
-    last_motion_score = 0.0
-    last_state = "MOVING"
-    fps = 0.0
-    previous_time = None
-    last_frame_timestamp_sec = None
-
-    previous_results_source = globals().get("DETECTION_RESULTS_SOURCE")
-    globals()["DETECTION_RESULTS_SOURCE"] = "RealSense live viewer started; no live frame processed yet"
-
-    try:
-        try:
-            profile = pipeline.start(config)
-            device = profile.get_device()
-            color_sensor = None
-            for sensor in device.query_sensors():
-                sensor_name = sensor.get_info(rs.camera_info.name)
-                if "RGB" in sensor_name or "Color" in sensor_name:
-                    color_sensor = sensor
-                    break
-            if color_sensor is not None:
-                # Previous live-view camera settings kept for reference:
-                # if color_sensor.supports(rs.option.power_line_frequency):
-                #     color_sensor.set_option(rs.option.power_line_frequency, 1)
-                # if color_sensor.supports(rs.option.brightness):
-                #     color_sensor.set_option(rs.option.brightness, -40)
-
-                GLOBAL_FIXED_RGB_SETTINGS = {
-                    "enable_auto_exposure": False,
-                    "auto_exposure_priority": 0,
-                    "power_line_frequency": 1,
-                    "exposure": 260,
-                    "gain": 96,
-                    "enable_auto_white_balance": False,
-                    "white_balance": 3600,
-                    "brightness": 0,
-                    "contrast": 45,
-                    "saturation": 58,
-                    "sharpness": 35,
-                    "gamma": 300,
-                }
-
-                def _set_color_option_safe(option_attr, value):
-                    if not hasattr(rs.option, option_attr):
-                        print(f"RGB {option_attr}: option enum not available")
-                        return None
-                    option = getattr(rs.option, option_attr)
-                    try:
-                        if not color_sensor.supports(option):
-                            print(f"RGB {option_attr}: not supported")
-                            return None
-                        color_sensor.set_option(option, float(value))
-                        actual = color_sensor.get_option(option)
-                        print(f"RGB {option_attr}: set to {actual}")
-                        return actual
-                    except Exception as option_exc:
-                        print(f"RGB {option_attr}: failed to set {value}: {option_exc}")
-                        return None
-
-                print("Applying fixed global RGB camera settings")
-                for option_attr, value in GLOBAL_FIXED_RGB_SETTINGS.items():
-                    _set_color_option_safe(option_attr, value)
-                
-            pipeline_started = True
-        except Exception as exc:
-            print(
-                "Could not start RealSense D435i. Check that the camera is "
-                f"connected and not used by another process. Details: {exc}"
-            )
-            return
-
-        print(
-            "Live controls: q/ESC quit, space pause/resume, "
-            "d cycle debug views."
-        )
-        try:
-            cv2.startWindowThread()
-        except Exception:
-            pass
-        try:
-            cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
-        except Exception as exc:
-            print(
-                "Could not create OpenCV display window. If you are running over SSH "
-                "or inside a headless VSCode/Jupyter session, run the notebook on the "
-                f"machine display or enable X forwarding. Details: {exc}"
-            )
-            return
-
-        while True:
-            if not paused:
-                frames = pipeline.wait_for_frames(timeout_ms=5000)
-                color_frame = frames.get_color_frame()
-                if not color_frame:
-                    print("No RealSense color frame received; retrying.")
-                    continue
-
-                color_bgr = np.asanyarray(color_frame.get_data())
-                if color_bgr is None or color_bgr.size == 0:
-                    print("Received an empty RealSense color frame; retrying.")
-                    continue
-                annotated, results, debug_views = detect_live_frame_bgr(
-                    color_bgr
-                )
-
-                gray = cv2.cvtColor(color_bgr, cv2.COLOR_BGR2GRAY)
-                if previous_gray is None:
-                    motion_score = 0.0
-                    stable_frame_count = 0
-                else:
-                    motion_score = float(
-                        cv2.mean(cv2.absdiff(gray, previous_gray))[0]
-                    )
-                    stable_frame_count = (
-                        stable_frame_count + 1
-                        if motion_score < 2.0
-                        else 0
-                    )
-                previous_gray = gray
-                state = "STABLE" if stable_frame_count >= 10 else "MOVING"
-
-                now = time.perf_counter()
-                if previous_time is not None:
-                    instant_fps = 1.0 / max(now - previous_time, 1e-6)
-                    fps = (
-                        instant_fps
-                        if fps <= 0.0
-                        else 0.85 * fps + 0.15 * instant_fps
-                    )
-                previous_time = now
-
-                available_modes = [
-                    name
-                    for name in (
-                        "annotated",
-                        "red_mask_raw",
-                        "red_mask",
-                        "red_mask_debug_overlay",
-                        "black_mask",
-                        "shaft_white_mask",
-                        "base_mask",
-                        "base_hole_search_mask",
-                        "base_hole_candidates_mask",
-                        "hole_candidate_debug",
-                    )
-                    if name in debug_views
-                    and debug_views[name] is not None
-                    and np.asarray(debug_views[name]).size > 0
-                ]
-                if not available_modes:
-                    available_modes = ["annotated"]
-                    debug_views["annotated"] = annotated
-                display_mode_index %= len(available_modes)
-                mode_name = available_modes[display_mode_index]
-                view = debug_views[mode_name]
-                if view.ndim == 2:
-                    view = cv2.cvtColor(view, cv2.COLOR_GRAY2BGR)
-                else:
-                    view = view.copy()
-
-                status_color = (
-                    (40, 220, 40) if state == "STABLE" else (0, 165, 255)
-                )
-                cv2.putText(
-                    view,
-                    (
-                        f"FPS {fps:5.1f}  num_results {len(results)}  "
-                        f"{state}  motion_score {motion_score:.2f}"
-                    ),
-                    (10, 24),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.55,
-                    (0, 0, 0),
-                    3,
-                    cv2.LINE_AA,
-                )
-                cv2.putText(
-                    view,
-                    (
-                        f"FPS {fps:5.1f}  num_results {len(results)}  "
-                        f"{state}  motion_score {motion_score:.2f}"
-                    ),
-                    (10, 24),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.55,
-                    status_color,
-                    1,
-                    cv2.LINE_AA,
-                )
-                cv2.putText(
-                    view,
-                    f"view: {mode_name}",
-                    (10, 47),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.5,
-                    (255, 255, 255),
-                    1,
-                    cv2.LINE_AA,
-                )
-                last_display = view
-                last_results = results
-                last_color_bgr = color_bgr.copy()
-                last_annotated = annotated.copy()
-                last_debug_views = {
-                    name: image.copy() if isinstance(image, np.ndarray) else image
-                    for name, image in debug_views.items()
-                }
-                last_motion_score = motion_score
-                last_state = state
-                last_frame_timestamp_sec = time.time()
-
-                # Make the current live frame the notebook-wide latest result.
-                # Cells below that read DETECTION_RESULTS will now use this live
-                # frame instead of the offline IMAGE_PATH result.
-                globals()["DETECTION_RESULTS"] = results
-                globals()["DEBUG_IMAGES"] = debug_views
-                globals()["LAST_LIVE_DETECTION_RESULTS"] = results
-                globals()["LAST_LIVE_COLOR_BGR"] = color_bgr.copy()
-                globals()["LAST_LIVE_ANNOTATED"] = annotated.copy()
-                globals()["LAST_LIVE_DEBUG_VIEWS"] = debug_views
-                globals()["LAST_LIVE_TIMESTAMP_SEC"] = last_frame_timestamp_sec
-                globals()["DETECTION_RESULTS_SOURCE"] = "last RealSense live frame"
-            elif last_display is not None:
-                view = last_display.copy()
-                cv2.putText(
-                    view,
-                    "PAUSED",
-                    (10, 72),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.65,
-                    (0, 0, 255),
-                    2,
-                    cv2.LINE_AA,
-                )
-                last_display = view
-
-            if last_display is not None:
-                cv2.imshow(window_name, last_display)
-
-            key = cv2.waitKey(1 if not paused else 30) & 0xFF
-            if key in (ord("q"), 27):
-                break
-            if key == ord(" "):
-                paused = not paused
-                print("Live view paused." if paused else "Live view resumed.")
-            elif key == ord("d"):
-                display_mode_index += 1
-                print("Debug view changed.")
-
-    except KeyboardInterrupt:
-        print("Live detection interrupted.")
-    except Exception as exc:
-        print(f"RealSense live detection stopped after an error: {exc}")
-    finally:
-        if pipeline_started:
-            pipeline.stop()
-        cv2.destroyAllWindows()
-        if last_annotated is not None:
-            # Commit exactly the final processed live frame. If the view was
-            # paused before quitting, this is the frozen frame. IMAGE_PATH is
-            # not read anywhere in this live path.
-            globals()["DETECTION_RESULTS"] = last_results
-            globals()["DEBUG_IMAGES"] = last_debug_views
-            globals()["LAST_LIVE_DETECTION_RESULTS"] = last_results
-            globals()["LAST_LIVE_COLOR_BGR"] = last_color_bgr
-            globals()["LAST_LIVE_ANNOTATED"] = last_annotated
-            globals()["LAST_LIVE_DEBUG_VIEWS"] = last_debug_views
-            globals()["LAST_LIVE_TIMESTAMP_SEC"] = last_frame_timestamp_sec
-            globals()["LAST_LIVE_FRAME_AVAILABLE"] = True
-            globals()["DETECTION_RESULTS_SOURCE"] = (
-                "final paused RealSense live frame"
-                if paused else "final RealSense live frame"
-            )
-            names = [
-                item.get("hole_name") or item.get("instance_name") or item.get("class_name")
-                for item in last_results
-            ]
-            print(
-                "Final live frame stored in DETECTION_RESULTS: "
-                f"{len(last_results)} detections -> {names}"
-            )
-        else:
-            globals()["LAST_LIVE_FRAME_AVAILABLE"] = False
-            if previous_results_source is not None:
-                globals()["DETECTION_RESULTS_SOURCE"] = previous_results_source
-            print("No RealSense live frame was processed; existing results were not overwritten.")
-        print("RealSense live detection closed.")
-
-    return last_results if last_annotated is not None else None
-
-
-from pathlib import Path
-
-
-import json
-
-
-import numpy as np
-
-
-from global_table_intersection_utils import (
-    add_camera_table_intersection_to_detections,
-    load_hand_eye_npz,
-    pixel_to_table_intersection_camera,
-)
-
-
-HAND_EYE_NPZ_PATH = Path("cam_calibration/outputs/03_hand_eye/hand_eye_result.npz")
-
-
-TABLE_Z_M = 0.0
-
-
-CAMERA_FRAME_ID = "camera_color_optical_frame"
-
-
-DEFAULT_CSV_PATH = Path("output/global_detection/global_detection_results.csv")
-
-
-DEFAULT_JSON_PATH = Path("output/global_detection/global_detection_results.json")
-
-
-def _result_count(results):
-    return len(results) if isinstance(results, list) else 0
-
-
-def _select_latest_detection_results(json_output_path: Path):
-    candidates = [
-        ("FINAL_LIVE_DETECTION_RESULTS", globals().get("FINAL_LIVE_DETECTION_RESULTS")),
-        ("LAST_LIVE_DETECTION_RESULTS", globals().get("LAST_LIVE_DETECTION_RESULTS")),
-        ("DETECTION_RESULTS", globals().get("DETECTION_RESULTS")),
-    ]
-    candidates = [(name, value) for name, value in candidates if isinstance(value, list) and value]
-    if candidates:
-        live_candidates = [item for item in candidates if "LIVE" in item[0]]
-        if live_candidates:
-            name, value = max(live_candidates, key=lambda item: _result_count(item[1]))
-        else:
-            name, value = candidates[0]
-        source = globals().get("DETECTION_RESULTS_SOURCE", name)
-        return value, source, name
-    if json_output_path.exists():
-        value = json.loads(json_output_path.read_text(encoding="utf-8"))
-        return value, str(json_output_path), "global_detection_results.json"
-    raise FileNotFoundError(
-        "没有找到可用的检测结果。请先运行 RealSense live cell，或确认已有 global_detection_results.json。"
-    )
-
-
-def _json_safe(value):
-    if isinstance(value, np.ndarray):
-        return value.tolist()
-    if isinstance(value, np.integer):
-        return int(value)
-    if isinstance(value, np.floating):
-        return float(value)
-    if isinstance(value, np.bool_):
-        return bool(value)
-    if isinstance(value, dict):
-        return {
-            str(key): _json_safe(val)
-            for key, val in value.items()
-            if not str(key).startswith("_")
-        }
-    if isinstance(value, (list, tuple)):
-        return [_json_safe(item) for item in value]
-    return value
-
-
-def _public_augmented_result(item):
-    return {
-        str(key): _json_safe(value)
-        for key, value in item.items()
-        if not str(key).startswith("_")
-    }
-
-
-def _global_camera_coordinate_rows(results):
-    rows = []
-    for idx, item in enumerate(results):
-        point_name = item.get("hole_name") or item.get("instance_name") or item.get("class_name") or f"point_{idx}"
-        role = "base_hole" if item.get("hole_name") else "part_center"
-        rows.append({
-            "point_name": point_name,
-            "role": role,
-            "class_name": item.get("class_name"),
-            "u_px": item.get("center_u"),
-            "v_px": item.get("center_v"),
-            "depth_valid": item.get("depth_valid"),
-            "depth_m": item.get("depth_m"),
-            "camera_x_m": item.get("camera_x_m"),
-            "camera_y_m": item.get("camera_y_m"),
-            "camera_z_m": item.get("camera_z_m"),
-            "camera_frame_id": item.get("camera_frame_id"),
-            "source": item.get("depth_source") or item.get("used_depth_source"),
-            "reason": item.get("ray_table_intersection_reason"),
-        })
-    return rows
-
-
-from pathlib import Path
-
-
-import json
-
-
-import numpy as np
-
-
-from global_table_intersection_utils import add_camera_table_intersection_to_detections, load_hand_eye_npz
-
-
-HAND_EYE_NPZ_PATH = Path("cam_calibration/outputs/03_hand_eye/hand_eye_result.npz")
-
-
-TABLE_Z_M = 0.0
-
-
-CAMERA_FRAME_ID = "camera_color_optical_frame"
-
-
-DEFAULT_CSV_PATH = Path("output/global_detection/global_detection_results.csv")
-
-
-DEFAULT_JSON_PATH = Path("output/global_detection/global_detection_results.json")
-
-
-def _result_count(results):
-    return len(results) if isinstance(results, list) else 0
-
-
-def _select_latest_detection_results(json_output_path: Path):
-    candidates = [
-        ("FINAL_LIVE_DETECTION_RESULTS", globals().get("FINAL_LIVE_DETECTION_RESULTS")),
-        ("LAST_LIVE_DETECTION_RESULTS", globals().get("LAST_LIVE_DETECTION_RESULTS")),
-        ("DETECTION_RESULTS", globals().get("DETECTION_RESULTS")),
-    ]
-    candidates = [(name, value) for name, value in candidates if isinstance(value, list) and value]
-    if candidates:
-        live_candidates = [item for item in candidates if "LIVE" in item[0]]
-        if live_candidates:
-            name, value = max(live_candidates, key=lambda item: _result_count(item[1]))
-        else:
-            name, value = candidates[0]
-        source = globals().get("DETECTION_RESULTS_SOURCE", name)
-        return value, source, name
-    if json_output_path.exists():
-        value = json.loads(json_output_path.read_text(encoding="utf-8"))
-        return value, str(json_output_path), "global_detection_results.json"
-    raise FileNotFoundError(
-        "没有找到可用的检测结果。请先运行 RealSense live cell，或确认已有 global_detection_results.json。"
-    )
-
-
-def _json_safe(value):
-    if isinstance(value, np.ndarray):
-        return value.tolist()
-    if isinstance(value, np.integer):
-        return int(value)
-    if isinstance(value, np.floating):
-        return float(value)
-    if isinstance(value, np.bool_):
-        return bool(value)
-    if isinstance(value, dict):
-        return {
-            str(key): _json_safe(val)
-            for key, val in value.items()
-            if not str(key).startswith("_")
-        }
-    if isinstance(value, (list, tuple)):
-        return [_json_safe(item) for item in value]
-    return value
-
-
-def _public_augmented_result(item):
-    return {
-        str(key): _json_safe(value)
-        for key, value in item.items()
-        if not str(key).startswith("_")
-    }
-
-
-def _global_camera_coordinate_rows(results):
-    rows = []
-    for idx, item in enumerate(results):
-        point_name = item.get("hole_name") or item.get("instance_name") or item.get("class_name") or f"point_{idx}"
-        role = "base_hole" if item.get("hole_name") else "part_center"
-        rows.append({
-            "point_name": point_name,
-            "role": role,
-            "class_name": item.get("class_name"),
-            "u_px": item.get("center_u"),
-            "v_px": item.get("center_v"),
-            "depth_valid": item.get("depth_valid"),
-            "depth_m": item.get("depth_m"),
-            "camera_x_m": item.get("camera_x_m"),
-            "camera_y_m": item.get("camera_y_m"),
-            "camera_z_m": item.get("camera_z_m"),
-            "camera_frame_id": item.get("camera_frame_id"),
-            "source": item.get("depth_source") or item.get("used_depth_source"),
-            "reason": item.get("ray_table_intersection_reason"),
-        })
-    return rows
-
-
-import numpy as np

@@ -1,0 +1,72 @@
+global_vision_force_adapter:
+  ros__parameters:
+    target_part: ""
+    color_topic: /camera/camera/color/image_raw
+    aligned_depth_topic: /camera/camera/aligned_depth_to_color/image_raw
+    camera_info_topic: /camera/camera/color/camera_info
+    realsense_camera_node: /camera/camera
+    enforce_fixed_camera_parameters: true
+    strict_camera_parameter_verification: true
+    camera_parameter_retry_sec: 2.0
+    base_frame: panda_link0
+    ee_frame: panda_hand
+    camera_frame: camera_color_optical_frame
+    handeye_path: /home/jingyun/Xinyu/ais_hiwi/cam_calibration/outputs/03_hand_eye/hand_eye_result.npz
+    topic_prefix: /vision/global
+    expected_width: 640
+    expected_height: 480
+    warmup_frames: 20
+    sync_queue_size: 10
+    sync_slop_sec: 0.05
+    # Outer ROS publication gate only; notebook detection remains unchanged.
+    # Allow unavoidable mount/lighting jitter and accumulate sparse valid frames.
+    motion_threshold: 5.0
+    stable_frames_required: 5
+    motion_reset_threshold: 15.0
+    motion_reset_frames: 20
+    consensus_required_frames: 5
+    consensus_tolerance_m: 0.015
+    publish_debug_images: true
+    publish_low_confidence: false
+    publish_rate: 10.0
+    tf_timeout_sec: 0.2
+    table_z_m: 0.0
+
+local_vision_force_adapter:
+  ros__parameters:
+    target_part: Shaft_large
+    base_hole_target: hole_large
+    # Commander enables this only after live TF verifies arrival at the
+    # corresponding cached Global observation pose.
+    detection_enabled: false
+    color_topic: /camera/camera/color/image_raw
+    aligned_depth_topic: /camera/camera/aligned_depth_to_color/image_raw
+    camera_info_topic: /camera/camera/color/camera_info
+    realsense_camera_node: /camera/camera
+    enforce_fixed_camera_parameters: true
+    strict_camera_parameter_verification: true
+    camera_parameter_retry_sec: 2.0
+    base_frame: panda_link0
+    ee_frame: panda_hand
+    camera_frame: camera_color_optical_frame
+    handeye_path: /home/jingyun/Xinyu/ais_hiwi/cam_calibration/outputs/03_hand_eye/hand_eye_result.npz
+    topic_prefix: /vision/local
+    expected_width: 640
+    expected_height: 480
+    warmup_frames: 20
+    sync_queue_size: 10
+    sync_slop_sec: 0.05
+    # Same tolerant outer gate for Local; target switches still clear consensus.
+    motion_threshold: 5.0
+    stable_frames_required: 5
+    motion_reset_threshold: 15.0
+    motion_reset_frames: 20
+    consensus_required_frames: 5
+    consensus_tolerance_m: 0.008
+    # Screw centre uses normal spatial consensus; circular visual yaw is
+    # ignored and replaced with this fixed planar yaw.
+    screw_fixed_yaw_deg: 0.0
+    publish_debug_images: true
+    publish_low_confidence: false
+    publish_rate: 10.0
+    tf_timeout_sec: 0.2
