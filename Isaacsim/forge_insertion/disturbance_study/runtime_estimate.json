@@ -1,0 +1,20 @@
+{
+  "measured_seconds_per_128_episode_job": 70.0838970541954,
+  "normal_jobs": [
+    130,
+    160
+  ],
+  "maximum_jobs": [
+    290,
+    380
+  ],
+  "normal_hours": [
+    2.5308073936237228,
+    3.114839869075351
+  ],
+  "maximum_hours": [
+    5.645647262699074,
+    7.397744689053959
+  ],
+  "scope": "first model only; use two_model_runtime_estimate.json for whole pipeline"
+}

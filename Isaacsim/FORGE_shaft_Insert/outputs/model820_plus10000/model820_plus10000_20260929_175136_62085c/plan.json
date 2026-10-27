@@ -1,0 +1,59 @@
+{
+  "status": "stopped_by_user",
+  "initial_checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_coupled_release25/preserved_model820_20260929/model_820.pt",
+  "initial_sha256": "bb300c0661534ab629cd73d76906bc65f0dc55d94ab6a342fe0e6715f6a4252f",
+  "train_command": [
+    "/home/masais/miniconda3/envs/Xinyu_isaacsim/bin/python",
+    "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/scripts/train.py",
+    "--task",
+    "FORGE-Shaft-Insert-Paper-v0",
+    "--headless",
+    "--num_envs",
+    "128",
+    "--max_iterations",
+    "10000",
+    "--seed",
+    "42",
+    "--resume",
+    "--load_run",
+    "preserved_model820_20260929",
+    "--checkpoint",
+    "model_820.pt",
+    "--run_name",
+    "model820_plus10000_20260929_175136_62085c",
+    "agent.num_steps_per_env=32",
+    "agent.algorithm.num_mini_batches=4",
+    "agent.save_interval=20"
+  ],
+  "additional_updates": 10000,
+  "milestones": [
+    [
+      1820,
+      1001
+    ],
+    [
+      2820,
+      2001
+    ],
+    [
+      4820,
+      4001
+    ],
+    [
+      6820,
+      6001
+    ],
+    [
+      8820,
+      8001
+    ],
+    [
+      10819,
+      10000
+    ]
+  ],
+  "evaluation_timing": "After uninterrupted training, not during training",
+  "training_run": null,
+  "preserved_checkpoint": "model_5140.pt",
+  "stop_record": "FORGE_shaft_Insert/outputs/stopped_training_20260930/stop_record.json"
+}

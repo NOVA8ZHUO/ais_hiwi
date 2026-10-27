@@ -1,0 +1,53 @@
+{
+  "models": {
+    "P0G0_seed0": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_0/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__363.9021_.pth",
+      "checkpoint_sha256": "44ec93581f0123a1bad94ff70751e554e7a98fe59d15065c56ba1b7a06395261"
+    },
+    "P1G0_seed0": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P1G0/seed_0/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__339.542_.pth",
+      "checkpoint_sha256": "c75c1587a6d7e228132b9bb220e38de75e58c4fabf5efb268eea2db492e75920"
+    },
+    "P0G1_seed0": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G1/seed_0/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__350.7975_.pth",
+      "checkpoint_sha256": "3f5099802407068a23af5364a9984fbcf25247f6e6c3455ea5901efb76f6e436"
+    },
+    "P1G1_seed0": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P1G1/seed_0/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__342.57205_.pth",
+      "checkpoint_sha256": "e1a7728d7637d7fde8f09c14312f9a3836a99b2b57861c558d5a2719e038ffa7"
+    },
+    "P0G0_seed1": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__360.81424_.pth",
+      "checkpoint_sha256": "20d2cc1db30a77929a4148d225d66ee479095e6f8ea430578f6bc025df82cbc1"
+    },
+    "P1G0_seed1": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P1G0/seed_1/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__348.4978_.pth",
+      "checkpoint_sha256": "d08e7b525475adce14d6adb924ce4217adda2f9c2b2f726aa79ac89ee2fc7c16"
+    },
+    "P0G1_seed1": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G1/seed_1/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__348.5164_.pth",
+      "checkpoint_sha256": "c9a3b1cb65801a7782b336363a04c8ba07872b60e416ad21349f676b62a3cb8e"
+    },
+    "P1G1_seed1": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P1G1/seed_1/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__340.76245_.pth",
+      "checkpoint_sha256": "68694cf8cdcf9b60273905b30e54ff4e7f85c48fb32361aa82ccd6be40e93726"
+    },
+    "P0G0_seed2": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_2/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__357.75912_.pth",
+      "checkpoint_sha256": "b1519e692123f9f5077e3defb6558b7487fcd06462d8216d08abf43bc2d1e955"
+    },
+    "P1G0_seed2": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P1G0/seed_2/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__355.4716_.pth",
+      "checkpoint_sha256": "9767d5b4ca2c15a172fbabfb4fd5ecbfcc8e2a48a01875afa0fb64e7efd04aeb"
+    },
+    "P0G1_seed2": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G1/seed_2/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__350.08368_.pth",
+      "checkpoint_sha256": "8f9d13dcf8da76d209a7519ef9a4df0764581ac46d21549d7ce277a38fe4e2e2"
+    },
+    "P1G1_seed2": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P1G1/seed_2/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__336.01483_.pth",
+      "checkpoint_sha256": "5a116895b7ef77e6f0d89eb48772b9c9f236d5357e17cc3e6e8cb8b9159de202"
+    }
+  },
+  "training_manifest_sha256": "83c492a64054ffd2a4db3ea54e0f00bf19e326f75f97b97bd837ffd38ed45bb4"
+}

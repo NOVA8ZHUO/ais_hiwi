@@ -1,0 +1,85 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/apps/isaaclab.python.headless.kit
+Loading user config located at: '/home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20261019_140010.log
+2026-10-19T12:00:10Z [65ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-10-19T12:00:10Z [438ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-10-19T12:00:10Z [445ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.178.04    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 4090          | Yes: 0 |     | 24564   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2684      | 9a8e4354.. |
+|     |                                  |        |     |            | 1         |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 6.8.0-111-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: 13th Gen Intel(R) Core(TM) i7-13700KF
+| Bare Metal Cores: 16 | Bare Metal Logical Cores: 32
+| Available Cores:  24 
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 64158 | Free Memory: 41636
+| Total Page/Swap (MB): 31249 | Free Page/Swap: 12668
+|---------------------------------------------------------------------------------------------|
+2026-10-19T12:00:15Z [5,184ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-10-19T12:00:15Z [5,194ms] [Warning] [gpu.foundation.plugin] PCIe link generation current (1) and maximum (4) for device 0 don't match.
+2026-10-19T12:00:15Z [5,194ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+2026-10-19T12:00:15Z [5,318ms] [Warning] [omni.kvdb.plugin] Disabling key-value database because another kit process is locking it
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-10-19_14-00-15.log[0m
+[36m======================================================================================[0m
+
+[33m14:00:15 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 0
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.008333333333333333
+	Environment step-size : 0.06666666666666667
+[33m14:00:15 [direct_rl_env.py] WARNING: The render interval (1) is smaller than the decimation (8). Multiple render calls will happen for each environment step.If this is not intended, set the render interval to be equal to the decimation.[0m
+2026-10-19T12:00:17Z [7,617ms] [Warning] [omni.fabric.plugin] Warning: input prim:attr `/World/envs/env_0:omni:rtx:skip` has no valid data.
+
+[INFO]: Time taken for scene creation : 2.003661 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 4
+	Environment spacing   : 2.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 1.207120 seconds
+[INFO] Event Manager:  <EventManager> contains 3 active terms.
++------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++---------+--------------------------+
+|  Index  | Name                     |
++---------+--------------------------+
+|    0    | object_scale_mass        |
++---------+--------------------------+
++----------------------------------------+
+| Active Event Terms in Mode: 'startup'  |
++---------+------------------------------+
+|  Index  | Name                         |
++---------+------------------------------+
+|    0    | held_physics_material        |
+|    1    | fixed_physics_material       |
+|    2    | robot_physics_material       |
++---------+------------------------------+
++--------------------------------------------------------+
+|         Active Event Terms in Mode: 'interval'         |
++-------+----------------------+-------------------------+
+| Index | Name                 | Interval time range (s) |
++-------+----------------------+-------------------------+
+|   0   | dead_zone_thresholds |        (2.0, 2.0)       |
++-------+----------------------+-------------------------+
+
+[INFO]: Completed setting up the environment...
+Reset/grasp/hold check 0 {'finger_joints_m': [[0.01758464425802231, 0.01758546754717827], [0.017584947869181633, 0.01758439838886261], [0.01758420281112194, 0.017584163695573807], [0.01759462244808674, 0.017593804746866226]], 'shaft_tip_m': [[0.6123901605606079, 0.03726726770401001, 0.15130797028541565], [0.6020810604095459, 0.022362709045410156, 0.10036516189575195], [0.5719654560089111, 0.05130738019943237, 0.15587027370929718], [0.6484224796295166, -0.03383791446685791, 0.06962138414382935]], 'hole_entry_m': [[0.6089494228363037, 0.03242415189743042, 0.1292368471622467], [0.5942329168319702, 0.009916543960571289, 0.08157677203416824], [0.5724515914916992, 0.03821384906768799, 0.14262676239013672], [0.6483581066131592, -0.03670001029968262, 0.05789543688297272]], 'shaft_tip_clearance_m': [0.022071123123168945, 0.01878838986158371, 0.013243511319160461, 0.011725947260856628], 'mass_kg': [[0.015499886125326157], [0.01896442100405693], [0.017728015780448914], [0.0129914041608572]], 'hole_estimate_bias_m': [[0.00022698339307680726, -0.001839155680499971, 0.000889859045855701], [-0.0008111015195026994, 0.0009492608951404691, 0.0004672652285080403], [4.039073610329069e-05, 0.0019845946226269007, 5.471817348734476e-05], [4.882472694589524e-06, 0.000447386089945212, 0.0011268642265349627]], 'hold_relative_translation_m': [0.0013545211404561996, 0.0015485197072848678, 0.001171257346868515, 0.0019073637668043375], 'fixed_motion_m': [0.0, 0.0, 0.0, 0.0]}
+Reset/grasp/hold check 1 {'finger_joints_m': [[0.017584573477506638, 0.01758568361401558], [0.017584122717380524, 0.017583992332220078], [0.017586447298526764, 0.01758703961968422], [0.017584117129445076, 0.017584726214408875]], 'shaft_tip_m': [[0.6177582740783691, 0.008795440196990967, 0.09953851997852325], [0.6065505743026733, -0.049893975257873535, 0.10083705186843872], [0.6166070699691772, -0.04427218437194824, 0.10622352361679077], [0.596603274345398, 0.015597105026245117, 0.13966670632362366]], 'hole_entry_m': [[0.597352147102356, 0.018126249313354492, 0.091384656727314], [0.6168755292892456, -0.04618769884109497, 0.09076083451509476], [0.6084535121917725, -0.03147315979003906, 0.09741602838039398], [0.6045941114425659, 0.01789546012878418, 0.1262056827545166]], 'shaft_tip_clearance_m': [0.008153863251209259, 0.010076217353343964, 0.00880749523639679, 0.013461023569107056], 'mass_kg': [[0.014199656434357166], [0.021672919392585754], [0.017768722027540207], [0.01987108215689659]], 'hole_estimate_bias_m': [[-0.0017373142763972282, 0.0017796328756958246, -0.0002511262136977166], [-0.00019851108663715422, 0.0008123886655084789, 0.0008461872930638492], [0.0017392849549651146, -0.0014550420455634594, -0.0009624173981137574], [-0.002018503611907363, -0.000723907258361578, 0.0016587474383413792]], 'hold_relative_translation_m': [0.002224339172244072, 0.001509293681010604, 0.0008980995044112206, 0.001775803742930293], 'fixed_motion_m': [0.0, 0.0, 0.0, 0.0]}
+2026-10-19T12:01:09Z [58,702ms] [Warning] [omni.usd] Unexpected reference count of 2 for UsdStage 'anon:0x5afeb4ed18d0:World0.usd' while being closed in UsdContext (this may indicate it is still resident in memory).

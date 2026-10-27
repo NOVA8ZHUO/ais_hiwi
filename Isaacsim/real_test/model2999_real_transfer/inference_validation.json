@@ -1,0 +1,7 @@
+{
+  "test": "400 sequential calls, batches1/4, partial reset at step100; original RSL policy versus exported TorchScript",
+  "max_abs_error": 0.0,
+  "passed": true,
+  "torch": "2.7.0+cu128",
+  "checkpoint_sha256": "b27a8e6caafb53f732f428db9badeb6a71442cb01d3770b8cc5dc372225ea578"
+}

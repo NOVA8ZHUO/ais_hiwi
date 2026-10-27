@@ -1,0 +1,14 @@
+{
+  "identity": {
+    "condition": "zero",
+    "active": [],
+    "seed": 0,
+    "num_envs": 128,
+    "model": "zero",
+    "checkpoint_sha256": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "341846b911b0716ff83db917f5546b493c553b3c9615167d2476760c98f7680d"
+  },
+  "seconds": 97.47595717804506,
+  "evaluation_sha256": "b4999288fe4ec92feb2265e1f6496aafe7999ebccaa9e9222520734b158a9327"
+}

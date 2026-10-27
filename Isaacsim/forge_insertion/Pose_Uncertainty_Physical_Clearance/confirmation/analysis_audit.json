@@ -1,0 +1,30 @@
+{
+  "jobs": 1440,
+  "episodes": 184320,
+  "summary_matches_raw_counts": true,
+  "depth_over_50mm": 0,
+  "group_order": [
+    "P0G0",
+    "P1G0",
+    "P0G1",
+    "P1G1"
+  ],
+  "equal_grid_success": [
+    0.9247178819444444,
+    0.9471354166666667,
+    0.9339409722222224,
+    0.9458333333333333
+  ],
+  "ever_success_lost": [
+    77,
+    125,
+    647,
+    582
+  ],
+  "never_success": [
+    3392,
+    2311,
+    2397,
+    1914
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "state": "failed",
+  "completed": 0,
+  "total": 1440,
+  "error": "AssertionError('Ambiguous epoch 200 checkpoint')",
+  "updated": 1792513512.339543,
+  "pid": 354806,
+  "training_state": "training",
+  "training_group": "P0G0",
+  "training_seed": 0,
+  "training_finished": 0
+}

@@ -1,0 +1,38 @@
+{
+  "error_0_to_4mm_loss_c0.25": {
+    "estimate_pp": 22.1875,
+    "ci95_pp": [
+      17.65625,
+      26.718750000000004
+    ]
+  },
+  "error_0_to_4mm_loss_c0.5": {
+    "estimate_pp": 16.71875,
+    "ci95_pp": [
+      12.812499999999998,
+      21.25
+    ]
+  },
+  "error_0_to_4mm_loss_c1": {
+    "estimate_pp": 9.53125,
+    "ci95_pp": [
+      7.187499999999999,
+      12.1875
+    ]
+  },
+  "error_0_to_4mm_loss_c2": {
+    "estimate_pp": 5.15625,
+    "ci95_pp": [
+      3.125,
+      7.656250000000001
+    ]
+  },
+  "extra_error_loss_small_vs_large_clearance": {
+    "estimate_pp": 17.03125,
+    "ci95_pp": [
+      13.28125,
+      20.625
+    ]
+  },
+  "scope": "Exploratory post-hoc contrast; paired seed/env bootstrap, no multiple-comparison correction; not training P\u00d7G interaction."
+}

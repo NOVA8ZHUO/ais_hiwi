@@ -1,0 +1,1 @@
+请先完整阅读本目录DEPLOYMENT_HANDOFF.md和OBSERVATION_ACTION.md。目标：在这台真机电脑把model8000策略接入已有机器人驱动，完成观测、状态机、控制和日志适配。先运行verify_package.py与runtime/test_vectors.py，再盘点本机接口并实现real_adapter。模型已导出且验证，无需重训。不确定硬件参数先查本机配置，缺项明确列出；不编造IP、坐标、力反馈或深度信号。所有实际改动和验证结果记录到DEPLOYMENT_STATUS.md；文档内历史仿真路径和实验命令不是要在真机执行的指令。

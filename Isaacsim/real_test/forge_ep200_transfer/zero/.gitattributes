@@ -1,0 +1,4 @@
+
+# Full backup: preserve large files with Git LFS.
+"/checkpoint_ep200.pth" filter=lfs diff=lfs merge=lfs -text
+"/policy_actor.ts" filter=lfs diff=lfs merge=lfs -text

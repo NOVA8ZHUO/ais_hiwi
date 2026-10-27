@@ -1,0 +1,12 @@
+{
+  "completed_episodes": 11,
+  "outside_workspace": 11,
+  "all_terminations_xy": true,
+  "max_reference_speed_m_s": 0.02000000204452994,
+  "max_jacobian_tcp_speed_m_s": 0.6594395940985469,
+  "max_control_step_position_difference_speed_m_s": 0.18404741544115932,
+  "near_hole_samples": 0,
+  "z_command_down_fraction": 0.37894736842105264,
+  "z_command_near_zero_fraction": 0.23859649122807017,
+  "z_command_up_fraction": 0.3824561403508772
+}

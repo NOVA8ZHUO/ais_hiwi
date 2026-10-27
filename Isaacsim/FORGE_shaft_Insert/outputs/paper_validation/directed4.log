@@ -1,0 +1,145 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/apps/isaaclab.python.headless.kit
+Loading user config located at: '/home/masais/miniconda3/envs/Xinyu_isaacsim/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/masais/miniconda3/envs/Xinyu_isaacsim/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260925_132553.log
+2026-09-25T11:25:53Z [69ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-09-25T11:25:54Z [525ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-09-25T11:25:54Z [535ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.178.04    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 4090          | Yes: 0 |     | 24564   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2684      | 9a8e4354.. |
+|     |                                  |        |     |            | 1         |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 6.8.0-111-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: 13th Gen Intel(R) Core(TM) i7-13700KF
+| Bare Metal Cores: 16 | Bare Metal Logical Cores: 32
+| Available Cores:  24 
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 64158 | Free Memory: 33942
+| Total Page/Swap (MB): 31249 | Free Page/Swap: 31221
+|---------------------------------------------------------------------------------------------|
+2026-09-25T11:25:59Z [5,632ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-09-25T11:25:59Z [5,644ms] [Warning] [gpu.foundation.plugin] PCIe link generation current (1) and maximum (4) for device 0 don't match.
+2026-09-25T11:25:59Z [5,644ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+2026-09-25T11:25:59Z [5,984ms] [Warning] [isaaclab.envs.manager_based_env] Seed not set for the environment. The environment creation may not be deterministic.
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-09-25_13-25-59.log[0m
+[36m======================================================================================[0m
+
+[33m13:25:59 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.004166666666666667
+	Rendering step-size   : 0.06666666666666667
+	Environment step-size : 0.06666666666666667
+[INFO]: Time taken for scene creation : 1.418732 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 4
+	Environment spacing   : 1.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 0.852439 seconds
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++------------------------+
+|  Active Command Terms  |
++--------+-------+-------+
+| Index  | Name  |  Type |
++--------+-------+-------+
++--------+-------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-----------------------------------+
+| Active Event Terms in Mode: 'reset' |
++----------+------------------------+
+|  Index   | Name                   |
++----------+------------------------+
+|    0     | reset                  |
+|    1     | shaft_friction         |
+|    2     | base_friction          |
++----------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++---------------------+
+| Active Recorder Terms |
++-----------+---------+
+|   Index   | Name    |
++-----------+---------+
++-----------+---------+
+
+[INFO] Action Manager:  <ActionManager> contains 1 active terms.
++-----------------------------------+
+|   Active Action Terms (shape: 5)  |
++--------+-------------+------------+
+| Index  | Name        |  Dimension |
++--------+-------------+------------+
+|   0    | arm_action  |          5 |
++--------+-------------+------------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++--------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (22,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (22,)      |
++----------------+----------------+----------------+
++--------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (40,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (40,)      |
++----------------+----------------+----------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 2 active terms.
++--------------------------------------+
+|       Active Termination Terms       |
++-------+-------------------+----------+
+| Index | Name              | Time Out |
++-------+-------------------+----------+
+|   0   | time_out          |   True   |
+|   1   | outside_workspace |  False   |
++-------+-------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 5 active terms.
++-----------------------------+
+|     Active Reward Terms     |
++-------+------------+--------+
+| Index | Name       | Weight |
++-------+------------+--------+
+|   0   | keypoints  |   15.0 |
+|   1   | place      |   15.0 |
+|   2   | inserted   |   15.0 |
+|   3   | contact    |   -3.0 |
+|   4   | prediction |  -15.0 |
++-------+------------+--------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+[INFO]: Completed setting up the environment...
+PAPER_RESET {'policy': (4, 22), 'critic': (4, 40)}
+SENSOR ['Shaft_large']
+PAPER_STEP 0 tip_error [0.0006284713745117188, 0.0016751289367675781, 0.01902090013027191] tcp_error [0.0007224082946777344, 0.0007904171943664551, 0.01933552324771881] force 0.0 reward 0.035593435168266296
+PAPER_STEP 30 tip_error [0.0015505552291870117, 0.003439962863922119, 0.004089992493391037] tcp_error [0.0018135309219360352, 0.001289069652557373, 0.004385054111480713] force 0.0 reward 0.07247473299503326
+PAPER_STEP 60 tip_error [-0.00011563301086425781, 2.4139881134033203e-05, -0.02113429084420204] tcp_error [0.0024182796478271484, 8.827447891235352e-05, -0.009416386485099792] force 2.555847644805908 reward 1.243786096572876
+PAPER_STEP 90 tip_error [-0.0004432201385498047, -0.00017398595809936523, -0.046992842108011246] tcp_error [0.004042267799377441, 0.0015541911125183105, -0.02467113733291626] force 1.4864318370819092 reward 1.749419927597046
+PAPER_STEP 120 tip_error [-0.00047326087951660156, -0.00017464160919189453, -0.04697171598672867] tcp_error [0.003676295280456543, 0.002339005470275879, -0.02494347095489502] force 14.492506980895996 reward 0.17747747898101807
+PAPER_RESULT {'mode': 'directed', 'max_force': 41.475341796875, 'max_tcp_drift': 0.06395945698022842, 'successful_steps': 56, 'timeouts': 0, 'failures': 0, 'reward_total': 53.53583491593599}

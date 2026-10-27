@@ -1,0 +1,16 @@
+{
+  "run": "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/outputs/coupled1000/coupled1000_20260929_154037_d798fa/gui_final_seed43",
+  "completed_episodes": 16,
+  "final_scalars": {},
+  "source_snapshot_available": true,
+  "terminations": {
+    "time_out": 9,
+    "outside_workspace": 0,
+    "invalid_grasp_width": 0
+  },
+  "success_rates": {
+    "success_any": 0.4375,
+    "success_final": 0.4375,
+    "success_stable": 0.4375
+  }
+}

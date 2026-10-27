@@ -1,0 +1,43 @@
+{
+  "stage": "smoke",
+  "command": [
+    "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/scripts/rollout.py",
+    "--task",
+    "Isaac-Forge-PegInsert-Direct-v0",
+    "--seed",
+    "0",
+    "--headless",
+    "--num_envs",
+    "4",
+    "--episodes",
+    "4"
+  ],
+  "cwd": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_peg_baseline/logs/20261012T123303_574987Z_smoke",
+  "lab": "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2",
+  "source_sha256": {
+    "forge/forge_env_cfg.py": "f71e3d0829a8b2534e08f20532f5381c7543ee097e98a5b345d7b6b10054b104",
+    "forge/forge_events.py": "d64daec7dfae064c1de72d77c35128619e41d2a32810e03c4ac98a40a9bc3076",
+    "forge/forge_tasks_cfg.py": "a997595709a5056278aaae461915b43091cbcbdb74a3761676514027a40d87a6",
+    "forge/forge_utils.py": "ecd47f107c7ae16fc913342c68fbadb09264a4f9a7e4534eebf5985ce4c938e6",
+    "forge/forge_env.py": "a674c899c7b281ea66b65b6ef2edff8e015cd8365b3a9bb56662700fd44410d5",
+    "forge/__init__.py": "71ea8d33e10895f0a1e7629715d64451c2d6592230822bf1032df0d1a99cd2c8",
+    "forge/agents/rl_games_ppo_cfg_nut_thread.yaml": "1f29eab0fbee8d45b573fe543d2f1a1673315e70084fb947f05c92ead28505e1",
+    "forge/agents/__init__.py": "3be19bd191a2d8780967a91b0d6e6fe4c6d74ad8b54efef94c33f6c2ebd6078b",
+    "forge/agents/rl_games_ppo_cfg.yaml": "4b2be34d91cfe1b21d95c0e6e2028a893851f22ba45608f943b68b894cf1fe6c",
+    "factory/factory_tasks_cfg.py": "7c1f59d68858453fa015e42d2553eac8e0ee8d0d12c1bcf7f232ab2c874fcba6",
+    "factory/factory_env.py": "7032b2557c0c325df30bd72328e73fe6063407fb847f5f48394d766acdcc1c78",
+    "factory/__init__.py": "2457d1c9c84a53e50e5b0188ab7b918876af7b03b9e1ef336e7b33dc9bf43c79",
+    "factory/factory_env_cfg.py": "c6be3e5218c1efd022ad795426b5282298d2753d0e3ea37c4bb76cf8153b7aaf",
+    "factory/factory_utils.py": "71e7a560c1704305c03a2108e421acb9d4d556c0a926684ae27835df2056497d",
+    "factory/factory_control.py": "aa3317f8a25beed13ade473f2236d66e09152149edd1351027ca60cb43b00c49",
+    "factory/agents/__init__.py": "3be19bd191a2d8780967a91b0d6e6fe4c6d74ad8b54efef94c33f6c2ebd6078b",
+    "factory/agents/rl_games_ppo_cfg.yaml": "498f33d1baff67402e9bfbdb22091e88e6b420a3b2548768c93ac0d4bef3bf13"
+  },
+  "started_utc": "2026-10-12T12:33:03.576450+00:00",
+  "status": "exited",
+  "commit": "37ddf626871758333d6ed89cf64ad702aef127d0\n",
+  "git_status": "",
+  "exit_code": 0,
+  "finished_utc": "2026-10-12T12:35:44.330155+00:00"
+}

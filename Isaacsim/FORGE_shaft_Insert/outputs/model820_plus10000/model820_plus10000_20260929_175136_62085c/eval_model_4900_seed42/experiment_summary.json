@@ -1,0 +1,16 @@
+{
+  "run": "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/outputs/model820_plus10000/model820_plus10000_20260929_175136_62085c/eval_model_4900_seed42",
+  "completed_episodes": 139,
+  "final_scalars": {},
+  "source_snapshot_available": true,
+  "terminations": {
+    "time_out": 89,
+    "outside_workspace": 0,
+    "invalid_grasp_width": 0
+  },
+  "success_rates": {
+    "success_any": 0.38848920863309355,
+    "success_final": 0.38848920863309355,
+    "success_stable": 0.381294964028777
+  }
+}

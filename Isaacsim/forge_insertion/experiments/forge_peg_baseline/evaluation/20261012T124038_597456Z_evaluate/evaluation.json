@@ -1,0 +1,64 @@
+{
+  "protocol": "auxiliary fixed-seed evaluation; not verified paper protocol",
+  "seed": 0,
+  "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_peg_baseline/logs/20261012T123556_559314Z_short/logs/rl_games/Forge/test/nn/last_Forge_ep_2_rew__-9.759542_.pth",
+  "episodes": 4,
+  "success_rate_any": 0.0,
+  "success_rate_final": 0.0,
+  "mean_episode_reward": -3.2373980283737183,
+  "force_definition": "L2 norm of smoothed wrist force, sampled at control rate",
+  "rows": [
+    {
+      "episode": 0,
+      "env_id": 0,
+      "reward": 40.032989501953125,
+      "steps": 149,
+      "success_any": false,
+      "success_final": false,
+      "first_success_seconds": null,
+      "force_mean_N": 8.03210735321045,
+      "force_max_N": 12.114728927612305,
+      "terminated": true,
+      "truncated": true
+    },
+    {
+      "episode": 1,
+      "env_id": 1,
+      "reward": -7.2937846183776855,
+      "steps": 149,
+      "success_any": false,
+      "success_final": false,
+      "first_success_seconds": null,
+      "force_mean_N": 7.429380893707275,
+      "force_max_N": 19.529741287231445,
+      "terminated": true,
+      "truncated": true
+    },
+    {
+      "episode": 2,
+      "env_id": 2,
+      "reward": -71.47854614257812,
+      "steps": 149,
+      "success_any": false,
+      "success_final": false,
+      "first_success_seconds": null,
+      "force_mean_N": 9.755995750427246,
+      "force_max_N": 13.46361255645752,
+      "terminated": true,
+      "truncated": true
+    },
+    {
+      "episode": 3,
+      "env_id": 3,
+      "reward": 25.789749145507812,
+      "steps": 149,
+      "success_any": false,
+      "success_final": false,
+      "first_success_seconds": null,
+      "force_mean_N": 4.055863380432129,
+      "force_max_N": 11.840043067932129,
+      "terminated": true,
+      "truncated": true
+    }
+  ]
+}

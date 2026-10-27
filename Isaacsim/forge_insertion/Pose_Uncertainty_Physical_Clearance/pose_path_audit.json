@@ -1,0 +1,9 @@
+{
+  "source": "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab_tasks/isaaclab_tasks/direct/forge/forge_env.py",
+  "sha256": "a674c899c7b281ea66b65b6ef2edff8e015cd8365b3a9bb56662700fd44410d5",
+  "checks": {
+    "noisy_fixed_pos = self.fixed_pos_obs_frame + self.init_fixed_pos_obs_noise": true,
+    "fixed_pos_action_frame = self.fixed_pos_obs_frame + self.init_fixed_pos_obs_noise": true
+  },
+  "scope": "Static path check; dynamic reset samples remain native FORGE sampling."
+}

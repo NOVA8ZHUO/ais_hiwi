@@ -1,0 +1,137 @@
+{
+  "base_pos": [
+    0.5,
+    0.0,
+    0.0
+  ],
+  "hole_offset_in_base": [
+    0.127,
+    -0.00018226745,
+    0.05
+  ],
+  "shaft_reset_pos": [
+    0.6268937547,
+    0.0005603544,
+    0.0692845565
+  ],
+  "shaft_reset_rot": [
+    0.999961853,
+    0.0081924731,
+    9.97439e-05,
+    -0.0030323504
+  ],
+  "tcp_offset": [
+    -0.0007295087,
+    -0.0001125964,
+    0.1125095189
+  ],
+  "tcp_offset_rot": [
+    0.9999995232,
+    0.000163734,
+    -0.0009569824,
+    7.75158e-05
+  ],
+  "nominal_tcp_height_above_hole": 0.0992845593,
+  "action_scale": 0.001,
+  "gripper_command": 0.014,
+  "success_xy_tolerance": 0.0005,
+  "workspace_xy_limit": 0.1,
+  "workspace_z_tolerance": 0.05,
+  "xy_progress_scale": 0.001,
+  "xy_reward_weight": 1.0,
+  "action_penalty_weight": -0.001,
+  "success_reward_weight": 20.0,
+  "coarse_kernel": [
+    50.0,
+    2.0
+  ],
+  "fine_kernel": [
+    100.0,
+    0.0
+  ],
+  "contact_beta": 0.25,
+  "place_distance": 0.0025,
+  "force_threshold_range": [
+    5.0,
+    8.0
+  ],
+  "kp_range": [
+    600.0,
+    600.0
+  ],
+  "action_limit_range": [
+    0.016,
+    0.025
+  ],
+  "deadzone_range": [
+    0.0,
+    0.0
+  ],
+  "part_friction_range": [
+    0.8,
+    0.8
+  ],
+  "grasp_position_error": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "hole_position_error": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "ee_position_noise_std": 0.00025,
+  "force_noise_std": 1.0,
+  "trace_num_envs": 4,
+  "metrics_csv_path": "FORGE_shaft_Insert/outputs/controller_repair/probe/episodes.csv",
+  "reference_speed": 0.02,
+  "reference_acceleration": 0.08,
+  "reference_yaw_speed": 0.5,
+  "reference_yaw_acceleration": 1.5,
+  "translation_force_cap": 10.0,
+  "shaft_pitch_tolerance": 0.05235987756,
+  "shaft_pitch_scale": 0.12217304764,
+  "shaft_pitch_weight": 0.25,
+  "gripper_force": 20.0,
+  "gripper_expected_width": 0.035,
+  "gripper_width_tolerance": 0.005,
+  "gripper_closing_speed": 0.02,
+  "gripper_settle_s": 0.5,
+  "gripper_check_delay_s": 1.0,
+  "insertion_speed": 0.0,
+  "approach_height": 0.0192845565,
+  "residual_position_scale": [
+    0.025,
+    0.025,
+    0.025
+  ],
+  "reset_hand_position": [
+    0.6275140047,
+    -7.64369e-05,
+    0.2425106019
+  ],
+  "reset_hand_quaternion": [
+    0.0001641507,
+    0.9999994636,
+    7.71873e-05,
+    0.0009570745
+  ],
+  "yaw_bound": 0.7853981633974483,
+  "rotation_stiffness": 30.0,
+  "rotation_damping": 0.5,
+  "shaft_bottom_offset": 0.0,
+  "insertion_depth": 0.047,
+  "depth_tolerance": 0.001,
+  "success_axis_cos": 0.9961946980917455,
+  "keypoint_offsets": [
+    0.0,
+    0.02,
+    0.04
+  ],
+  "control_point_in_hand": [
+    -0.0007295087,
+    -0.0001125964,
+    0.1732249624
+  ]
+}

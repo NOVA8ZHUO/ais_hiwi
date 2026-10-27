@@ -1,0 +1,15 @@
+{
+  "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__341.10693_.pth",
+  "checkpoint_sha256": "57ae61f09be156e0c07aa250e0c58d164251e0efc36f2b56b2a76ee21e3f24ed",
+  "export_checkpoint": "checkpoint_ep200.pth",
+  "epoch": 200,
+  "max_abs_error": 0.0,
+  "steps_per_batch": 80,
+  "batches": [
+    1,
+    4
+  ],
+  "partial_resets_tested": true,
+  "normalization_clipping_tested": true,
+  "hardware_tested": false
+}

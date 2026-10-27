@@ -1,0 +1,28 @@
+{
+  "identity": {
+    "condition": "group_off_control",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "force_noise",
+      "friction",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "quaternion_sign",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 303,
+    "num_envs": 128,
+    "model": "zero",
+    "checkpoint_sha256": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "8814ba148690d2a4be52c7890936c900b0372f4ea0a707a6605a16924739d259"
+  },
+  "seconds": 97.17342463321984,
+  "evaluation_sha256": "24b135fdc63a231a202586058c9a8d4e048b3730a0dc7888ee7f4f6e35a0c373"
+}

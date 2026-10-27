@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "condition": "factor_on_position_threshold",
+    "active": [
+      "position_threshold"
+    ],
+    "seed": 203,
+    "num_envs": 128,
+    "model": "zero",
+    "checkpoint_sha256": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "d501eef9500b52df5b6727ef01ce1a9821c3e8b7e21079bcdd89cc08f7ca8b63"
+  },
+  "seconds": 119.45835304725915,
+  "evaluation_sha256": "73189ffe890baa94efff2539aeaf96865f8a91aefa6f20b65a1d983703d7d889"
+}

@@ -1,0 +1,2 @@
+- agent.save_interval=10
+- agent.algorithm.num_mini_batches=2

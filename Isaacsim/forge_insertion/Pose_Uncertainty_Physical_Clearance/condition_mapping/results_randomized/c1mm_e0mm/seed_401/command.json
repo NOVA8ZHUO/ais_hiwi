@@ -1,0 +1,15 @@
+[
+  "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+  "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/condition_mapping/rollout_grid.py",
+  "--task",
+  "Isaac-Forge-CAD-ClearanceMapping-Direct-v0",
+  "--seed",
+  "401",
+  "--num_envs",
+  "128",
+  "--episodes",
+  "128",
+  "--checkpoint",
+  "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__341.10693_.pth",
+  "--headless"
+]

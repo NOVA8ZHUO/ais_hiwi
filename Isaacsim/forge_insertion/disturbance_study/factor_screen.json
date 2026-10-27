@@ -1,0 +1,159 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "zero_success": 1.0,
+  "full_success": 0.2390625,
+  "items": [
+    {
+      "name": "base_position",
+      "enable_drop": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "disable_recovery": {
+        "estimate": 0.0171875,
+        "ci95": [
+          -0.0140625,
+          0.0484375
+        ]
+      },
+      "score": {
+        "estimate": 0.00859375,
+        "ci95": [
+          -0.00703125,
+          0.02421875
+        ]
+      },
+      "on_success": 1.0,
+      "off_success": 0.25625
+    },
+    {
+      "name": "base_yaw",
+      "enable_drop": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "disable_recovery": {
+        "estimate": 0.003125,
+        "ci95": [
+          -0.0234765625,
+          0.03125
+        ]
+      },
+      "score": {
+        "estimate": 0.0015625,
+        "ci95": [
+          -0.01173828125,
+          0.015625
+        ]
+      },
+      "on_success": 1.0,
+      "off_success": 0.2421875
+    },
+    {
+      "name": "hand_position",
+      "enable_drop": {
+        "estimate": 0.5390625,
+        "ci95": [
+          0.4625,
+          0.6156640624999997
+        ]
+      },
+      "disable_recovery": {
+        "estimate": 0.178125,
+        "ci95": [
+          0.1234375,
+          0.2375
+        ]
+      },
+      "score": {
+        "estimate": 0.35859375,
+        "ci95": [
+          0.3015625,
+          0.41796875
+        ]
+      },
+      "on_success": 0.4609375,
+      "off_success": 0.4171875
+    },
+    {
+      "name": "hand_orientation",
+      "enable_drop": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "disable_recovery": {
+        "estimate": -0.003125,
+        "ci95": [
+          -0.04375,
+          0.0328125
+        ]
+      },
+      "score": {
+        "estimate": -0.0015625,
+        "ci95": [
+          -0.021875,
+          0.01640625
+        ]
+      },
+      "on_success": 1.0,
+      "off_success": 0.2359375
+    },
+    {
+      "name": "grasp_offset",
+      "enable_drop": {
+        "estimate": 0.0375,
+        "ci95": [
+          0.01875,
+          0.059375
+        ]
+      },
+      "disable_recovery": {
+        "estimate": 0.03125,
+        "ci95": [
+          -0.0078125,
+          0.06875
+        ]
+      },
+      "score": {
+        "estimate": 0.034375,
+        "ci95": [
+          0.01328125,
+          0.05470703124999989
+        ]
+      },
+      "on_success": 0.9625,
+      "off_success": 0.2703125
+    }
+  ],
+  "ranking": [
+    "hand_position",
+    "grasp_offset",
+    "base_position",
+    "base_yaw",
+    "hand_orientation"
+  ],
+  "top_gap": {
+    "estimate": 0.32421875,
+    "ci95": [
+      0.26015625000000003,
+      0.39453125
+    ]
+  },
+  "clear_leader": true,
+  "bootstrap": "95% paired hierarchical percentile; seed then env; exploratory during adaptive selection"
+}

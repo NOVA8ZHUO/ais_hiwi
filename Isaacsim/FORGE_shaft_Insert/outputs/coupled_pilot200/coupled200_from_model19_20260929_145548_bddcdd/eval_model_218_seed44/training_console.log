@@ -1,0 +1,142 @@
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-09-29_15-23-41.log[0m
+[36m======================================================================================[0m
+
+[33m15:23:41 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 44
+	Physics step-size     : 0.004166666666666667
+	Rendering step-size   : 0.06666666666666667
+	Environment step-size : 0.06666666666666667
+[INFO]: Time taken for scene creation : 1.525361 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 32
+	Environment spacing   : 1.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 0.446148 seconds
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++------------------------+
+|  Active Command Terms  |
++--------+-------+-------+
+| Index  | Name  |  Type |
++--------+-------+-------+
++--------+-------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-----------------------------------+
+| Active Event Terms in Mode: 'reset' |
++----------+------------------------+
+|  Index   | Name                   |
++----------+------------------------+
+|    0     | reset                  |
+|    1     | shaft_friction         |
+|    2     | base_friction          |
++----------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++---------------------+
+| Active Recorder Terms |
++-----------+---------+
+|   Index   | Name    |
++-----------+---------+
++-----------+---------+
+
+[INFO] Action Manager:  <ActionManager> contains 1 active terms.
++-----------------------------------+
+|   Active Action Terms (shape: 5)  |
++--------+-------------+------------+
+| Index  | Name        |  Dimension |
++--------+-------------+------------+
+|   0    | arm_action  |          5 |
++--------+-------------+------------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++--------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (29,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (29,)      |
++----------------+----------------+----------------+
++--------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (53,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (53,)      |
++----------------+----------------+----------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 4 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | outside_workspace   |  False   |
+|   2   | invalid_grasp_width |  False   |
+|   3   | release_complete    |  False   |
++-------+---------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 6 active terms.
++------------------------------+
+|     Active Reward Terms      |
++-------+-------------+--------+
+| Index | Name        | Weight |
++-------+-------------+--------+
+|   0   | keypoints   |   15.0 |
+|   1   | place       |   15.0 |
+|   2   | inserted    |   15.0 |
+|   3   | contact     |  -3.75 |
+|   4   | shaft_pitch |  -3.75 |
+|   5   | prediction  |  -15.0 |
++-------+-------------+--------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+[INFO]: Completed setting up the environment...
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 policy :  ['policy']
+	 critic :  ['critic']
+--------------------------------------------------------------------------------
+Actor RNN: Memory(
+  (rnn): LSTM(29, 128)
+)
+Actor MLP: MLP(
+  (0): Linear(in_features=128, out_features=128, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=128, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=5, bias=True)
+)
+Critic RNN: Memory(
+  (rnn): LSTM(53, 128)
+)
+Critic MLP: MLP(
+  (0): Linear(in_features=128, out_features=128, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=128, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=1, bias=True)
+)
+EVAL_PROGRESS {"steps": 150, "selected": 2, "quota": 128, "min_completed": 0, "elapsed_s": 31.999001977965236}
+EVAL_PROGRESS {"steps": 300, "selected": 32, "quota": 128, "min_completed": 1, "elapsed_s": 64.56240491615608}
+EVAL_PROGRESS {"steps": 450, "selected": 37, "quota": 128, "min_completed": 1, "elapsed_s": 97.86858862498775}
+EVAL_PROGRESS {"steps": 600, "selected": 67, "quota": 128, "min_completed": 2, "elapsed_s": 131.46711310511455}
+EVAL_PROGRESS {"steps": 750, "selected": 73, "quota": 128, "min_completed": 2, "elapsed_s": 164.38474645116366}
+EVAL_PROGRESS {"steps": 900, "selected": 102, "quota": 128, "min_completed": 3, "elapsed_s": 198.5999245219864}
+EVAL_PROGRESS {"steps": 1050, "selected": 107, "quota": 128, "min_completed": 3, "elapsed_s": 231.84588819602504}
+EVAL_PROGRESS {"steps": 1200, "selected": 128, "quota": 128, "min_completed": 4, "elapsed_s": 265.3641777620651}
+EVALUATION_RESULT {"checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_coupled_release25/2026-09-29_14-55-55_coupled200_from_model19_20260929_145548_bddcdd/model_218.pt", "checkpoint_sha256": "55412ac175be2c8294491d846719365f0a980bc6264be9cf359d97b5e1d8356a", "deterministic": true, "training": false, "policy_state_unchanged": true, "task_source_matches_training": true, "seed": 44, "num_envs": 32, "episodes_per_env": 4, "completed_episodes": 128, "raw_completed_episodes": 135, "control_steps": 1200, "elapsed_s": 265.36940449196845, "rates": {"success_any": 0.28125, "success_final": 0.28125, "success_stable": 0.28125, "fully_seated_final": 0.28125, "seated_depth_final": 0.28125}, "success_final_wilson95": [0.2106120712149715, 0.36463580199045076], "terminations": {"time_out": 92, "outside_workspace": 0, "invalid_grasp_width": 0, "release_complete": 36}, "mean_episode_force_p95_N": 2.6146860894514248, "peak_force_N": 8.97809886932373, "mean_episode_action_saturation": 0.045493541629452926, "mean_episode_duration_s": 17.707812500000003, "protocol": "First four episodes per environment by default; all environmental randomization retained, policy mean actions, no randomized initial episode lengths. Raw CSV includes unselected extra episodes of faster environments; evaluation_episodes.csv is the benchmark denominator."}

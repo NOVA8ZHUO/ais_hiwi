@@ -1,0 +1,5 @@
+env_id,steps,duration_s,success_any,success_final,success_stable,longest_success_s,final_success_streak_s,force_p95_N,force_peak_N,action_saturation,active_action_steps,time_out,outside_workspace,invalid_grasp_width,episode_index
+0,150,10.0,0,0,0,0.0,0.0,4.1794281005859375,4.270542144775391,0.0,135,1,0,0,1
+1,150,10.0,0,0,0,0.0,0.0,3.5106472969055176,3.9006876945495605,0.0,135,1,0,0,2
+2,150,10.0,0,0,0,0.0,0.0,3.5469837188720703,4.2821855545043945,0.0,135,1,0,0,3
+3,150,10.0,0,0,0,0.0,0.0,3.5180749893188477,4.207840919494629,0.0,135,1,0,0,4

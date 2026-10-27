@@ -1,0 +1,8169 @@
+{
+  "description": "Observation/control paired factor study; no training",
+  "models": {
+    "zero": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/runs/20261013T160124Z_train/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__404.08377_.pth",
+      "checkpoint_sha256": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897"
+    },
+    "randomized": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__341.10693_.pth",
+      "checkpoint_sha256": "57ae61f09be156e0c07aa250e0c58d164251e0efc36f2b56b2a76ee21e3f24ed"
+    }
+  },
+  "sha256": {
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/observation_control_study/experiment.py": "56226a0c75263b5f1cbcee89a1f6e93c2189d1ff80b117132d7fcdae13f4b167",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/observation_control_study/evaluator.py": "1b6ac69728a9320e658ddae3c532a403fc77ccbf9503dcea7072706544e68a56",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/observation_control_study/test_experiment.py": "21a5657f56f43225e1bda99ad885eef4fa805f1db3dd1dd2c192d1df637103f5",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/observation_control_study/start.sh": "00bd347886af3e5fe37f90d7e6ce10caebb53a3e4e9a7be3b59c1a626dd125bc",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/observation_control_study/run.sh": "c1beb7cff94e730a0de9204941d5d51472c4664063ca1a3f9d70aaeb3af26ed4",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/observation_control_study/progress.sh": "baa7d225d3d1196420dc24a19949ca395b6625c5310198391a20e5c08d6723cc",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/observation_control_study/EXPERIMENT.md": "0afbafa0a0915a27455758073bf8a7e43ef094aec364b85a00105454733e18eb",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/lock.json": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c"
+  },
+  "jobs": [
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "zero",
+      "active": [],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "zero",
+      "active": [],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "zero",
+      "active": [],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "zero",
+      "active": [],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "zero",
+      "active": [],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "zero",
+      "active": [],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "zero",
+      "active": [],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "zero",
+      "active": [],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "zero",
+      "active": [],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "zero",
+      "active": [],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 200
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 201
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 202
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 203
+    },
+    {
+      "phase": "screen",
+      "model": "zero",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "screen",
+      "model": "randomized",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 204
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "zero",
+      "active": [],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "zero",
+      "active": [],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "zero",
+      "active": [],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "zero",
+      "active": [],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "zero",
+      "active": [],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "zero",
+      "active": [],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "zero",
+      "active": [],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "zero",
+      "active": [],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "zero",
+      "active": [],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "zero",
+      "active": [],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "full",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_on_observation",
+      "active": [
+        "force_noise",
+        "hole_observation",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_off_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_on_control",
+      "active": [
+        "dead_zone",
+        "ema",
+        "gains",
+        "position_threshold",
+        "rotation_threshold"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "group_off_control",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_hole_observation",
+      "active": [
+        "hole_observation"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_hole_observation",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_tip_position_noise",
+      "active": [
+        "tip_position_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_tip_position_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_tip_rotation_noise",
+      "active": [
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_tip_rotation_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_force_noise",
+      "active": [
+        "force_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_force_noise",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_gains",
+      "active": [
+        "gains"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_gains",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_ema",
+      "active": [
+        "ema"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_ema",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_position_threshold",
+      "active": [
+        "position_threshold"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_position_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_rotation_threshold",
+      "active": [
+        "rotation_threshold"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_rotation_threshold",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "dead_zone",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_on_dead_zone",
+      "active": [
+        "dead_zone"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 300
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 301
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 302
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 303
+    },
+    {
+      "phase": "confirmation",
+      "model": "zero",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    },
+    {
+      "phase": "confirmation",
+      "model": "randomized",
+      "condition": "factor_off_dead_zone",
+      "active": [
+        "base_position",
+        "base_yaw",
+        "contact_threshold",
+        "ema",
+        "force_noise",
+        "friction",
+        "gains",
+        "grasp_offset",
+        "hand_orientation",
+        "hand_position",
+        "hole_observation",
+        "mass",
+        "position_threshold",
+        "quaternion_sign",
+        "rotation_threshold",
+        "tip_position_noise",
+        "tip_rotation_noise"
+      ],
+      "seed": 304
+    }
+  ],
+  "total_jobs": 480,
+  "total_episodes": 61440,
+  "historical_seconds_per_job": 96.01746493670507,
+  "estimated_hours": 12.802328658227344
+}

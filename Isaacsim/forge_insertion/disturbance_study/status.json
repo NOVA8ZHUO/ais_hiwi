@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "stage": "complete",
+  "model": "randomized",
+  "updated_unix": 1792010846.1119616,
+  "condition": "zero",
+  "seed": 4,
+  "selected_group": "pose",
+  "category_leader_clear": true,
+  "replay_job": 160,
+  "replay_total": 160,
+  "comparison_report": "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/MODEL_COMPARISON.md",
+  "elapsed_this_invocation_s": 30857.474874019623,
+  "report": "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/RESULTS.md"
+}

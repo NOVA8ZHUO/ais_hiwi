@@ -1,0 +1,17 @@
+{
+  "identity": {
+    "condition": "group_on_physics",
+    "active": [
+      "friction",
+      "mass"
+    ],
+    "seed": 4,
+    "num_envs": 128,
+    "model": "randomized",
+    "checkpoint_sha256": "57ae61f09be156e0c07aa250e0c58d164251e0efc36f2b56b2a76ee21e3f24ed",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "49a4e043927c7f163909f88755f8b71c0d9c4990767c76fe0e7b45c2be1e541d"
+  },
+  "seconds": 96.6273263162002,
+  "evaluation_sha256": "c6460c56f050d3e46b79c28152fd97fe3e9463dd058d646ea36d403350fbdd78"
+}

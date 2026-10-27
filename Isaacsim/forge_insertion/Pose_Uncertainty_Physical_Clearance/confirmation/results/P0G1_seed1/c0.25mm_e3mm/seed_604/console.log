@@ -1,0 +1,135 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/apps/isaaclab.python.headless.kit
+Loading user config located at: '/home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20261026_164627.log
+2026-10-26T15:46:28Z [60ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-10-26T15:46:28Z [391ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-10-26T15:46:28Z [398ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.178.04    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 4090          | Yes: 0 |     | 24564   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2684      | 9a8e4354.. |
+|     |                                  |        |     |            | 1         |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 6.8.0-111-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: 13th Gen Intel(R) Core(TM) i7-13700KF
+| Bare Metal Cores: 16 | Bare Metal Logical Cores: 32
+| Available Cores:  24 
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 64158 | Free Memory: 53156
+| Total Page/Swap (MB): 31249 | Free Page/Swap: 11405
+|---------------------------------------------------------------------------------------------|
+2026-10-26T15:46:33Z [5,384ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-10-26T15:46:33Z [5,392ms] [Warning] [gpu.foundation.plugin] PCIe link generation current (1) and maximum (4) for device 0 don't match.
+2026-10-26T15:46:33Z [5,392ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[INFO]: Parsing configuration from: confirm_task.config:ConfirmCfg
+[INFO]: Parsing configuration from: /home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab_tasks/isaaclab_tasks/direct/forge/agents/rl_games_ppo_cfg.yaml
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-10-26_16-46-35.log[0m
+[36m======================================================================================[0m
+
+[33m16:46:35 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 604
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.008333333333333333
+	Environment step-size : 0.06666666666666667
+[33m16:46:35 [direct_rl_env.py] WARNING: The render interval (1) is smaller than the decimation (8). Multiple render calls will happen for each environment step.If this is not intended, set the render interval to be equal to the decimation.[0m
+[INFO]: Time taken for scene creation : 1.709152 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 128
+	Environment spacing   : 2.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : ['/World/ground']
+	Replicate physics     : False
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 1.128360 seconds
+[INFO] Event Manager:  <EventManager> contains 3 active terms.
++------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++---------+--------------------------+
+|  Index  | Name                     |
++---------+--------------------------+
+|    0    | object_scale_mass        |
++---------+--------------------------+
++----------------------------------------+
+| Active Event Terms in Mode: 'startup'  |
++---------+------------------------------+
+|  Index  | Name                         |
++---------+------------------------------+
+|    0    | held_physics_material        |
+|    1    | fixed_physics_material       |
+|    2    | robot_physics_material       |
++---------+------------------------------+
++--------------------------------------------------------+
+|         Active Event Terms in Mode: 'interval'         |
++-------+----------------------+-------------------------+
+| Index | Name                 | Interval time range (s) |
++-------+----------------------+-------------------------+
+|   0   | dead_zone_thresholds |        (2.0, 2.0)       |
++-------+----------------------+-------------------------+
+
+[INFO]: Completed setting up the environment...
+Runtime: envs=128, action_space=Box(-inf, inf, (128, 7), float32), observation_space=Box(-inf, inf, (128, 24), float32)
+self.seed = 604
+[BasePlayer] Creating regular env:  rlgpu
+{'observation_space': Box(-inf, inf, (24,), float32), 'action_space': Box(-1.0, 1.0, (7,), float32), 'agents': 1, 'value_size': 1}
+build mlp: 1024
+RunningMeanStd:  (1,)
+RunningMeanStd:  (24,)
+=> loading checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G1/seed_1/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__348.5164_.pth'
+Rollout step=1, completed_episodes=0/128
+Rollout step=51, completed_episodes=0/128
+Rollout step=101, completed_episodes=0/128
+{
+  "protocol": "auxiliary fixed-seed evaluation; not verified paper protocol",
+  "seed": 604,
+  "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G1/seed_1/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__348.5164_.pth",
+  "episodes": 128,
+  "success_rate_any": 0.859375,
+  "success_rate_final": 0.859375,
+  "mean_episode_reward": 258.3418453694321,
+  "force_definition": "L2 norm of smoothed wrist force, sampled at control rate",
+  "cad_geometry": {
+    "seating_depth_m": 0.047,
+    "official_success_depth_min_m": 0.04512,
+    "episodes_exceeding_50mm_depth": 0,
+    "note": "Depth/width diagnostics do not change the official reward or success predicate."
+  },
+  "sample_sha256": "161c8e452677c5c0b52ef4379dcebc4e07e01ee8332534169f737f7fd278ab82",
+  "active_factors": [
+    "base_position",
+    "base_yaw",
+    "contact_threshold",
+    "dead_zone",
+    "ema",
+    "force_noise",
+    "friction",
+    "gains",
+    "grasp_offset",
+    "hand_orientation",
+    "hand_position",
+    "hole_observation",
+    "mass",
+    "position_threshold",
+    "quaternion_sign",
+    "rotation_threshold",
+    "tip_position_noise",
+    "tip_rotation_noise"
+  ],
+  "policy_sample_count": 149,
+  "clearance_mm": 0.25,
+  "xy_error_radius_mm": 3.0
+}

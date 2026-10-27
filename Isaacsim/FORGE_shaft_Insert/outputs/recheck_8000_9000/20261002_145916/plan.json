@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "training": false,
+  "models": [
+    8000,
+    9000
+  ],
+  "seeds": [
+    43,
+    44
+  ],
+  "training_run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_reward_v2_scratch/2026-10-01_14-19-06_reward_v2_total10000_20261001_141859_898ead"
+}

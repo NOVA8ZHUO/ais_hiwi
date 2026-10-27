@@ -1,0 +1,60 @@
+{
+  "protocol": "zero-action smoke test, not policy performance",
+  "seed": 0,
+  "checkpoint": null,
+  "episodes": 4,
+  "success_rate_any": 0.0,
+  "success_rate_final": 0.0,
+  "mean_episode_reward": -40.038681983947754,
+  "force_definition": "L2 norm of smoothed wrist force, sampled at control rate",
+  "rows": [
+    {
+      "episode": 0,
+      "env_id": 0,
+      "reward": 25.90713119506836,
+      "success_any": false,
+      "success_final": false,
+      "first_success_seconds": null,
+      "force_mean_N": 6.312301158905029,
+      "force_max_N": 9.383760452270508,
+      "terminated": true,
+      "truncated": true
+    },
+    {
+      "episode": 1,
+      "env_id": 1,
+      "reward": -101.42674255371094,
+      "success_any": false,
+      "success_final": false,
+      "first_success_seconds": null,
+      "force_mean_N": 14.127464294433594,
+      "force_max_N": 18.703413009643555,
+      "terminated": true,
+      "truncated": true
+    },
+    {
+      "episode": 2,
+      "env_id": 2,
+      "reward": -43.200435638427734,
+      "success_any": false,
+      "success_final": false,
+      "first_success_seconds": null,
+      "force_mean_N": 8.220478057861328,
+      "force_max_N": 11.237838745117188,
+      "terminated": true,
+      "truncated": true
+    },
+    {
+      "episode": 3,
+      "env_id": 3,
+      "reward": -41.4346809387207,
+      "success_any": false,
+      "success_final": false,
+      "first_success_seconds": null,
+      "force_mean_N": 8.22498893737793,
+      "force_max_N": 11.315452575683594,
+      "terminated": true,
+      "truncated": true
+    }
+  ]
+}

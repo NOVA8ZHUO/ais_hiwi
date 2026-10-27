@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/verify.py", line 78, in <module>
+    assert reset_delta < 1e-4, reset_delta
+           ^^^^^^^^^^^^^^^^^^
+AssertionError: 0.00015079975128173828

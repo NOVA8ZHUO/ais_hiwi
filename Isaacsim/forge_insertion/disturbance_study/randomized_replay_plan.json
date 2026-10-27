@@ -1,0 +1,2712 @@
+[
+  {
+    "condition": "factor_off_base_position",
+    "active": [
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "0dd19adeb53679af5f5d1ab5e5db5cf255bbd6f70e68feca762b26e426dbc645"
+  },
+  {
+    "condition": "factor_off_base_position",
+    "active": [
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "e9425d92ab8ab8df53451b2c6cbdabca4b3a6afc2fb9b2a016ec66a12cbf2e43"
+  },
+  {
+    "condition": "factor_off_base_position",
+    "active": [
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "dc883419e07bc4509a2489f3502d28c43db857fd3d0ebe5c68f08482c97b35e4"
+  },
+  {
+    "condition": "factor_off_base_position",
+    "active": [
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "d0a02d514fdce5c643f5d4d146604f063ee373804e598e1a88c5a21c548ae3c5"
+  },
+  {
+    "condition": "factor_off_base_position",
+    "active": [
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "1f43c7d28fd84657bca6ccc63d40b8c86a9abf25428eca76ed3ff8f5374e0d03"
+  },
+  {
+    "condition": "factor_off_base_yaw",
+    "active": [
+      "base_position",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "32b6cdf5b36a005370ae46af4434f9720d253bfe241058beb135b114a0e71320"
+  },
+  {
+    "condition": "factor_off_base_yaw",
+    "active": [
+      "base_position",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "56bd9d0068755909cf46709da92d5ddc351a0e8697587abbae9c217688ece16b"
+  },
+  {
+    "condition": "factor_off_base_yaw",
+    "active": [
+      "base_position",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "ecfbc3383e25762b000fa9eb1aae5ceeb84e7cb56ddaa454fb3d9a4d0d758267"
+  },
+  {
+    "condition": "factor_off_base_yaw",
+    "active": [
+      "base_position",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "c38b917b981a7336feaa7deef8279eb59f2211bf5d0673c077ae042a80f2b43b"
+  },
+  {
+    "condition": "factor_off_base_yaw",
+    "active": [
+      "base_position",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "c0857083efd4285d7a840eb288b1d3d706bbb159d1f05c7884f6d0793fbe0e6d"
+  },
+  {
+    "condition": "factor_off_grasp_offset",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "4155881f5a551ecdb7daf3bb068cbabbf9a0e7ebebd8e823daf862c0ec4c3ae3"
+  },
+  {
+    "condition": "factor_off_grasp_offset",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "835dfd32a3368e3943af3ff0046f8d83e8ef56f8a78efea7694ae0e828ec3bc7"
+  },
+  {
+    "condition": "factor_off_grasp_offset",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 100,
+    "n": 128,
+    "source_evaluation_sha256": "7b1c664a4ba86394e7ceaff6f5d4517b9b3688849878ce5ed3a01bf399f5fd2c"
+  },
+  {
+    "condition": "factor_off_grasp_offset",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 101,
+    "n": 128,
+    "source_evaluation_sha256": "ae3820b52ef21d514443c607210b091af43929ac7049e1800cd9540c5175f0da"
+  },
+  {
+    "condition": "factor_off_grasp_offset",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 102,
+    "n": 128,
+    "source_evaluation_sha256": "0cd22ff15e12894bb21c98aea3f753b9a9e575f4d06e0358371c3782353f81e9"
+  },
+  {
+    "condition": "factor_off_grasp_offset",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 103,
+    "n": 128,
+    "source_evaluation_sha256": "e79406f09eefd79b99c5035f967ce3b513312f3fc3715693cd6368d066019080"
+  },
+  {
+    "condition": "factor_off_grasp_offset",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 104,
+    "n": 128,
+    "source_evaluation_sha256": "87dd6c749b8ae6e8f5682e5e6d280dcb7dc56d7595855e68260f9e5756c6de94"
+  },
+  {
+    "condition": "factor_off_grasp_offset",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "70c0b6bb444e167e976777a15cedc903268fcc33784e64eeb8c4f3e26ae463d5"
+  },
+  {
+    "condition": "factor_off_grasp_offset",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "cf6e816cc30ddeb1eb3811021b5294a44931ccf81b64b25011b7c487da44a368"
+  },
+  {
+    "condition": "factor_off_grasp_offset",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "7359f836a190c2f2a4ad069997a918f14186ffec3f41fc64b59090fcb3273900"
+  },
+  {
+    "condition": "factor_off_hand_orientation",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "64bfcf1475f335e6d75834ccd1c8b7d1f407a87facae7b2382d48ed28bc05095"
+  },
+  {
+    "condition": "factor_off_hand_orientation",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "25fe490d7e39dcbb59fa33e4926490b79c4485815bd533f2056e82cb5c32ca7e"
+  },
+  {
+    "condition": "factor_off_hand_orientation",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "5bacc74819dd4eff35ec3a381f580ea65212bfe0c81b7bcd2cb5c27b9caf9406"
+  },
+  {
+    "condition": "factor_off_hand_orientation",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "3f173cefffdab330ad2d9473bb30e63a6c1aac9e733bdf8f33616085afd8c8a2"
+  },
+  {
+    "condition": "factor_off_hand_orientation",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "1e4434765d4fc51b6b191087fbc498e1ce8f58fe5665505dbb80a7a1afc82d7d"
+  },
+  {
+    "condition": "factor_off_hand_position",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "9f436c6f17a7ca619b253d4401f68e509615defc5f30fb16771affe6c23a4870"
+  },
+  {
+    "condition": "factor_off_hand_position",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "82b65e68bc57feaf7e56a06706cc024ae5d23f6e24282cea4a4169140d4a4bd9"
+  },
+  {
+    "condition": "factor_off_hand_position",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 100,
+    "n": 128,
+    "source_evaluation_sha256": "37481228fed366882a7c7aaee9f1f59801cba9b39d9625e24c8ef90497c8b5e4"
+  },
+  {
+    "condition": "factor_off_hand_position",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 101,
+    "n": 128,
+    "source_evaluation_sha256": "8dcd24970b1a90c2bfcff39b7fc8fa4015a1b67b018e734b2286b1060f57d47c"
+  },
+  {
+    "condition": "factor_off_hand_position",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 102,
+    "n": 128,
+    "source_evaluation_sha256": "84911a4e81d669d5d024dd02ddf67cb9695946b499c33b29b450379675a7c452"
+  },
+  {
+    "condition": "factor_off_hand_position",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 103,
+    "n": 128,
+    "source_evaluation_sha256": "8bbedf90d876ad3897db662892174d5de529558c4ea917eb38801712927a3743"
+  },
+  {
+    "condition": "factor_off_hand_position",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 104,
+    "n": 128,
+    "source_evaluation_sha256": "44e82cfbbb41e5327819a246a422cdfbd622eac6b5fc645db1d62608c2b30eef"
+  },
+  {
+    "condition": "factor_off_hand_position",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "30add0ed6d1c81e51337d342ad526ebf72d802328525f72890ebc499d25db9e9"
+  },
+  {
+    "condition": "factor_off_hand_position",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "5fe819c973f822c85f99ce34a77b0428501cb8ec30856567cebc09b97a1aa551"
+  },
+  {
+    "condition": "factor_off_hand_position",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "b150cdf4c01db126728c49dc172fda18c31ba96ea2f09d0f63773bd30164d952"
+  },
+  {
+    "condition": "factor_on_base_position",
+    "active": [
+      "base_position"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "455674dceb3baecbfc1394ff6628e9126345962ed1c10ba452cac585dad2419c"
+  },
+  {
+    "condition": "factor_on_base_position",
+    "active": [
+      "base_position"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "b293de451cfb8767350c3df2ea50f0c677a68512d4e36f6a3a6cab271ad9635f"
+  },
+  {
+    "condition": "factor_on_base_position",
+    "active": [
+      "base_position"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "1ce9d03737c785a44dc25dfa7c18091ea0bbe524ef5d09d3efe023a99f1a3ba6"
+  },
+  {
+    "condition": "factor_on_base_position",
+    "active": [
+      "base_position"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "0baa9dab855bf94674a6d25752f6d627bc94868f0acfe384075acedca87b7201"
+  },
+  {
+    "condition": "factor_on_base_position",
+    "active": [
+      "base_position"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "626070a127302c59fab30979a3c17b72c21af592064189e44ba81684b4e9d957"
+  },
+  {
+    "condition": "factor_on_base_yaw",
+    "active": [
+      "base_yaw"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "ada69d57c384eabfd07e8b34211bab7d69589dd109ba067f5ae4bd716969c339"
+  },
+  {
+    "condition": "factor_on_base_yaw",
+    "active": [
+      "base_yaw"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "0c805fdb2dadf6a39d892945d2e0ea6f1cd1e0c024894413639c2aed19b7249c"
+  },
+  {
+    "condition": "factor_on_base_yaw",
+    "active": [
+      "base_yaw"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "e40f274df663368fea91d3565f6be50bd7f4415199c002415dcaad26da8c5dbb"
+  },
+  {
+    "condition": "factor_on_base_yaw",
+    "active": [
+      "base_yaw"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "e008c905b31f174f835bae331a826d3a74c28ede10e610c3d730e15817a22443"
+  },
+  {
+    "condition": "factor_on_base_yaw",
+    "active": [
+      "base_yaw"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "5f037548b0a8f49ec5abae666c806a2da1e36f1fdfb326ae29a8cc9b58cac0f9"
+  },
+  {
+    "condition": "factor_on_grasp_offset",
+    "active": [
+      "grasp_offset"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "76a2c655e9debc67a42b90d0380fa11ccdf0f3aee0e6cd492f02e7ca0d946605"
+  },
+  {
+    "condition": "factor_on_grasp_offset",
+    "active": [
+      "grasp_offset"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "67f27b6a2658a5a689fee1cfd7c3356d8e890c0d322e92dcbdba8fd9644b10db"
+  },
+  {
+    "condition": "factor_on_grasp_offset",
+    "active": [
+      "grasp_offset"
+    ],
+    "seed": 100,
+    "n": 128,
+    "source_evaluation_sha256": "60e6c5fda47c10e91ebbf75c845c1e3ee274c0c2638c49f06c6a1e13416bfa7d"
+  },
+  {
+    "condition": "factor_on_grasp_offset",
+    "active": [
+      "grasp_offset"
+    ],
+    "seed": 101,
+    "n": 128,
+    "source_evaluation_sha256": "0db2e261bf179c9fcda08b23c7029654e3957474fd17720fd6b16c076188d15a"
+  },
+  {
+    "condition": "factor_on_grasp_offset",
+    "active": [
+      "grasp_offset"
+    ],
+    "seed": 102,
+    "n": 128,
+    "source_evaluation_sha256": "fe73b57738a7487d04a193e02d518af1d30b212a775e1897101ef6b87faf380f"
+  },
+  {
+    "condition": "factor_on_grasp_offset",
+    "active": [
+      "grasp_offset"
+    ],
+    "seed": 103,
+    "n": 128,
+    "source_evaluation_sha256": "0416e16397e5372e55b59bcb4f6ae05079d0ba824b62e31d3e305bf8d352e3d4"
+  },
+  {
+    "condition": "factor_on_grasp_offset",
+    "active": [
+      "grasp_offset"
+    ],
+    "seed": 104,
+    "n": 128,
+    "source_evaluation_sha256": "f80dcc834bf7dd6837d369aa91e17f9d29ee7052cc5a67e0b0d5d59821e3acd8"
+  },
+  {
+    "condition": "factor_on_grasp_offset",
+    "active": [
+      "grasp_offset"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "7443484d65a91474002f4ef4e91c2a2915f6397b407bbd7f9f785508e35d8dec"
+  },
+  {
+    "condition": "factor_on_grasp_offset",
+    "active": [
+      "grasp_offset"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "2eb9f23a222ce91780174876cc6d3fb99eeb2987b5a19a87b8fd9b2cc45b71b7"
+  },
+  {
+    "condition": "factor_on_grasp_offset",
+    "active": [
+      "grasp_offset"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "77d03063e7c1c3a553165e2220e443a7f2f92ca6dce84a5b8660ee62a0a6cdda"
+  },
+  {
+    "condition": "factor_on_hand_orientation",
+    "active": [
+      "hand_orientation"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "456de5821f4d7e24757fe91002e5bcc9fe0e10b51c455c2df608d938df835337"
+  },
+  {
+    "condition": "factor_on_hand_orientation",
+    "active": [
+      "hand_orientation"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "e495b62e228fe41416f330e7bf679c1c38a7b0e38432969353b61cd25d5249cc"
+  },
+  {
+    "condition": "factor_on_hand_orientation",
+    "active": [
+      "hand_orientation"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "2cd097dc998464754b4f16166c5e3f8ab54939077f7ccf34624cd5afd99800fa"
+  },
+  {
+    "condition": "factor_on_hand_orientation",
+    "active": [
+      "hand_orientation"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "0fc8ca32e1768196a6382370474ef8f200c00c4ea74f79c615f307ac42187eb3"
+  },
+  {
+    "condition": "factor_on_hand_orientation",
+    "active": [
+      "hand_orientation"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "5096fe857942b3a8132006fbde78c06a9de63b589575730f37b2e47da6173e31"
+  },
+  {
+    "condition": "factor_on_hand_position",
+    "active": [
+      "hand_position"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "22c5463d9be1ae49aa634741313879c75d7e4ecf684ec631ba92d9f3d0277a61"
+  },
+  {
+    "condition": "factor_on_hand_position",
+    "active": [
+      "hand_position"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "accfc903e9576cd2ade6e2fc7777a72326d1a25e79b167a35f5b449b98c4b7d9"
+  },
+  {
+    "condition": "factor_on_hand_position",
+    "active": [
+      "hand_position"
+    ],
+    "seed": 100,
+    "n": 128,
+    "source_evaluation_sha256": "f2e71303ed6c055cffa826c5e4a9061cf6332969b41efc8e82c8b5cff5bc36b1"
+  },
+  {
+    "condition": "factor_on_hand_position",
+    "active": [
+      "hand_position"
+    ],
+    "seed": 101,
+    "n": 128,
+    "source_evaluation_sha256": "c63bdb22e0f59953630e5fa8204d41df58d3c3255d49a891605dd59ac7c433fe"
+  },
+  {
+    "condition": "factor_on_hand_position",
+    "active": [
+      "hand_position"
+    ],
+    "seed": 102,
+    "n": 128,
+    "source_evaluation_sha256": "a2a80980fa2c4249e4760e2fb670a6f0a43706be29f392dd7182fe7a8e437cad"
+  },
+  {
+    "condition": "factor_on_hand_position",
+    "active": [
+      "hand_position"
+    ],
+    "seed": 103,
+    "n": 128,
+    "source_evaluation_sha256": "0853970a975a39f885f938bf899a3ae78be7f2ed22ff2270915e1b1699d3bc11"
+  },
+  {
+    "condition": "factor_on_hand_position",
+    "active": [
+      "hand_position"
+    ],
+    "seed": 104,
+    "n": 128,
+    "source_evaluation_sha256": "cc3c2b7d2b8248b44055794b1366409659a6542ff710b6e6bf2944159534354c"
+  },
+  {
+    "condition": "factor_on_hand_position",
+    "active": [
+      "hand_position"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "fb56343e1c66bd559b0bc1f57b272fcfd4ae9d0f96421e71245002915df432a8"
+  },
+  {
+    "condition": "factor_on_hand_position",
+    "active": [
+      "hand_position"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "7328c8f3b35aa236c696c170ef18ea18547bf6a4cff449b475582d7e34ce67d1"
+  },
+  {
+    "condition": "factor_on_hand_position",
+    "active": [
+      "hand_position"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "4420e81b6b0693ebb9ef2f1052397d06e37a6c97aff86bf124896802eacbcc2b"
+  },
+  {
+    "condition": "full",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "939c0de414933121cc248a3bcd19077179ddb1a70ada92cab33415f33026415d"
+  },
+  {
+    "condition": "full",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "b2237eb1b90f456791078fb3a5ee21e7ee567e2edd5faf6d462f4c6ddd1c25bc"
+  },
+  {
+    "condition": "full",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 100,
+    "n": 128,
+    "source_evaluation_sha256": "12e160d5a44758bdccdb2b8f689025b05207b4c3adcc8192eef76deefab51fc5"
+  },
+  {
+    "condition": "full",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 101,
+    "n": 128,
+    "source_evaluation_sha256": "7bff4690475185db87afa89dd9011c810a4114ea51fa42d5ed183cfefe65106f"
+  },
+  {
+    "condition": "full",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 102,
+    "n": 128,
+    "source_evaluation_sha256": "d6c0d98e0933bad277df12171db8fb6dbcde64e023115d63cd2eeda85e0e0410"
+  },
+  {
+    "condition": "full",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 103,
+    "n": 128,
+    "source_evaluation_sha256": "e1a1a3612beabd37080418fb7d582ac112569f8e79dbc02d406308efc8476a37"
+  },
+  {
+    "condition": "full",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 104,
+    "n": 128,
+    "source_evaluation_sha256": "cae944a11f518c67ab6de31bf9ff074a6ef7911573aa2e5d3cc503f271007df3"
+  },
+  {
+    "condition": "full",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "cc94cc31da34dbb7509d7ab89ebdb8fc368d579d2eb1a706cc4aa7238e2b4161"
+  },
+  {
+    "condition": "full",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "460e23a662b0d6cc460f96ddf314f2af2e504d723433816add378e11ba766baf"
+  },
+  {
+    "condition": "full",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "ffb0813d36c4f81e3987afffed2adf3a7a5ea31de7faf09c596389c6535c16ef"
+  },
+  {
+    "condition": "group_off_control",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "force_noise",
+      "friction",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "quaternion_sign",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "93c8340ed440f36f4e19a1093616cf24a8472008510c957b2c80a4a79b88081d"
+  },
+  {
+    "condition": "group_off_control",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "force_noise",
+      "friction",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "quaternion_sign",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "0dd74864fe6c3d1c166bea66ce4798f278d14eebb1bb5221da8b8c616b39e7dd"
+  },
+  {
+    "condition": "group_off_control",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "force_noise",
+      "friction",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "quaternion_sign",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "00550eb91136eb66564b6e974cea3ebdf54234a35345223433b76c36ac793b2b"
+  },
+  {
+    "condition": "group_off_control",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "force_noise",
+      "friction",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "quaternion_sign",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "71939f1e96a458aa48846060bd8c8e811649e4155b23619980de8649133dfbf0"
+  },
+  {
+    "condition": "group_off_control",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "force_noise",
+      "friction",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "quaternion_sign",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "3eeab4041759f6931a0f6c88d2a702f48a300238ac3cd372922a199d1588d13c"
+  },
+  {
+    "condition": "group_off_observation",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "1b47d2a5394954da3ffe50088c2fd60c6b2e3c4f08e5ababf13287de282ec683"
+  },
+  {
+    "condition": "group_off_observation",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "428c411c79bd12d711f3d32e73fbc872b6d91256a681fd2aa2b075f5d741861e"
+  },
+  {
+    "condition": "group_off_observation",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "01868f4fe2de183500b52099830d38e1c83214a3bb250d1ce232c69659d857b7"
+  },
+  {
+    "condition": "group_off_observation",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "2a995f1972bb3ef2cd659960f6db3de660d0b8431a43562f37ca81fea6ca9a9a"
+  },
+  {
+    "condition": "group_off_observation",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "e77ad524f28b4b9fb04cc162ede15f23ee6ba7e79dbbc9ba9c83adf4276175dc"
+  },
+  {
+    "condition": "group_off_other",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "c3493f4d9a9bc0b570d1e8b42cb49a1f76bda62a40d4be8437b3f5a873ed6476"
+  },
+  {
+    "condition": "group_off_other",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "deefaf1476807ec081d95433412d9f83c8512c6a4088f9c4d785db84fabe596f"
+  },
+  {
+    "condition": "group_off_other",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 100,
+    "n": 128,
+    "source_evaluation_sha256": "22f23e3bf24332ddaf606f10e6f9c7eadf6cc31a44ce1354de3e5b82262ea7c0"
+  },
+  {
+    "condition": "group_off_other",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 101,
+    "n": 128,
+    "source_evaluation_sha256": "6de6604cef87811974c0687fc929cd966823e72fa293d16cb3cb0a3cc68a5977"
+  },
+  {
+    "condition": "group_off_other",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 102,
+    "n": 128,
+    "source_evaluation_sha256": "d899ee0667164f3dac758ed525ee5456189b5ad2a690edf169f5b94e0eaa9dab"
+  },
+  {
+    "condition": "group_off_other",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 103,
+    "n": 128,
+    "source_evaluation_sha256": "0c51608eea7d20f88923e4a8508021d001462de408b0084f44c3062e1cc6ef80"
+  },
+  {
+    "condition": "group_off_other",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 104,
+    "n": 128,
+    "source_evaluation_sha256": "87f0f60ae949828e5749a6a0a94893d9a4c4c09de159251016505e316e961493"
+  },
+  {
+    "condition": "group_off_other",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "b8dd3f211d980c308bf1e74f65ff17269e7356ff6d143864c2c195cffb7e847c"
+  },
+  {
+    "condition": "group_off_other",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "337764a6cdb469840f5d4668980cd5278303d006379971c5f17792ae303c4e2b"
+  },
+  {
+    "condition": "group_off_other",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "6c0b2a15593229849379538cb6931da28927cbea439dbf7d1fbb81f5a520667a"
+  },
+  {
+    "condition": "group_off_physics",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "6006a74375fa5b0f3c90b22bdbbce2affd9ad27138d544261d43f5824c330572"
+  },
+  {
+    "condition": "group_off_physics",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "937e0692cb2014f1c9d876bdc4990bc2c5a53cfbe8d54f5279b782bde8445124"
+  },
+  {
+    "condition": "group_off_physics",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "5527e29a2494b9c11969b52fe22315c6d5ebe75e3590e130ba013e11dedeaf0c"
+  },
+  {
+    "condition": "group_off_physics",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "969c1341f223e8833cfe8a8ce2c0450bf5e8c0b9a664721fa1157e5f38899f8b"
+  },
+  {
+    "condition": "group_off_physics",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "d00594712b57d0675d38cb416f4a9ee451279cfefe6d69f625fcd9877670f7aa"
+  },
+  {
+    "condition": "group_off_pose",
+    "active": [
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "b1d675f71eb5578297cc4f38631a9f09250cb9e930bb5b1fa291fc9c327bac32"
+  },
+  {
+    "condition": "group_off_pose",
+    "active": [
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "668b1e48c77f202ffc89b1b199a78335f8405a9f7647d6654c5196eb35814707"
+  },
+  {
+    "condition": "group_off_pose",
+    "active": [
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 100,
+    "n": 128,
+    "source_evaluation_sha256": "8872e488fe7d517ac364b6c72c4d08f5500a84d0e99b7d98a421ee9ea16759a1"
+  },
+  {
+    "condition": "group_off_pose",
+    "active": [
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 101,
+    "n": 128,
+    "source_evaluation_sha256": "944adc721d9411f970f5c0713e255830848b2ff513e0ee16b3da972ff3c759c7"
+  },
+  {
+    "condition": "group_off_pose",
+    "active": [
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 102,
+    "n": 128,
+    "source_evaluation_sha256": "bd0f4f9e7cc06de7c9ee5bec828a257d20204db17ef6c548d8be573c85d29da2"
+  },
+  {
+    "condition": "group_off_pose",
+    "active": [
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 103,
+    "n": 128,
+    "source_evaluation_sha256": "c00db1f0e37746c77fbf7cb8289be49e6145e6c28f95aa3785bb2181fb59516a"
+  },
+  {
+    "condition": "group_off_pose",
+    "active": [
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 104,
+    "n": 128,
+    "source_evaluation_sha256": "77a3461c086d8aaad92852b79501ce121fc5a48c79f186251bfa08ba18db0ddf"
+  },
+  {
+    "condition": "group_off_pose",
+    "active": [
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "565f978ac0e7b2b28d874d35da7de80949296b76838070de220fd2fcf9e19b19"
+  },
+  {
+    "condition": "group_off_pose",
+    "active": [
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "1747ee85f4d6a21e0b535668020c3b0319a01850f647da659c6a4f4c40fe9532"
+  },
+  {
+    "condition": "group_off_pose",
+    "active": [
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "6b00d8632afb00558d5faa161ac95b2b38b859c5ad6fd27d8c41be03924dbcce"
+  },
+  {
+    "condition": "group_on_control",
+    "active": [
+      "dead_zone",
+      "ema",
+      "gains",
+      "position_threshold",
+      "rotation_threshold"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "b45edc48b46e8b9f2f508e8a779e8a9ab18fd2ae62ccd42f4408b895cab378e3"
+  },
+  {
+    "condition": "group_on_control",
+    "active": [
+      "dead_zone",
+      "ema",
+      "gains",
+      "position_threshold",
+      "rotation_threshold"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "e04b8c972d7c5299cb00baffc3d8d49ad7f8fe32bf59032e1b8cb1d262203ba7"
+  },
+  {
+    "condition": "group_on_control",
+    "active": [
+      "dead_zone",
+      "ema",
+      "gains",
+      "position_threshold",
+      "rotation_threshold"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "8cf1e502c697eb4e9ee0a5437fa34daa76948cceb9af07df463901293ca03ceb"
+  },
+  {
+    "condition": "group_on_control",
+    "active": [
+      "dead_zone",
+      "ema",
+      "gains",
+      "position_threshold",
+      "rotation_threshold"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "48a3f07ba772c036e5192323e3fb57484e95dd7607784eed7328418a117662da"
+  },
+  {
+    "condition": "group_on_control",
+    "active": [
+      "dead_zone",
+      "ema",
+      "gains",
+      "position_threshold",
+      "rotation_threshold"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "8c3e9372f5e13fdf2cd3b50b04a6d5b906ba85a8caaba4856dc40be396cf3548"
+  },
+  {
+    "condition": "group_on_observation",
+    "active": [
+      "force_noise",
+      "hole_observation",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "60aa08d7cad462bb95aeeed144d70c7d9e703ce4905825a480d09b4f05f88189"
+  },
+  {
+    "condition": "group_on_observation",
+    "active": [
+      "force_noise",
+      "hole_observation",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "6d0a292f9ad898fe6cfe5206803621f288eeecf60de10ddfc1f652c5f23d40bd"
+  },
+  {
+    "condition": "group_on_observation",
+    "active": [
+      "force_noise",
+      "hole_observation",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "5dfce9b3af390594d7add1c1415ee357af49ab4df816533cb4b4a0281b5e2bf1"
+  },
+  {
+    "condition": "group_on_observation",
+    "active": [
+      "force_noise",
+      "hole_observation",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "bae20ff9ad82a5a145d36bf9effe5f7f2080631748fae0f34b8d4927fe53753a"
+  },
+  {
+    "condition": "group_on_observation",
+    "active": [
+      "force_noise",
+      "hole_observation",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "f4d8080278b064dc88a68da7d72c66d1c3e9629a5c51a977976e18ee933c35ed"
+  },
+  {
+    "condition": "group_on_other",
+    "active": [
+      "contact_threshold",
+      "quaternion_sign"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "179ec405608a9aec0294825dac461f466437539a7d31b853f5a0fc87b87efe26"
+  },
+  {
+    "condition": "group_on_other",
+    "active": [
+      "contact_threshold",
+      "quaternion_sign"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "2cd16651557e5802cdb3599a35ad0cab4f3589beb7ed57a2f6bc08d228dafb34"
+  },
+  {
+    "condition": "group_on_other",
+    "active": [
+      "contact_threshold",
+      "quaternion_sign"
+    ],
+    "seed": 100,
+    "n": 128,
+    "source_evaluation_sha256": "783140891ecb7d8c1b68b47e7824d8dc9ab5449bf72173326300917cb0a4026c"
+  },
+  {
+    "condition": "group_on_other",
+    "active": [
+      "contact_threshold",
+      "quaternion_sign"
+    ],
+    "seed": 101,
+    "n": 128,
+    "source_evaluation_sha256": "62ff19e349d069c9378a885d72074e6c476f44b3dbeb515aaa61e6fb8386b59a"
+  },
+  {
+    "condition": "group_on_other",
+    "active": [
+      "contact_threshold",
+      "quaternion_sign"
+    ],
+    "seed": 102,
+    "n": 128,
+    "source_evaluation_sha256": "337161619acf670c5eaae21603fc4ef3d49d790293f41e0eab495671b2ce4fe4"
+  },
+  {
+    "condition": "group_on_other",
+    "active": [
+      "contact_threshold",
+      "quaternion_sign"
+    ],
+    "seed": 103,
+    "n": 128,
+    "source_evaluation_sha256": "a73bf80fffe71bb4b244ca1f10f95bab2efa94b591d708e5b886ff651d30d6ef"
+  },
+  {
+    "condition": "group_on_other",
+    "active": [
+      "contact_threshold",
+      "quaternion_sign"
+    ],
+    "seed": 104,
+    "n": 128,
+    "source_evaluation_sha256": "9037aeb47e9ccf141b03dbd91f919a90588ef09f2478765f72570e9f3b353d62"
+  },
+  {
+    "condition": "group_on_other",
+    "active": [
+      "contact_threshold",
+      "quaternion_sign"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "a8644411341c345f73ceade78c8a21118ecd8be5fa06049f1d2600c1ee73c9d9"
+  },
+  {
+    "condition": "group_on_other",
+    "active": [
+      "contact_threshold",
+      "quaternion_sign"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "7d0777fef5b3102c2bbab4dc9080949123db9c9093b5a24202c9741e69991480"
+  },
+  {
+    "condition": "group_on_other",
+    "active": [
+      "contact_threshold",
+      "quaternion_sign"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "3415fba4bebc0ecfea222dc31d28f308e7449442528ce08cab32f528d091f271"
+  },
+  {
+    "condition": "group_on_physics",
+    "active": [
+      "friction",
+      "mass"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "cacd6f319c70a5c074df240338cf23e1b290f8c3c8a6a9c26bbdc2501e4aff9a"
+  },
+  {
+    "condition": "group_on_physics",
+    "active": [
+      "friction",
+      "mass"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "8d2fbac91fdaf767c9fb6638ae196d888557dd470102fb51b03caa753e7a9456"
+  },
+  {
+    "condition": "group_on_physics",
+    "active": [
+      "friction",
+      "mass"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "86bbc4f0f746011e5781963d9313a95f95c187829f352ddda8c7d6baad64e420"
+  },
+  {
+    "condition": "group_on_physics",
+    "active": [
+      "friction",
+      "mass"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "5cffbdc846602ec7222dc22ab5253d2a22dd5d42b22508a04ac532889781a0df"
+  },
+  {
+    "condition": "group_on_physics",
+    "active": [
+      "friction",
+      "mass"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "e2dd5ad4357865f37efd5011abea807f19b0997ecda5fb056844928284fbfc8d"
+  },
+  {
+    "condition": "group_on_pose",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position"
+    ],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "bed00b95ae018d41aa3ffa49aae1f29795a8e8b80effcab740169dae6d9b504d"
+  },
+  {
+    "condition": "group_on_pose",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position"
+    ],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "af24e47b0e8745fb996c6ebe2e9c70156324a042f0d26f982d10f0f35b8b58dd"
+  },
+  {
+    "condition": "group_on_pose",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position"
+    ],
+    "seed": 100,
+    "n": 128,
+    "source_evaluation_sha256": "5487c2e011a0339e9fd5b7540524fbc72b1f581a78b714910f65296be84699cc"
+  },
+  {
+    "condition": "group_on_pose",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position"
+    ],
+    "seed": 101,
+    "n": 128,
+    "source_evaluation_sha256": "b0eac2d07f5435fc7a0dd2ed9dbcc07900b418ad894fb17128cb493c8157caf3"
+  },
+  {
+    "condition": "group_on_pose",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position"
+    ],
+    "seed": 102,
+    "n": 128,
+    "source_evaluation_sha256": "c056cf527937e24cba346dfc439381aeacd5026fd4df309e403f22785bde6eaf"
+  },
+  {
+    "condition": "group_on_pose",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position"
+    ],
+    "seed": 103,
+    "n": 128,
+    "source_evaluation_sha256": "55850d078196972477b6020acb0f35114503e073cc79310a0f2682a5415b0c38"
+  },
+  {
+    "condition": "group_on_pose",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position"
+    ],
+    "seed": 104,
+    "n": 128,
+    "source_evaluation_sha256": "d96aeb9f44d7d1baa3d2cf6dc9662f95f8fa90da79781a02f10dec576087443b"
+  },
+  {
+    "condition": "group_on_pose",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position"
+    ],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "4109db955c55111abdd53466a8b3ec52a12a233e5c5b8de948070e0b4327971e"
+  },
+  {
+    "condition": "group_on_pose",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position"
+    ],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "0eeb0bff4b92b829feb03f0f25ef2a36f8068f9b1203559926335b082fe599d1"
+  },
+  {
+    "condition": "group_on_pose",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position"
+    ],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "b92ebb43c2493d5b5c68377e497b6b36bcf9d210474cdfce38062da12d5ba672"
+  },
+  {
+    "condition": "zero",
+    "active": [],
+    "seed": 0,
+    "n": 128,
+    "source_evaluation_sha256": "b4999288fe4ec92feb2265e1f6496aafe7999ebccaa9e9222520734b158a9327"
+  },
+  {
+    "condition": "zero",
+    "active": [],
+    "seed": 1,
+    "n": 128,
+    "source_evaluation_sha256": "f914858abd3f271c780b46be61097ac8e6fe0a7eb59022b6521e5bfcf04c7497"
+  },
+  {
+    "condition": "zero",
+    "active": [],
+    "seed": 100,
+    "n": 128,
+    "source_evaluation_sha256": "3209aec716d2730a127060131b39fd493bad29d8735a142870263ece4e0878c4"
+  },
+  {
+    "condition": "zero",
+    "active": [],
+    "seed": 101,
+    "n": 128,
+    "source_evaluation_sha256": "262e735797968b4f6cd8f8c5ff0e0a37875d11667b5590b5f2f80dae2bf73a07"
+  },
+  {
+    "condition": "zero",
+    "active": [],
+    "seed": 102,
+    "n": 128,
+    "source_evaluation_sha256": "23e289f4a72a531a2603b3511f086d5a4580b2c40f3bbaab72c9654581f69051"
+  },
+  {
+    "condition": "zero",
+    "active": [],
+    "seed": 103,
+    "n": 128,
+    "source_evaluation_sha256": "894b848acfd6037890e2ece1a528a0b7d2e0cfac67210133601095f5f7904955"
+  },
+  {
+    "condition": "zero",
+    "active": [],
+    "seed": 104,
+    "n": 128,
+    "source_evaluation_sha256": "e53e8440d348db37761efe4aaee9e65bdbd96d2f754282b358dbbba4e61a447f"
+  },
+  {
+    "condition": "zero",
+    "active": [],
+    "seed": 2,
+    "n": 128,
+    "source_evaluation_sha256": "81379cc2c65bd48f68996ddaca0817fa64da30ccff3a86f04ae6f67fc4afb21f"
+  },
+  {
+    "condition": "zero",
+    "active": [],
+    "seed": 3,
+    "n": 128,
+    "source_evaluation_sha256": "b8fbebdc9e9502c2adb3af201d798e7c1fa3d410b91a07319c164d03415a731b"
+  },
+  {
+    "condition": "zero",
+    "active": [],
+    "seed": 4,
+    "n": 128,
+    "source_evaluation_sha256": "a3267ab5b2f7a9dd38a809b973eaef2d47048452dedab5c1e4b41a6334591143"
+  }
+]

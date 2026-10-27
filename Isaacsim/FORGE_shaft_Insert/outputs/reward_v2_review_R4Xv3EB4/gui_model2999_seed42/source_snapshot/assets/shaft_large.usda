@@ -1,0 +1,19 @@
+#usda 1.0
+(
+    defaultPrim = "Shaft_large"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Shaft_large" (
+    prepend references = @/home/masais/Xinyu/USD_files/shaft_insertion.usd@</Parts/Shaft_large>
+)
+{
+    # The imported CAD node carries an obsolete nested articulation root.
+    # Shaft_large itself remains an independent dynamic rigid body.
+    over "node_" (
+        delete apiSchemas = ["PhysicsArticulationRootAPI", "PhysxArticulationAPI"]
+    )
+    {
+    }
+}

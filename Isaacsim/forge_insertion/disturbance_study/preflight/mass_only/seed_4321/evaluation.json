@@ -1,0 +1,91 @@
+{
+  "protocol": "auxiliary fixed-seed evaluation; not verified paper protocol",
+  "seed": 4321,
+  "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/runs/20261013T160124Z_train/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__404.08377_.pth",
+  "episodes": 4,
+  "success_rate_any": 1.0,
+  "success_rate_final": 1.0,
+  "mean_episode_reward": 406.04319763183594,
+  "force_definition": "L2 norm of smoothed wrist force, sampled at control rate",
+  "rows": [
+    {
+      "episode": 0,
+      "env_id": 0,
+      "reward": 404.4312744140625,
+      "steps": 149,
+      "success_any": true,
+      "success_final": true,
+      "first_success_seconds": 0.6666666865348816,
+      "force_mean_N": 4.566861152648926,
+      "force_max_N": 11.7930269241333,
+      "terminated": true,
+      "truncated": true,
+      "final_insertion_depth_m": 0.04666733741760254,
+      "max_insertion_depth_m": 0.047005098313093185,
+      "final_xy_error_m": 0.0002600800944492221,
+      "final_grasp_width_m": 0.035168007016181946
+    },
+    {
+      "episode": 1,
+      "env_id": 1,
+      "reward": 406.45758056640625,
+      "steps": 149,
+      "success_any": true,
+      "success_final": true,
+      "first_success_seconds": 0.6666666865348816,
+      "force_mean_N": 4.545631408691406,
+      "force_max_N": 7.933859348297119,
+      "terminated": true,
+      "truncated": true,
+      "final_insertion_depth_m": 0.04678571969270706,
+      "max_insertion_depth_m": 0.04692933335900307,
+      "final_xy_error_m": 0.00015707207785453647,
+      "final_grasp_width_m": 0.035159606486558914
+    },
+    {
+      "episode": 2,
+      "env_id": 2,
+      "reward": 406.31787109375,
+      "steps": 149,
+      "success_any": true,
+      "success_final": true,
+      "first_success_seconds": 0.6666666865348816,
+      "force_mean_N": 4.454832553863525,
+      "force_max_N": 11.937691688537598,
+      "terminated": true,
+      "truncated": true,
+      "final_insertion_depth_m": 0.04679456725716591,
+      "max_insertion_depth_m": 0.0469859316945076,
+      "final_xy_error_m": 0.0001379085733788088,
+      "final_grasp_width_m": 0.03517628461122513
+    },
+    {
+      "episode": 3,
+      "env_id": 3,
+      "reward": 406.966064453125,
+      "steps": 149,
+      "success_any": true,
+      "success_final": true,
+      "first_success_seconds": 0.6666666865348816,
+      "force_mean_N": 4.224053382873535,
+      "force_max_N": 6.86841344833374,
+      "terminated": true,
+      "truncated": true,
+      "final_insertion_depth_m": 0.04678894579410553,
+      "max_insertion_depth_m": 0.04692550748586655,
+      "final_xy_error_m": 0.0001529772562207654,
+      "final_grasp_width_m": 0.035155534744262695
+    }
+  ],
+  "cad_geometry": {
+    "seating_depth_m": 0.047,
+    "official_success_depth_min_m": 0.04512,
+    "episodes_exceeding_50mm_depth": 0,
+    "note": "Depth/width diagnostics do not change the official reward or success predicate."
+  },
+  "sample_sha256": "fb1accb697765f70d79c965c2876557be4794df58731af3d8f6c69818204580c",
+  "active_factors": [
+    "mass"
+  ],
+  "policy_sample_count": 149
+}

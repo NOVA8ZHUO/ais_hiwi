@@ -1,0 +1,51 @@
+{
+  "status": "completed",
+  "initial_checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_coupled_release25/2026-09-29_14-55-55_coupled200_from_model19_20260929_145548_bddcdd/model_218.pt",
+  "initial_sha256": "55412ac175be2c8294491d846719365f0a980bc6264be9cf359d97b5e1d8356a",
+  "train_command": [
+    "/home/masais/miniconda3/envs/Xinyu_isaacsim/bin/python",
+    "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/scripts/train.py",
+    "--task",
+    "FORGE-Shaft-Insert-Paper-v0",
+    "--headless",
+    "--num_envs",
+    "128",
+    "--max_iterations",
+    "800",
+    "--seed",
+    "42",
+    "--resume",
+    "--load_run",
+    "2026-09-29_14-55-55_coupled200_from_model19_20260929_145548_bddcdd",
+    "--checkpoint",
+    "model_218.pt",
+    "--run_name",
+    "coupled1000_20260929_154037_d798fa",
+    "agent.num_steps_per_env=32",
+    "agent.algorithm.num_mini_batches=4",
+    "agent.save_interval=10"
+  ],
+  "previous_updates": 200,
+  "additional_updates": 800,
+  "total_updates": 1000,
+  "checkpoints": [
+    [
+      420,
+      403
+    ],
+    [
+      620,
+      603
+    ],
+    [
+      820,
+      803
+    ],
+    [
+      1017,
+      1000
+    ]
+  ],
+  "evaluation_timing": "Evaluate saved intermediate checkpoints after uninterrupted training finishes.",
+  "training_run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_coupled_release25/2026-09-29_15-40-45_coupled1000_20260929_154037_d798fa"
+}

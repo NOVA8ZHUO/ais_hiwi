@@ -1,0 +1,80 @@
+{
+  "stage": "formal_training_running",
+  "background": "full_randomized_ForgeCadCfg",
+  "pose_factor": "episode_constant_XY_hole_estimate_bias",
+  "P0_sigma_xyz_m": [
+    0,
+    0,
+    0.001
+  ],
+  "P1_sigma_xyz_m": [
+    0.001,
+    0.001,
+    0.001
+  ],
+  "G0_diametral_clearance_mm": 1.0,
+  "G1_candidate_clearance_mm": [
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "G1_sampling_implemented": true,
+  "training_started": true,
+  "groups": [
+    "P0G0",
+    "P1G0",
+    "P0G1",
+    "P1G1"
+  ],
+  "other_randomization": "unchanged from full randomized baseline",
+  "baseline_model_reference": {
+    "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__341.10693_.pth",
+    "checkpoint_sha256": "57ae61f09be156e0c07aa250e0c58d164251e0efc36f2b56b2a76ee21e3f24ed"
+  },
+  "historical_training_budget": {
+    "max_epochs": 200,
+    "num_envs": 128
+  },
+  "training_seed_plan": [
+    0,
+    1,
+    2
+  ],
+  "note": "Historical budget is a planned comparator, not evidence of convergence. G1 distribution and geometry sampling implementation must be finalized before training.",
+  "G1_sampling_mode": "balanced static environment assignment; 32 envs per clearance; no per-reset resampling",
+  "mixed_asset_runtime_preflight": "all_four_groups_passed",
+  "condition_mapping": {
+    "status": "started_preflight",
+    "directory": "condition_mapping",
+    "models": "existing two epoch-200 checkpoints",
+    "clearances_mm": [
+      0.25,
+      0.5,
+      1,
+      2
+    ],
+    "xy_error_radii_mm": [
+      0,
+      0.5,
+      1,
+      2,
+      4
+    ],
+    "seeds": [
+      400,
+      401,
+      402,
+      403,
+      404
+    ],
+    "training": false
+  },
+  "current_run": "P0G0 seed 0",
+  "scene_infrastructure": {
+    "replicate_physics": false,
+    "clone_in_fabric": false,
+    "skip_factory_reclone": true,
+    "explicit_collision_filter": true
+  }
+}

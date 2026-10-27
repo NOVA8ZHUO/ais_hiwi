@@ -1,0 +1,15 @@
+[
+  "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+  "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/confirmation/rollout.py",
+  "--task",
+  "Isaac-Forge-CAD-PG-Confirmation-Direct-v0",
+  "--seed",
+  "603",
+  "--num_envs",
+  "128",
+  "--episodes",
+  "128",
+  "--checkpoint",
+  "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G1/seed_2/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__350.08368_.pth",
+  "--headless"
+]

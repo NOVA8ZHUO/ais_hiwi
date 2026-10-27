@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "jobs": 480,
+  "episodes": 61440,
+  "paired_conditions": 240,
+  "episodes_depth_over_50mm": 0,
+  "checks": [
+    "checkpoint identity",
+    "per-file evaluation hash",
+    "sample tape hash and cross-condition sharing",
+    "paired conditions and rollout lengths",
+    "128 unique env IDs",
+    "raw success counts match summary",
+    "frozen source manifest"
+  ]
+}

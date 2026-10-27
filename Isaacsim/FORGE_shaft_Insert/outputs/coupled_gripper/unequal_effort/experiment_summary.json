@@ -1,0 +1,16 @@
+{
+  "run": "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/outputs/coupled_gripper/unequal_effort",
+  "completed_episodes": 2,
+  "final_scalars": {},
+  "source_snapshot_available": true,
+  "terminations": {
+    "time_out": 0,
+    "outside_workspace": 1,
+    "invalid_grasp_width": 0
+  },
+  "success_rates": {
+    "success_any": 0.5,
+    "success_final": 0.5,
+    "success_stable": 0.5
+  }
+}

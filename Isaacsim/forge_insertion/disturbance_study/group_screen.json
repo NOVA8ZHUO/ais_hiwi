@@ -1,0 +1,159 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "zero_success": 1.0,
+  "full_success": 0.2390625,
+  "items": [
+    {
+      "name": "pose",
+      "enable_drop": {
+        "estimate": 0.6203125,
+        "ci95": [
+          0.56875,
+          0.66875
+        ]
+      },
+      "disable_recovery": {
+        "estimate": 0.2421875,
+        "ci95": [
+          0.1921875,
+          0.290625
+        ]
+      },
+      "score": {
+        "estimate": 0.43125,
+        "ci95": [
+          0.38984375,
+          0.47267578124999987
+        ]
+      },
+      "on_success": 0.3796875,
+      "off_success": 0.48125
+    },
+    {
+      "name": "physics",
+      "enable_drop": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "disable_recovery": {
+        "estimate": 0.0125,
+        "ci95": [
+          -0.012539062499999998,
+          0.0390625
+        ]
+      },
+      "score": {
+        "estimate": 0.00625,
+        "ci95": [
+          -0.006269531249999999,
+          0.01953125
+        ]
+      },
+      "on_success": 1.0,
+      "off_success": 0.2515625
+    },
+    {
+      "name": "control",
+      "enable_drop": {
+        "estimate": 0.1765625,
+        "ci95": [
+          0.1437109375,
+          0.2125
+        ]
+      },
+      "disable_recovery": {
+        "estimate": -0.015625,
+        "ci95": [
+          -0.0844140625,
+          0.0484375
+        ]
+      },
+      "score": {
+        "estimate": 0.08046875,
+        "ci95": [
+          0.03591796875,
+          0.1203125
+        ]
+      },
+      "on_success": 0.8234375,
+      "off_success": 0.2234375
+    },
+    {
+      "name": "observation",
+      "enable_drop": {
+        "estimate": 0.115625,
+        "ci95": [
+          0.084375,
+          0.15
+        ]
+      },
+      "disable_recovery": {
+        "estimate": 0.0171875,
+        "ci95": [
+          -0.029726562499999998,
+          0.0625
+        ]
+      },
+      "score": {
+        "estimate": 0.06640625,
+        "ci95": [
+          0.03828125,
+          0.0937695312499999
+        ]
+      },
+      "on_success": 0.884375,
+      "off_success": 0.25625
+    },
+    {
+      "name": "other",
+      "enable_drop": {
+        "estimate": 0.1796875,
+        "ci95": [
+          0.1359375,
+          0.228125
+        ]
+      },
+      "disable_recovery": {
+        "estimate": 0.078125,
+        "ci95": [
+          0.03125,
+          0.128125
+        ]
+      },
+      "score": {
+        "estimate": 0.12890625,
+        "ci95": [
+          0.0984375,
+          0.1586132812499999
+        ]
+      },
+      "on_success": 0.8203125,
+      "off_success": 0.3171875
+    }
+  ],
+  "ranking": [
+    "pose",
+    "other",
+    "control",
+    "observation",
+    "physics"
+  ],
+  "top_gap": {
+    "estimate": 0.30234375,
+    "ci95": [
+      0.24453125,
+      0.35625
+    ]
+  },
+  "clear_leader": true,
+  "bootstrap": "95% paired hierarchical percentile; seed then env; exploratory during adaptive selection"
+}

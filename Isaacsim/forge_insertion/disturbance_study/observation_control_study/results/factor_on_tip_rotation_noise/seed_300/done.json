@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "condition": "factor_on_tip_rotation_noise",
+    "active": [
+      "tip_rotation_noise"
+    ],
+    "seed": 300,
+    "num_envs": 128,
+    "model": "zero",
+    "checkpoint_sha256": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "dd77508e5259e4ceb71a1020b72a1d2f8f926ae99e692df2e00015e1d616c0e4"
+  },
+  "seconds": 97.08110548881814,
+  "evaluation_sha256": "02387c17de34ebf451daac317ef93688ced73679d78dd7a203b1ecbfa75edb5e"
+}

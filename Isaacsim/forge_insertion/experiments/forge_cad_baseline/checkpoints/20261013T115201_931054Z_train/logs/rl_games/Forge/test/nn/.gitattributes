@@ -1,0 +1,6 @@
+
+# Full backup: preserve large files with Git LFS.
+"/Forge.pth" filter=lfs diff=lfs merge=lfs -text
+"/last_Forge_ep_100_rew_334.6864.pth" filter=lfs diff=lfs merge=lfs -text
+"/last_Forge_ep_200_rew_341.10693.pth" filter=lfs diff=lfs merge=lfs -text
+"/last_Forge_ep_200_rew__341.10693_.pth" filter=lfs diff=lfs merge=lfs -text

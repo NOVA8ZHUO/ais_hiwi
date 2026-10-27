@@ -1,0 +1,604 @@
+START zero c1mm_e0mm seed=450 n=4
+DONE zero c1mm_e0mm seed=450: 50.00%
+START randomized c0.25mm_e4mm seed=450 n=4
+DONE randomized c0.25mm_e4mm seed=450: 50.00%
+PROGRESS 0/200 ETA remaining 5.56 h {'clearance_mm': 0.25, 'error_mm': 0.0, 'seed': 400, 'model': 'zero'}
+START zero c0.25mm_e0mm seed=400 n=128
+DONE zero c0.25mm_e0mm seed=400: 14.06%
+PROGRESS 1/200 ETA remaining 6.78 h {'clearance_mm': 0.25, 'error_mm': 0.0, 'seed': 400, 'model': 'randomized'}
+START randomized c0.25mm_e0mm seed=400 n=128
+DONE randomized c0.25mm_e0mm seed=400: 98.44%
+PROGRESS 2/200 ETA remaining 6.76 h {'clearance_mm': 0.25, 'error_mm': 0.0, 'seed': 401, 'model': 'zero'}
+START zero c0.25mm_e0mm seed=401 n=128
+DONE zero c0.25mm_e0mm seed=401: 12.50%
+PROGRESS 3/200 ETA remaining 6.71 h {'clearance_mm': 0.25, 'error_mm': 0.0, 'seed': 401, 'model': 'randomized'}
+START randomized c0.25mm_e0mm seed=401 n=128
+DONE randomized c0.25mm_e0mm seed=401: 97.66%
+PROGRESS 4/200 ETA remaining 6.63 h {'clearance_mm': 0.25, 'error_mm': 0.0, 'seed': 402, 'model': 'zero'}
+START zero c0.25mm_e0mm seed=402 n=128
+DONE zero c0.25mm_e0mm seed=402: 8.59%
+PROGRESS 5/200 ETA remaining 6.60 h {'clearance_mm': 0.25, 'error_mm': 0.0, 'seed': 402, 'model': 'randomized'}
+START randomized c0.25mm_e0mm seed=402 n=128
+DONE randomized c0.25mm_e0mm seed=402: 98.44%
+PROGRESS 6/200 ETA remaining 6.56 h {'clearance_mm': 0.25, 'error_mm': 0.0, 'seed': 403, 'model': 'zero'}
+START zero c0.25mm_e0mm seed=403 n=128
+DONE zero c0.25mm_e0mm seed=403: 14.06%
+PROGRESS 7/200 ETA remaining 6.44 h {'clearance_mm': 0.25, 'error_mm': 0.0, 'seed': 403, 'model': 'randomized'}
+START randomized c0.25mm_e0mm seed=403 n=128
+DONE randomized c0.25mm_e0mm seed=403: 96.88%
+PROGRESS 8/200 ETA remaining 6.42 h {'clearance_mm': 0.25, 'error_mm': 0.0, 'seed': 404, 'model': 'zero'}
+START zero c0.25mm_e0mm seed=404 n=128
+DONE zero c0.25mm_e0mm seed=404: 12.50%
+PROGRESS 9/200 ETA remaining 6.41 h {'clearance_mm': 0.25, 'error_mm': 0.0, 'seed': 404, 'model': 'randomized'}
+START randomized c0.25mm_e0mm seed=404 n=128
+DONE randomized c0.25mm_e0mm seed=404: 100.00%
+PROGRESS 10/200 ETA remaining 6.37 h {'clearance_mm': 0.25, 'error_mm': 0.5, 'seed': 400, 'model': 'zero'}
+START zero c0.25mm_e0.5mm seed=400 n=128
+DONE zero c0.25mm_e0.5mm seed=400: 12.50%
+PROGRESS 11/200 ETA remaining 6.34 h {'clearance_mm': 0.25, 'error_mm': 0.5, 'seed': 400, 'model': 'randomized'}
+START randomized c0.25mm_e0.5mm seed=400 n=128
+DONE randomized c0.25mm_e0.5mm seed=400: 98.44%
+PROGRESS 12/200 ETA remaining 6.32 h {'clearance_mm': 0.25, 'error_mm': 0.5, 'seed': 401, 'model': 'zero'}
+START zero c0.25mm_e0.5mm seed=401 n=128
+DONE zero c0.25mm_e0.5mm seed=401: 10.16%
+PROGRESS 13/200 ETA remaining 6.29 h {'clearance_mm': 0.25, 'error_mm': 0.5, 'seed': 401, 'model': 'randomized'}
+START randomized c0.25mm_e0.5mm seed=401 n=128
+DONE randomized c0.25mm_e0.5mm seed=401: 98.44%
+PROGRESS 14/200 ETA remaining 6.25 h {'clearance_mm': 0.25, 'error_mm': 0.5, 'seed': 402, 'model': 'zero'}
+START zero c0.25mm_e0.5mm seed=402 n=128
+DONE zero c0.25mm_e0.5mm seed=402: 10.94%
+PROGRESS 15/200 ETA remaining 6.21 h {'clearance_mm': 0.25, 'error_mm': 0.5, 'seed': 402, 'model': 'randomized'}
+START randomized c0.25mm_e0.5mm seed=402 n=128
+DONE randomized c0.25mm_e0.5mm seed=402: 100.00%
+PROGRESS 16/200 ETA remaining 6.19 h {'clearance_mm': 0.25, 'error_mm': 0.5, 'seed': 403, 'model': 'zero'}
+START zero c0.25mm_e0.5mm seed=403 n=128
+DONE zero c0.25mm_e0.5mm seed=403: 14.84%
+PROGRESS 17/200 ETA remaining 6.16 h {'clearance_mm': 0.25, 'error_mm': 0.5, 'seed': 403, 'model': 'randomized'}
+START randomized c0.25mm_e0.5mm seed=403 n=128
+DONE randomized c0.25mm_e0.5mm seed=403: 97.66%
+PROGRESS 18/200 ETA remaining 6.13 h {'clearance_mm': 0.25, 'error_mm': 0.5, 'seed': 404, 'model': 'zero'}
+START zero c0.25mm_e0.5mm seed=404 n=128
+DONE zero c0.25mm_e0.5mm seed=404: 11.72%
+PROGRESS 19/200 ETA remaining 6.10 h {'clearance_mm': 0.25, 'error_mm': 0.5, 'seed': 404, 'model': 'randomized'}
+START randomized c0.25mm_e0.5mm seed=404 n=128
+DONE randomized c0.25mm_e0.5mm seed=404: 99.22%
+PROGRESS 20/200 ETA remaining 6.07 h {'clearance_mm': 0.25, 'error_mm': 1.0, 'seed': 400, 'model': 'zero'}
+START zero c0.25mm_e1mm seed=400 n=128
+DONE zero c0.25mm_e1mm seed=400: 13.28%
+PROGRESS 21/200 ETA remaining 6.04 h {'clearance_mm': 0.25, 'error_mm': 1.0, 'seed': 400, 'model': 'randomized'}
+START randomized c0.25mm_e1mm seed=400 n=128
+DONE randomized c0.25mm_e1mm seed=400: 99.22%
+PROGRESS 22/200 ETA remaining 6.00 h {'clearance_mm': 0.25, 'error_mm': 1.0, 'seed': 401, 'model': 'zero'}
+START zero c0.25mm_e1mm seed=401 n=128
+DONE zero c0.25mm_e1mm seed=401: 14.06%
+PROGRESS 23/200 ETA remaining 5.97 h {'clearance_mm': 0.25, 'error_mm': 1.0, 'seed': 401, 'model': 'randomized'}
+START randomized c0.25mm_e1mm seed=401 n=128
+DONE randomized c0.25mm_e1mm seed=401: 97.66%
+PROGRESS 24/200 ETA remaining 5.94 h {'clearance_mm': 0.25, 'error_mm': 1.0, 'seed': 402, 'model': 'zero'}
+START zero c0.25mm_e1mm seed=402 n=128
+DONE zero c0.25mm_e1mm seed=402: 11.72%
+PROGRESS 25/200 ETA remaining 5.90 h {'clearance_mm': 0.25, 'error_mm': 1.0, 'seed': 402, 'model': 'randomized'}
+START randomized c0.25mm_e1mm seed=402 n=128
+DONE randomized c0.25mm_e1mm seed=402: 98.44%
+PROGRESS 26/200 ETA remaining 5.82 h {'clearance_mm': 0.25, 'error_mm': 1.0, 'seed': 403, 'model': 'zero'}
+START zero c0.25mm_e1mm seed=403 n=128
+DONE zero c0.25mm_e1mm seed=403: 14.84%
+PROGRESS 27/200 ETA remaining 5.81 h {'clearance_mm': 0.25, 'error_mm': 1.0, 'seed': 403, 'model': 'randomized'}
+START randomized c0.25mm_e1mm seed=403 n=128
+DONE randomized c0.25mm_e1mm seed=403: 97.66%
+PROGRESS 28/200 ETA remaining 5.78 h {'clearance_mm': 0.25, 'error_mm': 1.0, 'seed': 404, 'model': 'zero'}
+START zero c0.25mm_e1mm seed=404 n=128
+DONE zero c0.25mm_e1mm seed=404: 10.94%
+PROGRESS 29/200 ETA remaining 5.74 h {'clearance_mm': 0.25, 'error_mm': 1.0, 'seed': 404, 'model': 'randomized'}
+START randomized c0.25mm_e1mm seed=404 n=128
+DONE randomized c0.25mm_e1mm seed=404: 99.22%
+PROGRESS 30/200 ETA remaining 5.71 h {'clearance_mm': 0.25, 'error_mm': 2.0, 'seed': 400, 'model': 'zero'}
+START zero c0.25mm_e2mm seed=400 n=128
+DONE zero c0.25mm_e2mm seed=400: 12.50%
+PROGRESS 31/200 ETA remaining 5.68 h {'clearance_mm': 0.25, 'error_mm': 2.0, 'seed': 400, 'model': 'randomized'}
+START randomized c0.25mm_e2mm seed=400 n=128
+DONE randomized c0.25mm_e2mm seed=400: 96.88%
+PROGRESS 32/200 ETA remaining 5.64 h {'clearance_mm': 0.25, 'error_mm': 2.0, 'seed': 401, 'model': 'zero'}
+START zero c0.25mm_e2mm seed=401 n=128
+DONE zero c0.25mm_e2mm seed=401: 15.62%
+PROGRESS 33/200 ETA remaining 5.61 h {'clearance_mm': 0.25, 'error_mm': 2.0, 'seed': 401, 'model': 'randomized'}
+START randomized c0.25mm_e2mm seed=401 n=128
+DONE randomized c0.25mm_e2mm seed=401: 93.75%
+PROGRESS 34/200 ETA remaining 5.58 h {'clearance_mm': 0.25, 'error_mm': 2.0, 'seed': 402, 'model': 'zero'}
+START zero c0.25mm_e2mm seed=402 n=128
+DONE zero c0.25mm_e2mm seed=402: 9.38%
+PROGRESS 35/200 ETA remaining 5.55 h {'clearance_mm': 0.25, 'error_mm': 2.0, 'seed': 402, 'model': 'randomized'}
+START randomized c0.25mm_e2mm seed=402 n=128
+DONE randomized c0.25mm_e2mm seed=402: 96.09%
+PROGRESS 36/200 ETA remaining 5.51 h {'clearance_mm': 0.25, 'error_mm': 2.0, 'seed': 403, 'model': 'zero'}
+START zero c0.25mm_e2mm seed=403 n=128
+DONE zero c0.25mm_e2mm seed=403: 14.06%
+PROGRESS 37/200 ETA remaining 5.48 h {'clearance_mm': 0.25, 'error_mm': 2.0, 'seed': 403, 'model': 'randomized'}
+START randomized c0.25mm_e2mm seed=403 n=128
+DONE randomized c0.25mm_e2mm seed=403: 96.09%
+PROGRESS 38/200 ETA remaining 5.44 h {'clearance_mm': 0.25, 'error_mm': 2.0, 'seed': 404, 'model': 'zero'}
+START zero c0.25mm_e2mm seed=404 n=128
+DONE zero c0.25mm_e2mm seed=404: 7.81%
+PROGRESS 39/200 ETA remaining 5.41 h {'clearance_mm': 0.25, 'error_mm': 2.0, 'seed': 404, 'model': 'randomized'}
+START randomized c0.25mm_e2mm seed=404 n=128
+DONE randomized c0.25mm_e2mm seed=404: 96.88%
+PROGRESS 40/200 ETA remaining 5.38 h {'clearance_mm': 0.25, 'error_mm': 4.0, 'seed': 400, 'model': 'zero'}
+START zero c0.25mm_e4mm seed=400 n=128
+DONE zero c0.25mm_e4mm seed=400: 9.38%
+PROGRESS 41/200 ETA remaining 5.35 h {'clearance_mm': 0.25, 'error_mm': 4.0, 'seed': 400, 'model': 'randomized'}
+START randomized c0.25mm_e4mm seed=400 n=128
+DONE randomized c0.25mm_e4mm seed=400: 75.00%
+PROGRESS 42/200 ETA remaining 5.32 h {'clearance_mm': 0.25, 'error_mm': 4.0, 'seed': 401, 'model': 'zero'}
+START zero c0.25mm_e4mm seed=401 n=128
+DONE zero c0.25mm_e4mm seed=401: 8.59%
+PROGRESS 43/200 ETA remaining 5.28 h {'clearance_mm': 0.25, 'error_mm': 4.0, 'seed': 401, 'model': 'randomized'}
+START randomized c0.25mm_e4mm seed=401 n=128
+DONE randomized c0.25mm_e4mm seed=401: 80.47%
+PROGRESS 44/200 ETA remaining 5.25 h {'clearance_mm': 0.25, 'error_mm': 4.0, 'seed': 402, 'model': 'zero'}
+START zero c0.25mm_e4mm seed=402 n=128
+DONE zero c0.25mm_e4mm seed=402: 8.59%
+PROGRESS 45/200 ETA remaining 5.22 h {'clearance_mm': 0.25, 'error_mm': 4.0, 'seed': 402, 'model': 'randomized'}
+START randomized c0.25mm_e4mm seed=402 n=128
+DONE randomized c0.25mm_e4mm seed=402: 77.34%
+PROGRESS 46/200 ETA remaining 5.19 h {'clearance_mm': 0.25, 'error_mm': 4.0, 'seed': 403, 'model': 'zero'}
+START zero c0.25mm_e4mm seed=403 n=128
+DONE zero c0.25mm_e4mm seed=403: 14.06%
+PROGRESS 47/200 ETA remaining 5.15 h {'clearance_mm': 0.25, 'error_mm': 4.0, 'seed': 403, 'model': 'randomized'}
+START randomized c0.25mm_e4mm seed=403 n=128
+DONE randomized c0.25mm_e4mm seed=403: 69.53%
+PROGRESS 48/200 ETA remaining 5.12 h {'clearance_mm': 0.25, 'error_mm': 4.0, 'seed': 404, 'model': 'zero'}
+START zero c0.25mm_e4mm seed=404 n=128
+DONE zero c0.25mm_e4mm seed=404: 8.59%
+PROGRESS 49/200 ETA remaining 5.09 h {'clearance_mm': 0.25, 'error_mm': 4.0, 'seed': 404, 'model': 'randomized'}
+START randomized c0.25mm_e4mm seed=404 n=128
+DONE randomized c0.25mm_e4mm seed=404: 78.12%
+PROGRESS 50/200 ETA remaining 5.05 h {'clearance_mm': 0.5, 'error_mm': 0.0, 'seed': 400, 'model': 'zero'}
+START zero c0.5mm_e0mm seed=400 n=128
+DONE zero c0.5mm_e0mm seed=400: 19.53%
+PROGRESS 51/200 ETA remaining 5.02 h {'clearance_mm': 0.5, 'error_mm': 0.0, 'seed': 400, 'model': 'randomized'}
+START randomized c0.5mm_e0mm seed=400 n=128
+DONE randomized c0.5mm_e0mm seed=400: 100.00%
+PROGRESS 52/200 ETA remaining 4.98 h {'clearance_mm': 0.5, 'error_mm': 0.0, 'seed': 401, 'model': 'zero'}
+START zero c0.5mm_e0mm seed=401 n=128
+DONE zero c0.5mm_e0mm seed=401: 20.31%
+PROGRESS 53/200 ETA remaining 4.95 h {'clearance_mm': 0.5, 'error_mm': 0.0, 'seed': 401, 'model': 'randomized'}
+START randomized c0.5mm_e0mm seed=401 n=128
+DONE randomized c0.5mm_e0mm seed=401: 100.00%
+PROGRESS 54/200 ETA remaining 4.92 h {'clearance_mm': 0.5, 'error_mm': 0.0, 'seed': 402, 'model': 'zero'}
+START zero c0.5mm_e0mm seed=402 n=128
+DONE zero c0.5mm_e0mm seed=402: 16.41%
+PROGRESS 55/200 ETA remaining 4.88 h {'clearance_mm': 0.5, 'error_mm': 0.0, 'seed': 402, 'model': 'randomized'}
+START randomized c0.5mm_e0mm seed=402 n=128
+DONE randomized c0.5mm_e0mm seed=402: 100.00%
+PROGRESS 56/200 ETA remaining 4.85 h {'clearance_mm': 0.5, 'error_mm': 0.0, 'seed': 403, 'model': 'zero'}
+START zero c0.5mm_e0mm seed=403 n=128
+DONE zero c0.5mm_e0mm seed=403: 18.75%
+PROGRESS 57/200 ETA remaining 4.81 h {'clearance_mm': 0.5, 'error_mm': 0.0, 'seed': 403, 'model': 'randomized'}
+START randomized c0.5mm_e0mm seed=403 n=128
+DONE randomized c0.5mm_e0mm seed=403: 99.22%
+PROGRESS 58/200 ETA remaining 4.77 h {'clearance_mm': 0.5, 'error_mm': 0.0, 'seed': 404, 'model': 'zero'}
+START zero c0.5mm_e0mm seed=404 n=128
+DONE zero c0.5mm_e0mm seed=404: 17.19%
+PROGRESS 59/200 ETA remaining 4.74 h {'clearance_mm': 0.5, 'error_mm': 0.0, 'seed': 404, 'model': 'randomized'}
+START randomized c0.5mm_e0mm seed=404 n=128
+DONE randomized c0.5mm_e0mm seed=404: 99.22%
+PROGRESS 60/200 ETA remaining 4.70 h {'clearance_mm': 0.5, 'error_mm': 0.5, 'seed': 400, 'model': 'zero'}
+START zero c0.5mm_e0.5mm seed=400 n=128
+DONE zero c0.5mm_e0.5mm seed=400: 18.75%
+PROGRESS 61/200 ETA remaining 4.65 h {'clearance_mm': 0.5, 'error_mm': 0.5, 'seed': 400, 'model': 'randomized'}
+START randomized c0.5mm_e0.5mm seed=400 n=128
+DONE randomized c0.5mm_e0.5mm seed=400: 100.00%
+PROGRESS 62/200 ETA remaining 4.62 h {'clearance_mm': 0.5, 'error_mm': 0.5, 'seed': 401, 'model': 'zero'}
+START zero c0.5mm_e0.5mm seed=401 n=128
+DONE zero c0.5mm_e0.5mm seed=401: 24.22%
+PROGRESS 63/200 ETA remaining 4.58 h {'clearance_mm': 0.5, 'error_mm': 0.5, 'seed': 401, 'model': 'randomized'}
+START randomized c0.5mm_e0.5mm seed=401 n=128
+DONE randomized c0.5mm_e0.5mm seed=401: 99.22%
+PROGRESS 64/200 ETA remaining 4.55 h {'clearance_mm': 0.5, 'error_mm': 0.5, 'seed': 402, 'model': 'zero'}
+START zero c0.5mm_e0.5mm seed=402 n=128
+DONE zero c0.5mm_e0.5mm seed=402: 15.62%
+PROGRESS 65/200 ETA remaining 4.48 h {'clearance_mm': 0.5, 'error_mm': 0.5, 'seed': 402, 'model': 'randomized'}
+START randomized c0.5mm_e0.5mm seed=402 n=128
+DONE randomized c0.5mm_e0.5mm seed=402: 98.44%
+PROGRESS 66/200 ETA remaining 4.47 h {'clearance_mm': 0.5, 'error_mm': 0.5, 'seed': 403, 'model': 'zero'}
+START zero c0.5mm_e0.5mm seed=403 n=128
+DONE zero c0.5mm_e0.5mm seed=403: 17.97%
+PROGRESS 67/200 ETA remaining 4.45 h {'clearance_mm': 0.5, 'error_mm': 0.5, 'seed': 403, 'model': 'randomized'}
+START randomized c0.5mm_e0.5mm seed=403 n=128
+DONE randomized c0.5mm_e0.5mm seed=403: 100.00%
+PROGRESS 68/200 ETA remaining 4.41 h {'clearance_mm': 0.5, 'error_mm': 0.5, 'seed': 404, 'model': 'zero'}
+START zero c0.5mm_e0.5mm seed=404 n=128
+DONE zero c0.5mm_e0.5mm seed=404: 17.97%
+PROGRESS 69/200 ETA remaining 4.38 h {'clearance_mm': 0.5, 'error_mm': 0.5, 'seed': 404, 'model': 'randomized'}
+START randomized c0.5mm_e0.5mm seed=404 n=128
+DONE randomized c0.5mm_e0.5mm seed=404: 100.00%
+PROGRESS 70/200 ETA remaining 4.34 h {'clearance_mm': 0.5, 'error_mm': 1.0, 'seed': 400, 'model': 'zero'}
+START zero c0.5mm_e1mm seed=400 n=128
+DONE zero c0.5mm_e1mm seed=400: 21.88%
+PROGRESS 71/200 ETA remaining 4.31 h {'clearance_mm': 0.5, 'error_mm': 1.0, 'seed': 400, 'model': 'randomized'}
+START randomized c0.5mm_e1mm seed=400 n=128
+DONE randomized c0.5mm_e1mm seed=400: 100.00%
+PROGRESS 72/200 ETA remaining 4.27 h {'clearance_mm': 0.5, 'error_mm': 1.0, 'seed': 401, 'model': 'zero'}
+START zero c0.5mm_e1mm seed=401 n=128
+DONE zero c0.5mm_e1mm seed=401: 19.53%
+PROGRESS 73/200 ETA remaining 4.24 h {'clearance_mm': 0.5, 'error_mm': 1.0, 'seed': 401, 'model': 'randomized'}
+START randomized c0.5mm_e1mm seed=401 n=128
+DONE randomized c0.5mm_e1mm seed=401: 100.00%
+PROGRESS 74/200 ETA remaining 4.20 h {'clearance_mm': 0.5, 'error_mm': 1.0, 'seed': 402, 'model': 'zero'}
+START zero c0.5mm_e1mm seed=402 n=128
+DONE zero c0.5mm_e1mm seed=402: 20.31%
+PROGRESS 75/200 ETA remaining 4.17 h {'clearance_mm': 0.5, 'error_mm': 1.0, 'seed': 402, 'model': 'randomized'}
+START randomized c0.5mm_e1mm seed=402 n=128
+DONE randomized c0.5mm_e1mm seed=402: 97.66%
+PROGRESS 76/200 ETA remaining 4.14 h {'clearance_mm': 0.5, 'error_mm': 1.0, 'seed': 403, 'model': 'zero'}
+START zero c0.5mm_e1mm seed=403 n=128
+DONE zero c0.5mm_e1mm seed=403: 19.53%
+PROGRESS 77/200 ETA remaining 4.10 h {'clearance_mm': 0.5, 'error_mm': 1.0, 'seed': 403, 'model': 'randomized'}
+START randomized c0.5mm_e1mm seed=403 n=128
+DONE randomized c0.5mm_e1mm seed=403: 98.44%
+PROGRESS 78/200 ETA remaining 4.07 h {'clearance_mm': 0.5, 'error_mm': 1.0, 'seed': 404, 'model': 'zero'}
+START zero c0.5mm_e1mm seed=404 n=128
+DONE zero c0.5mm_e1mm seed=404: 21.09%
+PROGRESS 79/200 ETA remaining 4.04 h {'clearance_mm': 0.5, 'error_mm': 1.0, 'seed': 404, 'model': 'randomized'}
+START randomized c0.5mm_e1mm seed=404 n=128
+DONE randomized c0.5mm_e1mm seed=404: 100.00%
+PROGRESS 80/200 ETA remaining 4.00 h {'clearance_mm': 0.5, 'error_mm': 2.0, 'seed': 400, 'model': 'zero'}
+START zero c0.5mm_e2mm seed=400 n=128
+DONE zero c0.5mm_e2mm seed=400: 17.19%
+PROGRESS 81/200 ETA remaining 3.96 h {'clearance_mm': 0.5, 'error_mm': 2.0, 'seed': 400, 'model': 'randomized'}
+START randomized c0.5mm_e2mm seed=400 n=128
+DONE randomized c0.5mm_e2mm seed=400: 98.44%
+PROGRESS 82/200 ETA remaining 3.93 h {'clearance_mm': 0.5, 'error_mm': 2.0, 'seed': 401, 'model': 'zero'}
+START zero c0.5mm_e2mm seed=401 n=128
+DONE zero c0.5mm_e2mm seed=401: 18.75%
+PROGRESS 83/200 ETA remaining 3.90 h {'clearance_mm': 0.5, 'error_mm': 2.0, 'seed': 401, 'model': 'randomized'}
+START randomized c0.5mm_e2mm seed=401 n=128
+DONE randomized c0.5mm_e2mm seed=401: 99.22%
+PROGRESS 84/200 ETA remaining 3.86 h {'clearance_mm': 0.5, 'error_mm': 2.0, 'seed': 402, 'model': 'zero'}
+START zero c0.5mm_e2mm seed=402 n=128
+DONE zero c0.5mm_e2mm seed=402: 19.53%
+PROGRESS 85/200 ETA remaining 3.84 h {'clearance_mm': 0.5, 'error_mm': 2.0, 'seed': 402, 'model': 'randomized'}
+START randomized c0.5mm_e2mm seed=402 n=128
+DONE randomized c0.5mm_e2mm seed=402: 97.66%
+PROGRESS 86/200 ETA remaining 3.81 h {'clearance_mm': 0.5, 'error_mm': 2.0, 'seed': 403, 'model': 'zero'}
+START zero c0.5mm_e2mm seed=403 n=128
+DONE zero c0.5mm_e2mm seed=403: 21.09%
+PROGRESS 87/200 ETA remaining 3.78 h {'clearance_mm': 0.5, 'error_mm': 2.0, 'seed': 403, 'model': 'randomized'}
+START randomized c0.5mm_e2mm seed=403 n=128
+DONE randomized c0.5mm_e2mm seed=403: 98.44%
+PROGRESS 88/200 ETA remaining 3.74 h {'clearance_mm': 0.5, 'error_mm': 2.0, 'seed': 404, 'model': 'zero'}
+START zero c0.5mm_e2mm seed=404 n=128
+DONE zero c0.5mm_e2mm seed=404: 14.84%
+PROGRESS 89/200 ETA remaining 3.71 h {'clearance_mm': 0.5, 'error_mm': 2.0, 'seed': 404, 'model': 'randomized'}
+START randomized c0.5mm_e2mm seed=404 n=128
+DONE randomized c0.5mm_e2mm seed=404: 99.22%
+PROGRESS 90/200 ETA remaining 3.68 h {'clearance_mm': 0.5, 'error_mm': 4.0, 'seed': 400, 'model': 'zero'}
+START zero c0.5mm_e4mm seed=400 n=128
+DONE zero c0.5mm_e4mm seed=400: 15.62%
+PROGRESS 91/200 ETA remaining 3.65 h {'clearance_mm': 0.5, 'error_mm': 4.0, 'seed': 400, 'model': 'randomized'}
+START randomized c0.5mm_e4mm seed=400 n=128
+DONE randomized c0.5mm_e4mm seed=400: 85.16%
+PROGRESS 92/200 ETA remaining 3.62 h {'clearance_mm': 0.5, 'error_mm': 4.0, 'seed': 401, 'model': 'zero'}
+START zero c0.5mm_e4mm seed=401 n=128
+DONE zero c0.5mm_e4mm seed=401: 16.41%
+PROGRESS 93/200 ETA remaining 3.58 h {'clearance_mm': 0.5, 'error_mm': 4.0, 'seed': 401, 'model': 'randomized'}
+START randomized c0.5mm_e4mm seed=401 n=128
+DONE randomized c0.5mm_e4mm seed=401: 85.94%
+PROGRESS 94/200 ETA remaining 3.55 h {'clearance_mm': 0.5, 'error_mm': 4.0, 'seed': 402, 'model': 'zero'}
+START zero c0.5mm_e4mm seed=402 n=128
+DONE zero c0.5mm_e4mm seed=402: 16.41%
+PROGRESS 95/200 ETA remaining 3.52 h {'clearance_mm': 0.5, 'error_mm': 4.0, 'seed': 402, 'model': 'randomized'}
+START randomized c0.5mm_e4mm seed=402 n=128
+DONE randomized c0.5mm_e4mm seed=402: 85.16%
+PROGRESS 96/200 ETA remaining 3.48 h {'clearance_mm': 0.5, 'error_mm': 4.0, 'seed': 403, 'model': 'zero'}
+START zero c0.5mm_e4mm seed=403 n=128
+DONE zero c0.5mm_e4mm seed=403: 16.41%
+PROGRESS 97/200 ETA remaining 3.45 h {'clearance_mm': 0.5, 'error_mm': 4.0, 'seed': 403, 'model': 'randomized'}
+START randomized c0.5mm_e4mm seed=403 n=128
+DONE randomized c0.5mm_e4mm seed=403: 75.78%
+PROGRESS 98/200 ETA remaining 3.42 h {'clearance_mm': 0.5, 'error_mm': 4.0, 'seed': 404, 'model': 'zero'}
+START zero c0.5mm_e4mm seed=404 n=128
+DONE zero c0.5mm_e4mm seed=404: 13.28%
+PROGRESS 99/200 ETA remaining 3.38 h {'clearance_mm': 0.5, 'error_mm': 4.0, 'seed': 404, 'model': 'randomized'}
+START randomized c0.5mm_e4mm seed=404 n=128
+DONE randomized c0.5mm_e4mm seed=404: 82.81%
+PROGRESS 100/200 ETA remaining 3.35 h {'clearance_mm': 1.0, 'error_mm': 0.0, 'seed': 400, 'model': 'zero'}
+START zero c1mm_e0mm seed=400 n=128
+DONE zero c1mm_e0mm seed=400: 22.66%
+PROGRESS 101/200 ETA remaining 3.32 h {'clearance_mm': 1.0, 'error_mm': 0.0, 'seed': 400, 'model': 'randomized'}
+START randomized c1mm_e0mm seed=400 n=128
+DONE randomized c1mm_e0mm seed=400: 100.00%
+PROGRESS 102/200 ETA remaining 3.28 h {'clearance_mm': 1.0, 'error_mm': 0.0, 'seed': 401, 'model': 'zero'}
+START zero c1mm_e0mm seed=401 n=128
+DONE zero c1mm_e0mm seed=401: 28.91%
+PROGRESS 103/200 ETA remaining 3.25 h {'clearance_mm': 1.0, 'error_mm': 0.0, 'seed': 401, 'model': 'randomized'}
+START randomized c1mm_e0mm seed=401 n=128
+DONE randomized c1mm_e0mm seed=401: 100.00%
+PROGRESS 104/200 ETA remaining 3.20 h {'clearance_mm': 1.0, 'error_mm': 0.0, 'seed': 402, 'model': 'zero'}
+START zero c1mm_e0mm seed=402 n=128
+DONE zero c1mm_e0mm seed=402: 26.56%
+PROGRESS 105/200 ETA remaining 3.17 h {'clearance_mm': 1.0, 'error_mm': 0.0, 'seed': 402, 'model': 'randomized'}
+START randomized c1mm_e0mm seed=402 n=128
+DONE randomized c1mm_e0mm seed=402: 99.22%
+PROGRESS 106/200 ETA remaining 3.14 h {'clearance_mm': 1.0, 'error_mm': 0.0, 'seed': 403, 'model': 'zero'}
+START zero c1mm_e0mm seed=403 n=128
+DONE zero c1mm_e0mm seed=403: 21.88%
+PROGRESS 107/200 ETA remaining 3.10 h {'clearance_mm': 1.0, 'error_mm': 0.0, 'seed': 403, 'model': 'randomized'}
+START randomized c1mm_e0mm seed=403 n=128
+DONE randomized c1mm_e0mm seed=403: 100.00%
+PROGRESS 108/200 ETA remaining 3.07 h {'clearance_mm': 1.0, 'error_mm': 0.0, 'seed': 404, 'model': 'zero'}
+START zero c1mm_e0mm seed=404 n=128
+DONE zero c1mm_e0mm seed=404: 28.12%
+PROGRESS 109/200 ETA remaining 3.04 h {'clearance_mm': 1.0, 'error_mm': 0.0, 'seed': 404, 'model': 'randomized'}
+START randomized c1mm_e0mm seed=404 n=128
+DONE randomized c1mm_e0mm seed=404: 100.00%
+PROGRESS 110/200 ETA remaining 3.00 h {'clearance_mm': 1.0, 'error_mm': 0.5, 'seed': 400, 'model': 'zero'}
+START zero c1mm_e0.5mm seed=400 n=128
+DONE zero c1mm_e0.5mm seed=400: 27.34%
+PROGRESS 111/200 ETA remaining 2.97 h {'clearance_mm': 1.0, 'error_mm': 0.5, 'seed': 400, 'model': 'randomized'}
+START randomized c1mm_e0.5mm seed=400 n=128
+DONE randomized c1mm_e0.5mm seed=400: 100.00%
+PROGRESS 112/200 ETA remaining 2.93 h {'clearance_mm': 1.0, 'error_mm': 0.5, 'seed': 401, 'model': 'zero'}
+START zero c1mm_e0.5mm seed=401 n=128
+DONE zero c1mm_e0.5mm seed=401: 32.03%
+PROGRESS 113/200 ETA remaining 2.90 h {'clearance_mm': 1.0, 'error_mm': 0.5, 'seed': 401, 'model': 'randomized'}
+START randomized c1mm_e0.5mm seed=401 n=128
+DONE randomized c1mm_e0.5mm seed=401: 100.00%
+PROGRESS 114/200 ETA remaining 2.87 h {'clearance_mm': 1.0, 'error_mm': 0.5, 'seed': 402, 'model': 'zero'}
+START zero c1mm_e0.5mm seed=402 n=128
+DONE zero c1mm_e0.5mm seed=402: 23.44%
+PROGRESS 115/200 ETA remaining 2.83 h {'clearance_mm': 1.0, 'error_mm': 0.5, 'seed': 402, 'model': 'randomized'}
+START randomized c1mm_e0.5mm seed=402 n=128
+DONE randomized c1mm_e0.5mm seed=402: 99.22%
+PROGRESS 116/200 ETA remaining 2.80 h {'clearance_mm': 1.0, 'error_mm': 0.5, 'seed': 403, 'model': 'zero'}
+START zero c1mm_e0.5mm seed=403 n=128
+DONE zero c1mm_e0.5mm seed=403: 23.44%
+PROGRESS 117/200 ETA remaining 2.77 h {'clearance_mm': 1.0, 'error_mm': 0.5, 'seed': 403, 'model': 'randomized'}
+START randomized c1mm_e0.5mm seed=403 n=128
+DONE randomized c1mm_e0.5mm seed=403: 99.22%
+PROGRESS 118/200 ETA remaining 2.73 h {'clearance_mm': 1.0, 'error_mm': 0.5, 'seed': 404, 'model': 'zero'}
+START zero c1mm_e0.5mm seed=404 n=128
+DONE zero c1mm_e0.5mm seed=404: 28.12%
+PROGRESS 119/200 ETA remaining 2.70 h {'clearance_mm': 1.0, 'error_mm': 0.5, 'seed': 404, 'model': 'randomized'}
+START randomized c1mm_e0.5mm seed=404 n=128
+DONE randomized c1mm_e0.5mm seed=404: 100.00%
+PROGRESS 120/200 ETA remaining 2.67 h {'clearance_mm': 1.0, 'error_mm': 1.0, 'seed': 400, 'model': 'zero'}
+START zero c1mm_e1mm seed=400 n=128
+DONE zero c1mm_e1mm seed=400: 24.22%
+PROGRESS 121/200 ETA remaining 2.63 h {'clearance_mm': 1.0, 'error_mm': 1.0, 'seed': 400, 'model': 'randomized'}
+START randomized c1mm_e1mm seed=400 n=128
+DONE randomized c1mm_e1mm seed=400: 99.22%
+PROGRESS 122/200 ETA remaining 2.60 h {'clearance_mm': 1.0, 'error_mm': 1.0, 'seed': 401, 'model': 'zero'}
+START zero c1mm_e1mm seed=401 n=128
+DONE zero c1mm_e1mm seed=401: 32.03%
+PROGRESS 123/200 ETA remaining 2.55 h {'clearance_mm': 1.0, 'error_mm': 1.0, 'seed': 401, 'model': 'randomized'}
+START randomized c1mm_e1mm seed=401 n=128
+DONE randomized c1mm_e1mm seed=401: 100.00%
+PROGRESS 124/200 ETA remaining 2.54 h {'clearance_mm': 1.0, 'error_mm': 1.0, 'seed': 402, 'model': 'zero'}
+START zero c1mm_e1mm seed=402 n=128
+DONE zero c1mm_e1mm seed=402: 26.56%
+PROGRESS 125/200 ETA remaining 2.51 h {'clearance_mm': 1.0, 'error_mm': 1.0, 'seed': 402, 'model': 'randomized'}
+START randomized c1mm_e1mm seed=402 n=128
+DONE randomized c1mm_e1mm seed=402: 100.00%
+PROGRESS 126/200 ETA remaining 2.47 h {'clearance_mm': 1.0, 'error_mm': 1.0, 'seed': 403, 'model': 'zero'}
+START zero c1mm_e1mm seed=403 n=128
+DONE zero c1mm_e1mm seed=403: 25.78%
+PROGRESS 127/200 ETA remaining 2.44 h {'clearance_mm': 1.0, 'error_mm': 1.0, 'seed': 403, 'model': 'randomized'}
+START randomized c1mm_e1mm seed=403 n=128
+DONE randomized c1mm_e1mm seed=403: 100.00%
+PROGRESS 128/200 ETA remaining 2.41 h {'clearance_mm': 1.0, 'error_mm': 1.0, 'seed': 404, 'model': 'zero'}
+START zero c1mm_e1mm seed=404 n=128
+DONE zero c1mm_e1mm seed=404: 31.25%
+PROGRESS 129/200 ETA remaining 2.38 h {'clearance_mm': 1.0, 'error_mm': 1.0, 'seed': 404, 'model': 'randomized'}
+START randomized c1mm_e1mm seed=404 n=128
+DONE randomized c1mm_e1mm seed=404: 99.22%
+PROGRESS 130/200 ETA remaining 2.34 h {'clearance_mm': 1.0, 'error_mm': 2.0, 'seed': 400, 'model': 'zero'}
+START zero c1mm_e2mm seed=400 n=128
+DONE zero c1mm_e2mm seed=400: 25.00%
+PROGRESS 131/200 ETA remaining 2.31 h {'clearance_mm': 1.0, 'error_mm': 2.0, 'seed': 400, 'model': 'randomized'}
+START randomized c1mm_e2mm seed=400 n=128
+DONE randomized c1mm_e2mm seed=400: 100.00%
+PROGRESS 132/200 ETA remaining 2.28 h {'clearance_mm': 1.0, 'error_mm': 2.0, 'seed': 401, 'model': 'zero'}
+START zero c1mm_e2mm seed=401 n=128
+DONE zero c1mm_e2mm seed=401: 31.25%
+PROGRESS 133/200 ETA remaining 2.24 h {'clearance_mm': 1.0, 'error_mm': 2.0, 'seed': 401, 'model': 'randomized'}
+START randomized c1mm_e2mm seed=401 n=128
+DONE randomized c1mm_e2mm seed=401: 99.22%
+PROGRESS 134/200 ETA remaining 2.21 h {'clearance_mm': 1.0, 'error_mm': 2.0, 'seed': 402, 'model': 'zero'}
+START zero c1mm_e2mm seed=402 n=128
+DONE zero c1mm_e2mm seed=402: 25.00%
+PROGRESS 135/200 ETA remaining 2.18 h {'clearance_mm': 1.0, 'error_mm': 2.0, 'seed': 402, 'model': 'randomized'}
+START randomized c1mm_e2mm seed=402 n=128
+DONE randomized c1mm_e2mm seed=402: 98.44%
+PROGRESS 136/200 ETA remaining 2.14 h {'clearance_mm': 1.0, 'error_mm': 2.0, 'seed': 403, 'model': 'zero'}
+START zero c1mm_e2mm seed=403 n=128
+DONE zero c1mm_e2mm seed=403: 26.56%
+PROGRESS 137/200 ETA remaining 2.11 h {'clearance_mm': 1.0, 'error_mm': 2.0, 'seed': 403, 'model': 'randomized'}
+START randomized c1mm_e2mm seed=403 n=128
+DONE randomized c1mm_e2mm seed=403: 99.22%
+PROGRESS 138/200 ETA remaining 2.08 h {'clearance_mm': 1.0, 'error_mm': 2.0, 'seed': 404, 'model': 'zero'}
+START zero c1mm_e2mm seed=404 n=128
+DONE zero c1mm_e2mm seed=404: 22.66%
+PROGRESS 139/200 ETA remaining 2.05 h {'clearance_mm': 1.0, 'error_mm': 2.0, 'seed': 404, 'model': 'randomized'}
+START randomized c1mm_e2mm seed=404 n=128
+DONE randomized c1mm_e2mm seed=404: 100.00%
+PROGRESS 140/200 ETA remaining 2.03 h {'clearance_mm': 1.0, 'error_mm': 4.0, 'seed': 400, 'model': 'zero'}
+START zero c1mm_e4mm seed=400 n=128
+DONE zero c1mm_e4mm seed=400: 23.44%
+PROGRESS 141/200 ETA remaining 2.01 h {'clearance_mm': 1.0, 'error_mm': 4.0, 'seed': 400, 'model': 'randomized'}
+START randomized c1mm_e4mm seed=400 n=128
+DONE randomized c1mm_e4mm seed=400: 89.84%
+PROGRESS 142/200 ETA remaining 1.99 h {'clearance_mm': 1.0, 'error_mm': 4.0, 'seed': 401, 'model': 'zero'}
+START zero c1mm_e4mm seed=401 n=128
+DONE zero c1mm_e4mm seed=401: 25.00%
+PROGRESS 143/200 ETA remaining 1.98 h {'clearance_mm': 1.0, 'error_mm': 4.0, 'seed': 401, 'model': 'randomized'}
+START randomized c1mm_e4mm seed=401 n=128
+DONE randomized c1mm_e4mm seed=401: 91.41%
+PROGRESS 144/200 ETA remaining 1.95 h {'clearance_mm': 1.0, 'error_mm': 4.0, 'seed': 402, 'model': 'zero'}
+START zero c1mm_e4mm seed=402 n=128
+DONE zero c1mm_e4mm seed=402: 22.66%
+PROGRESS 145/200 ETA remaining 1.91 h {'clearance_mm': 1.0, 'error_mm': 4.0, 'seed': 402, 'model': 'randomized'}
+START randomized c1mm_e4mm seed=402 n=128
+DONE randomized c1mm_e4mm seed=402: 87.50%
+PROGRESS 146/200 ETA remaining 1.87 h {'clearance_mm': 1.0, 'error_mm': 4.0, 'seed': 403, 'model': 'zero'}
+START zero c1mm_e4mm seed=403 n=128
+DONE zero c1mm_e4mm seed=403: 20.31%
+PROGRESS 147/200 ETA remaining 1.84 h {'clearance_mm': 1.0, 'error_mm': 4.0, 'seed': 403, 'model': 'randomized'}
+START randomized c1mm_e4mm seed=403 n=128
+DONE randomized c1mm_e4mm seed=403: 91.41%
+PROGRESS 148/200 ETA remaining 1.80 h {'clearance_mm': 1.0, 'error_mm': 4.0, 'seed': 404, 'model': 'zero'}
+START zero c1mm_e4mm seed=404 n=128
+DONE zero c1mm_e4mm seed=404: 21.09%
+PROGRESS 149/200 ETA remaining 1.77 h {'clearance_mm': 1.0, 'error_mm': 4.0, 'seed': 404, 'model': 'randomized'}
+START randomized c1mm_e4mm seed=404 n=128
+DONE randomized c1mm_e4mm seed=404: 91.41%
+PROGRESS 150/200 ETA remaining 1.73 h {'clearance_mm': 2.0, 'error_mm': 0.0, 'seed': 400, 'model': 'zero'}
+START zero c2mm_e0mm seed=400 n=128
+DONE zero c2mm_e0mm seed=400: 32.03%
+PROGRESS 151/200 ETA remaining 1.70 h {'clearance_mm': 2.0, 'error_mm': 0.0, 'seed': 400, 'model': 'randomized'}
+START randomized c2mm_e0mm seed=400 n=128
+DONE randomized c2mm_e0mm seed=400: 100.00%
+PROGRESS 152/200 ETA remaining 1.66 h {'clearance_mm': 2.0, 'error_mm': 0.0, 'seed': 401, 'model': 'zero'}
+START zero c2mm_e0mm seed=401 n=128
+DONE zero c2mm_e0mm seed=401: 38.28%
+PROGRESS 153/200 ETA remaining 1.63 h {'clearance_mm': 2.0, 'error_mm': 0.0, 'seed': 401, 'model': 'randomized'}
+START randomized c2mm_e0mm seed=401 n=128
+DONE randomized c2mm_e0mm seed=401: 100.00%
+PROGRESS 154/200 ETA remaining 1.59 h {'clearance_mm': 2.0, 'error_mm': 0.0, 'seed': 402, 'model': 'zero'}
+START zero c2mm_e0mm seed=402 n=128
+DONE zero c2mm_e0mm seed=402: 30.47%
+PROGRESS 155/200 ETA remaining 1.56 h {'clearance_mm': 2.0, 'error_mm': 0.0, 'seed': 402, 'model': 'randomized'}
+START randomized c2mm_e0mm seed=402 n=128
+DONE randomized c2mm_e0mm seed=402: 99.22%
+PROGRESS 156/200 ETA remaining 1.53 h {'clearance_mm': 2.0, 'error_mm': 0.0, 'seed': 403, 'model': 'zero'}
+START zero c2mm_e0mm seed=403 n=128
+DONE zero c2mm_e0mm seed=403: 30.47%
+PROGRESS 157/200 ETA remaining 1.49 h {'clearance_mm': 2.0, 'error_mm': 0.0, 'seed': 403, 'model': 'randomized'}
+START randomized c2mm_e0mm seed=403 n=128
+DONE randomized c2mm_e0mm seed=403: 100.00%
+PROGRESS 158/200 ETA remaining 1.46 h {'clearance_mm': 2.0, 'error_mm': 0.0, 'seed': 404, 'model': 'zero'}
+START zero c2mm_e0mm seed=404 n=128
+DONE zero c2mm_e0mm seed=404: 36.72%
+PROGRESS 159/200 ETA remaining 1.42 h {'clearance_mm': 2.0, 'error_mm': 0.0, 'seed': 404, 'model': 'randomized'}
+START randomized c2mm_e0mm seed=404 n=128
+DONE randomized c2mm_e0mm seed=404: 100.00%
+PROGRESS 160/200 ETA remaining 1.38 h {'clearance_mm': 2.0, 'error_mm': 0.5, 'seed': 400, 'model': 'zero'}
+START zero c2mm_e0.5mm seed=400 n=128
+DONE zero c2mm_e0.5mm seed=400: 32.03%
+PROGRESS 161/200 ETA remaining 1.33 h {'clearance_mm': 2.0, 'error_mm': 0.5, 'seed': 400, 'model': 'randomized'}
+START randomized c2mm_e0.5mm seed=400 n=128
+DONE randomized c2mm_e0.5mm seed=400: 100.00%
+PROGRESS 162/200 ETA remaining 1.29 h {'clearance_mm': 2.0, 'error_mm': 0.5, 'seed': 401, 'model': 'zero'}
+START zero c2mm_e0.5mm seed=401 n=128
+DONE zero c2mm_e0.5mm seed=401: 37.50%
+PROGRESS 163/200 ETA remaining 1.25 h {'clearance_mm': 2.0, 'error_mm': 0.5, 'seed': 401, 'model': 'randomized'}
+START randomized c2mm_e0.5mm seed=401 n=128
+DONE randomized c2mm_e0.5mm seed=401: 100.00%
+PROGRESS 164/200 ETA remaining 1.21 h {'clearance_mm': 2.0, 'error_mm': 0.5, 'seed': 402, 'model': 'zero'}
+START zero c2mm_e0.5mm seed=402 n=128
+DONE zero c2mm_e0.5mm seed=402: 32.03%
+PROGRESS 165/200 ETA remaining 1.18 h {'clearance_mm': 2.0, 'error_mm': 0.5, 'seed': 402, 'model': 'randomized'}
+START randomized c2mm_e0.5mm seed=402 n=128
+DONE randomized c2mm_e0.5mm seed=402: 100.00%
+PROGRESS 166/200 ETA remaining 1.14 h {'clearance_mm': 2.0, 'error_mm': 0.5, 'seed': 403, 'model': 'zero'}
+START zero c2mm_e0.5mm seed=403 n=128
+DONE zero c2mm_e0.5mm seed=403: 29.69%
+PROGRESS 167/200 ETA remaining 1.11 h {'clearance_mm': 2.0, 'error_mm': 0.5, 'seed': 403, 'model': 'randomized'}
+START randomized c2mm_e0.5mm seed=403 n=128
+DONE randomized c2mm_e0.5mm seed=403: 100.00%
+PROGRESS 168/200 ETA remaining 1.07 h {'clearance_mm': 2.0, 'error_mm': 0.5, 'seed': 404, 'model': 'zero'}
+START zero c2mm_e0.5mm seed=404 n=128
+DONE zero c2mm_e0.5mm seed=404: 36.72%
+PROGRESS 169/200 ETA remaining 1.04 h {'clearance_mm': 2.0, 'error_mm': 0.5, 'seed': 404, 'model': 'randomized'}
+START randomized c2mm_e0.5mm seed=404 n=128
+DONE randomized c2mm_e0.5mm seed=404: 100.00%
+PROGRESS 170/200 ETA remaining 1.01 h {'clearance_mm': 2.0, 'error_mm': 1.0, 'seed': 400, 'model': 'zero'}
+START zero c2mm_e1mm seed=400 n=128
+DONE zero c2mm_e1mm seed=400: 28.91%
+PROGRESS 171/200 ETA remaining 0.97 h {'clearance_mm': 2.0, 'error_mm': 1.0, 'seed': 400, 'model': 'randomized'}
+START randomized c2mm_e1mm seed=400 n=128
+DONE randomized c2mm_e1mm seed=400: 100.00%
+PROGRESS 172/200 ETA remaining 0.94 h {'clearance_mm': 2.0, 'error_mm': 1.0, 'seed': 401, 'model': 'zero'}
+START zero c2mm_e1mm seed=401 n=128
+DONE zero c2mm_e1mm seed=401: 35.94%
+PROGRESS 173/200 ETA remaining 0.91 h {'clearance_mm': 2.0, 'error_mm': 1.0, 'seed': 401, 'model': 'randomized'}
+START randomized c2mm_e1mm seed=401 n=128
+DONE randomized c2mm_e1mm seed=401: 100.00%
+PROGRESS 174/200 ETA remaining 0.87 h {'clearance_mm': 2.0, 'error_mm': 1.0, 'seed': 402, 'model': 'zero'}
+START zero c2mm_e1mm seed=402 n=128
+DONE zero c2mm_e1mm seed=402: 30.47%
+PROGRESS 175/200 ETA remaining 0.84 h {'clearance_mm': 2.0, 'error_mm': 1.0, 'seed': 402, 'model': 'randomized'}
+START randomized c2mm_e1mm seed=402 n=128
+DONE randomized c2mm_e1mm seed=402: 99.22%
+PROGRESS 176/200 ETA remaining 0.81 h {'clearance_mm': 2.0, 'error_mm': 1.0, 'seed': 403, 'model': 'zero'}
+START zero c2mm_e1mm seed=403 n=128
+DONE zero c2mm_e1mm seed=403: 31.25%
+PROGRESS 177/200 ETA remaining 0.77 h {'clearance_mm': 2.0, 'error_mm': 1.0, 'seed': 403, 'model': 'randomized'}
+START randomized c2mm_e1mm seed=403 n=128
+DONE randomized c2mm_e1mm seed=403: 100.00%
+PROGRESS 178/200 ETA remaining 0.74 h {'clearance_mm': 2.0, 'error_mm': 1.0, 'seed': 404, 'model': 'zero'}
+START zero c2mm_e1mm seed=404 n=128
+DONE zero c2mm_e1mm seed=404: 39.84%
+PROGRESS 179/200 ETA remaining 0.71 h {'clearance_mm': 2.0, 'error_mm': 1.0, 'seed': 404, 'model': 'randomized'}
+START randomized c2mm_e1mm seed=404 n=128
+DONE randomized c2mm_e1mm seed=404: 100.00%
+PROGRESS 180/200 ETA remaining 0.67 h {'clearance_mm': 2.0, 'error_mm': 2.0, 'seed': 400, 'model': 'zero'}
+START zero c2mm_e2mm seed=400 n=128
+DONE zero c2mm_e2mm seed=400: 32.03%
+PROGRESS 181/200 ETA remaining 0.64 h {'clearance_mm': 2.0, 'error_mm': 2.0, 'seed': 400, 'model': 'randomized'}
+START randomized c2mm_e2mm seed=400 n=128
+DONE randomized c2mm_e2mm seed=400: 100.00%
+PROGRESS 182/200 ETA remaining 0.61 h {'clearance_mm': 2.0, 'error_mm': 2.0, 'seed': 401, 'model': 'zero'}
+START zero c2mm_e2mm seed=401 n=128
+DONE zero c2mm_e2mm seed=401: 34.38%
+PROGRESS 183/200 ETA remaining 0.57 h {'clearance_mm': 2.0, 'error_mm': 2.0, 'seed': 401, 'model': 'randomized'}
+START randomized c2mm_e2mm seed=401 n=128
+DONE randomized c2mm_e2mm seed=401: 100.00%
+PROGRESS 184/200 ETA remaining 0.53 h {'clearance_mm': 2.0, 'error_mm': 2.0, 'seed': 402, 'model': 'zero'}
+START zero c2mm_e2mm seed=402 n=128
+DONE zero c2mm_e2mm seed=402: 31.25%
+PROGRESS 185/200 ETA remaining 0.50 h {'clearance_mm': 2.0, 'error_mm': 2.0, 'seed': 402, 'model': 'randomized'}
+START randomized c2mm_e2mm seed=402 n=128
+DONE randomized c2mm_e2mm seed=402: 99.22%
+PROGRESS 186/200 ETA remaining 0.47 h {'clearance_mm': 2.0, 'error_mm': 2.0, 'seed': 403, 'model': 'zero'}
+START zero c2mm_e2mm seed=403 n=128
+DONE zero c2mm_e2mm seed=403: 32.81%
+PROGRESS 187/200 ETA remaining 0.43 h {'clearance_mm': 2.0, 'error_mm': 2.0, 'seed': 403, 'model': 'randomized'}
+START randomized c2mm_e2mm seed=403 n=128
+DONE randomized c2mm_e2mm seed=403: 99.22%
+PROGRESS 188/200 ETA remaining 0.40 h {'clearance_mm': 2.0, 'error_mm': 2.0, 'seed': 404, 'model': 'zero'}
+START zero c2mm_e2mm seed=404 n=128
+DONE zero c2mm_e2mm seed=404: 36.72%
+PROGRESS 189/200 ETA remaining 0.37 h {'clearance_mm': 2.0, 'error_mm': 2.0, 'seed': 404, 'model': 'randomized'}
+START randomized c2mm_e2mm seed=404 n=128
+DONE randomized c2mm_e2mm seed=404: 99.22%
+PROGRESS 190/200 ETA remaining 0.33 h {'clearance_mm': 2.0, 'error_mm': 4.0, 'seed': 400, 'model': 'zero'}
+START zero c2mm_e4mm seed=400 n=128
+DONE zero c2mm_e4mm seed=400: 30.47%
+PROGRESS 191/200 ETA remaining 0.30 h {'clearance_mm': 2.0, 'error_mm': 4.0, 'seed': 400, 'model': 'randomized'}
+START randomized c2mm_e4mm seed=400 n=128
+DONE randomized c2mm_e4mm seed=400: 95.31%
+PROGRESS 192/200 ETA remaining 0.27 h {'clearance_mm': 2.0, 'error_mm': 4.0, 'seed': 401, 'model': 'zero'}
+START zero c2mm_e4mm seed=401 n=128
+DONE zero c2mm_e4mm seed=401: 31.25%
+PROGRESS 193/200 ETA remaining 0.23 h {'clearance_mm': 2.0, 'error_mm': 4.0, 'seed': 401, 'model': 'randomized'}
+START randomized c2mm_e4mm seed=401 n=128
+DONE randomized c2mm_e4mm seed=401: 96.09%
+PROGRESS 194/200 ETA remaining 0.20 h {'clearance_mm': 2.0, 'error_mm': 4.0, 'seed': 402, 'model': 'zero'}
+START zero c2mm_e4mm seed=402 n=128
+DONE zero c2mm_e4mm seed=402: 29.69%
+PROGRESS 195/200 ETA remaining 0.17 h {'clearance_mm': 2.0, 'error_mm': 4.0, 'seed': 402, 'model': 'randomized'}
+START randomized c2mm_e4mm seed=402 n=128
+DONE randomized c2mm_e4mm seed=402: 94.53%
+PROGRESS 196/200 ETA remaining 0.13 h {'clearance_mm': 2.0, 'error_mm': 4.0, 'seed': 403, 'model': 'zero'}
+START zero c2mm_e4mm seed=403 n=128
+DONE zero c2mm_e4mm seed=403: 29.69%
+PROGRESS 197/200 ETA remaining 0.10 h {'clearance_mm': 2.0, 'error_mm': 4.0, 'seed': 403, 'model': 'randomized'}
+START randomized c2mm_e4mm seed=403 n=128
+DONE randomized c2mm_e4mm seed=403: 91.41%
+PROGRESS 198/200 ETA remaining 0.07 h {'clearance_mm': 2.0, 'error_mm': 4.0, 'seed': 404, 'model': 'zero'}
+START zero c2mm_e4mm seed=404 n=128
+DONE zero c2mm_e4mm seed=404: 26.56%
+PROGRESS 199/200 ETA remaining 0.03 h {'clearance_mm': 2.0, 'error_mm': 4.0, 'seed': 404, 'model': 'randomized'}
+START randomized c2mm_e4mm seed=404 n=128
+DONE randomized c2mm_e4mm seed=404: 96.09%

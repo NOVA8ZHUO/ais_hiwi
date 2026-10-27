@@ -1,0 +1,28 @@
+{
+  "scope": "two models, identical replay job list",
+  "measured_seconds_per_job": 70.0838970541954,
+  "normal_jobs": [
+    260,
+    320
+  ],
+  "maximum_jobs": [
+    580,
+    760
+  ],
+  "normal_compute_hours": [
+    5.0616147872474455,
+    6.229679738150702
+  ],
+  "maximum_compute_hours": [
+    11.291294525398149,
+    14.795489378107918
+  ],
+  "recommended_walltime_hours": [
+    6,
+    10
+  ],
+  "recommended_maximum_walltime_hours": [
+    12,
+    20
+  ]
+}

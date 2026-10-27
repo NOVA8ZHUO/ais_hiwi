@@ -1,0 +1,29 @@
+{
+  "pid": 2933799,
+  "started_utc": "2026-10-13T11:52:01.896608+00:00",
+  "stage": "complete",
+  "variant": "cad",
+  "status": "complete",
+  "updated_utc": "2026-10-13T16:03:45.153974+00:00",
+  "train_directory": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train",
+  "train_exit_code": 0,
+  "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__341.10693_.pth",
+  "evaluate_directory": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T160114_110218Z_evaluate",
+  "evaluate_exit_code": 0,
+  "evaluation_summary": {
+    "protocol": "auxiliary fixed-seed evaluation; not verified paper protocol",
+    "seed": 0,
+    "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__341.10693_.pth",
+    "episodes": 128,
+    "success_rate_any": 1.0,
+    "success_rate_final": 1.0,
+    "mean_episode_reward": 365.3293730020523,
+    "force_definition": "L2 norm of smoothed wrist force, sampled at control rate",
+    "cad_geometry": {
+      "seating_depth_m": 0.047,
+      "official_success_depth_min_m": 0.04512,
+      "episodes_exceeding_50mm_depth": 0,
+      "note": "Depth/width diagnostics do not change the official reward or success predicate."
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "status": "failed",
+  "checks": {
+    "config_whitelist": true,
+    "articulation_structure": true
+  },
+  "configuration_diff": [
+    {
+      "path": "task.fixed_asset_cfg.height",
+      "official": "0.025",
+      "cad": "0.047"
+    },
+    {
+      "path": "task.fixed_asset_cfg.usd_path",
+      "official": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_hole_8mm.usd",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/base.usda"
+    },
+    {
+      "path": "task.fixed_asset_cfg.diameter",
+      "official": "0.0081",
+      "cad": "0.026"
+    },
+    {
+      "path": "task.fixed_asset.spawn.usd_path",
+      "official": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_hole_8mm.usd",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/base.usda"
+    },
+    {
+      "path": "task.hand_init_pos",
+      "official": "[0.0, 0.0, 0.047]",
+      "cad": "[0.0, 0.0, 0.08]"
+    },
+    {
+      "path": "task.held_asset_cfg.mass",
+      "official": "0.019",
+      "cad": "0.0175"
+    },
+    {
+      "path": "task.held_asset_cfg.height",
+      "official": "0.05",
+      "cad": "0.083"
+    },
+    {
+      "path": "task.held_asset_cfg.usd_path",
+      "official": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_peg_8mm.usd",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/shaft_large.usda"
+    },
+    {
+      "path": "task.held_asset_cfg.diameter",
+      "official": "0.007986",
+      "cad": "0.035"
+    },
+    {
+      "path": "task.held_asset.spawn.usd_path",
+      "official": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_peg_8mm.usd",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/shaft_large.usda"
+    },
+    {
+      "path": "task.held_asset.spawn.mass_props.mass",
+      "official": "0.019",
+      "cad": "0.0175"
+    }
+  ],
+  "resets": [
+    {
+      "finger_joints_m": [
+        [
+          0.017584724351763725,
+          0.01758546754717827
+        ],
+        [
+          0.01758333295583725,
+          0.01758410781621933
+        ],
+        [
+          0.01758420281112194,
+          0.017584163695573807
+        ],
+        [
+          0.01759462244808674,
+          0.017593804746866226
+        ]
+      ],
+      "shaft_tip_m": [
+        [
+          0.6123895645141602,
+          0.037266433238983154,
+          0.1513073593378067
+        ],
+        [
+          0.6020818948745728,
+          0.022365212440490723,
+          0.10036532580852509
+        ],
+        [
+          0.5719654560089111,
+          0.05130738019943237,
+          0.15587027370929718
+        ],
+        [
+          0.6484224796295166,
+          -0.03383791446685791,
+          0.06962138414382935
+        ]
+      ],
+      "hole_entry_m": [
+        [
+          0.6089493036270142,
+          0.03242415189743042,
+          0.1292368471622467
+        ],
+        [
+          0.5942327976226807,
+          0.009916543960571289,
+          0.08157677948474884
+        ],
+        [
+          0.5724515914916992,
+          0.03821384906768799,
+          0.14262676239013672
+        ],
+        [
+          0.6483581066131592,
+          -0.03670001029968262,
+          0.05789543688297272
+        ]
+      ],
+      "shaft_tip_clearance_m": [
+        0.022070512175559998,
+        0.018788546323776245,
+        0.013243511319160461,
+        0.011725947260856628
+      ],
+      "mass_kg": [
+        [
+          0.015499886125326157
+        ],
+        [
+          0.01896442100405693
+        ],
+        [
+          0.017728015780448914
+        ],
+        [
+          0.0129914041608572
+        ]
+      ],
+      "hold_relative_translation_m": [
+        0.0013531794538721442,
+        0.0015059924917295575,
+        0.001171257346868515,
+        0.0019073637668043375
+      ],
+      "fixed_motion_m": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "error": "Traceback (most recent call last):\n  File \"/home/masais/Xinyu/Isaacsim/forge_insertion/scripts/validate_cad.py\", line 61, in <module>\n    obs, _ = env.reset()\n             ^^^^^^^^^^^\n  File \"/home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/gymnasium/wrappers/common.py\", line 400, in reset\n    return super().reset(seed=seed, options=options)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/gymnasium/core.py\", line 333, in reset\n    return self.env.reset(seed=seed, options=options)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab/isaaclab/envs/direct_rl_env.py\", line 315, in reset\n    self._reset_idx(indices)\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab_tasks/isaaclab_tasks/direct/forge/forge_env.py\", line 274, in _reset_idx\n    super()._reset_idx(env_ids)\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab_tasks/isaaclab_tasks/direct/factory/factory_env.py\", line 492, in _reset_idx\n    self._set_assets_to_default_pose(env_ids)\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab_tasks/isaaclab_tasks/direct/factory/factory_env.py\", line 503, in _set_assets_to_default_pose\n    self._held_asset.write_root_pose_to_sim(held_state[:, 0:7], env_ids=env_ids)\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab/isaaclab/assets/articulation/articulation.py\", line 408, in write_root_pose_to_sim\n    self.write_root_link_pose_to_sim(root_pose, env_ids=env_ids)\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab/isaaclab/assets/articulation/articulation.py\", line 427, in write_root_link_pose_to_sim\n    self._data.root_link_pose_w[env_ids] = root_pose.clone()\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^\nRuntimeError: Inplace update to inference tensor outside InferenceMode is not allowed.You can make a clone to get a normal tensor before doing inplace update.See https://github.com/pytorch/rfcs/pull/17 for more details.\n"
+}

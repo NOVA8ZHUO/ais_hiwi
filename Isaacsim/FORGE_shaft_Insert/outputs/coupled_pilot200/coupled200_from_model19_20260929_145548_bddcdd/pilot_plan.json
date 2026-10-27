@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "initial_checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_release25/2026-09-28_15-34-34_release25_gui_20260928_152608/model_19.pt",
+  "initial_sha256": "071c17f0d60e4de4b22eec5d13c0e266233421e5de43786b101ad98962c7da7a",
+  "train_command": [
+    "/home/masais/miniconda3/envs/Xinyu_isaacsim/bin/python",
+    "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/scripts/train.py",
+    "--task",
+    "FORGE-Shaft-Insert-Paper-v0",
+    "--headless",
+    "--num_envs",
+    "128",
+    "--max_iterations",
+    "200",
+    "--seed",
+    "42",
+    "--resume",
+    "--load_run",
+    "initial_model19_original_physics",
+    "--checkpoint",
+    "model_19.pt",
+    "--run_name",
+    "coupled200_from_model19_20260929_145548_bddcdd",
+    "agent.num_steps_per_env=32",
+    "agent.algorithm.num_mini_batches=4",
+    "agent.save_interval=10"
+  ],
+  "additional_updates": 200,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "change": "Native equal-extension finger coupling; task rewards/control/randomization unchanged from repaired configuration.",
+  "comparison_scope": "Historical old-physics model218 versus retrained coupled-physics model218; combined physics and training effect.",
+  "training_run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_coupled_release25/2026-09-29_14-55-55_coupled200_from_model19_20260929_145548_bddcdd"
+}

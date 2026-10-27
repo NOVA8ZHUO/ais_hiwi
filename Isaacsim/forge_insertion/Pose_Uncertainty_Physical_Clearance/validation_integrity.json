@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "cases": 8,
+  "reset_instances": 64,
+  "training_started": false,
+  "report_sha256": {
+    "VALIDATION_RESULTS.md": "3a4eb83b4b5bf62f9dfb02aeed6302bbeb4d7728c76bafd9b6534fd986645e75",
+    "validation_summary.json": "c2b566202e7092806bd07a2b7d244fb58233f4bb4af0b8afec57e62a5f67fe1b",
+    "validation/P0_clearance_1mm/validation.json": "38abe24d59f1f7e636d441ce70041b97656d7630e72532612baa7ac82c59df74",
+    "validation/P1_clearance_0.25mm/validation.json": "5a07326222f61e3f4845c2cbec2c3573d661bb45c72e8decb156ce139c454237",
+    "validation/P0_clearance_0.25mm/validation.json": "671e2eecd03624f1d87eae7abef2d5307f22565b812b8cbae92eec89ffcccc64",
+    "validation/P0_clearance_0.5mm/validation.json": "ee42b3e544dba5ae4aab2f8b6ecdfe3b07369b8e4b6bbe7e57c7d5faca4b83e5",
+    "validation/P1_clearance_1mm/validation.json": "ada465a95a1d6d2ad473f49e1f9ae452bb5c653660adbe0d3667fd920c7ae3c2",
+    "validation/P0_clearance_2mm/validation.json": "3368734a3ee2d383abcf5ee99ca7ee2a29d0ccddc4ae8eeedba6107434e08aff",
+    "validation/P1_clearance_0.5mm/validation.json": "719682ef0eca6bc67a60af9dd54d35c18382d3d2e6581e3d6e8fe46d5a44fa2b",
+    "validation/P1_clearance_2mm/validation.json": "f075ae1b1dd32cec2f8d51a4b8006f5652b6aa89fb008ae4e617268c81244f61"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "checkpoint_sha256": "f025e808a8d677b3c9ab365e6e796bd5da99215cf671c0a668a9975a8683aafc",
+  "torch_version": "2.7.0+cu128",
+  "reference": "rsl_rl ActorCriticRecurrent.act_inference loaded original model8000",
+  "sequence_steps_per_batch": 200,
+  "batches": [
+    1,
+    4
+  ],
+  "partial_resets": true,
+  "max_abs_error": 0.0,
+  "hardware_tested": false
+}

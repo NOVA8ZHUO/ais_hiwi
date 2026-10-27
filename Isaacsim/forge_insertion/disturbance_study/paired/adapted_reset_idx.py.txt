@@ -1,0 +1,36 @@
+def _reset_idx(self, env_ids):
+    """Perform additional randomizations."""
+    FactoryEnv._reset_idx(self, env_ids)
+    fixed_pos_action_frame = self.fixed_pos_obs_frame + self.init_fixed_pos_obs_noise
+    pos_actions = self.fingertip_midpoint_pos - fixed_pos_action_frame
+    pos_action_bounds = torch.tensor(self.cfg.ctrl.pos_action_bounds, device=self.device)
+    pos_actions = pos_actions @ torch.diag(1.0 / pos_action_bounds)
+    self.actions[:, 0:3] = self.prev_actions[:, 0:3] = pos_actions
+    unrot_180_euler = torch.tensor([-np.pi, 0.0, 0.0], device=self.device).repeat(self.num_envs, 1)
+    unrot_quat = torch_utils.quat_from_euler_xyz(roll=unrot_180_euler[:, 0], pitch=unrot_180_euler[:, 1], yaw=unrot_180_euler[:, 2])
+    fingertip_quat_rel_bolt = torch_utils.quat_mul(unrot_quat, self.fingertip_midpoint_quat)
+    fingertip_yaw_bolt = torch_utils.get_euler_xyz(fingertip_quat_rel_bolt)[-1]
+    fingertip_yaw_bolt = torch.where(fingertip_yaw_bolt > torch.pi / 2, fingertip_yaw_bolt - 2 * torch.pi, fingertip_yaw_bolt)
+    fingertip_yaw_bolt = torch.where(fingertip_yaw_bolt < -torch.pi, fingertip_yaw_bolt + 2 * torch.pi, fingertip_yaw_bolt)
+    yaw_action = (fingertip_yaw_bolt + np.deg2rad(180.0)) / np.deg2rad(270.0) * 2.0 - 1.0
+    self.actions[:, 5] = self.prev_actions[:, 5] = yaw_action
+    self.actions[:, 6] = self.prev_actions[:, 6] = -1.0
+    ema_rand = self._sample('ema', locals(), (self.num_envs, 1), dtype=torch.float32, device=self.device)
+    (ema_lower, ema_upper) = self.cfg.ctrl.ema_factor_range
+    self.ema_factor = ema_lower + ema_rand * (ema_upper - ema_lower)
+    prop_gains = self.default_gains.clone()
+    self.pos_threshold = self.default_pos_threshold.clone()
+    self.rot_threshold = self.default_rot_threshold.clone()
+    prop_gains = self._paired_gains(prop_gains, self.cfg.ctrl.task_prop_gains_noise_level, self.num_envs, self.device, 'gains')
+    self.pos_threshold = self._paired_gains(self.pos_threshold, self.cfg.ctrl.pos_threshold_noise_level, self.num_envs, self.device, 'position_threshold')
+    self.rot_threshold = self._paired_gains(self.rot_threshold, self.cfg.ctrl.rot_threshold_noise_level, self.num_envs, self.device, 'rotation_threshold')
+    self.task_prop_gains = prop_gains
+    self.task_deriv_gains = factory_utils.get_deriv_gains(prop_gains)
+    contact_rand = self._sample('contact_threshold', locals(), (self.num_envs,), dtype=torch.float32, device=self.device)
+    (contact_lower, contact_upper) = self.cfg.task.contact_penalty_threshold_range
+    self.contact_penalty_thresholds = contact_lower + contact_rand * (contact_upper - contact_lower)
+    self.dead_zone_thresholds = self._sample('dead_zone', locals(), (self.num_envs, 6), dtype=torch.float32, device=self.device) * self.default_dead_zone
+    self.force_sensor_world_smooth[:, :] = 0.0
+    self.flip_quats = torch.ones((self.num_envs,), dtype=torch.float32, device=self.device)
+    rand_flips = self._sample('quaternion_sign', locals(), self.num_envs) > 0.5
+    self.flip_quats[rand_flips] = -1.0

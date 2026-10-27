@@ -1,0 +1,173 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/apps/isaaclab.python.headless.kit
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-09-29_15-23-41.log[0m
+[36m======================================================================================[0m
+
+[33m15:23:41 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 44
+	Physics step-size     : 0.004166666666666667
+	Rendering step-size   : 0.06666666666666667
+	Environment step-size : 0.06666666666666667
+[INFO]: Time taken for scene creation : 1.525361 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 32
+	Environment spacing   : 1.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 0.446148 seconds
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++------------------------+
+|  Active Command Terms  |
++--------+-------+-------+
+| Index  | Name  |  Type |
++--------+-------+-------+
++--------+-------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-----------------------------------+
+| Active Event Terms in Mode: 'reset' |
++----------+------------------------+
+|  Index   | Name                   |
++----------+------------------------+
+|    0     | reset                  |
+|    1     | shaft_friction         |
+|    2     | base_friction          |
++----------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++---------------------+
+| Active Recorder Terms |
++-----------+---------+
+|   Index   | Name    |
++-----------+---------+
++-----------+---------+
+
+[INFO] Action Manager:  <ActionManager> contains 1 active terms.
++-----------------------------------+
+|   Active Action Terms (shape: 5)  |
++--------+-------------+------------+
+| Index  | Name        |  Dimension |
++--------+-------------+------------+
+|   0    | arm_action  |          5 |
++--------+-------------+------------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++--------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (29,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (29,)      |
++----------------+----------------+----------------+
++--------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (53,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (53,)      |
++----------------+----------------+----------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 4 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | outside_workspace   |  False   |
+|   2   | invalid_grasp_width |  False   |
+|   3   | release_complete    |  False   |
++-------+---------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 6 active terms.
++------------------------------+
+|     Active Reward Terms      |
++-------+-------------+--------+
+| Index | Name        | Weight |
++-------+-------------+--------+
+|   0   | keypoints   |   15.0 |
+|   1   | place       |   15.0 |
+|   2   | inserted    |   15.0 |
+|   3   | contact     |  -3.75 |
+|   4   | shaft_pitch |  -3.75 |
+|   5   | prediction  |  -15.0 |
++-------+-------------+--------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+[INFO]: Completed setting up the environment...
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 policy :  ['policy']
+	 critic :  ['critic']
+--------------------------------------------------------------------------------
+Actor RNN: Memory(
+  (rnn): LSTM(29, 128)
+)
+Actor MLP: MLP(
+  (0): Linear(in_features=128, out_features=128, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=128, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=5, bias=True)
+)
+Critic RNN: Memory(
+  (rnn): LSTM(53, 128)
+)
+Critic MLP: MLP(
+  (0): Linear(in_features=128, out_features=128, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=128, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=1, bias=True)
+)
+EVAL_PROGRESS {"steps": 150, "selected": 2, "quota": 128, "min_completed": 0, "elapsed_s": 31.999001977965236}
+EVAL_PROGRESS {"steps": 300, "selected": 32, "quota": 128, "min_completed": 1, "elapsed_s": 64.56240491615608}
+EVAL_PROGRESS {"steps": 450, "selected": 37, "quota": 128, "min_completed": 1, "elapsed_s": 97.86858862498775}
+EVAL_PROGRESS {"steps": 600, "selected": 67, "quota": 128, "min_completed": 2, "elapsed_s": 131.46711310511455}
+EVAL_PROGRESS {"steps": 750, "selected": 73, "quota": 128, "min_completed": 2, "elapsed_s": 164.38474645116366}
+EVAL_PROGRESS {"steps": 900, "selected": 102, "quota": 128, "min_completed": 3, "elapsed_s": 198.5999245219864}
+EVAL_PROGRESS {"steps": 1050, "selected": 107, "quota": 128, "min_completed": 3, "elapsed_s": 231.84588819602504}
+EVAL_PROGRESS {"steps": 1200, "selected": 128, "quota": 128, "min_completed": 4, "elapsed_s": 265.3641777620651}
+EVALUATION_RESULT {"checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_coupled_release25/2026-09-29_14-55-55_coupled200_from_model19_20260929_145548_bddcdd/model_218.pt", "checkpoint_sha256": "55412ac175be2c8294491d846719365f0a980bc6264be9cf359d97b5e1d8356a", "deterministic": true, "training": false, "policy_state_unchanged": true, "task_source_matches_training": true, "seed": 44, "num_envs": 32, "episodes_per_env": 4, "completed_episodes": 128, "raw_completed_episodes": 135, "control_steps": 1200, "elapsed_s": 265.36940449196845, "rates": {"success_any": 0.28125, "success_final": 0.28125, "success_stable": 0.28125, "fully_seated_final": 0.28125, "seated_depth_final": 0.28125}, "success_final_wilson95": [0.2106120712149715, 0.36463580199045076], "terminations": {"time_out": 92, "outside_workspace": 0, "invalid_grasp_width": 0, "release_complete": 36}, "mean_episode_force_p95_N": 2.6146860894514248, "peak_force_N": 8.97809886932373, "mean_episode_action_saturation": 0.045493541629452926, "mean_episode_duration_s": 17.707812500000003, "protocol": "First four episodes per environment by default; all environmental randomization retained, policy mean actions, no randomized initial episode lengths. Raw CSV includes unselected extra episodes of faster environments; evaluation_episodes.csv is the benchmark denominator."}
+Loading user config located at: '/home/masais/miniconda3/envs/Xinyu_isaacsim/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/masais/miniconda3/envs/Xinyu_isaacsim/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260929_152334.log
+2026-09-29T13:23:34Z [61ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-09-29T13:23:35Z [392ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-09-29T13:23:35Z [398ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.178.04    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 4090          | Yes: 0 |     | 24564   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2684      | 9a8e4354.. |
+|     |                                  |        |     |            | 1         |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 6.8.0-111-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: 13th Gen Intel(R) Core(TM) i7-13700KF
+| Bare Metal Cores: 16 | Bare Metal Logical Cores: 32
+| Available Cores:  24 
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 64158 | Free Memory: 40936
+| Total Page/Swap (MB): 31249 | Free Page/Swap: 31222
+|---------------------------------------------------------------------------------------------|
+2026-09-29T13:23:40Z [5,803ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-09-29T13:23:40Z [5,812ms] [Warning] [gpu.foundation.plugin] PCIe link generation current (1) and maximum (4) for device 0 don't match.
+2026-09-29T13:23:40Z [5,812ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.

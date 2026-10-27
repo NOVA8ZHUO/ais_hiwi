@@ -1,0 +1,33 @@
+{
+  "python": "3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]",
+  "executable": "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+  "platform": "Linux-6.8.0-111-generic-x86_64-with-glibc2.35",
+  "packages": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.54.2",
+    "torch": "2.7.0+cu128",
+    "rl-games": "1.6.1",
+    "gymnasium": "1.2.0",
+    "tensorboard": "2.21.0"
+  },
+  "git_commit": {
+    "returncode": 0,
+    "stdout": "37ddf626871758333d6ed89cf64ad702aef127d0\n",
+    "stderr": ""
+  },
+  "git_branch": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "gpu": {
+    "returncode": 0,
+    "stdout": "Mon Oct 12 14:32:57 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 4090        Off |   00000000:01:00.0 Off |                  Off |\n| 30%   49C    P2            193W /  450W |    8691MiB /  24564MiB |     99%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A          242214      G   /usr/lib/xorg/Xorg                      267MiB |\n|    0   N/A  N/A          242315    C+G   ...c/gnome-remote-desktop-daemon        392MiB |\n|    0   N/A  N/A          242369      G   /usr/bin/gnome-shell                     78MiB |\n|    0   N/A  N/A          243155      G   ...bin/snapd-desktop-integration         10MiB |\n|    0   N/A  N/A         1534423      G   /usr/share/code/code                    234MiB |\n|    0   N/A  N/A         1538147      G   ...rack-uuid=3190708988185955192         64MiB |\n|    0   N/A  N/A         1549559      G   .../8995/usr/lib/firefox/firefox         17MiB |\n|    0   N/A  N/A         1652927    C+G   python                                 3721MiB |\n|    0   N/A  N/A         1658308    C+G   python                                 3721MiB |\n+-----------------------------------------------------------------------------------------+\n",
+    "stderr": ""
+  },
+  "torch_runtime": {
+    "cuda": "12.8",
+    "cuda_available": true
+  },
+  "physx": "UNVERIFIED: inspect Kit extension versions after simulator startup"
+}

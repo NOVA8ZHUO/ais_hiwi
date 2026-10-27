@@ -1,0 +1,61 @@
+{
+  "source": "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/assets",
+  "shaft_nominal_mass_kg": 0.0175,
+  "shaft_length_m": 0.083,
+  "grasp_diameter_m": 0.035,
+  "insertion_diameter_m": 0.025,
+  "seating_depth_m": 0.047,
+  "base_target_in_original_frame_m": [
+    0.127,
+    -0.00018226,
+    0.003
+  ],
+  "assets": {
+    "shaft_large": {
+      "path": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/shaft_large.usda",
+      "sha256": "ce1b6818a3617aef4a1a201e288b17e5ba19f32650bd87b7cf0ec8cc49d83a32",
+      "vertices": 8994,
+      "bounds_min_m": [
+        -0.017500000074505806,
+        -0.01750000284701769,
+        -3.593996838309485e-10
+      ],
+      "bounds_max_m": [
+        0.017500000074505806,
+        0.017499998397307294,
+        0.08299999737149616
+      ],
+      "source_layers": {
+        "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/assets/shaft_large.usda": "49ac86276c5402f0da81bd132628ad22afc79e9fae73504377718af2c9a60fab",
+        "/home/masais/Xinyu/USD_files/shaft_insertion.usd": "59977ebbcb3d54eec1c61d99a79a4b79825b5ac7c856a885bd746f89c193c569",
+        "/home/masais/Xinyu/USD_files/parts_USD_files/Shaft_large.usd": "3553ef2ed3a3ef1238af5493aaa714f9d8a5ab0046fcb7c0a1bf0e83f4a3926f"
+      },
+      "fixed_to_world": false,
+      "collision": "sdf",
+      "mass_kg": 0.0175
+    },
+    "base": {
+      "path": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/base.usda",
+      "sha256": "441eb6d098302bc8fbfbb6c1e01552043561d85aa66c5c985f55b543520ac15a",
+      "vertices": 39108,
+      "bounds_min_m": [
+        -0.16129248929023743,
+        -0.03447133329970927,
+        -0.0030000011861419508
+      ],
+      "bounds_max_m": [
+        0.03447388517856598,
+        0.16447474452186572,
+        0.047000001628761764
+      ],
+      "source_layers": {
+        "/home/masais/Xinyu/USD_files/shaft_insertion.usd": "59977ebbcb3d54eec1c61d99a79a4b79825b5ac7c856a885bd746f89c193c569",
+        "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/assets/base.usda": "3ca59d83fc4da393a98017e7a7b43d845fa8202fe413342ae49ef8ac73be2551",
+        "/home/masais/Xinyu/USD_files/parts_USD_files/Base.usd": "4b86d77fe776d28648dea5c4cabe2f10c56413b6e1cb65b69eddd002b3ad07f6"
+      },
+      "fixed_to_world": true,
+      "collision": "sdf",
+      "mass_kg": 0.05
+    }
+  }
+}

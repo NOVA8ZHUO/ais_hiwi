@@ -1,0 +1,20 @@
+{
+  "task": "Isaac-Forge-ShaftLarge-CAD-Direct-v0",
+  "run": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train",
+  "training_pid": 2933806,
+  "num_envs": 128,
+  "max_epochs": 200,
+  "seed": 0,
+  "from_scratch": true,
+  "official_ppo_and_network_match": true,
+  "shaft_nominal_mass_kg": 0.0175,
+  "shaft_randomized_mass_range_kg": [
+    0.0125,
+    0.0225
+  ],
+  "actor_observation_dim_from_log": 24,
+  "critic_state_dim_from_log": 61,
+  "action_dim": 7,
+  "seating_depth_m": 0.047,
+  "official_success_depth_min_m": 0.04512
+}

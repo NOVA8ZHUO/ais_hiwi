@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/verify.py", line 45, in <module>
+    dump_yaml('zero_env.yaml',cfg)
+  File "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab/isaaclab/utils/io/yaml.py", line 50, in dump_yaml
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+  File "<frozen os>", line 225, in makedirs
+FileNotFoundError: [Errno 2] No such file or directory: ''

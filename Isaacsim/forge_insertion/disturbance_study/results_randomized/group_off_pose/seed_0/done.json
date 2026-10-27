@@ -1,0 +1,28 @@
+{
+  "identity": {
+    "condition": "group_off_pose",
+    "active": [
+      "contact_threshold",
+      "dead_zone",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 0,
+    "num_envs": 128,
+    "model": "randomized",
+    "checkpoint_sha256": "57ae61f09be156e0c07aa250e0c58d164251e0efc36f2b56b2a76ee21e3f24ed",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "341846b911b0716ff83db917f5546b493c553b3c9615167d2476760c98f7680d"
+  },
+  "seconds": 96.12438865192235,
+  "evaluation_sha256": "a74b9be8f5211d11e425a4b82f4ba2713b7c96d357f96de4e7620cdd82b87d19"
+}

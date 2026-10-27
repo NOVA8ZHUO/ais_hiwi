@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "condition": "factor_on_hole_observation",
+    "active": [
+      "hole_observation"
+    ],
+    "seed": 303,
+    "num_envs": 128,
+    "model": "zero",
+    "checkpoint_sha256": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "8814ba148690d2a4be52c7890936c900b0372f4ea0a707a6605a16924739d259"
+  },
+  "seconds": 96.12845540000126,
+  "evaluation_sha256": "b73e26854c9e9dc45576f115307d52ea4df32efffcd6a8a7a2a20900e40c96db"
+}

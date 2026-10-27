@@ -1,0 +1,815 @@
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-09-28_15-34-34.log[0m
+[36m======================================================================================[0m
+
+[33m15:34:34 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 42
+	Physics step-size     : 0.004166666666666667
+	Rendering step-size   : 0.06666666666666667
+	Environment step-size : 0.06666666666666667
+[INFO]: Time taken for scene creation : 1.572996 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 4
+	Environment spacing   : 1.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 3.396093 seconds
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++------------------------+
+|  Active Command Terms  |
++--------+-------+-------+
+| Index  | Name  |  Type |
++--------+-------+-------+
++--------+-------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-----------------------------------+
+| Active Event Terms in Mode: 'reset' |
++----------+------------------------+
+|  Index   | Name                   |
++----------+------------------------+
+|    0     | reset                  |
+|    1     | shaft_friction         |
+|    2     | base_friction          |
++----------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++---------------------+
+| Active Recorder Terms |
++-----------+---------+
+|   Index   | Name    |
++-----------+---------+
++-----------+---------+
+
+[INFO] Action Manager:  <ActionManager> contains 1 active terms.
++-----------------------------------+
+|   Active Action Terms (shape: 5)  |
++--------+-------------+------------+
+| Index  | Name        |  Dimension |
++--------+-------------+------------+
+|   0    | arm_action  |          5 |
++--------+-------------+------------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++--------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (29,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (29,)      |
++----------------+----------------+----------------+
++--------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (53,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (53,)      |
++----------------+----------------+----------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 4 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | outside_workspace   |  False   |
+|   2   | invalid_grasp_width |  False   |
+|   3   | release_complete    |  False   |
++-------+---------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 6 active terms.
++------------------------------+
+|     Active Reward Terms      |
++-------+-------------+--------+
+| Index | Name        | Weight |
++-------+-------------+--------+
+|   0   | keypoints   |   15.0 |
+|   1   | place       |   15.0 |
+|   2   | inserted    |   15.0 |
+|   3   | contact     |  -3.75 |
+|   4   | shaft_pitch |  -3.75 |
+|   5   | prediction  |  -15.0 |
++-------+-------------+--------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+Creating window for environment.
+[INFO]: Completed setting up the environment...
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 policy :  ['policy']
+	 critic :  ['critic']
+--------------------------------------------------------------------------------
+Actor RNN: Memory(
+  (rnn): LSTM(29, 128)
+)
+Actor MLP: MLP(
+  (0): Linear(in_features=128, out_features=128, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=128, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=5, bias=True)
+)
+Critic RNN: Memory(
+  (rnn): LSTM(53, 128)
+)
+Critic MLP: MLP(
+  (0): Linear(in_features=128, out_features=128, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=128, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=1, bias=True)
+)
+################################################################################
+                       [1m Learning iteration 0/20 [0m                        
+
+                       Computation: 5 steps/s (collection: 24.839s, learning 0.344s)
+             Mean action noise std: 0.50
+                    value_function: 14.1168
+                         surrogate: -0.0494
+                           entropy: 3.6294
+          Episode_Reward/keypoints: 0.0000
+              Episode_Reward/place: 0.0000
+           Episode_Reward/inserted: 0.0000
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: 0.0000
+      Episode_Termination/time_out: 0.0000
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.0000
+Metrics_cumulative/completed_episodes: 0.0000
+    Metrics_cumulative/success_any: 0.0000
+  Metrics_cumulative/success_final: 0.0000
+ Metrics_cumulative/success_stable: 0.0000
+    Metrics_cumulative/force_p95_N: 0.0000
+   Metrics_cumulative/force_peak_N: 0.0000
+Metrics_cumulative/action_saturation: 0.0000
+Metrics_cumulative/longest_success_s: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 128
+                    Iteration time: 25.18s
+                      Time elapsed: 00:00:25
+                               ETA: 00:08:23
+
+Could not find git repository in /home/masais/miniconda3/envs/Xinyu_isaacsim/lib/python3.11/site-packages/rsl_rl/__init__.py. Skipping.
+Storing git diff for 'IsaacLab_2_3_2' in: /home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_release25/2026-09-28_15-34-34_release25_gui_20260928_152608/git/IsaacLab_2_3_2.diff
+################################################################################
+                       [1m Learning iteration 1/20 [0m                        
+
+                       Computation: 5 steps/s (collection: 25.209s, learning 0.274s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 6.9654
+               Mean surrogate loss: -0.0216
+                 Mean entropy loss: 3.6223
+                       Mean reward: -21.24
+               Mean episode length: 61.00
+          Episode_Reward/keypoints: 0.0457
+              Episode_Reward/place: 0.0000
+           Episode_Reward/inserted: 0.0000
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -0.1785
+      Episode_Termination/time_out: 0.0312
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.0000
+Metrics_cumulative/completed_episodes: 1.0000
+    Metrics_cumulative/success_any: 0.0000
+  Metrics_cumulative/success_final: 0.0000
+ Metrics_cumulative/success_stable: 0.0000
+    Metrics_cumulative/force_p95_N: 0.0000
+   Metrics_cumulative/force_peak_N: 0.0000
+Metrics_cumulative/action_saturation: 0.0326
+Metrics_cumulative/longest_success_s: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 256
+                    Iteration time: 25.48s
+                      Time elapsed: 00:00:50
+                               ETA: 00:08:01
+
+################################################################################
+                       [1m Learning iteration 2/20 [0m                        
+
+                       Computation: 5 steps/s (collection: 22.027s, learning 0.274s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 22.9933
+               Mean surrogate loss: -0.0100
+                 Mean entropy loss: 3.6119
+                       Mean reward: -21.24
+               Mean episode length: 61.00
+          Episode_Reward/keypoints: 0.3656
+              Episode_Reward/place: 0.0000
+           Episode_Reward/inserted: 0.0000
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -1.4277
+      Episode_Termination/time_out: 0.2500
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.0000
+Metrics_cumulative/completed_episodes: 1.0000
+    Metrics_cumulative/success_any: 0.0000
+  Metrics_cumulative/success_final: 0.0000
+ Metrics_cumulative/success_stable: 0.0000
+    Metrics_cumulative/force_p95_N: 0.0000
+   Metrics_cumulative/force_peak_N: 0.0000
+Metrics_cumulative/action_saturation: 0.0326
+Metrics_cumulative/longest_success_s: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 384
+                    Iteration time: 22.30s
+                      Time elapsed: 00:01:12
+                               ETA: 00:07:17
+
+################################################################################
+                       [1m Learning iteration 3/20 [0m                        
+
+                       Computation: 5 steps/s (collection: 22.262s, learning 0.271s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 46.6323
+               Mean surrogate loss: -0.0263
+                 Mean entropy loss: 3.6263
+                       Mean reward: -23.89
+               Mean episode length: 97.33
+          Episode_Reward/keypoints: 0.7853
+              Episode_Reward/place: 0.0000
+           Episode_Reward/inserted: 0.0000
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -2.0328
+      Episode_Termination/time_out: 0.4609
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.0000
+Metrics_cumulative/completed_episodes: 3.0000
+    Metrics_cumulative/success_any: 0.0000
+  Metrics_cumulative/success_final: 0.0000
+ Metrics_cumulative/success_stable: 0.0000
+    Metrics_cumulative/force_p95_N: 2.5294
+   Metrics_cumulative/force_peak_N: 2.9790
+Metrics_cumulative/action_saturation: 0.0458
+Metrics_cumulative/longest_success_s: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 512
+                    Iteration time: 22.53s
+                      Time elapsed: 00:01:35
+                               ETA: 00:06:45
+
+################################################################################
+                       [1m Learning iteration 4/20 [0m                        
+
+                       Computation: 5 steps/s (collection: 22.078s, learning 0.268s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 37.8440
+               Mean surrogate loss: -0.0117
+                 Mean entropy loss: 3.6266
+                       Mean reward: 1.58
+               Mean episode length: 111.50
+          Episode_Reward/keypoints: 1.4066
+              Episode_Reward/place: 0.9078
+           Episode_Reward/inserted: 0.3391
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -2.7490
+      Episode_Termination/time_out: 0.7500
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.0547
+Metrics_cumulative/completed_episodes: 4.0000
+    Metrics_cumulative/success_any: 0.2500
+  Metrics_cumulative/success_final: 0.2500
+ Metrics_cumulative/success_stable: 0.2500
+    Metrics_cumulative/force_p95_N: 2.0058
+   Metrics_cumulative/force_peak_N: 2.6176
+Metrics_cumulative/action_saturation: 0.0468
+Metrics_cumulative/longest_success_s: 0.5167
+--------------------------------------------------------------------------------
+                   Total timesteps: 640
+                    Iteration time: 22.35s
+                      Time elapsed: 00:01:57
+                               ETA: 00:06:17
+
+################################################################################
+                       [1m Learning iteration 5/20 [0m                        
+
+                       Computation: 5 steps/s (collection: 21.969s, learning 0.269s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 14.7112
+               Mean surrogate loss: -0.0231
+                 Mean entropy loss: 3.6359
+                       Mean reward: 1.58
+               Mean episode length: 111.50
+          Episode_Reward/keypoints: 2.1869
+              Episode_Reward/place: 4.1500
+           Episode_Reward/inserted: 1.5500
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -3.9886
+      Episode_Termination/time_out: 0.7500
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.2500
+Metrics_cumulative/completed_episodes: 4.0000
+    Metrics_cumulative/success_any: 0.2500
+  Metrics_cumulative/success_final: 0.2500
+ Metrics_cumulative/success_stable: 0.2500
+    Metrics_cumulative/force_p95_N: 2.0058
+   Metrics_cumulative/force_peak_N: 2.6176
+Metrics_cumulative/action_saturation: 0.0468
+Metrics_cumulative/longest_success_s: 0.5167
+--------------------------------------------------------------------------------
+                   Total timesteps: 768
+                    Iteration time: 22.24s
+                      Time elapsed: 00:02:20
+                               ETA: 00:05:50
+
+################################################################################
+                       [1m Learning iteration 6/20 [0m                        
+
+                       Computation: 5 steps/s (collection: 22.031s, learning 0.255s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 43.1047
+               Mean surrogate loss: -0.0163
+                 Mean entropy loss: 3.6551
+                       Mean reward: 1.58
+               Mean episode length: 111.50
+          Episode_Reward/keypoints: 2.1869
+              Episode_Reward/place: 4.1500
+           Episode_Reward/inserted: 1.5500
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -3.9886
+      Episode_Termination/time_out: 0.7500
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.2500
+Metrics_cumulative/completed_episodes: 4.0000
+    Metrics_cumulative/success_any: 0.2500
+  Metrics_cumulative/success_final: 0.2500
+ Metrics_cumulative/success_stable: 0.2500
+    Metrics_cumulative/force_p95_N: 2.0058
+   Metrics_cumulative/force_peak_N: 2.6176
+Metrics_cumulative/action_saturation: 0.0468
+Metrics_cumulative/longest_success_s: 0.5167
+--------------------------------------------------------------------------------
+                   Total timesteps: 896
+                    Iteration time: 22.29s
+                      Time elapsed: 00:02:42
+                               ETA: 00:05:24
+
+################################################################################
+                       [1m Learning iteration 7/20 [0m                        
+
+                       Computation: 5 steps/s (collection: 21.706s, learning 0.263s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 25.7746
+               Mean surrogate loss: -0.0006
+                 Mean entropy loss: 3.6566
+                       Mean reward: 1.58
+               Mean episode length: 111.50
+          Episode_Reward/keypoints: 2.1869
+              Episode_Reward/place: 4.1500
+           Episode_Reward/inserted: 1.5500
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -3.9886
+      Episode_Termination/time_out: 0.7500
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.2500
+Metrics_cumulative/completed_episodes: 4.0000
+    Metrics_cumulative/success_any: 0.2500
+  Metrics_cumulative/success_final: 0.2500
+ Metrics_cumulative/success_stable: 0.2500
+    Metrics_cumulative/force_p95_N: 2.0058
+   Metrics_cumulative/force_peak_N: 2.6176
+Metrics_cumulative/action_saturation: 0.0468
+Metrics_cumulative/longest_success_s: 0.5167
+--------------------------------------------------------------------------------
+                   Total timesteps: 1024
+                    Iteration time: 21.97s
+                      Time elapsed: 00:03:04
+                               ETA: 00:04:59
+
+################################################################################
+                       [1m Learning iteration 8/20 [0m                        
+
+                       Computation: 5 steps/s (collection: 21.438s, learning 0.261s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 51.0387
+               Mean surrogate loss: -0.0109
+                 Mean entropy loss: 3.6613
+                       Mean reward: 1.58
+               Mean episode length: 111.50
+          Episode_Reward/keypoints: 2.1869
+              Episode_Reward/place: 4.1500
+           Episode_Reward/inserted: 1.5500
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -3.9886
+      Episode_Termination/time_out: 0.7500
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.2500
+Metrics_cumulative/completed_episodes: 4.0000
+    Metrics_cumulative/success_any: 0.2500
+  Metrics_cumulative/success_final: 0.2500
+ Metrics_cumulative/success_stable: 0.2500
+    Metrics_cumulative/force_p95_N: 2.0058
+   Metrics_cumulative/force_peak_N: 2.6176
+Metrics_cumulative/action_saturation: 0.0468
+Metrics_cumulative/longest_success_s: 0.5167
+--------------------------------------------------------------------------------
+                   Total timesteps: 1152
+                    Iteration time: 21.70s
+                      Time elapsed: 00:03:26
+                               ETA: 00:04:34
+
+################################################################################
+                       [1m Learning iteration 9/20 [0m                        
+
+                       Computation: 5 steps/s (collection: 22.545s, learning 0.268s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 12.4541
+               Mean surrogate loss: -0.0103
+                 Mean entropy loss: 3.6693
+                       Mean reward: 29.55
+               Mean episode length: 129.40
+          Episode_Reward/keypoints: 3.0442
+              Episode_Reward/place: 5.4000
+           Episode_Reward/inserted: 1.5500
+            Episode_Reward/contact: -0.0342
+        Episode_Reward/shaft_pitch: -0.0022
+         Episode_Reward/prediction: -4.4730
+      Episode_Termination/time_out: 0.6250
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.3750
+Metrics_cumulative/completed_episodes: 5.0000
+    Metrics_cumulative/success_any: 0.4000
+  Metrics_cumulative/success_final: 0.4000
+ Metrics_cumulative/success_stable: 0.4000
+    Metrics_cumulative/force_p95_N: 2.4737
+   Metrics_cumulative/force_peak_N: 3.5321
+Metrics_cumulative/action_saturation: 0.0477
+Metrics_cumulative/longest_success_s: 0.8267
+--------------------------------------------------------------------------------
+                   Total timesteps: 1280
+                    Iteration time: 22.81s
+                      Time elapsed: 00:03:48
+                               ETA: 00:04:11
+
+################################################################################
+                       [1m Learning iteration 10/20 [0m                       
+
+                       Computation: 5 steps/s (collection: 23.111s, learning 0.267s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 2.0459
+               Mean surrogate loss: -0.0260
+                 Mean entropy loss: 3.6714
+                       Mean reward: 29.55
+               Mean episode length: 129.40
+          Episode_Reward/keypoints: 3.9016
+              Episode_Reward/place: 6.6500
+           Episode_Reward/inserted: 1.5500
+            Episode_Reward/contact: -0.0684
+        Episode_Reward/shaft_pitch: -0.0044
+         Episode_Reward/prediction: -4.9573
+      Episode_Termination/time_out: 0.5000
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.5000
+Metrics_cumulative/completed_episodes: 5.0000
+    Metrics_cumulative/success_any: 0.4000
+  Metrics_cumulative/success_final: 0.4000
+ Metrics_cumulative/success_stable: 0.4000
+    Metrics_cumulative/force_p95_N: 2.4737
+   Metrics_cumulative/force_peak_N: 3.5321
+Metrics_cumulative/action_saturation: 0.0477
+Metrics_cumulative/longest_success_s: 0.8267
+--------------------------------------------------------------------------------
+                   Total timesteps: 1408
+                    Iteration time: 23.38s
+                      Time elapsed: 00:04:12
+                               ETA: 00:03:49
+
+################################################################################
+                       [1m Learning iteration 11/20 [0m                       
+
+                       Computation: 5 steps/s (collection: 22.118s, learning 0.272s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 26.3898
+               Mean surrogate loss: -0.0051
+                 Mean entropy loss: 3.6700
+                       Mean reward: 18.12
+               Mean episode length: 157.83
+          Episode_Reward/keypoints: 3.2531
+              Episode_Reward/place: 1.6625
+           Episode_Reward/inserted: 0.3875
+            Episode_Reward/contact: -0.0171
+        Episode_Reward/shaft_pitch: -0.0011
+         Episode_Reward/prediction: -4.9811
+      Episode_Termination/time_out: 0.5000
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.5000
+Metrics_cumulative/completed_episodes: 6.0000
+    Metrics_cumulative/success_any: 0.3333
+  Metrics_cumulative/success_final: 0.3333
+ Metrics_cumulative/success_stable: 0.3333
+    Metrics_cumulative/force_p95_N: 2.7065
+   Metrics_cumulative/force_peak_N: 3.8393
+Metrics_cumulative/action_saturation: 0.0522
+Metrics_cumulative/longest_success_s: 0.6889
+--------------------------------------------------------------------------------
+                   Total timesteps: 1536
+                    Iteration time: 22.39s
+                      Time elapsed: 00:04:34
+                               ETA: 00:03:25
+
+################################################################################
+                       [1m Learning iteration 12/20 [0m                       
+
+                       Computation: 5 steps/s (collection: 22.145s, learning 0.257s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 31.3316
+               Mean surrogate loss: 0.0036
+                 Mean entropy loss: 3.6676
+                       Mean reward: 18.12
+               Mean episode length: 157.83
+          Episode_Reward/keypoints: 3.0369
+              Episode_Reward/place: 0.0000
+           Episode_Reward/inserted: 0.0000
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: -0.0000
+         Episode_Reward/prediction: -4.9890
+      Episode_Termination/time_out: 0.5000
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.5000
+Metrics_cumulative/completed_episodes: 6.0000
+    Metrics_cumulative/success_any: 0.3333
+  Metrics_cumulative/success_final: 0.3333
+ Metrics_cumulative/success_stable: 0.3333
+    Metrics_cumulative/force_p95_N: 2.7065
+   Metrics_cumulative/force_peak_N: 3.8393
+Metrics_cumulative/action_saturation: 0.0522
+Metrics_cumulative/longest_success_s: 0.6889
+--------------------------------------------------------------------------------
+                   Total timesteps: 1664
+                    Iteration time: 22.40s
+                      Time elapsed: 00:04:57
+                               ETA: 00:03:02
+
+################################################################################
+                       [1m Learning iteration 13/20 [0m                       
+
+                       Computation: 5 steps/s (collection: 22.525s, learning 0.272s)
+             Mean action noise std: 0.51
+          Mean value_function loss: 47.5933
+               Mean surrogate loss: -0.0064
+                 Mean entropy loss: 3.6707
+                       Mean reward: 8.77
+               Mean episode length: 178.14
+          Episode_Reward/keypoints: 2.7827
+              Episode_Reward/place: 0.0000
+           Episode_Reward/inserted: 0.0000
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: -0.0000
+         Episode_Reward/prediction: -5.0195
+      Episode_Termination/time_out: 0.5000
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.5000
+Metrics_cumulative/completed_episodes: 7.0000
+    Metrics_cumulative/success_any: 0.2857
+  Metrics_cumulative/success_final: 0.2857
+ Metrics_cumulative/success_stable: 0.2857
+    Metrics_cumulative/force_p95_N: 2.8969
+   Metrics_cumulative/force_peak_N: 4.0289
+Metrics_cumulative/action_saturation: 0.0522
+Metrics_cumulative/longest_success_s: 0.5905
+--------------------------------------------------------------------------------
+                   Total timesteps: 1792
+                    Iteration time: 22.80s
+                      Time elapsed: 00:05:19
+                               ETA: 00:02:39
+
+################################################################################
+                       [1m Learning iteration 14/20 [0m                       
+
+                       Computation: 5 steps/s (collection: 23.074s, learning 0.259s)
+             Mean action noise std: 0.51
+          Mean value_function loss: 44.2671
+               Mean surrogate loss: -0.0076
+                 Mean entropy loss: 3.6879
+                       Mean reward: 17.11
+               Mean episode length: 191.22
+          Episode_Reward/keypoints: 3.0772
+              Episode_Reward/place: 0.3656
+           Episode_Reward/inserted: 0.0969
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -4.9899
+      Episode_Termination/time_out: 0.7109
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.2891
+Metrics_cumulative/completed_episodes: 9.0000
+    Metrics_cumulative/success_any: 0.3333
+  Metrics_cumulative/success_final: 0.3333
+ Metrics_cumulative/success_stable: 0.3333
+    Metrics_cumulative/force_p95_N: 2.9666
+   Metrics_cumulative/force_peak_N: 4.2365
+Metrics_cumulative/action_saturation: 0.0561
+Metrics_cumulative/longest_success_s: 0.6889
+--------------------------------------------------------------------------------
+                   Total timesteps: 1920
+                    Iteration time: 23.33s
+                      Time elapsed: 00:05:43
+                               ETA: 00:02:17
+
+################################################################################
+                       [1m Learning iteration 15/20 [0m                       
+
+                       Computation: 5 steps/s (collection: 23.010s, learning 0.274s)
+             Mean action noise std: 0.51
+          Mean value_function loss: 6.4454
+               Mean surrogate loss: -0.0169
+                 Mean entropy loss: 3.6963
+                       Mean reward: 17.11
+               Mean episode length: 191.22
+          Episode_Reward/keypoints: 3.1911
+              Episode_Reward/place: 5.8500
+           Episode_Reward/inserted: 1.5500
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -4.0520
+      Episode_Termination/time_out: 0.7500
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.2500
+Metrics_cumulative/completed_episodes: 9.0000
+    Metrics_cumulative/success_any: 0.3333
+  Metrics_cumulative/success_final: 0.3333
+ Metrics_cumulative/success_stable: 0.3333
+    Metrics_cumulative/force_p95_N: 2.9666
+   Metrics_cumulative/force_peak_N: 4.2365
+Metrics_cumulative/action_saturation: 0.0561
+Metrics_cumulative/longest_success_s: 0.6889
+--------------------------------------------------------------------------------
+                   Total timesteps: 2048
+                    Iteration time: 23.28s
+                      Time elapsed: 00:06:06
+                               ETA: 00:01:54
+
+################################################################################
+                       [1m Learning iteration 16/20 [0m                       
+
+                       Computation: 5 steps/s (collection: 22.104s, learning 0.269s)
+             Mean action noise std: 0.51
+          Mean value_function loss: 2.9914
+               Mean surrogate loss: 0.0041
+                 Mean entropy loss: 3.6937
+                       Mean reward: 17.11
+               Mean episode length: 191.22
+          Episode_Reward/keypoints: 3.1911
+              Episode_Reward/place: 5.8500
+           Episode_Reward/inserted: 1.5500
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -4.0520
+      Episode_Termination/time_out: 0.7500
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.2500
+Metrics_cumulative/completed_episodes: 9.0000
+    Metrics_cumulative/success_any: 0.3333
+  Metrics_cumulative/success_final: 0.3333
+ Metrics_cumulative/success_stable: 0.3333
+    Metrics_cumulative/force_p95_N: 2.9666
+   Metrics_cumulative/force_peak_N: 4.2365
+Metrics_cumulative/action_saturation: 0.0561
+Metrics_cumulative/longest_success_s: 0.6889
+--------------------------------------------------------------------------------
+                   Total timesteps: 2176
+                    Iteration time: 22.37s
+                      Time elapsed: 00:06:28
+                               ETA: 00:01:31
+
+################################################################################
+                       [1m Learning iteration 17/20 [0m                       
+
+                       Computation: 5 steps/s (collection: 21.291s, learning 0.268s)
+             Mean action noise std: 0.51
+          Mean value_function loss: 0.7645
+               Mean surrogate loss: -0.0134
+                 Mean entropy loss: 3.6903
+                       Mean reward: 17.11
+               Mean episode length: 191.22
+          Episode_Reward/keypoints: 3.1911
+              Episode_Reward/place: 5.8500
+           Episode_Reward/inserted: 1.5500
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -4.0520
+      Episode_Termination/time_out: 0.7500
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.2500
+Metrics_cumulative/completed_episodes: 9.0000
+    Metrics_cumulative/success_any: 0.3333
+  Metrics_cumulative/success_final: 0.3333
+ Metrics_cumulative/success_stable: 0.3333
+    Metrics_cumulative/force_p95_N: 2.9666
+   Metrics_cumulative/force_peak_N: 4.2365
+Metrics_cumulative/action_saturation: 0.0561
+Metrics_cumulative/longest_success_s: 0.6889
+--------------------------------------------------------------------------------
+                   Total timesteps: 2304
+                    Iteration time: 21.56s
+                      Time elapsed: 00:06:50
+                               ETA: 00:01:08
+
+################################################################################
+                       [1m Learning iteration 18/20 [0m                       
+
+                       Computation: 5 steps/s (collection: 23.788s, learning 0.271s)
+             Mean action noise std: 0.51
+          Mean value_function loss: 0.8524
+               Mean surrogate loss: -0.0093
+                 Mean entropy loss: 3.6883
+                       Mean reward: 17.11
+               Mean episode length: 191.22
+          Episode_Reward/keypoints: 3.1911
+              Episode_Reward/place: 5.8500
+           Episode_Reward/inserted: 1.5500
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -4.0520
+      Episode_Termination/time_out: 0.7500
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.2500
+Metrics_cumulative/completed_episodes: 9.0000
+    Metrics_cumulative/success_any: 0.3333
+  Metrics_cumulative/success_final: 0.3333
+ Metrics_cumulative/success_stable: 0.3333
+    Metrics_cumulative/force_p95_N: 2.9666
+   Metrics_cumulative/force_peak_N: 4.2365
+Metrics_cumulative/action_saturation: 0.0561
+Metrics_cumulative/longest_success_s: 0.6889
+--------------------------------------------------------------------------------
+                   Total timesteps: 2432
+                    Iteration time: 24.06s
+                      Time elapsed: 00:07:14
+                               ETA: 00:00:45
+
+################################################################################
+                       [1m Learning iteration 19/20 [0m                       
+
+                       Computation: 5 steps/s (collection: 23.976s, learning 0.289s)
+             Mean action noise std: 0.51
+          Mean value_function loss: 1.8007
+               Mean surrogate loss: -0.0005
+                 Mean entropy loss: 3.6879
+                       Mean reward: 17.11
+               Mean episode length: 191.22
+          Episode_Reward/keypoints: 3.1911
+              Episode_Reward/place: 5.8500
+           Episode_Reward/inserted: 1.5500
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -4.0520
+      Episode_Termination/time_out: 0.7500
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.2500
+Metrics_cumulative/completed_episodes: 9.0000
+    Metrics_cumulative/success_any: 0.3333
+  Metrics_cumulative/success_final: 0.3333
+ Metrics_cumulative/success_stable: 0.3333
+    Metrics_cumulative/force_p95_N: 2.9666
+   Metrics_cumulative/force_peak_N: 4.2365
+Metrics_cumulative/action_saturation: 0.0561
+Metrics_cumulative/longest_success_s: 0.6889
+--------------------------------------------------------------------------------
+                   Total timesteps: 2560
+                    Iteration time: 24.27s
+                      Time elapsed: 00:07:38
+                               ETA: 00:00:22
+
+Training time: 460.21 seconds

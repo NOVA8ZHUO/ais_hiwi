@@ -1,0 +1,17 @@
+{
+  "protocol": "4 envs, 310 control steps, zero residual, no grasp/hole estimate offsets; release at 25mm without precision/tilt gate",
+  "completed_episodes": 6,
+  "unfinished_episodes_at_stop": 2,
+  "success_final_count": 6,
+  "strictly_seated_final_count": 6,
+  "final_depth_mm_range": [
+    46.98854064941406,
+    46.996299743652344
+  ],
+  "duration_s_range": [
+    9.2,
+    11.4
+  ],
+  "contact_peak_N": 4.467970371246338,
+  "mean_episode_force_p95_N": 1.5061822334925334
+}

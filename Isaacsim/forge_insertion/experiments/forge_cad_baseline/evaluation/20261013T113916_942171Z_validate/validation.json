@@ -1,0 +1,64 @@
+{
+  "status": "failed",
+  "checks": {
+    "config_whitelist": true
+  },
+  "configuration_diff": [
+    {
+      "path": "task.held_asset.spawn.usd_path",
+      "official": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_peg_8mm.usd",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/shaft_large.usda"
+    },
+    {
+      "path": "task.held_asset.spawn.mass_props.mass",
+      "official": "0.019",
+      "cad": "0.0175"
+    },
+    {
+      "path": "task.fixed_asset.spawn.usd_path",
+      "official": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_hole_8mm.usd",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/base.usda"
+    },
+    {
+      "path": "task.held_asset_cfg.mass",
+      "official": "0.019",
+      "cad": "0.0175"
+    },
+    {
+      "path": "task.held_asset_cfg.usd_path",
+      "official": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_peg_8mm.usd",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/shaft_large.usda"
+    },
+    {
+      "path": "task.held_asset_cfg.diameter",
+      "official": "0.007986",
+      "cad": "0.035"
+    },
+    {
+      "path": "task.held_asset_cfg.height",
+      "official": "0.05",
+      "cad": "0.083"
+    },
+    {
+      "path": "task.hand_init_pos",
+      "official": "[0.0, 0.0, 0.047]",
+      "cad": "[0.0, 0.0, 0.08]"
+    },
+    {
+      "path": "task.fixed_asset_cfg.usd_path",
+      "official": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_hole_8mm.usd",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/base.usda"
+    },
+    {
+      "path": "task.fixed_asset_cfg.diameter",
+      "official": "0.0081",
+      "cad": "0.026"
+    },
+    {
+      "path": "task.fixed_asset_cfg.height",
+      "official": "0.025",
+      "cad": "0.047"
+    }
+  ],
+  "error": "Traceback (most recent call last):\n  File \"/home/masais/Xinyu/Isaacsim/forge_insertion/scripts/validate_cad.py\", line 49, in <module>\n    env = gym.make(a.task, cfg=cfg)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/gymnasium/envs/registration.py\", line 734, in make\n    env = env_creator(**env_spec_kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab_tasks/isaaclab_tasks/direct/forge/forge_env.py\", line 24, in __init__\n    super().__init__(cfg, render_mode, **kwargs)\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab_tasks/isaaclab_tasks/direct/factory/factory_env.py\", line 34, in __init__\n    super().__init__(cfg, render_mode, **kwargs)\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab/isaaclab/envs/direct_rl_env.py\", line 167, in __init__\n    self.sim.reset()\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab/isaaclab/sim/simulation_context.py\", line 530, in reset\n    self.render()\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab/isaaclab/sim/simulation_context.py\", line 601, in render\n    raise exception_to_raise\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab/isaaclab/assets/asset_base.py\", line 317, in _initialize_callback\n    self._initialize_impl()\n  File \"/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab/isaaclab/assets/articulation/articulation.py\", line 1551, in _initialize_impl\n    raise RuntimeError(f\"Failed to create articulation at: {root_prim_path_expr}. Please check PhysX logs.\")\nRuntimeError: Failed to create articulation at: /World/envs/env_.*/HeldAsset. Please check PhysX logs.\n"
+}

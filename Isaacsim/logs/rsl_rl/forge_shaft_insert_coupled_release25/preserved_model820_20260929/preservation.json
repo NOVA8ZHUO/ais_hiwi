@@ -1,0 +1,5 @@
+{
+  "original_checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_coupled_release25/2026-09-29_15-40-45_coupled1000_20260929_154037_d798fa/model_820.pt",
+  "sha256": "bb300c0661534ab629cd73d76906bc65f0dc55d94ab6a342fe0e6715f6a4252f",
+  "purpose": "Preserved baseline for 10000 additional updates; training outputs use separate run directories."
+}

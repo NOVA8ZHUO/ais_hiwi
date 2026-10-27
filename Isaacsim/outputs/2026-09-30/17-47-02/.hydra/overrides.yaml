@@ -1,0 +1,5 @@
+- agent.experiment_name=forge_reward_v2_scratch
+- agent.resume=False
+- agent.num_steps_per_env=32
+- agent.algorithm.num_mini_batches=4
+- agent.save_interval=100

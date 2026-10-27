@@ -1,0 +1,17 @@
+{
+  "nominal": {
+    "completed": 4,
+    "success_any": 3,
+    "success_final": 3,
+    "success_stable": 2,
+    "success_final_no_failure": 1
+  },
+  "errors": {
+    "completed": 4,
+    "success_any": 1,
+    "success_final": 1,
+    "success_stable": 1,
+    "success_final_no_failure": 1
+  },
+  "ppo_run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_residual/2026-09-28_12-16-53_metrics_integration"
+}

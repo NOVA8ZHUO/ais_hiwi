@@ -1,0 +1,20 @@
+{
+  "identity": {
+    "condition": "group_on_control",
+    "active": [
+      "dead_zone",
+      "ema",
+      "gains",
+      "position_threshold",
+      "rotation_threshold"
+    ],
+    "seed": 0,
+    "num_envs": 128,
+    "model": "randomized",
+    "checkpoint_sha256": "57ae61f09be156e0c07aa250e0c58d164251e0efc36f2b56b2a76ee21e3f24ed",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "341846b911b0716ff83db917f5546b493c553b3c9615167d2476760c98f7680d"
+  },
+  "seconds": 95.76909369882196,
+  "evaluation_sha256": "1cd74ed7d85106d6330a2de04f7c3742a1af4e6f6a1fa7c3d459f85d7eba0f83"
+}

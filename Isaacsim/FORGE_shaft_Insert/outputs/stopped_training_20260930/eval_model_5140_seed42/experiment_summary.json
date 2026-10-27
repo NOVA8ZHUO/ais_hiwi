@@ -1,0 +1,16 @@
+{
+  "run": "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/outputs/stopped_training_20260930/eval_model_5140_seed42",
+  "completed_episodes": 141,
+  "final_scalars": {},
+  "source_snapshot_available": true,
+  "terminations": {
+    "time_out": 81,
+    "outside_workspace": 0,
+    "invalid_grasp_width": 0
+  },
+  "success_rates": {
+    "success_any": 0.46099290780141844,
+    "success_final": 0.46099290780141844,
+    "success_stable": 0.44680851063829785
+  }
+}

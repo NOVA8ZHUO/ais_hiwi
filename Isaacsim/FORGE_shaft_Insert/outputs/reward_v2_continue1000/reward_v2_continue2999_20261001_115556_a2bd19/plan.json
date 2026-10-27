@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "train_command": [
+    "/home/masais/miniconda3/envs/Xinyu_isaacsim/bin/python",
+    "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/scripts/train.py",
+    "--task",
+    "FORGE-Shaft-Insert-Paper-v0",
+    "--headless",
+    "--num_envs",
+    "128",
+    "--max_iterations",
+    "1000",
+    "--seed",
+    "42",
+    "--run_name",
+    "reward_v2_continue2999_20261001_115556_a2bd19",
+    "agent.experiment_name=forge_reward_v2_scratch",
+    "--resume",
+    "--load_run",
+    "preserved_reward_v2_model2999",
+    "--checkpoint",
+    "model_2999.pt",
+    "agent.num_steps_per_env=32",
+    "agent.algorithm.num_mini_batches=4",
+    "agent.save_interval=50"
+  ],
+  "resume": true,
+  "updates": 1000,
+  "initial_checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_reward_v2_scratch/preserved_reward_v2_model2999/model_2999.pt",
+  "initial_sha256": "b27a8e6caafb53f732f428db9badeb6a71442cb01d3770b8cc5dc372225ea578",
+  "training_run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_reward_v2_scratch/2026-10-01_11-56-03_reward_v2_continue2999_20261001_115556_a2bd19"
+}

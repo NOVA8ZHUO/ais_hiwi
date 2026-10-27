@@ -1,0 +1,17 @@
+{
+  "identity": {
+    "condition": "group_on_other",
+    "active": [
+      "contact_threshold",
+      "quaternion_sign"
+    ],
+    "seed": 103,
+    "num_envs": 128,
+    "model": "randomized",
+    "checkpoint_sha256": "57ae61f09be156e0c07aa250e0c58d164251e0efc36f2b56b2a76ee21e3f24ed",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "70c58d91cd5462c579c55464a5c16d501e21169d4037758b332c565083f6c321"
+  },
+  "seconds": 96.42718474101275,
+  "evaluation_sha256": "bf69f2199d8cc038ab8152d4f9b0fbef58a58e8827c9bfb9d34c23e6086dd73c"
+}

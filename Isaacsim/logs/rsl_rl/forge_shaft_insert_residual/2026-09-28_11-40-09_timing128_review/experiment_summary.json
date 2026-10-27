@@ -1,0 +1,37 @@
+{
+  "run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_residual/2026-09-28_11-40-09_timing128_review",
+  "completed_episodes": 0,
+  "final_scalars": {
+    "Episode_Reward/keypoints": 0.6924201250076294,
+    "Episode_Reward/place": 0.03541666641831398,
+    "Episode_Reward/inserted": 0.0,
+    "Episode_Reward/contact": -0.5471378564834595,
+    "Episode_Reward/prediction": -6.525694847106934,
+    "Episode_Termination/time_out": 0.886474609375,
+    "Episode_Termination/outside_workspace": 0.009521484375,
+    "Episode_Termination/invalid_grasp_width": 0.042236328125,
+    "Loss/value_function": 19.41677474975586,
+    "Loss/surrogate": -0.014125483110547066,
+    "Loss/entropy": 3.47422194480896,
+    "Loss/learning_rate": 0.0006750000175088644,
+    "Policy/mean_noise_std": 0.48330265283584595,
+    "Perf/total_fps": 106.0,
+    "Perf/collection time": 37.50786590576172,
+    "Perf/learning_time": 0.9662306308746338,
+    "Train/mean_reward": -48.02608871459961,
+    "Train/mean_episode_length": 104.2699966430664,
+    "Train/mean_reward/time": -48.02608871459961,
+    "Train/mean_episode_length/time": 104.2699966430664
+  },
+  "source_snapshot_available": false,
+  "terminations": {
+    "time_out": 0,
+    "outside_workspace": 0,
+    "invalid_grasp_width": 0
+  },
+  "success_rates": {
+    "success_any": null,
+    "success_final": null,
+    "success_stable": null
+  }
+}

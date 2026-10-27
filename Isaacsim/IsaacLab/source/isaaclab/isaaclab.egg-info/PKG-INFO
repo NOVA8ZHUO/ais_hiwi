@@ -1,0 +1,77 @@
+Metadata-Version: 2.4
+Name: isaaclab
+Version: 6.1.17
+Summary: Extension providing main framework interfaces and abstractions for robot learning.
+Home-page: https://github.com/isaac-sim/IsaacLab
+Author: Isaac Lab Project Developers
+Maintainer: Isaac Lab Project Developers
+License: BSD-3-Clause
+Keywords: kit,robotics,learning,ai
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Isaac Sim :: 6.0.0
+Requires-Python: >=3.12
+Requires-Dist: numpy>=2
+Requires-Dist: torch>=2.10
+Requires-Dist: onnx>=1.18.0
+Requires-Dist: prettytable==3.3.0
+Requires-Dist: toml
+Requires-Dist: hidapi==0.14.0.post2
+Requires-Dist: gymnasium==1.2.1
+Requires-Dist: trimesh
+Requires-Dist: pyglet<3,>=2.1.6
+Requires-Dist: transformers==4.57.6
+Requires-Dist: einops
+Requires-Dist: warp-lang==1.13.0
+Requires-Dist: matplotlib>=3.10.3
+Requires-Dist: pillow>=12.1.1
+Requires-Dist: botocore
+Requires-Dist: starlette<0.50,>=0.46.0
+Requires-Dist: omniverseclient==2.71.1.7015
+Requires-Dist: pytest
+Requires-Dist: pytest-mock
+Requires-Dist: junitparser
+Requires-Dist: coverage==7.6.1
+Requires-Dist: debugpy>=1.8.20
+Requires-Dist: flatdict>=4.1.0
+Requires-Dist: flaky
+Requires-Dist: packaging
+Requires-Dist: psutil
+Requires-Dist: filelock
+Requires-Dist: typing_extensions==4.12.2
+Requires-Dist: pydantic<2.12,>=2.7
+Requires-Dist: lazy_loader>=0.4
+Requires-Dist: pin; platform_system == "Linux" and platform_machine in "x86_64,AMD64,aarch64,arm64"
+Requires-Dist: pin-pink==3.3.0; platform_system == "Linux" and platform_machine in "x86_64,AMD64,aarch64,arm64"
+Requires-Dist: daqp==0.8.5; platform_system == "Linux" and platform_machine in "x86_64,AMD64,aarch64,arm64"
+Requires-Dist: usd-core<26.0,>=25.11; platform_machine in "x86_64,AMD64"
+Requires-Dist: usd-exchange>=2.2; platform_machine in "x86_64,AMD64,aarch64,arm64"
+Requires-Dist: pytetwild==0.2.3; platform_machine in "x86_64,AMD64"
+Requires-Dist: hf-xet<2.0.0,>=1.4.1; platform_machine in "x86_64,AMD64,aarch64,arm64"
+Provides-Extra: isaacsim
+Requires-Dist: isaacsim[all,extscache]==6.0.1.0; extra == "isaacsim"
+Provides-Extra: all
+Requires-Dist: isaacsim[all,extscache]==6.0.1.0; extra == "all"
+Requires-Dist: isaaclab_assets; extra == "all"
+Requires-Dist: isaaclab_contrib; extra == "all"
+Requires-Dist: isaaclab_experimental; extra == "all"
+Requires-Dist: isaaclab_mimic; extra == "all"
+Requires-Dist: isaaclab_newton[all]; extra == "all"
+Requires-Dist: isaaclab_ov; extra == "all"
+Requires-Dist: isaaclab_ovphysx; extra == "all"
+Requires-Dist: isaaclab_physx[newton]; extra == "all"
+Requires-Dist: isaaclab_ppisp; extra == "all"
+Requires-Dist: isaaclab_rl[all]; extra == "all"
+Requires-Dist: isaaclab_tasks; extra == "all"
+Requires-Dist: isaaclab_tasks_experimental; extra == "all"
+Requires-Dist: isaaclab_teleop; extra == "all"
+Requires-Dist: isaaclab_visualizers[all]; extra == "all"
+Dynamic: author
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: maintainer
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

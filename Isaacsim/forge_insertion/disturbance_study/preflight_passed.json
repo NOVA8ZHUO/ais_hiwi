@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "seconds": 293.5934829036705,
+  "checks": [
+    "paired samples",
+    "policy sample counts",
+    "mass paired full/on",
+    "nominal fixed values",
+    "one complete episode per env"
+  ],
+  "success_rates": {
+    "zero": 1.0,
+    "full": 0.25,
+    "mass_only": 1.0
+  },
+  "validated_sha256": {
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/samples.py": "6e96fca004136511f105168eb45167a9578afd6647b9707ce1b2a71c12655434",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/rollout.py": "608ed710835d68d8c35510f34439f9a21ad29c756641a25b41e20d14d36e2a74",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/paired/env.py": "1f07f24fb989243e1f385ca6e91775593b76aabd7e8e4132176474db5de3a821",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/paired/config.py": "0f5184b741988fec49977b434963335830674ce0e4646ed53119a16fc6f24a64",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/paired/events.py": "f87cda1ef2e6bd6e025bc46d3656ff2962821f41b5d28c08e428c737b3e42937",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/paired/adapter.json": "a0a62e03ab3329d6331fa963d9380adf64f74fb6e5cc7d2327cafacf2df22a75"
+  }
+}

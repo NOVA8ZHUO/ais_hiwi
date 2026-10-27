@@ -1,0 +1,17 @@
+#usda 1.0
+(
+    defaultPrim = "Base"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Base" (
+    prepend references = @/home/masais/Xinyu/USD_files/shaft_insertion.usd@</Parts/Base>
+)
+{
+    over "node_" (
+        delete apiSchemas = ["PhysicsArticulationRootAPI", "PhysxArticulationAPI"]
+    )
+    {
+    }
+}

@@ -1,0 +1,289 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/apps/isaaclab.python.headless.kit
+Loading user config located at: '/home/masais/miniconda3/envs/Xinyu_isaacsim/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/masais/miniconda3/envs/Xinyu_isaacsim/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260928_114002.log
+2026-09-28T09:40:02Z [77ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-09-28T09:40:03Z [484ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-09-28T09:40:03Z [492ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.178.04    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 4090          | Yes: 0 |     | 24564   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2684      | 9a8e4354.. |
+|     |                                  |        |     |            | 1         |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 6.8.0-111-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: 13th Gen Intel(R) Core(TM) i7-13700KF
+| Bare Metal Cores: 16 | Bare Metal Logical Cores: 32
+| Available Cores:  24 
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 64158 | Free Memory: 35676
+| Total Page/Swap (MB): 31249 | Free Page/Swap: 31222
+|---------------------------------------------------------------------------------------------|
+2026-09-28T09:40:08Z [5,378ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-09-28T09:40:08Z [5,388ms] [Warning] [gpu.foundation.plugin] PCIe link generation current (1) and maximum (4) for device 0 don't match.
+2026-09-28T09:40:08Z [5,388ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+[INFO]: Parsing configuration from: forge_shaft_insert.forge_paper_env_cfg:ForgePaperEnvCfg
+[INFO]: Parsing configuration from: forge_shaft_insert.agents.rsl_rl_ppo_cfg:ForgePaperPPORunnerCfg
+[INFO] Logging experiment in directory: /home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_residual
+Exact experiment name requested from command line: 2026-09-28_11-40-09
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-09-28_11-40-09.log[0m
+[36m======================================================================================[0m
+
+[33m11:40:09 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 42
+	Physics step-size     : 0.004166666666666667
+	Rendering step-size   : 0.06666666666666667
+	Environment step-size : 0.06666666666666667
+[INFO]: Time taken for scene creation : 1.370457 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 128
+	Environment spacing   : 1.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 0.483481 seconds
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++------------------------+
+|  Active Command Terms  |
++--------+-------+-------+
+| Index  | Name  |  Type |
++--------+-------+-------+
++--------+-------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-----------------------------------+
+| Active Event Terms in Mode: 'reset' |
++----------+------------------------+
+|  Index   | Name                   |
++----------+------------------------+
+|    0     | reset                  |
+|    1     | shaft_friction         |
+|    2     | base_friction          |
++----------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++---------------------+
+| Active Recorder Terms |
++-----------+---------+
+|   Index   | Name    |
++-----------+---------+
++-----------+---------+
+
+[INFO] Action Manager:  <ActionManager> contains 1 active terms.
++-----------------------------------+
+|   Active Action Terms (shape: 5)  |
++--------+-------------+------------+
+| Index  | Name        |  Dimension |
++--------+-------------+------------+
+|   0    | arm_action  |          5 |
++--------+-------------+------------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++--------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (24,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (24,)      |
++----------------+----------------+----------------+
++--------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (48,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (48,)      |
++----------------+----------------+----------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 3 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | outside_workspace   |  False   |
+|   2   | invalid_grasp_width |  False   |
++-------+---------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 5 active terms.
++-----------------------------+
+|     Active Reward Terms     |
++-------+------------+--------+
+| Index | Name       | Weight |
++-------+------------+--------+
+|   0   | keypoints  |   15.0 |
+|   1   | place      |   15.0 |
+|   2   | inserted   |   15.0 |
+|   3   | contact    |   -3.0 |
+|   4   | prediction |  -15.0 |
++-------+------------+--------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+[INFO]: Completed setting up the environment...
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 policy :  ['policy']
+	 critic :  ['critic']
+--------------------------------------------------------------------------------
+Actor RNN: Memory(
+  (rnn): LSTM(24, 128)
+)
+Actor MLP: MLP(
+  (0): Linear(in_features=128, out_features=128, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=128, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=5, bias=True)
+)
+Critic RNN: Memory(
+  (rnn): LSTM(48, 128)
+)
+Critic MLP: MLP(
+  (0): Linear(in_features=128, out_features=128, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=128, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=1, bias=True)
+)
+################################################################################
+                        [1m Learning iteration 0/5 [0m                        
+
+                       Computation: 415 steps/s (collection: 9.195s, learning 0.671s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 21.1860
+               Mean surrogate loss: -0.0132
+                 Mean entropy loss: 3.6235
+                       Mean reward: -7.62
+               Mean episode length: 16.77
+          Episode_Reward/keypoints: 0.0603
+              Episode_Reward/place: 0.0021
+           Episode_Reward/inserted: 0.0000
+            Episode_Reward/contact: 0.0000
+         Episode_Reward/prediction: -0.7508
+      Episode_Termination/time_out: 0.0872
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 4096
+                    Iteration time: 9.87s
+                      Time elapsed: 00:00:09
+                               ETA: 00:00:49
+
+Could not find git repository in /home/masais/miniconda3/envs/Xinyu_isaacsim/lib/python3.11/site-packages/rsl_rl/__init__.py. Skipping.
+Storing git diff for 'IsaacLab_2_3_2' in: /home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_residual/2026-09-28_11-40-09_timing128_review/git/IsaacLab_2_3_2.diff
+################################################################################
+                        [1m Learning iteration 1/5 [0m                        
+
+                       Computation: 127 steps/s (collection: 31.014s, learning 0.995s)
+             Mean action noise std: 0.49
+          Mean value_function loss: 20.8802
+               Mean surrogate loss: -0.0120
+                 Mean entropy loss: 3.5924
+                       Mean reward: -15.03
+               Mean episode length: 32.24
+          Episode_Reward/keypoints: 0.2061
+              Episode_Reward/place: 0.0188
+           Episode_Reward/inserted: 0.0000
+            Episode_Reward/contact: -0.0638
+         Episode_Reward/prediction: -2.4242
+      Episode_Termination/time_out: 0.2727
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 8192
+                    Iteration time: 32.01s
+                      Time elapsed: 00:00:41
+                               ETA: 00:01:23
+
+################################################################################
+                        [1m Learning iteration 2/5 [0m                        
+
+                       Computation: 111 steps/s (collection: 35.808s, learning 0.967s)
+             Mean action noise std: 0.49
+          Mean value_function loss: 18.0326
+               Mean surrogate loss: -0.0144
+                 Mean entropy loss: 3.5190
+                       Mean reward: -23.86
+               Mean episode length: 51.96
+          Episode_Reward/keypoints: 0.4647
+              Episode_Reward/place: 0.1878
+           Episode_Reward/inserted: 0.0500
+            Episode_Reward/contact: -0.2211
+         Episode_Reward/prediction: -3.8919
+      Episode_Termination/time_out: 0.5042
+Episode_Termination/outside_workspace: 0.0051
+Episode_Termination/invalid_grasp_width: 0.0024
+--------------------------------------------------------------------------------
+                   Total timesteps: 12288
+                    Iteration time: 36.77s
+                      Time elapsed: 00:01:18
+                               ETA: 00:01:18
+
+################################################################################
+                        [1m Learning iteration 3/5 [0m                        
+
+                       Computation: 110 steps/s (collection: 36.220s, learning 0.971s)
+             Mean action noise std: 0.49
+          Mean value_function loss: 17.3967
+               Mean surrogate loss: -0.0118
+                 Mean entropy loss: 3.4925
+                       Mean reward: -33.82
+               Mean episode length: 73.67
+          Episode_Reward/keypoints: 0.5699
+              Episode_Reward/place: 0.0141
+           Episode_Reward/inserted: 0.0000
+            Episode_Reward/contact: -0.2858
+         Episode_Reward/prediction: -5.3203
+      Episode_Termination/time_out: 0.7268
+Episode_Termination/outside_workspace: 0.0078
+Episode_Termination/invalid_grasp_width: 0.0217
+--------------------------------------------------------------------------------
+                   Total timesteps: 16384
+                    Iteration time: 37.19s
+                      Time elapsed: 00:01:55
+                               ETA: 00:00:57
+
+################################################################################
+                        [1m Learning iteration 4/5 [0m                        
+
+                       Computation: 106 steps/s (collection: 37.508s, learning 0.966s)
+             Mean action noise std: 0.48
+          Mean value_function loss: 19.4168
+               Mean surrogate loss: -0.0141
+                 Mean entropy loss: 3.4742
+                       Mean reward: -48.03
+               Mean episode length: 104.27
+          Episode_Reward/keypoints: 0.6924
+              Episode_Reward/place: 0.0354
+           Episode_Reward/inserted: 0.0000
+            Episode_Reward/contact: -0.5471
+         Episode_Reward/prediction: -6.5257
+      Episode_Termination/time_out: 0.8865
+Episode_Termination/outside_workspace: 0.0095
+Episode_Termination/invalid_grasp_width: 0.0422
+--------------------------------------------------------------------------------
+                   Total timesteps: 20480
+                    Iteration time: 38.47s
+                      Time elapsed: 00:02:34
+                               ETA: 00:00:30
+
+Training time: 155.46 seconds

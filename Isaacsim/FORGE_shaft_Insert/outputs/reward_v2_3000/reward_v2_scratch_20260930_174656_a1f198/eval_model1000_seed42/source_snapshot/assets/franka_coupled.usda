@@ -1,0 +1,24 @@
+#usda 1.0
+(
+    defaultPrim = "Robot"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Robot" (
+    prepend references = @franka.usda@</Robot>
+)
+{
+    over "panda_hand"
+    {
+        over "panda_finger_joint2" (
+            prepend apiSchemas = ["PhysxMimicJointAPI:rotX"]
+        )
+        {
+            float physxMimicJoint:rotX:gearing = -1
+            float physxMimicJoint:rotX:offset = 0
+            rel physxMimicJoint:rotX:referenceJoint = </Robot/panda_hand/panda_finger_joint1>
+        }
+    }
+}
+

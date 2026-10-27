@@ -1,0 +1,60 @@
+{
+  "stage": "predeclared_evaluation_after_training_not_started",
+  "training_groups": [
+    "P0G0",
+    "P1G0",
+    "P0G1",
+    "P1G1"
+  ],
+  "training_seeds": [
+    0,
+    1,
+    2
+  ],
+  "checkpoint": "final epoch 200, no best checkpoint selection",
+  "clearance_mm": [
+    0.25,
+    0.5,
+    1,
+    2
+  ],
+  "xy_error_radius_mm": [
+    0,
+    0.5,
+    1,
+    2,
+    3,
+    4
+  ],
+  "evaluation_seeds": [
+    600,
+    601,
+    602,
+    603,
+    604
+  ],
+  "episodes_per_seed": 128,
+  "total_planned_episodes": 184320,
+  "background": "full randomization including unchanged Z hole-estimate error",
+  "sampling": "paired named environment and stochastic-policy streams shared across all models/conditions",
+  "metrics": [
+    "official final success",
+    "ever success then lost",
+    "final depth",
+    "final XY error",
+    "time to first success",
+    "mean smoothed wrist force",
+    "episode max smoothed wrist force"
+  ],
+  "contrasts": [
+    "S10-S00",
+    "S01-S00",
+    "S11-S01",
+    "S11-S10",
+    "S11-S10-S01+S00"
+  ],
+  "uncertainty": "paired resampling of training-seed blocks and shared evaluation seed/env blocks; do not treat 3*640 episodes as independent training replications",
+  "dimensionless_ratio": "rho=error_mm/(clearance_mm/2)",
+  "physical_assembly_criterion_status": "additional geometry criterion not yet validated; do not silently substitute predicted success or claim physical fit from official 2.5mm XY threshold",
+  "training_reward_changed": false
+}

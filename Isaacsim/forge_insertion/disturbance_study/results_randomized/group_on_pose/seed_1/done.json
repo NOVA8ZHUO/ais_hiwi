@@ -1,0 +1,20 @@
+{
+  "identity": {
+    "condition": "group_on_pose",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position"
+    ],
+    "seed": 1,
+    "num_envs": 128,
+    "model": "randomized",
+    "checkpoint_sha256": "57ae61f09be156e0c07aa250e0c58d164251e0efc36f2b56b2a76ee21e3f24ed",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "a9cd9a3b3acbef9817de2bfe313c81878192a098f9f48ec91fc1cf330e0a9586"
+  },
+  "seconds": 96.33340599108487,
+  "evaluation_sha256": "d9d2025649aa78093cc0d9f051f0b69171e14b5c2340d8baf12aa10e5b6bb271"
+}

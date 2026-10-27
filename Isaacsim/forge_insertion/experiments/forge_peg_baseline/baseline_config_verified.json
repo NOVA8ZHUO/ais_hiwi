@@ -1,0 +1,16 @@
+{
+  "run_directory": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_peg_baseline/logs/20261012T124421_296458Z_train",
+  "training_pid": 1686965,
+  "task": "Isaac-Forge-PegInsert-Direct-v0",
+  "num_envs": 128,
+  "max_epochs": 200,
+  "seed": 0,
+  "ppo_matches_official_yaml": true,
+  "actor_observation_dim_from_log": 24,
+  "critic_state_dim_from_log": 61,
+  "action_dim": 7,
+  "physics_dt": 0.008333333333333333,
+  "decimation": 8,
+  "episode_length_s": 10.0,
+  "note": "Dimensions are runtime log values; official YAML is dumped before environment initializes derived dimensions."
+}

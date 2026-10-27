@@ -1,0 +1,40 @@
+{
+  "initial_checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_release25/2026-09-28_15-34-34_release25_gui_20260928_152608/model_19.pt",
+  "initial_sha256": "071c17f0d60e4de4b22eec5d13c0e266233421e5de43786b101ad98962c7da7a",
+  "baseline": "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/outputs/policy_baseline/model19_seed42_32x4",
+  "train_command": [
+    "/home/masais/miniconda3/envs/Xinyu_isaacsim/bin/python",
+    "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/scripts/train.py",
+    "--task",
+    "FORGE-Shaft-Insert-Paper-v0",
+    "--headless",
+    "--num_envs",
+    "128",
+    "--max_iterations",
+    "200",
+    "--seed",
+    "42",
+    "--resume",
+    "--load_run",
+    "2026-09-28_15-34-34_release25_gui_20260928_152608",
+    "--checkpoint",
+    "model_19.pt",
+    "--run_name",
+    "pilot200_from_model19_20260928_163043_c55e89",
+    "agent.num_steps_per_env=32",
+    "agent.algorithm.num_mini_batches=4",
+    "agent.save_interval=10"
+  ],
+  "checkpoints": [
+    70,
+    120,
+    218
+  ],
+  "additional_updates": [
+    52,
+    102,
+    200
+  ],
+  "status": "completed",
+  "training_run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_release25/2026-09-28_16-30-50_pilot200_from_model19_20260928_163043_c55e89"
+}

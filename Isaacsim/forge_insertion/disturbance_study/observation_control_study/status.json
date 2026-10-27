@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "pid": 2309821,
+  "completed": 480,
+  "total": 480,
+  "updated": 1792455217.7628376,
+  "current": {
+    "phase": "confirmation",
+    "model": "randomized",
+    "condition": "factor_off_dead_zone",
+    "active": [
+      "base_position",
+      "base_yaw",
+      "contact_threshold",
+      "ema",
+      "force_noise",
+      "friction",
+      "gains",
+      "grasp_offset",
+      "hand_orientation",
+      "hand_position",
+      "hole_observation",
+      "mass",
+      "position_threshold",
+      "quaternion_sign",
+      "rotation_threshold",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 304
+  },
+  "seconds_per_job": 94.1637808311265
+}

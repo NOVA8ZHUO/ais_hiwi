@@ -1,0 +1,7 @@
+[
+  "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+  "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/check_mixed.py",
+  "--group",
+  "P0G0",
+  "--headless"
+]

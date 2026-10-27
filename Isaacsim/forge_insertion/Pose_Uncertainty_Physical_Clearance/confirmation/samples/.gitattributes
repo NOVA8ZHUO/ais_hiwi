@@ -1,0 +1,7 @@
+
+# Full backup: preserve large files with Git LFS.
+"/n128_seed600.npz" filter=lfs diff=lfs merge=lfs -text
+"/n128_seed601.npz" filter=lfs diff=lfs merge=lfs -text
+"/n128_seed602.npz" filter=lfs diff=lfs merge=lfs -text
+"/n128_seed603.npz" filter=lfs diff=lfs merge=lfs -text
+"/n128_seed604.npz" filter=lfs diff=lfs merge=lfs -text

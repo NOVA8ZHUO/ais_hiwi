@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/verify.py", line 74, in <module>
+    assert torch.allclose(snapshots[0],snapshots[1],atol=1e-4)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

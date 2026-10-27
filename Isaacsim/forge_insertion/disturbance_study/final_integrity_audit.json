@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "jobs_per_model": 160,
+  "total_jobs": 320,
+  "total_episodes": 40960,
+  "episodes_exceeding_50mm_depth": 0,
+  "checks": [
+    "all planned jobs present",
+    "result SHA256 verified",
+    "checkpoint identities match frozen models",
+    "128 unique env IDs per job",
+    "raw success counts match summaries",
+    "sample hash, active factors, policy step counts match between models"
+  ]
+}

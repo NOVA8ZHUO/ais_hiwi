@@ -1,0 +1,37 @@
+{
+  "checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_reward_v2_scratch/2026-10-01_14-19-06_reward_v2_total10000_20261001_141859_898ead/model_8000.pt",
+  "checkpoint_sha256": "f025e808a8d677b3c9ab365e6e796bd5da99215cf671c0a668a9975a8683aafc",
+  "deterministic": true,
+  "training": false,
+  "policy_state_unchanged": true,
+  "task_source_matches_training": true,
+  "seed": 44,
+  "num_envs": 32,
+  "episodes_per_env": 4,
+  "completed_episodes": 128,
+  "raw_completed_episodes": 153,
+  "control_steps": 1006,
+  "elapsed_s": 225.27845699316822,
+  "rates": {
+    "success_any": 0.90625,
+    "success_final": 0.90625,
+    "success_stable": 0.90625,
+    "fully_seated_final": 0.90625,
+    "seated_depth_final": 0.90625
+  },
+  "success_final_wilson95": [
+    0.8432686438028733,
+    0.945556734529914
+  ],
+  "terminations": {
+    "time_out": 14,
+    "outside_workspace": 0,
+    "invalid_grasp_width": 0,
+    "release_complete": 114
+  },
+  "mean_episode_force_p95_N": 2.0461082125548273,
+  "peak_force_N": 10.518525123596191,
+  "mean_episode_action_saturation": 0.23783350305477807,
+  "mean_episode_duration_s": 12.352083333333335,
+  "protocol": "First four episodes per environment by default; all environmental randomization retained, policy mean actions, no randomized initial episode lengths. Raw CSV includes unselected extra episodes of faster environments; evaluation_episodes.csv is the benchmark denominator."
+}

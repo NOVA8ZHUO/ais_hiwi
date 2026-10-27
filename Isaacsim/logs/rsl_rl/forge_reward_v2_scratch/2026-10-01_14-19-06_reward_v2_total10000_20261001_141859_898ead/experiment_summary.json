@@ -1,0 +1,52 @@
+{
+  "run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_reward_v2_scratch/2026-10-01_14-19-06_reward_v2_total10000_20261001_141859_898ead",
+  "completed_episodes": 127607,
+  "final_scalars": {
+    "Episode_Reward/keypoints": 0.2803141474723816,
+    "Episode_Reward/place": 0.20391923189163208,
+    "Episode_Reward/inserted": 7.184896469116211,
+    "Episode_Reward/contact": 0.0,
+    "Episode_Reward/shaft_pitch": 0.0,
+    "Episode_Reward/prediction": -0.1405590921640396,
+    "Episode_Reward/depth_progress": 2.318593978881836,
+    "Episode_Reward/insertion_stall": 0.0,
+    "Episode_Reward/lateral_stall": 0.0,
+    "Episode_Reward/outside_descent": 0.0,
+    "Episode_Reward/release_seated": 0.463541716337204,
+    "Episode_Termination/time_out": 0.173095703125,
+    "Episode_Termination/outside_workspace": 0.0,
+    "Episode_Termination/invalid_grasp_width": 0.0,
+    "Episode_Termination/release_complete": 0.833251953125,
+    "Metrics_cumulative/completed_episodes": 127607.0,
+    "Metrics_cumulative/success_any": 0.8526961803436279,
+    "Metrics_cumulative/success_final": 0.8526883125305176,
+    "Metrics_cumulative/success_stable": 0.8490443229675293,
+    "Metrics_cumulative/force_p95_N": 2.147722005844116,
+    "Metrics_cumulative/force_peak_N": 3.889073133468628,
+    "Metrics_cumulative/action_saturation": 0.246005117893219,
+    "Metrics_cumulative/longest_success_s": 1.742877721786499,
+    "Loss/value_function": 40.734352111816406,
+    "Loss/surrogate": 0.0022299594711512327,
+    "Loss/entropy": -7.99439811706543,
+    "Loss/learning_rate": 9.999999747378752e-06,
+    "Policy/mean_noise_std": 0.14708176255226135,
+    "Perf/total_fps": 713.0,
+    "Perf/collection time": 5.636578559875488,
+    "Perf/learning_time": 0.10135626792907715,
+    "Train/mean_reward": 193.66297912597656,
+    "Train/mean_episode_length": 184.49000549316406,
+    "Train/mean_reward/time": 193.66297912597656,
+    "Train/mean_episode_length/time": 184.49000549316406
+  },
+  "source_snapshot_available": true,
+  "terminations": {
+    "time_out": 21443,
+    "outside_workspace": 0,
+    "invalid_grasp_width": 3
+  },
+  "success_rates": {
+    "success_any": 0.8526961687054785,
+    "success_final": 0.8526883321447883,
+    "success_stable": 0.8490443314238247
+  }
+}

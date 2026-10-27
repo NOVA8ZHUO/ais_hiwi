@@ -1,0 +1,36 @@
+{
+  "sha256": {
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/condition_mapping/rollout_grid.py": "8e32dbd980d1c2378461c2d29344471d34d2ee74886ae4abbb8f04e4e3bd2bac",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/condition_mapping/evaluate.py": "a36ebb9ecdc6ee3736388888820fd221058e719b119488cb1af748c8da409b86",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/condition_mapping/pipeline.py": "7156d0723c5e6d147bbb8b5194b5af912bd2de894dc626c10429d9c3908fb6e9",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/condition_mapping/grid_task/config.py": "378d4ed335e8511593f874442d0ab8bfadfce391c5043b2d25069b631456b1be",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/condition_mapping/grid_task/__init__.py": "58b36675d9e7d8cc7d3ec4e916fae70c4c21f1295864f90f3595031d933a79d7",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/condition_mapping/grid_task/env.py": "63197f9ebe0a71ac4a5264472a86f393670bf119e43b2b79019a1b96c62863a5",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/assets/base_clearance_2mm.usda": "7803e80c8d5ee204d8760ab7d4f97d40c0c5333e5e4c79d50464a8f124f4e2d1",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/assets/base_clearance_0.25mm.usda": "3cfdcda449230277b19ae4acf17d44795f38352c63983c88f2f81913f7597eda",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/assets/base_clearance_1mm.usda": "961d548ec7f8749387f6712149b00d1e428d3362397aa208987554dd951995d5",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/assets/base_clearance_0.5mm.usda": "d06973dd594eae3c4ee6246b1815b253adaab12a0a2c10b7d78f28859308d7a5"
+  },
+  "clearances_mm": [
+    0.25,
+    0.5,
+    1,
+    2
+  ],
+  "error_radii_mm": [
+    0,
+    0.5,
+    1,
+    2,
+    4
+  ],
+  "seeds": [
+    400,
+    401,
+    402,
+    403,
+    404
+  ],
+  "episodes_per_job": 128,
+  "models": "same two epoch-200 checkpoints in original lock.json"
+}

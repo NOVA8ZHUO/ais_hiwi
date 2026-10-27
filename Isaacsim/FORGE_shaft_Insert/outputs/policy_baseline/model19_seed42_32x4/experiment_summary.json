@@ -1,0 +1,16 @@
+{
+  "run": "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/outputs/policy_baseline/model19_seed42_32x4",
+  "completed_episodes": 132,
+  "final_scalars": {},
+  "source_snapshot_available": true,
+  "terminations": {
+    "time_out": 105,
+    "outside_workspace": 0,
+    "invalid_grasp_width": 0
+  },
+  "success_rates": {
+    "success_any": 0.20454545454545456,
+    "success_final": 0.20454545454545456,
+    "success_stable": 0.20454545454545456
+  }
+}

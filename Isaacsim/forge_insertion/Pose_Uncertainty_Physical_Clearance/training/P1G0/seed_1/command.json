@@ -1,0 +1,14 @@
+[
+  "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+  "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+  "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+  "--task",
+  "Isaac-Forge-CAD-PG-P1G0-Direct-v0",
+  "--num_envs",
+  "128",
+  "--max_iterations",
+  "200",
+  "--seed",
+  "1",
+  "--headless"
+]

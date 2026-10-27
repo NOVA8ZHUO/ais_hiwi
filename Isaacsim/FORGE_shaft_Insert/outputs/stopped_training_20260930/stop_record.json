@@ -1,0 +1,8 @@
+{
+  "training_run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_coupled_release25/2026-09-29_17-51-43_model820_plus10000_20260929_175136_62085c",
+  "latest_checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_coupled_release25/2026-09-29_17-51-43_model820_plus10000_20260929_175136_62085c/model_5140.pt",
+  "latest_iter": 5140,
+  "note": "Stopped at latest complete on-disk checkpoint. Unsaved updates after this checkpoint are not recoverable; no live save handler.",
+  "status": "stopped_by_user",
+  "termination": "SIGTERM did not stop child; SIGKILL after verified backups"
+}

@@ -1,0 +1,47 @@
+{
+  "baseline_sha256": {
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/base.usda": "961d548ec7f8749387f6712149b00d1e428d3362397aa208987554dd951995d5",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/shaft_large.usda": "c89f594c77d884a4be637727cceb800d4508b21a83705fe86e33e215e9cc9482"
+  },
+  "shaft_diameter_m": 0.025,
+  "nominal_bore_diameter_m": 0.026,
+  "nominal_diametral_clearance_m": 0.001,
+  "variants": [
+    {
+      "path": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/assets/base_clearance_0.25mm.usda",
+      "clearance_mm": 0.25,
+      "measured_clearance_mm": 0.24999949154380988,
+      "bore_vertices_modified": 3044,
+      "outer_vertices_unchanged": true,
+      "z_unchanged": true,
+      "sha256": "3cfdcda449230277b19ae4acf17d44795f38352c63983c88f2f81913f7597eda"
+    },
+    {
+      "path": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/assets/base_clearance_0.5mm.usda",
+      "clearance_mm": 0.5,
+      "measured_clearance_mm": 0.49999949168120367,
+      "bore_vertices_modified": 3044,
+      "outer_vertices_unchanged": true,
+      "z_unchanged": true,
+      "sha256": "d06973dd594eae3c4ee6246b1815b253adaab12a0a2c10b7d78f28859308d7a5"
+    },
+    {
+      "path": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/assets/base_clearance_1mm.usda",
+      "clearance_mm": 1.0,
+      "measured_clearance_mm": 0.9999994919559912,
+      "bore_vertices_modified": 0,
+      "outer_vertices_unchanged": true,
+      "z_unchanged": true,
+      "sha256": "961d548ec7f8749387f6712149b00d1e428d3362397aa208987554dd951995d5"
+    },
+    {
+      "path": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/assets/base_clearance_2mm.usda",
+      "clearance_mm": 2.0,
+      "measured_clearance_mm": 1.99999949250557,
+      "bore_vertices_modified": 3044,
+      "outer_vertices_unchanged": true,
+      "z_unchanged": true,
+      "sha256": "7803e80c8d5ee204d8760ab7d4f97d40c0c5333e5e4c79d50464a8f124f4e2d1"
+    }
+  ]
+}

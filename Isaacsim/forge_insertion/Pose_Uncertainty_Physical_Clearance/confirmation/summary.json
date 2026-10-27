@@ -1,0 +1,2666 @@
+[
+  {
+    "clearance_mm": 0.25,
+    "error_mm": 0.0,
+    "rho": 0.0,
+    "per_training_seed_success": [
+      [
+        0.9875,
+        0.9796875,
+        0.978125,
+        0.9921875
+      ],
+      [
+        0.9609375,
+        0.9703125,
+        0.98125,
+        0.9640625
+      ],
+      [
+        0.9640625,
+        0.965625,
+        0.99375,
+        0.9796875
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9708333333333333,
+        0.971875,
+        0.984375,
+        0.9786458333333333,
+        0.0010416666666666667,
+        0.013541666666666667,
+        -0.005729166666666666,
+        0.0067708333333333336,
+        -0.0067708333333333336
+      ],
+      "ci95": [
+        [
+          0.9489583333333333,
+          0.9526041666666667,
+          0.9703125,
+          0.95625,
+          -0.0140625,
+          -0.0109375,
+          -0.0296875,
+          -0.0140625,
+          -0.03959635416666666
+        ],
+        [
+          0.9875,
+          0.9854166666666667,
+          0.9947916666666666,
+          0.99375,
+          0.018229166666666668,
+          0.03802083333333333,
+          0.0171875,
+          0.0265625,
+          0.024479166666666666
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 0,
+        "mean_depth_mm": 46.39422115966833,
+        "mean_xy_mm": 0.17020870283073938,
+        "mean_force_N": 3.6947694212198257,
+        "peak_force_p95_N": 17.574602127075195,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.5221389063310213,
+        "never_success_count": 56
+      },
+      "P1G0": {
+        "ever_success_lost_count": 2,
+        "mean_depth_mm": 46.433846030655936,
+        "mean_xy_mm": 0.15430750462167944,
+        "mean_force_N": 3.4106595732892555,
+        "peak_force_p95_N": 17.686988353729248,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.583476229353431,
+        "never_success_count": 52
+      },
+      "P0G1": {
+        "ever_success_lost_count": 5,
+        "mean_depth_mm": 46.5498119534459,
+        "mean_xy_mm": 0.1381185717933183,
+        "mean_force_N": 3.1781604170799254,
+        "peak_force_p95_N": 18.305409717559815,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.317467143604812,
+        "never_success_count": 25
+      },
+      "P1G1": {
+        "ever_success_lost_count": 7,
+        "mean_depth_mm": 46.55780266233099,
+        "mean_xy_mm": 0.11219457911622044,
+        "mean_force_N": 3.2614305717870593,
+        "peak_force_p95_N": 17.765410518646238,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.343867215978758,
+        "never_success_count": 34
+      }
+    }
+  },
+  {
+    "clearance_mm": 0.25,
+    "error_mm": 0.5,
+    "rho": 4.0,
+    "per_training_seed_success": [
+      [
+        0.990625,
+        0.9734375,
+        0.9625,
+        0.9875
+      ],
+      [
+        0.9609375,
+        0.9546875,
+        0.9734375,
+        0.96875
+      ],
+      [
+        0.9671875,
+        0.9671875,
+        0.9828125,
+        0.975
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9729166666666667,
+        0.9651041666666667,
+        0.9729166666666667,
+        0.9770833333333333,
+        -0.0078125,
+        0.0,
+        0.004166666666666667,
+        0.011979166666666667,
+        0.011979166666666667
+      ],
+      "ci95": [
+        [
+          0.9505208333333334,
+          0.9427083333333334,
+          0.9546875,
+          0.959375,
+          -0.0296875,
+          -0.0296875,
+          -0.018229166666666668,
+          -0.0078125,
+          -0.025
+        ],
+        [
+          0.9901041666666667,
+          0.984375,
+          0.9864583333333333,
+          0.990625,
+          0.013541666666666667,
+          0.027604166666666666,
+          0.02761718749999981,
+          0.033854166666666664,
+          0.05
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 1,
+        "mean_depth_mm": 46.45931446866598,
+        "mean_xy_mm": 0.13553176424802396,
+        "mean_force_N": 3.7230054502685865,
+        "peak_force_p95_N": 17.729338932037354,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.5507046154886086,
+        "never_success_count": 51
+      },
+      "P1G0": {
+        "ever_success_lost_count": 0,
+        "mean_depth_mm": 46.31481784454081,
+        "mean_xy_mm": 0.1478732152496202,
+        "mean_force_N": 3.461560480482876,
+        "peak_force_p95_N": 17.761028480529784,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.5749956419579867,
+        "never_success_count": 67
+      },
+      "P0G1": {
+        "ever_success_lost_count": 5,
+        "mean_depth_mm": 46.29026504117064,
+        "mean_xy_mm": 0.16050330298469362,
+        "mean_force_N": 3.2407863093540072,
+        "peak_force_p95_N": 18.420619392395018,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.3431928667612274,
+        "never_success_count": 47
+      },
+      "P1G1": {
+        "ever_success_lost_count": 4,
+        "mean_depth_mm": 46.483805626242734,
+        "mean_xy_mm": 0.12971374020196436,
+        "mean_force_N": 3.305019224373003,
+        "peak_force_p95_N": 17.752177238464355,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.3620923265497735,
+        "never_success_count": 40
+      }
+    }
+  },
+  {
+    "clearance_mm": 0.25,
+    "error_mm": 1.0,
+    "rho": 8.0,
+    "per_training_seed_success": [
+      [
+        0.9640625,
+        0.9765625,
+        0.9578125,
+        0.9828125
+      ],
+      [
+        0.946875,
+        0.95,
+        0.9796875,
+        0.9671875
+      ],
+      [
+        0.9453125,
+        0.9640625,
+        0.9859375,
+        0.9640625
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9520833333333333,
+        0.9635416666666666,
+        0.9744791666666667,
+        0.9713541666666666,
+        0.011458333333333333,
+        0.022395833333333334,
+        -0.003125,
+        0.0078125,
+        -0.014583333333333334
+      ],
+      "ci95": [
+        [
+          0.928125,
+          0.9380208333333333,
+          0.9526041666666667,
+          0.9515625,
+          -0.009375,
+          -0.009375,
+          -0.030729166666666665,
+          -0.0109375,
+          -0.05
+        ],
+        [
+          0.9703125,
+          0.9828125,
+          0.9901041666666667,
+          0.9859375,
+          0.03125,
+          0.05260416666666667,
+          0.026575520833333144,
+          0.027604166666666666,
+          0.0203125
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 0,
+        "mean_depth_mm": 45.98734378814697,
+        "mean_xy_mm": 0.16885376202336508,
+        "mean_force_N": 3.86736789830029,
+        "peak_force_p95_N": 17.658114051818846,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.6657915392837586,
+        "never_success_count": 92
+      },
+      "P1G0": {
+        "ever_success_lost_count": 6,
+        "mean_depth_mm": 46.33842814170445,
+        "mean_xy_mm": 0.1498312016437353,
+        "mean_force_N": 3.5508540817846854,
+        "peak_force_p95_N": 17.857766532897948,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.707327732270391,
+        "never_success_count": 64
+      },
+      "P0G1": {
+        "ever_success_lost_count": 7,
+        "mean_depth_mm": 46.34123219293542,
+        "mean_xy_mm": 0.16335998992739556,
+        "mean_force_N": 3.346334459632635,
+        "peak_force_p95_N": 18.378973484039307,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.4595315472576944,
+        "never_success_count": 42
+      },
+      "P1G1": {
+        "ever_success_lost_count": 9,
+        "mean_depth_mm": 46.37847215247651,
+        "mean_xy_mm": 0.12953445955285284,
+        "mean_force_N": 3.3935752181801946,
+        "peak_force_p95_N": 17.664864921569823,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.466951395779562,
+        "never_success_count": 46
+      }
+    }
+  },
+  {
+    "clearance_mm": 0.25,
+    "error_mm": 2.0,
+    "rho": 16.0,
+    "per_training_seed_success": [
+      [
+        0.909375,
+        0.94375,
+        0.9109375,
+        0.9625
+      ],
+      [
+        0.8828125,
+        0.9296875,
+        0.9390625,
+        0.934375
+      ],
+      [
+        0.875,
+        0.90625,
+        0.95,
+        0.946875
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.8890625,
+        0.9265625,
+        0.9333333333333333,
+        0.9479166666666666,
+        0.0375,
+        0.044270833333333336,
+        0.014583333333333334,
+        0.021354166666666667,
+        -0.022916666666666665
+      ],
+      "ci95": [
+        [
+          0.8552083333333333,
+          0.8973958333333333,
+          0.9010416666666666,
+          0.921875,
+          0.009895833333333333,
+          -0.005208333333333333,
+          -0.019804687499999994,
+          -0.009375,
+          -0.07084635416666667
+        ],
+        [
+          0.9177083333333333,
+          0.9520833333333333,
+          0.959375,
+          0.9671875,
+          0.06407552083333314,
+          0.0890625,
+          0.057291666666666664,
+          0.051041666666666666,
+          0.03126302083333314
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 4,
+        "mean_depth_mm": 44.662056058101975,
+        "mean_xy_mm": 0.2875663338502458,
+        "mean_force_N": 4.359577741287649,
+        "peak_force_p95_N": 17.96769781112671,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.105396623189236,
+        "never_success_count": 209
+      },
+      "P1G0": {
+        "ever_success_lost_count": 5,
+        "mean_depth_mm": 45.49785618922518,
+        "mean_xy_mm": 0.23496224541155186,
+        "mean_force_N": 3.9344250464191037,
+        "peak_force_p95_N": 18.35879135131836,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.0437221389781732,
+        "never_success_count": 136
+      },
+      "P0G1": {
+        "ever_success_lost_count": 9,
+        "mean_depth_mm": 45.284611460131906,
+        "mean_xy_mm": 0.23956097344637328,
+        "mean_force_N": 3.8639431573450564,
+        "peak_force_p95_N": 18.618431949615477,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.8103277485348133,
+        "never_success_count": 119
+      },
+      "P1G1": {
+        "ever_success_lost_count": 11,
+        "mean_depth_mm": 45.76086693947824,
+        "mean_xy_mm": 0.18319251245498455,
+        "mean_force_N": 3.7792697712313386,
+        "peak_force_p95_N": 17.900184059143065,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.821336399297907,
+        "never_success_count": 89
+      }
+    }
+  },
+  {
+    "clearance_mm": 0.25,
+    "error_mm": 3.0,
+    "rho": 24.0,
+    "per_training_seed_success": [
+      [
+        0.7578125,
+        0.846875,
+        0.8171875,
+        0.9046875
+      ],
+      [
+        0.71875,
+        0.8375,
+        0.878125,
+        0.8796875
+      ],
+      [
+        0.7421875,
+        0.809375,
+        0.8890625,
+        0.8375
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.7395833333333334,
+        0.83125,
+        0.8614583333333333,
+        0.8739583333333333,
+        0.09166666666666666,
+        0.121875,
+        0.0125,
+        0.042708333333333334,
+        -0.07916666666666666
+      ],
+      "ci95": [
+        [
+          0.7,
+          0.7927083333333333,
+          0.8130208333333333,
+          0.8265625,
+          0.0515625,
+          0.05311197916666667,
+          -0.058333333333333334,
+          0.003125,
+          -0.153125
+        ],
+        [
+          0.7796875,
+          0.8672005208333331,
+          0.9046875,
+          0.915625,
+          0.13282552083333315,
+          0.18177083333333333,
+          0.08595052083333314,
+          0.0828125,
+          0.00625
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 5,
+        "mean_depth_mm": 40.633180287356176,
+        "mean_xy_mm": 0.6270131275096938,
+        "mean_force_N": 5.289949739786485,
+        "peak_force_p95_N": 18.59483346939087,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.6483276788393657,
+        "never_success_count": 495
+      },
+      "P1G0": {
+        "ever_success_lost_count": 4,
+        "mean_depth_mm": 42.931054156118385,
+        "mean_xy_mm": 0.42186305475411245,
+        "mean_force_N": 4.691477621595065,
+        "peak_force_p95_N": 18.95322322845459,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.5275418598204853,
+        "never_success_count": 320
+      },
+      "P0G1": {
+        "ever_success_lost_count": 14,
+        "mean_depth_mm": 42.86805997932485,
+        "mean_xy_mm": 0.5368174283177041,
+        "mean_force_N": 4.71496278087919,
+        "peak_force_p95_N": 18.922629165649415,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.4156676524405856,
+        "never_success_count": 252
+      },
+      "P1G1": {
+        "ever_success_lost_count": 16,
+        "mean_depth_mm": 43.485343591116056,
+        "mean_xy_mm": 0.4574375531008812,
+        "mean_force_N": 4.556169288946936,
+        "peak_force_p95_N": 18.74641933441162,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.343447644391054,
+        "never_success_count": 226
+      }
+    }
+  },
+  {
+    "clearance_mm": 0.25,
+    "error_mm": 4.0,
+    "rho": 32.0,
+    "per_training_seed_success": [
+      [
+        0.565625,
+        0.7328125,
+        0.621875,
+        0.78125
+      ],
+      [
+        0.5453125,
+        0.6859375,
+        0.7203125,
+        0.746875
+      ],
+      [
+        0.5921875,
+        0.6859375,
+        0.73125,
+        0.7484375
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.5677083333333334,
+        0.7015625,
+        0.6911458333333333,
+        0.7588541666666667,
+        0.13385416666666666,
+        0.1234375,
+        0.06770833333333333,
+        0.057291666666666664,
+        -0.06614583333333333
+      ],
+      "ci95": [
+        [
+          0.5161458333333333,
+          0.6489583333333333,
+          0.6140625,
+          0.7171875,
+          0.0765625,
+          0.04479166666666667,
+          -0.0109375,
+          0.016145833333333335,
+          -0.1390625
+        ],
+        [
+          0.6208333333333333,
+          0.7515755208333331,
+          0.7552213541666665,
+          0.796875,
+          0.19063802083333314,
+          0.190625,
+          0.16355468749999982,
+          0.09739583333333333,
+          0.009375
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 6,
+        "mean_depth_mm": 34.06596497516148,
+        "mean_xy_mm": 1.5473617324587963,
+        "mean_force_N": 6.345465096645057,
+        "peak_force_p95_N": 18.971257495880128,
+        "mean_first_success_seconds_conditional_on_ever_success": 4.294404120775905,
+        "never_success_count": 824
+      },
+      "P1G0": {
+        "ever_success_lost_count": 3,
+        "mean_depth_mm": 38.576791356899776,
+        "mean_xy_mm": 0.8592747943644952,
+        "mean_force_N": 5.698202686570585,
+        "peak_force_p95_N": 19.384567165374754,
+        "mean_first_success_seconds_conditional_on_ever_success": 4.219210102425682,
+        "never_success_count": 570
+      },
+      "P0G1": {
+        "ever_success_lost_count": 14,
+        "mean_depth_mm": 37.064037716481835,
+        "mean_xy_mm": 1.358320819080679,
+        "mean_force_N": 5.9224039775629835,
+        "peak_force_p95_N": 19.16746120452881,
+        "mean_first_success_seconds_conditional_on_ever_success": 4.175192864015865,
+        "never_success_count": 579
+      },
+      "P1G1": {
+        "ever_success_lost_count": 15,
+        "mean_depth_mm": 38.90886613614081,
+        "mean_xy_mm": 1.1345500412437797,
+        "mean_force_N": 5.570851363598679,
+        "peak_force_p95_N": 18.859496116638184,
+        "mean_first_success_seconds_conditional_on_ever_success": 4.094701311024635,
+        "never_success_count": 448
+      }
+    }
+  },
+  {
+    "clearance_mm": 0.5,
+    "error_mm": 0.0,
+    "rho": 0.0,
+    "per_training_seed_success": [
+      [
+        0.9953125,
+        0.9875,
+        0.9828125,
+        0.9953125
+      ],
+      [
+        0.9859375,
+        0.98125,
+        0.9859375,
+        0.984375
+      ],
+      [
+        0.9921875,
+        0.9828125,
+        0.996875,
+        0.9890625
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9911458333333333,
+        0.9838541666666667,
+        0.9885416666666667,
+        0.9895833333333334,
+        -0.007291666666666667,
+        -0.0026041666666666665,
+        0.0010416666666666667,
+        0.005729166666666666,
+        0.008333333333333333
+      ],
+      "ci95": [
+        [
+          0.98125,
+          0.9703125,
+          0.9755208333333333,
+          0.9765625,
+          -0.0203125,
+          -0.0171875,
+          -0.0140625,
+          -0.008333333333333333,
+          -0.011458333333333333
+        ],
+        [
+          0.9984375,
+          0.99375,
+          0.9979166666666667,
+          0.9984375,
+          0.005729166666666666,
+          0.009895833333333333,
+          0.0171875,
+          0.017708333333333333,
+          0.0296875
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 0,
+        "mean_depth_mm": 46.6578846341387,
+        "mean_xy_mm": 0.23572585132261756,
+        "mean_force_N": 3.3952533687775333,
+        "peak_force_p95_N": 17.565836811065672,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.0224909160679663,
+        "never_success_count": 17
+      },
+      "P1G0": {
+        "ever_success_lost_count": 0,
+        "mean_depth_mm": 46.57666087053561,
+        "mean_xy_mm": 0.23488952534620466,
+        "mean_force_N": 3.104008292189489,
+        "peak_force_p95_N": 17.517782402038574,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.025022166976858,
+        "never_success_count": 31
+      },
+      "P0G1": {
+        "ever_success_lost_count": 7,
+        "mean_depth_mm": 46.57063070723476,
+        "mean_xy_mm": 0.23580146414256356,
+        "mean_force_N": 2.9436009340609113,
+        "peak_force_p95_N": 18.487060737609863,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.9833421898013337,
+        "never_success_count": 15
+      },
+      "P1G1": {
+        "ever_success_lost_count": 9,
+        "mean_depth_mm": 46.6251635691151,
+        "mean_xy_mm": 0.22654496702566954,
+        "mean_force_N": 3.0073501670422655,
+        "peak_force_p95_N": 17.584545040130614,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.9957046653351402,
+        "never_success_count": 11
+      }
+    }
+  },
+  {
+    "clearance_mm": 0.5,
+    "error_mm": 0.5,
+    "rho": 2.0,
+    "per_training_seed_success": [
+      [
+        0.9921875,
+        0.990625,
+        0.9796875,
+        0.99375
+      ],
+      [
+        0.9890625,
+        0.98125,
+        0.9921875,
+        0.98125
+      ],
+      [
+        0.990625,
+        0.9921875,
+        0.99375,
+        0.9875
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.990625,
+        0.9880208333333333,
+        0.9885416666666667,
+        0.9875,
+        -0.0026041666666666665,
+        -0.0020833333333333333,
+        -0.0010416666666666667,
+        -0.0005208333333333333,
+        0.0015625
+      ],
+      "ci95": [
+        [
+          0.9828125,
+          0.9760416666666667,
+          0.9755208333333333,
+          0.9755208333333333,
+          -0.013541666666666667,
+          -0.015625,
+          -0.019270833333333334,
+          -0.0140625,
+          -0.01875
+        ],
+        [
+          0.996875,
+          0.9963541666666667,
+          0.9979166666666667,
+          0.9973958333333334,
+          0.0067708333333333336,
+          0.009895833333333333,
+          0.01875,
+          0.013033854166666478,
+          0.0234375
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 1,
+        "mean_depth_mm": 46.62678605139566,
+        "mean_xy_mm": 0.23875269791110063,
+        "mean_force_N": 3.424942051433027,
+        "peak_force_p95_N": 17.337837505340573,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.0405326026461967,
+        "never_success_count": 17
+      },
+      "P1G0": {
+        "ever_success_lost_count": 1,
+        "mean_depth_mm": 46.65552187264742,
+        "mean_xy_mm": 0.2507397342616476,
+        "mean_force_N": 3.11397772502775,
+        "peak_force_p95_N": 17.85324659347534,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.050790415925648,
+        "never_success_count": 22
+      },
+      "P0G1": {
+        "ever_success_lost_count": 8,
+        "mean_depth_mm": 46.553953449862696,
+        "mean_xy_mm": 0.23669185689859282,
+        "mean_force_N": 2.9615333516150715,
+        "peak_force_p95_N": 18.569385719299316,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.9935293147596458,
+        "never_success_count": 14
+      },
+      "P1G1": {
+        "ever_success_lost_count": 10,
+        "mean_depth_mm": 46.57355378537128,
+        "mean_xy_mm": 0.22644104384218858,
+        "mean_force_N": 3.0213146103856463,
+        "peak_force_p95_N": 17.77836141586304,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.017628652288931,
+        "never_success_count": 14
+      }
+    }
+  },
+  {
+    "clearance_mm": 0.5,
+    "error_mm": 1.0,
+    "rho": 4.0,
+    "per_training_seed_success": [
+      [
+        0.9890625,
+        0.990625,
+        0.9578125,
+        0.9953125
+      ],
+      [
+        0.9796875,
+        0.98125,
+        0.984375,
+        0.9765625
+      ],
+      [
+        0.9859375,
+        0.9859375,
+        0.984375,
+        0.9796875
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9848958333333333,
+        0.9859375,
+        0.9755208333333333,
+        0.9838541666666667,
+        0.0010416666666666667,
+        -0.009375,
+        0.008333333333333333,
+        -0.0020833333333333333,
+        0.007291666666666667
+      ],
+      "ci95": [
+        [
+          0.9739583333333334,
+          0.9739583333333334,
+          0.9552083333333333,
+          0.9651041666666667,
+          -0.0125,
+          -0.0328125,
+          -0.022916666666666665,
+          -0.022916666666666665,
+          -0.03125
+        ],
+        [
+          0.99375,
+          0.9953125,
+          0.9921875,
+          0.9958333333333333,
+          0.013554687499999812,
+          0.013541666666666667,
+          0.03647135416666648,
+          0.0125,
+          0.036458333333333336
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 0,
+        "mean_depth_mm": 46.47812784727042,
+        "mean_xy_mm": 0.26732876778226,
+        "mean_force_N": 3.492263267065088,
+        "peak_force_p95_N": 17.47813968658447,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.0838358273965096,
+        "never_success_count": 29
+      },
+      "P1G0": {
+        "ever_success_lost_count": 3,
+        "mean_depth_mm": 46.63401969107023,
+        "mean_xy_mm": 0.24415502080531817,
+        "mean_force_N": 3.1992315750569107,
+        "peak_force_p95_N": 17.66496877670288,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.1702532824207457,
+        "never_success_count": 24
+      },
+      "P0G1": {
+        "ever_success_lost_count": 16,
+        "mean_depth_mm": 46.278676396468654,
+        "mean_xy_mm": 0.2642862745490267,
+        "mean_force_N": 3.1019894964993,
+        "peak_force_p95_N": 18.60649700164795,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.0680431689516836,
+        "never_success_count": 31
+      },
+      "P1G1": {
+        "ever_success_lost_count": 15,
+        "mean_depth_mm": 46.57022503670305,
+        "mean_xy_mm": 0.2188795615019501,
+        "mean_force_N": 3.098901008007427,
+        "peak_force_p95_N": 17.564263343811035,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.0980743416780685,
+        "never_success_count": 16
+      }
+    }
+  },
+  {
+    "clearance_mm": 0.5,
+    "error_mm": 2.0,
+    "rho": 8.0,
+    "per_training_seed_success": [
+      [
+        0.959375,
+        0.9765625,
+        0.940625,
+        0.9765625
+      ],
+      [
+        0.9578125,
+        0.95,
+        0.9703125,
+        0.965625
+      ],
+      [
+        0.965625,
+        0.9609375,
+        0.975,
+        0.95625
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9609375,
+        0.9625,
+        0.9619791666666667,
+        0.9661458333333334,
+        0.0015625,
+        0.0010416666666666667,
+        0.004166666666666667,
+        0.0036458333333333334,
+        0.0026041666666666665
+      ],
+      "ci95": [
+        [
+          0.9416666666666667,
+          0.9364583333333333,
+          0.9374869791666667,
+          0.9473828125,
+          -0.022916666666666665,
+          -0.028645833333333332,
+          -0.0265625,
+          -0.016679687499999995,
+          -0.028645833333333332
+        ],
+        [
+          0.9786458333333333,
+          0.984375,
+          0.98125,
+          0.9822916666666667,
+          0.027604166666666666,
+          0.0265625,
+          0.0390625,
+          0.025,
+          0.0375
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 1,
+        "mean_depth_mm": 45.739563357589454,
+        "mean_xy_mm": 0.37137712214274643,
+        "mean_force_N": 3.8927925140286486,
+        "peak_force_p95_N": 17.960786724090575,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.4561214766032258,
+        "never_success_count": 74
+      },
+      "P1G0": {
+        "ever_success_lost_count": 2,
+        "mean_depth_mm": 46.134010668417126,
+        "mean_xy_mm": 0.29982236455457684,
+        "mean_force_N": 3.535191539147248,
+        "peak_force_p95_N": 18.476107883453366,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.4206848138087507,
+        "never_success_count": 70
+      },
+      "P0G1": {
+        "ever_success_lost_count": 14,
+        "mean_depth_mm": 45.84199518819029,
+        "mean_xy_mm": 0.3384672276150506,
+        "mean_force_N": 3.481000551705559,
+        "peak_force_p95_N": 18.679674053192137,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.380763158306263,
+        "never_success_count": 59
+      },
+      "P1G1": {
+        "ever_success_lost_count": 15,
+        "mean_depth_mm": 46.09214991214685,
+        "mean_xy_mm": 0.29969562703371366,
+        "mean_force_N": 3.4328105330622445,
+        "peak_force_p95_N": 17.67731037139892,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.4087701834459354,
+        "never_success_count": 50
+      }
+    }
+  },
+  {
+    "clearance_mm": 0.5,
+    "error_mm": 3.0,
+    "rho": 12.0,
+    "per_training_seed_success": [
+      [
+        0.88125,
+        0.9203125,
+        0.8609375,
+        0.940625
+      ],
+      [
+        0.89375,
+        0.909375,
+        0.9296875,
+        0.915625
+      ],
+      [
+        0.8640625,
+        0.8859375,
+        0.9078125,
+        0.9171875
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.8796875,
+        0.9052083333333333,
+        0.8994791666666667,
+        0.9244791666666666,
+        0.025520833333333333,
+        0.019791666666666666,
+        0.025,
+        0.019270833333333334,
+        -0.0005208333333333333
+      ],
+      "ci95": [
+        [
+          0.846875,
+          0.875,
+          0.8578125,
+          0.8953125,
+          -0.0015625,
+          -0.0296875,
+          -0.024492187499999995,
+          -0.009895833333333333,
+          -0.0515625
+        ],
+        [
+          0.9093880208333331,
+          0.93125,
+          0.9364713541666664,
+          0.9510416666666667,
+          0.05260416666666667,
+          0.0609375,
+          0.08177083333333333,
+          0.0484375,
+          0.05364583333333333
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 4,
+        "mean_depth_mm": 43.315971820265986,
+        "mean_xy_mm": 0.6590401364405807,
+        "mean_force_N": 4.672401127777993,
+        "peak_force_p95_N": 18.622794151306152,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.0728885302583073,
+        "never_success_count": 227
+      },
+      "P1G0": {
+        "ever_success_lost_count": 7,
+        "mean_depth_mm": 44.574819662375376,
+        "mean_xy_mm": 0.4981559838952876,
+        "mean_force_N": 4.1789464543263115,
+        "peak_force_p95_N": 18.9648118019104,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.9082332033140954,
+        "never_success_count": 175
+      },
+      "P0G1": {
+        "ever_success_lost_count": 23,
+        "mean_depth_mm": 43.786311954803146,
+        "mean_xy_mm": 0.6300075007184583,
+        "mean_force_N": 4.275711817046006,
+        "peak_force_p95_N": 19.2853853225708,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.884838249376842,
+        "never_success_count": 170
+      },
+      "P1G1": {
+        "ever_success_lost_count": 19,
+        "mean_depth_mm": 44.657134775964856,
+        "mean_xy_mm": 0.48135835592191256,
+        "mean_force_N": 4.081521044392138,
+        "peak_force_p95_N": 18.42446765899658,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.8995170610538428,
+        "never_success_count": 126
+      }
+    }
+  },
+  {
+    "clearance_mm": 0.5,
+    "error_mm": 4.0,
+    "rho": 16.0,
+    "per_training_seed_success": [
+      [
+        0.68125,
+        0.8234375,
+        0.734375,
+        0.8578125
+      ],
+      [
+        0.69375,
+        0.834375,
+        0.8109375,
+        0.828125
+      ],
+      [
+        0.7296875,
+        0.8125,
+        0.8046875,
+        0.7984375
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.7015625,
+        0.8234375,
+        0.7833333333333333,
+        0.828125,
+        0.121875,
+        0.08177083333333333,
+        0.04479166666666667,
+        0.0046875,
+        -0.07708333333333334
+      ],
+      "ci95": [
+        [
+          0.6552083333333333,
+          0.7833333333333333,
+          0.728125,
+          0.7869791666666667,
+          0.06666666666666667,
+          0.0328125,
+          -0.025,
+          -0.0375,
+          -0.14688802083333333
+        ],
+        [
+          0.7526041666666666,
+          0.8604166666666667,
+          0.8328125,
+          0.8713541666666667,
+          0.17395833333333333,
+          0.13958333333333334,
+          0.1276171874999998,
+          0.0484375,
+          -0.0020703125000001896
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 7,
+        "mean_depth_mm": 37.659289545263164,
+        "mean_xy_mm": 1.4834789541552595,
+        "mean_force_N": 5.776918614283204,
+        "peak_force_p95_N": 18.880850791931152,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.6505171875833935,
+        "never_success_count": 566
+      },
+      "P1G0": {
+        "ever_success_lost_count": 14,
+        "mean_depth_mm": 41.667939000763,
+        "mean_xy_mm": 0.854006187856271,
+        "mean_force_N": 5.097403324395418,
+        "peak_force_p95_N": 19.806629943847653,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.6086940236226144,
+        "never_success_count": 325
+      },
+      "P0G1": {
+        "ever_success_lost_count": 40,
+        "mean_depth_mm": 39.630693944248684,
+        "mean_xy_mm": 1.2891573094511461,
+        "mean_force_N": 5.343539630419885,
+        "peak_force_p95_N": 19.286763763427732,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.527893103890777,
+        "never_success_count": 376
+      },
+      "P1G1": {
+        "ever_success_lost_count": 24,
+        "mean_depth_mm": 40.91128507085765,
+        "mean_xy_mm": 1.0480735908015977,
+        "mean_force_N": 5.034865005811056,
+        "peak_force_p95_N": 19.404854583740235,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.5326313343559206,
+        "never_success_count": 306
+      }
+    }
+  },
+  {
+    "clearance_mm": 1.0,
+    "error_mm": 0.0,
+    "rho": 0.0,
+    "per_training_seed_success": [
+      [
+        0.9953125,
+        0.9984375,
+        0.9796875,
+        0.9953125
+      ],
+      [
+        0.9984375,
+        0.9921875,
+        0.9859375,
+        0.9796875
+      ],
+      [
+        0.996875,
+        0.9953125,
+        0.99375,
+        0.9828125
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.996875,
+        0.9953125,
+        0.9864583333333333,
+        0.9859375,
+        -0.0015625,
+        -0.010416666666666666,
+        -0.0005208333333333333,
+        -0.009375,
+        0.0010416666666666667
+      ],
+      "ci95": [
+        [
+          0.990625,
+          0.9880208333333333,
+          0.9729166666666667,
+          0.9734375,
+          -0.009895833333333333,
+          -0.0234375,
+          -0.019270833333333334,
+          -0.022395833333333334,
+          -0.016666666666666666
+        ],
+        [
+          1.0,
+          1.0,
+          0.996875,
+          0.9963541666666667,
+          0.00625,
+          -0.0010416666666666667,
+          0.01875,
+          0.0010416666666666667,
+          0.01875
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 0,
+        "mean_depth_mm": 46.64210612536408,
+        "mean_xy_mm": 0.43155847314485146,
+        "mean_force_N": 3.143740474184354,
+        "peak_force_p95_N": 17.904322910308835,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.6639847659828022,
+        "never_success_count": 6
+      },
+      "P1G0": {
+        "ever_success_lost_count": 2,
+        "mean_depth_mm": 46.7143609712366,
+        "mean_xy_mm": 0.4336191075367424,
+        "mean_force_N": 2.883951385691762,
+        "peak_force_p95_N": 17.744086360931394,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.7007493519434054,
+        "never_success_count": 7
+      },
+      "P0G1": {
+        "ever_success_lost_count": 16,
+        "mean_depth_mm": 46.54524869401939,
+        "mean_xy_mm": 0.41890096812267075,
+        "mean_force_N": 2.72828181477574,
+        "peak_force_p95_N": 18.457248592376708,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.6951833364851188,
+        "never_success_count": 10
+      },
+      "P1G1": {
+        "ever_success_lost_count": 19,
+        "mean_depth_mm": 46.57192302208083,
+        "mean_xy_mm": 0.42183704885469336,
+        "mean_force_N": 2.8010533524832377,
+        "peak_force_p95_N": 17.717387866973876,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.7261855896235012,
+        "never_success_count": 8
+      }
+    }
+  },
+  {
+    "clearance_mm": 1.0,
+    "error_mm": 0.5,
+    "rho": 1.0,
+    "per_training_seed_success": [
+      [
+        0.996875,
+        0.996875,
+        0.9765625,
+        0.996875
+      ],
+      [
+        0.990625,
+        0.996875,
+        0.984375,
+        0.984375
+      ],
+      [
+        1.0,
+        0.9921875,
+        0.99375,
+        0.9734375
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9958333333333333,
+        0.9953125,
+        0.9848958333333333,
+        0.9848958333333333,
+        -0.0005208333333333333,
+        -0.0109375,
+        0.0,
+        -0.010416666666666666,
+        0.0005208333333333333
+      ],
+      "ci95": [
+        [
+          0.9880208333333333,
+          0.9880208333333333,
+          0.9713541666666666,
+          0.9677083333333333,
+          -0.009375,
+          -0.025,
+          -0.024479166666666666,
+          -0.026041666666666668,
+          -0.022395833333333334
+        ],
+        [
+          1.0,
+          1.0,
+          0.9953125,
+          0.996875,
+          0.009375,
+          0.0005208333333333333,
+          0.021875,
+          0.0015625,
+          0.021875
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 1,
+        "mean_depth_mm": 46.67565101990476,
+        "mean_xy_mm": 0.42808160127757827,
+        "mean_force_N": 3.1792821771775683,
+        "peak_force_p95_N": 17.758420467376705,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.7068828263958273,
+        "never_success_count": 7
+      },
+      "P1G0": {
+        "ever_success_lost_count": 3,
+        "mean_depth_mm": 46.70977773494087,
+        "mean_xy_mm": 0.4293580397425482,
+        "mean_force_N": 2.8960627669468524,
+        "peak_force_p95_N": 17.87992420196533,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.7216650191207914,
+        "never_success_count": 6
+      },
+      "P0G1": {
+        "ever_success_lost_count": 18,
+        "mean_depth_mm": 46.533603426845126,
+        "mean_xy_mm": 0.42036197729136876,
+        "mean_force_N": 2.7473067236598583,
+        "peak_force_p95_N": 18.36388425827026,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.6948490553716518,
+        "never_success_count": 11
+      },
+      "P1G1": {
+        "ever_success_lost_count": 23,
+        "mean_depth_mm": 46.64943900424987,
+        "mean_xy_mm": 0.4048241139637791,
+        "mean_force_N": 2.8045550134498627,
+        "peak_force_p95_N": 17.871064567565917,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.7468130521266065,
+        "never_success_count": 6
+      }
+    }
+  },
+  {
+    "clearance_mm": 1.0,
+    "error_mm": 1.0,
+    "rho": 2.0,
+    "per_training_seed_success": [
+      [
+        0.9921875,
+        0.99375,
+        0.9765625,
+        0.996875
+      ],
+      [
+        0.9859375,
+        0.990625,
+        0.984375,
+        0.975
+      ],
+      [
+        0.9953125,
+        0.9921875,
+        0.99375,
+        0.9796875
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9911458333333333,
+        0.9921875,
+        0.9848958333333333,
+        0.9838541666666667,
+        0.0010416666666666667,
+        -0.00625,
+        -0.0010416666666666667,
+        -0.008333333333333333,
+        -0.0020833333333333333
+      ],
+      "ci95": [
+        [
+          0.9828125,
+          0.9838541666666667,
+          0.9713541666666666,
+          0.9645833333333333,
+          -0.009375,
+          -0.019270833333333334,
+          -0.025,
+          -0.029166666666666667,
+          -0.028125
+        ],
+        [
+          0.9984375,
+          0.9984375,
+          0.9953125,
+          0.996875,
+          0.010416666666666666,
+          0.0046875,
+          0.021354166666666667,
+          0.005729166666666666,
+          0.020833333333333332
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 2,
+        "mean_depth_mm": 46.561422008865826,
+        "mean_xy_mm": 0.44682279311984985,
+        "mean_force_N": 3.254355671815574,
+        "peak_force_p95_N": 17.8746768951416,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.7478216188160454,
+        "never_success_count": 15
+      },
+      "P1G0": {
+        "ever_success_lost_count": 4,
+        "mean_depth_mm": 46.617883179957666,
+        "mean_xy_mm": 0.4367748274243392,
+        "mean_force_N": 2.980826529363791,
+        "peak_force_p95_N": 18.02871742248535,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.7841453731465926,
+        "never_success_count": 11
+      },
+      "P0G1": {
+        "ever_success_lost_count": 16,
+        "mean_depth_mm": 46.49905949869814,
+        "mean_xy_mm": 0.4215062162624387,
+        "mean_force_N": 2.8414417364945015,
+        "peak_force_p95_N": 18.67276430130005,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.767593175250945,
+        "never_success_count": 13
+      },
+      "P1G1": {
+        "ever_success_lost_count": 19,
+        "mean_depth_mm": 46.55602021375671,
+        "mean_xy_mm": 0.41257145492134367,
+        "mean_force_N": 2.8711401219945403,
+        "peak_force_p95_N": 17.72751598358154,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.8037038014369942,
+        "never_success_count": 12
+      }
+    }
+  },
+  {
+    "clearance_mm": 1.0,
+    "error_mm": 2.0,
+    "rho": 4.0,
+    "per_training_seed_success": [
+      [
+        0.978125,
+        0.990625,
+        0.9375,
+        0.9828125
+      ],
+      [
+        0.978125,
+        0.984375,
+        0.978125,
+        0.9734375
+      ],
+      [
+        0.978125,
+        0.9890625,
+        0.971875,
+        0.9515625
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.978125,
+        0.9880208333333333,
+        0.9625,
+        0.9692708333333333,
+        0.009895833333333333,
+        -0.015625,
+        0.0067708333333333336,
+        -0.01875,
+        -0.003125
+      ],
+      "ci95": [
+        [
+          0.965625,
+          0.9776041666666667,
+          0.9343619791666666,
+          0.9453125,
+          -0.004166666666666667,
+          -0.043763020833333326,
+          -0.0265625,
+          -0.04375,
+          -0.042708333333333334
+        ],
+        [
+          0.9890625,
+          0.9963541666666667,
+          0.9833333333333333,
+          0.9859375,
+          0.025520833333333333,
+          0.008333333333333333,
+          0.046875,
+          -0.0005208333333333333,
+          0.03697916666666667
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 3,
+        "mean_depth_mm": 46.09495529342288,
+        "mean_xy_mm": 0.5288333485805671,
+        "mean_force_N": 3.5961386422937114,
+        "peak_force_p95_N": 18.12055559158325,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.033918238586089,
+        "never_success_count": 39
+      },
+      "P1G0": {
+        "ever_success_lost_count": 4,
+        "mean_depth_mm": 46.4981094468385,
+        "mean_xy_mm": 0.4291126652674393,
+        "mean_force_N": 3.213236509542912,
+        "peak_force_p95_N": 18.472087669372556,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.018762165593323,
+        "never_success_count": 19
+      },
+      "P0G1": {
+        "ever_success_lost_count": 32,
+        "mean_depth_mm": 45.87818768923171,
+        "mean_xy_mm": 0.5134251739993564,
+        "mean_force_N": 3.2208838180017967,
+        "peak_force_p95_N": 19.112119483947755,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.0143263504543203,
+        "never_success_count": 40
+      },
+      "P1G1": {
+        "ever_success_lost_count": 29,
+        "mean_depth_mm": 46.21966457537686,
+        "mean_xy_mm": 0.4480785156123564,
+        "mean_force_N": 3.1672928555946176,
+        "peak_force_p95_N": 18.24872598648071,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.0880424420984967,
+        "never_success_count": 30
+      }
+    }
+  },
+  {
+    "clearance_mm": 1.0,
+    "error_mm": 3.0,
+    "rho": 6.0,
+    "per_training_seed_success": [
+      [
+        0.921875,
+        0.965625,
+        0.875,
+        0.959375
+      ],
+      [
+        0.959375,
+        0.9546875,
+        0.9375,
+        0.95625
+      ],
+      [
+        0.9328125,
+        0.94375,
+        0.9375,
+        0.9234375
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9380208333333333,
+        0.9546875,
+        0.9166666666666666,
+        0.9463541666666667,
+        0.016666666666666666,
+        -0.021354166666666667,
+        0.0296875,
+        -0.008333333333333333,
+        0.013020833333333334
+      ],
+      "ci95": [
+        [
+          0.909375,
+          0.9328125,
+          0.8692578125,
+          0.9166536458333333,
+          -0.013554687499999996,
+          -0.059375,
+          -0.0203125,
+          -0.03125,
+          -0.0359375
+        ],
+        [
+          0.9635546874999997,
+          0.9729166666666667,
+          0.9536588541666664,
+          0.9708333333333333,
+          0.04739583333333333,
+          0.0140625,
+          0.0859375,
+          0.0140625,
+          0.0578125
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 5,
+        "mean_depth_mm": 44.71655668846021,
+        "mean_xy_mm": 0.7523097936863602,
+        "mean_force_N": 4.214380541381737,
+        "peak_force_p95_N": 18.69288167953491,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.580767951006377,
+        "never_success_count": 114
+      },
+      "P1G0": {
+        "ever_success_lost_count": 8,
+        "mean_depth_mm": 45.5321169118785,
+        "mean_xy_mm": 0.561772662379667,
+        "mean_force_N": 3.735672458416472,
+        "peak_force_p95_N": 19.04518404006958,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.4158972890593318,
+        "never_success_count": 79
+      },
+      "P0G1": {
+        "ever_success_lost_count": 61,
+        "mean_depth_mm": 44.65664649032988,
+        "mean_xy_mm": 0.7349082875672744,
+        "mean_force_N": 3.853040305059403,
+        "peak_force_p95_N": 19.465204429626464,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.461028871236431,
+        "never_success_count": 99
+      },
+      "P1G1": {
+        "ever_success_lost_count": 32,
+        "mean_depth_mm": 45.46461137360893,
+        "mean_xy_mm": 0.5938544897138817,
+        "mean_force_N": 3.6740420347002023,
+        "peak_force_p95_N": 18.735117435455322,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.5221562592192814,
+        "never_success_count": 71
+      }
+    }
+  },
+  {
+    "clearance_mm": 1.0,
+    "error_mm": 4.0,
+    "rho": 8.0,
+    "per_training_seed_success": [
+      [
+        0.790625,
+        0.8953125,
+        0.75625,
+        0.871875
+      ],
+      [
+        0.85,
+        0.90625,
+        0.8609375,
+        0.8265625
+      ],
+      [
+        0.8375,
+        0.875,
+        0.8578125,
+        0.85625
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.8260416666666667,
+        0.8921875,
+        0.825,
+        0.8515625,
+        0.06614583333333333,
+        -0.0010416666666666667,
+        0.0265625,
+        -0.040625,
+        -0.03958333333333333
+      ],
+      "ci95": [
+        [
+          0.7817708333333333,
+          0.8640625,
+          0.7546875,
+          0.8124869791666667,
+          0.024479166666666666,
+          -0.046875,
+          -0.053125,
+          -0.0875,
+          -0.10833333333333334
+        ],
+        [
+          0.8677213541666664,
+          0.9192708333333334,
+          0.8807291666666667,
+          0.8890625,
+          0.11197916666666667,
+          0.04114583333333333,
+          0.11510416666666666,
+          0.007291666666666667,
+          0.033854166666666664
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 13,
+        "mean_depth_mm": 40.47048717329744,
+        "mean_xy_mm": 1.4147573641196232,
+        "mean_force_N": 5.205895963404328,
+        "peak_force_p95_N": 19.035795593261717,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.1536378597676418,
+        "never_success_count": 321
+      },
+      "P1G0": {
+        "ever_success_lost_count": 10,
+        "mean_depth_mm": 43.27532725583296,
+        "mean_xy_mm": 0.9403368804986675,
+        "mean_force_N": 4.5631271046586335,
+        "peak_force_p95_N": 19.848927307128907,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.0438384262199536,
+        "never_success_count": 197
+      },
+      "P0G1": {
+        "ever_success_lost_count": 73,
+        "mean_depth_mm": 41.188662775675766,
+        "mean_xy_mm": 1.2887129409866322,
+        "mean_force_N": 4.86098157435966,
+        "peak_force_p95_N": 19.552534770965575,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.0593443614715685,
+        "never_success_count": 263
+      },
+      "P1G1": {
+        "ever_success_lost_count": 51,
+        "mean_depth_mm": 41.92096455662977,
+        "mean_xy_mm": 1.207808372514781,
+        "mean_force_N": 4.631354322501768,
+        "peak_force_p95_N": 19.282712173461913,
+        "mean_first_success_seconds_conditional_on_ever_success": 3.094424842727566,
+        "never_success_count": 234
+      }
+    }
+  },
+  {
+    "clearance_mm": 2.0,
+    "error_mm": 0.0,
+    "rho": 0.0,
+    "per_training_seed_success": [
+      [
+        0.996875,
+        0.996875,
+        0.98125,
+        1.0
+      ],
+      [
+        0.9953125,
+        0.9953125,
+        0.98125,
+        0.978125
+      ],
+      [
+        0.9984375,
+        0.99375,
+        0.99375,
+        0.9671875
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.996875,
+        0.9953125,
+        0.9854166666666667,
+        0.9817708333333334,
+        -0.0015625,
+        -0.011458333333333333,
+        -0.0036458333333333334,
+        -0.013541666666666667,
+        -0.0020833333333333333
+      ],
+      "ci95": [
+        [
+          0.9916666666666667,
+          0.9890625,
+          0.9729166666666667,
+          0.9625,
+          -0.008333333333333333,
+          -0.0234375,
+          -0.0296875,
+          -0.03178385416666666,
+          -0.0265625
+        ],
+        [
+          1.0,
+          1.0,
+          0.9958333333333333,
+          1.0,
+          0.0046875,
+          -0.0015625,
+          0.0203125,
+          0.0015625,
+          0.020833333333333332
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 1,
+        "mean_depth_mm": 46.62998267061388,
+        "mean_xy_mm": 0.7563864995347558,
+        "mean_force_N": 2.909866940043867,
+        "peak_force_p95_N": 17.78707265853882,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.4427502963312613,
+        "never_success_count": 5
+      },
+      "P1G0": {
+        "ever_success_lost_count": 6,
+        "mean_depth_mm": 46.69013924431056,
+        "mean_xy_mm": 0.7748720974916523,
+        "mean_force_N": 2.669761595595628,
+        "peak_force_p95_N": 17.742181301116943,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.461867581666231,
+        "never_success_count": 3
+      },
+      "P0G1": {
+        "ever_success_lost_count": 24,
+        "mean_depth_mm": 46.65309954628659,
+        "mean_xy_mm": 0.7800254944861251,
+        "mean_force_N": 2.4859271646011623,
+        "peak_force_p95_N": 18.41719741821289,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.4635352245638913,
+        "never_success_count": 4
+      },
+      "P1G1": {
+        "ever_success_lost_count": 33,
+        "mean_depth_mm": 46.60020609735511,
+        "mean_xy_mm": 0.7739153137597062,
+        "mean_force_N": 2.576520934980363,
+        "peak_force_p95_N": 17.407562255859375,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.520299005744604,
+        "never_success_count": 2
+      }
+    }
+  },
+  {
+    "clearance_mm": 2.0,
+    "error_mm": 0.5,
+    "rho": 0.5,
+    "per_training_seed_success": [
+      [
+        1.0,
+        0.996875,
+        0.984375,
+        0.9984375
+      ],
+      [
+        0.9984375,
+        0.99375,
+        0.984375,
+        0.9875
+      ],
+      [
+        0.996875,
+        0.99375,
+        0.990625,
+        0.9546875
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9984375,
+        0.9947916666666666,
+        0.9864583333333333,
+        0.9802083333333333,
+        -0.0036458333333333334,
+        -0.011979166666666667,
+        -0.00625,
+        -0.014583333333333334,
+        -0.0026041666666666665
+      ],
+      "ci95": [
+        [
+          0.99375,
+          0.9880078125,
+          0.9734375,
+          0.9515494791666667,
+          -0.0109375,
+          -0.025,
+          -0.0375,
+          -0.0421875,
+          -0.034375
+        ],
+        [
+          1.0,
+          1.0,
+          0.9963541666666667,
+          0.9989583333333333,
+          0.0020833333333333333,
+          -0.0015625,
+          0.0203125,
+          0.005208333333333333,
+          0.025
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 1,
+        "mean_depth_mm": 46.68288839942155,
+        "mean_xy_mm": 0.7428880119116835,
+        "mean_force_N": 2.9347259062652786,
+        "peak_force_p95_N": 17.536378479003904,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.4734446401702972,
+        "never_success_count": 2
+      },
+      "P1G0": {
+        "ever_success_lost_count": 7,
+        "mean_depth_mm": 46.67817632046839,
+        "mean_xy_mm": 0.7831692465278669,
+        "mean_force_N": 2.684810934836666,
+        "peak_force_p95_N": 17.711670780181883,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.4673622783174352,
+        "never_success_count": 3
+      },
+      "P0G1": {
+        "ever_success_lost_count": 24,
+        "mean_depth_mm": 46.67700602634189,
+        "mean_xy_mm": 0.7796461483962958,
+        "mean_force_N": 2.5210861679787437,
+        "peak_force_p95_N": 18.73173589706421,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.4978103020516873,
+        "never_success_count": 2
+      },
+      "P1G1": {
+        "ever_success_lost_count": 35,
+        "mean_depth_mm": 46.59768296405673,
+        "mean_xy_mm": 0.7738693025577467,
+        "mean_force_N": 2.5943272973022733,
+        "peak_force_p95_N": 17.488191509246825,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.5307251760968332,
+        "never_success_count": 3
+      }
+    }
+  },
+  {
+    "clearance_mm": 2.0,
+    "error_mm": 1.0,
+    "rho": 1.0,
+    "per_training_seed_success": [
+      [
+        0.9984375,
+        0.9984375,
+        0.9796875,
+        1.0
+      ],
+      [
+        0.996875,
+        0.996875,
+        0.984375,
+        0.984375
+      ],
+      [
+        0.996875,
+        0.9984375,
+        0.9953125,
+        0.965625
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9973958333333334,
+        0.9979166666666667,
+        0.9864583333333333,
+        0.9833333333333333,
+        0.0005208333333333333,
+        -0.0109375,
+        -0.003125,
+        -0.014583333333333334,
+        -0.0036458333333333334
+      ],
+      "ci95": [
+        [
+          0.9927083333333333,
+          0.9932291666666667,
+          0.9734375,
+          0.9609375,
+          -0.0046875,
+          -0.023958333333333335,
+          -0.0328125,
+          -0.03697916666666667,
+          -0.034375
+        ],
+        [
+          1.0,
+          1.0,
+          0.996875,
+          1.0,
+          0.00625,
+          0.0,
+          0.021875,
+          0.0015625,
+          0.021875
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 1,
+        "mean_depth_mm": 46.648474307342745,
+        "mean_xy_mm": 0.7453880151672365,
+        "mean_force_N": 2.9879999734771747,
+        "peak_force_p95_N": 17.873554611206053,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.5026792756326512,
+        "never_success_count": 4
+      },
+      "P1G0": {
+        "ever_success_lost_count": 3,
+        "mean_depth_mm": 46.70043348645171,
+        "mean_xy_mm": 0.7488149540089731,
+        "mean_force_N": 2.7289709966940183,
+        "peak_force_p95_N": 17.967846393585205,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.5187424838139154,
+        "never_success_count": 1
+      },
+      "P0G1": {
+        "ever_success_lost_count": 21,
+        "mean_depth_mm": 46.58941940870136,
+        "mean_xy_mm": 0.7884305856156478,
+        "mean_force_N": 2.582167263329029,
+        "peak_force_p95_N": 18.668175220489502,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.5315579616058588,
+        "never_success_count": 5
+      },
+      "P1G1": {
+        "ever_success_lost_count": 30,
+        "mean_depth_mm": 46.58430529719529,
+        "mean_xy_mm": 0.7652002387961451,
+        "mean_force_N": 2.625486246799119,
+        "peak_force_p95_N": 17.79482650756836,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.5745569166413687,
+        "never_success_count": 2
+      }
+    }
+  },
+  {
+    "clearance_mm": 2.0,
+    "error_mm": 2.0,
+    "rho": 2.0,
+    "per_training_seed_success": [
+      [
+        0.9890625,
+        0.996875,
+        0.9515625,
+        0.996875
+      ],
+      [
+        0.990625,
+        0.9890625,
+        0.9765625,
+        0.9828125
+      ],
+      [
+        0.99375,
+        0.9921875,
+        0.9796875,
+        0.95625
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9911458333333333,
+        0.9927083333333333,
+        0.9692708333333333,
+        0.9786458333333333,
+        0.0015625,
+        -0.021875,
+        0.009375,
+        -0.0140625,
+        0.0078125
+      ],
+      "ci95": [
+        [
+          0.9828125,
+          0.9854166666666667,
+          0.9463541666666667,
+          0.9505078125,
+          -0.0078125,
+          -0.044270833333333336,
+          -0.025,
+          -0.04114583333333333,
+          -0.025
+        ],
+        [
+          0.9984375,
+          0.9984375,
+          0.9864583333333333,
+          0.9973958333333334,
+          0.011458333333333333,
+          -0.005208333333333333,
+          0.04636718749999981,
+          0.0046875,
+          0.04010416666666667
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 3,
+        "mean_depth_mm": 46.43608474095041,
+        "mean_xy_mm": 0.7955749663655828,
+        "mean_force_N": 3.236736037271718,
+        "peak_force_p95_N": 17.934128189086913,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.7060161836500058,
+        "never_success_count": 14
+      },
+      "P1G0": {
+        "ever_success_lost_count": 5,
+        "mean_depth_mm": 46.57433617006367,
+        "mean_xy_mm": 0.7750322439193269,
+        "mean_force_N": 2.927494237292558,
+        "peak_force_p95_N": 18.51033983230591,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.6723182509857468,
+        "never_success_count": 9
+      },
+      "P0G1": {
+        "ever_success_lost_count": 40,
+        "mean_depth_mm": 46.280749033515654,
+        "mean_xy_mm": 0.8078085682645527,
+        "mean_force_N": 2.8853854660565657,
+        "peak_force_p95_N": 18.938789749145506,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.7252674986035619,
+        "never_success_count": 19
+      },
+      "P1G1": {
+        "ever_success_lost_count": 37,
+        "mean_depth_mm": 46.53950531889374,
+        "mean_xy_mm": 0.7696607670633663,
+        "mean_force_N": 2.8123288276217258,
+        "peak_force_p95_N": 18.08188667297363,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.7650662053975283,
+        "never_success_count": 4
+      }
+    }
+  },
+  {
+    "clearance_mm": 2.0,
+    "error_mm": 3.0,
+    "rho": 3.0,
+    "per_training_seed_success": [
+      [
+        0.953125,
+        0.9859375,
+        0.903125,
+        0.984375
+      ],
+      [
+        0.978125,
+        0.9703125,
+        0.9625,
+        0.9578125
+      ],
+      [
+        0.984375,
+        0.978125,
+        0.9578125,
+        0.9296875
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.971875,
+        0.978125,
+        0.9411458333333333,
+        0.9572916666666667,
+        0.00625,
+        -0.030729166666666665,
+        0.016145833333333335,
+        -0.020833333333333332,
+        0.009895833333333333
+      ],
+      "ci95": [
+        [
+          0.9473958333333333,
+          0.9635416666666666,
+          0.896875,
+          0.9260416666666667,
+          -0.015625,
+          -0.0625,
+          -0.0359375,
+          -0.05,
+          -0.03125
+        ],
+        [
+          0.9901041666666667,
+          0.990625,
+          0.9744791666666667,
+          0.9854166666666667,
+          0.034375,
+          -0.0067708333333333336,
+          0.08125,
+          0.0046875,
+          0.0578125
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 4,
+        "mean_depth_mm": 45.6420791199586,
+        "mean_xy_mm": 0.9390612779100138,
+        "mean_force_N": 3.730613212722043,
+        "peak_force_p95_N": 18.54838228225708,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.0906239954226793,
+        "never_success_count": 50
+      },
+      "P1G0": {
+        "ever_success_lost_count": 11,
+        "mean_depth_mm": 46.2168792107453,
+        "mean_xy_mm": 0.8158623907059829,
+        "mean_force_N": 3.317833435287078,
+        "peak_force_p95_N": 19.338731956481933,
+        "mean_first_success_seconds_conditional_on_ever_success": 1.9760721043785645,
+        "never_success_count": 31
+      },
+      "P0G1": {
+        "ever_success_lost_count": 67,
+        "mean_depth_mm": 45.640922452245526,
+        "mean_xy_mm": 0.9047142229074249,
+        "mean_force_N": 3.348821287214135,
+        "peak_force_p95_N": 19.317439651489256,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.045926827185945,
+        "never_success_count": 46
+      },
+      "P1G1": {
+        "ever_success_lost_count": 58,
+        "mean_depth_mm": 46.152010113776974,
+        "mean_xy_mm": 0.8211124962495356,
+        "mean_force_N": 3.205458774906583,
+        "peak_force_p95_N": 18.537414264678954,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.1310127752239696,
+        "never_success_count": 24
+      }
+    }
+  },
+  {
+    "clearance_mm": 2.0,
+    "error_mm": 4.0,
+    "rho": 4.0,
+    "per_training_seed_success": [
+      [
+        0.875,
+        0.946875,
+        0.803125,
+        0.934375
+      ],
+      [
+        0.925,
+        0.9484375,
+        0.9140625,
+        0.9109375
+      ],
+      [
+        0.93125,
+        0.9421875,
+        0.89375,
+        0.8828125
+      ]
+    ],
+    "columns": [
+      "P0G0",
+      "P1G0",
+      "P0G1",
+      "P1G1",
+      "S10-S00",
+      "S01-S00",
+      "S11-S01",
+      "S11-S10",
+      "interaction"
+    ],
+    "statistics": {
+      "mean": [
+        0.9104166666666667,
+        0.9458333333333333,
+        0.8703125,
+        0.909375,
+        0.035416666666666666,
+        -0.04010416666666667,
+        0.0390625,
+        -0.036458333333333336,
+        0.0036458333333333334
+      ],
+      "ci95": [
+        [
+          0.8692708333333333,
+          0.9265625,
+          0.8026041666666667,
+          0.8692578125,
+          0.0005208333333333333,
+          -0.08541666666666667,
+          -0.03802083333333333,
+          -0.075,
+          -0.0578125
+        ],
+        [
+          0.9411458333333333,
+          0.9630208333333333,
+          0.9265625,
+          0.9421875,
+          0.07916666666666666,
+          -0.0010416666666666667,
+          0.12657552083333315,
+          -0.0026041666666666665,
+          0.065625
+        ]
+      ]
+    },
+    "diagnostics": {
+      "P0G0": {
+        "ever_success_lost_count": 14,
+        "mean_depth_mm": 43.3184181592272,
+        "mean_xy_mm": 1.334757930905539,
+        "mean_force_N": 4.523344529202829,
+        "peak_force_p95_N": 19.32089834213257,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.6477867515755564,
+        "never_success_count": 158
+      },
+      "P1G0": {
+        "ever_success_lost_count": 15,
+        "mean_depth_mm": 44.898975072040535,
+        "mean_xy_mm": 1.0242081687617126,
+        "mean_force_N": 3.9615424167054396,
+        "peak_force_p95_N": 20.232605457305905,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.4638632276812125,
+        "never_success_count": 89
+      },
+      "P0G1": {
+        "ever_success_lost_count": 93,
+        "mean_depth_mm": 43.324893391885176,
+        "mean_xy_mm": 1.260151563382313,
+        "mean_force_N": 4.213464919881274,
+        "peak_force_p95_N": 19.907662105560302,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.56791396925644,
+        "never_success_count": 156
+      },
+      "P1G1": {
+        "ever_success_lost_count": 62,
+        "mean_depth_mm": 44.23110497300513,
+        "mean_xy_mm": 1.2116438169674855,
+        "mean_force_N": 3.9448560040987406,
+        "peak_force_p95_N": 19.15015106201172,
+        "mean_first_success_seconds_conditional_on_ever_success": 2.6530606143044686,
+        "never_success_count": 112
+      }
+    }
+  }
+]

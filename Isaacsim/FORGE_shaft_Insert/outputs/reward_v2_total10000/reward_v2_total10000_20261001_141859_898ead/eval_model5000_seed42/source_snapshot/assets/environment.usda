@@ -1,0 +1,19 @@
+#usda 1.0
+(
+    defaultPrim = "Environment"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Environment" (
+    prepend references = @/home/masais/Xinyu/USD_files/shaft_insertion.usd@</Environment>
+)
+{
+    # Isaac Lab owns the single global physics scene.  The source environment
+    # carries a nested one that cannot be cloned across vectorized envs.
+    over "physicsScene" (
+        active = false
+    )
+    {
+    }
+}

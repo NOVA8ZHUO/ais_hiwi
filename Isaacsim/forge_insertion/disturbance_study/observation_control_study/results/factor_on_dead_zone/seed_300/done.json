@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "condition": "factor_on_dead_zone",
+    "active": [
+      "dead_zone"
+    ],
+    "seed": 300,
+    "num_envs": 128,
+    "model": "zero",
+    "checkpoint_sha256": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "dd77508e5259e4ceb71a1020b72a1d2f8f926ae99e692df2e00015e1d616c0e4"
+  },
+  "seconds": 95.77755596721545,
+  "evaluation_sha256": "6f9496443d1bec5b6ba65a7ed79bbb1a3b753928310904c9ec3eb8656f708ad0"
+}

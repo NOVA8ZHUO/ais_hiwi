@@ -1,0 +1,145 @@
+{
+  "config_differences": [
+    {
+      "field": "task.contact_penalty_threshold_range",
+      "baseline": "[5.0, 10.0]",
+      "zero": "[7.5, 7.5]"
+    },
+    {
+      "field": "task.hand_init_orn_noise",
+      "baseline": "[0.0, 0.0, 0.785]",
+      "zero": "[0.0, 0.0, 0.0]"
+    },
+    {
+      "field": "task.held_asset_pos_noise",
+      "baseline": "[0.003, 0.0, 0.003]",
+      "zero": "[0.0, 0.0, 0.0]"
+    },
+    {
+      "field": "task.hand_init_pos_noise",
+      "baseline": "[0.02, 0.02, 0.01]",
+      "zero": "[0.0, 0.0, 0.0]"
+    },
+    {
+      "field": "task.fixed_asset_init_orn_range_deg",
+      "baseline": "360.0",
+      "zero": "0.0"
+    },
+    {
+      "field": "task.fixed_asset_init_pos_noise",
+      "baseline": "[0.05, 0.05, 0.05]",
+      "zero": "[0.0, 0.0, 0.0]"
+    },
+    {
+      "field": "ctrl.pos_threshold_noise_level",
+      "baseline": "[0.25, 0.25, 0.25]",
+      "zero": "[0.0, 0.0, 0.0]"
+    },
+    {
+      "field": "ctrl.ema_factor_range",
+      "baseline": "[0.025, 0.1]",
+      "zero": "[0.0625, 0.0625]"
+    },
+    {
+      "field": "ctrl.rot_threshold_noise_level",
+      "baseline": "[0.29, 0.29, 0.29]",
+      "zero": "[0.0, 0.0, 0.0]"
+    },
+    {
+      "field": "ctrl.task_prop_gains_noise_level",
+      "baseline": "[0.41, 0.41, 0.41, 0.41, 0.41, 0.41]",
+      "zero": "[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
+    },
+    {
+      "field": "events.object_scale_mass.params.mass_distribution_params",
+      "baseline": "(-0.005, 0.005)",
+      "zero": "(0.0, 0.0)"
+    },
+    {
+      "field": "events.dead_zone_thresholds",
+      "baseline": "{'func': 'isaaclab_tasks.direct.forge.forge_events:randomize_dead_zone', 'params': {}, 'mode': 'interval', 'interval_range_s': (2.0, 2.0), 'is_global_time': False, 'min_step_count_between_reset': 0}",
+      "zero": "None"
+    },
+    {
+      "field": "events.fixed_physics_material.params.static_friction_range",
+      "baseline": "(0.25, 1.25)",
+      "zero": "(0.75, 0.75)"
+    },
+    {
+      "field": "obs_rand.ft_force",
+      "baseline": "1.0",
+      "zero": "0.0"
+    },
+    {
+      "field": "obs_rand.fingertip_rot_deg",
+      "baseline": "0.1",
+      "zero": "0.0"
+    },
+    {
+      "field": "obs_rand.fixed_asset_pos",
+      "baseline": "[0.001, 0.001, 0.001]",
+      "zero": "[0.0, 0.0, 0.0]"
+    },
+    {
+      "field": "obs_rand.fingertip_pos",
+      "baseline": "0.00025",
+      "zero": "0.0"
+    }
+  ],
+  "ppo_runtime_differences": [
+    {
+      "field": "params.config.train_dir",
+      "baseline": "None",
+      "zero": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train/logs/rl_games/Forge"
+    }
+  ],
+  "reference_run": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train",
+  "reset_shaft_tip_max_difference_m": 0.00015079975128173828,
+  "reset_shaft_tip_positions_m": [
+    [
+      [
+        0.5997735261917114,
+        4.583597183227539e-05,
+        0.11177262663841248
+      ],
+      [
+        0.5997823476791382,
+        3.981590270996094e-05,
+        0.1117684543132782
+      ],
+      [
+        0.5997817516326904,
+        4.017353057861328e-05,
+        0.11176873743534088
+      ],
+      [
+        0.5997824668884277,
+        4.3272972106933594e-05,
+        0.1117689460515976
+      ]
+    ],
+    [
+      [
+        0.5998239517211914,
+        7.671117782592773e-05,
+        0.11191895604133606
+      ],
+      [
+        0.599824070930481,
+        7.653236389160156e-05,
+        0.11191902309656143
+      ],
+      [
+        0.5998244285583496,
+        7.510185241699219e-05,
+        0.11191953718662262
+      ],
+      [
+        0.5998232364654541,
+        7.665157318115234e-05,
+        0.11191907525062561
+      ]
+    ]
+  ],
+  "runtime": "two resets and 35 steps each passed; interval >2s tested"
+}

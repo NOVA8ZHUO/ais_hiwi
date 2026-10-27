@@ -1,0 +1,376 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/apps/isaaclab.python.headless.kit
+Loading user config located at: '/home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20261021_065050.log
+2026-10-21T04:50:51Z [79ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-10-21T04:50:51Z [397ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-10-21T04:50:51Z [404ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.178.04    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 4090          | Yes: 0 |     | 24564   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2684      | 9a8e4354.. |
+|     |                                  |        |     |            | 1         |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 6.8.0-111-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: 13th Gen Intel(R) Core(TM) i7-13700KF
+| Bare Metal Cores: 16 | Bare Metal Logical Cores: 32
+| Available Cores:  24 
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 64158 | Free Memory: 48447
+| Total Page/Swap (MB): 31249 | Free Page/Swap: 12685
+|---------------------------------------------------------------------------------------------|
+2026-10-21T04:50:55Z [4,925ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-10-21T04:50:55Z [4,938ms] [Warning] [gpu.foundation.plugin] PCIe link generation current (1) and maximum (4) for device 0 don't match.
+2026-10-21T04:50:55Z [4,938ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[INFO]: Parsing configuration from: pg_task.config:P0G0Cfg
+[INFO]: Parsing configuration from: /home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab_tasks/isaaclab_tasks/direct/forge/agents/rl_games_ppo_cfg.yaml
+[INFO] Logging experiment in directory: /home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge
+Exact experiment name requested from command line: /home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test
+[2026-10-21 06:50:58,630][__main__][WARNING] - IO descriptors are only supported for manager based RL environments. No IO descriptors will be exported.
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-10-21_06-50-58.log[0m
+[36m======================================================================================[0m
+
+[33m06:50:58 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 1
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.008333333333333333
+	Environment step-size : 0.06666666666666667
+[33m06:50:58 [direct_rl_env.py] WARNING: The render interval (1) is smaller than the decimation (8). Multiple render calls will happen for each environment step.If this is not intended, set the render interval to be equal to the decimation.[0m
+[INFO]: Time taken for scene creation : 1.738058 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 128
+	Environment spacing   : 2.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : ['/World/ground']
+	Replicate physics     : False
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 1.380568 seconds
+[INFO] Event Manager:  <EventManager> contains 3 active terms.
++------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++---------+--------------------------+
+|  Index  | Name                     |
++---------+--------------------------+
+|    0    | object_scale_mass        |
++---------+--------------------------+
++----------------------------------------+
+| Active Event Terms in Mode: 'startup'  |
++---------+------------------------------+
+|  Index  | Name                         |
++---------+------------------------------+
+|    0    | held_physics_material        |
+|    1    | fixed_physics_material       |
+|    2    | robot_physics_material       |
++---------+------------------------------+
++--------------------------------------------------------+
+|         Active Event Terms in Mode: 'interval'         |
++-------+----------------------+-------------------------+
+| Index | Name                 | Interval time range (s) |
++-------+----------------------+-------------------------+
+|   0   | dead_zone_thresholds |        (2.0, 2.0)       |
++-------+----------------------+-------------------------+
+
+[INFO]: Completed setting up the environment...
+self.seed = 1
+Started to train
+Exact experiment name requested from command line: test
+Adding Central Value Network
+seq_length: 128
+current training device: cuda:0
+/home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/rl_games/common/a2c_common.py:261: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = torch.cuda.amp.GradScaler(enabled=self.mixed_precision)
+build mlp: 1024
+RunningMeanStd:  (1,)
+RunningMeanStd:  (24,)
+build mlp: 1024
+RunningMeanStd:  (1,)
+RunningMeanStd:  (61,)
+/home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/rl_games/algos_torch/a2c_continuous.py:130: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=self.mixed_precision):
+fps step: 258 fps step and policy inference: 255 fps total: 230 epoch: 1/200 frames: 0
+fps step: 247 fps step and policy inference: 245 fps total: 219 epoch: 2/200 frames: 16384
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 3/200 frames: 32768
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 4/200 frames: 49152
+fps step: 263 fps step and policy inference: 260 fps total: 231 epoch: 5/200 frames: 65536
+fps step: 449 fps step and policy inference: 445 fps total: 368 epoch: 6/200 frames: 81920
+fps step: 268 fps step and policy inference: 265 fps total: 236 epoch: 7/200 frames: 98304
+fps step: 258 fps step and policy inference: 255 fps total: 231 epoch: 8/200 frames: 114688
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 9/200 frames: 131072
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 10/200 frames: 147456
+saving next best rewards:  [49.275497]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 11/200 frames: 163840
+saving next best rewards:  [104.50703]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 12/200 frames: 180224
+saving next best rewards:  [129.52484]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 13/200 frames: 196608
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 14/200 frames: 212992
+saving next best rewards:  [132.5557]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 258 fps step and policy inference: 255 fps total: 231 epoch: 15/200 frames: 229376
+fps step: 245 fps step and policy inference: 242 fps total: 217 epoch: 16/200 frames: 245760
+fps step: 245 fps step and policy inference: 242 fps total: 217 epoch: 17/200 frames: 262144
+saving next best rewards:  [155.65274]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 18/200 frames: 278528
+saving next best rewards:  [177.8068]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 19/200 frames: 294912
+saving next best rewards:  [181.77486]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 20/200 frames: 311296
+fps step: 244 fps step and policy inference: 242 fps total: 217 epoch: 21/200 frames: 327680
+fps step: 257 fps step and policy inference: 255 fps total: 230 epoch: 22/200 frames: 344064
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 23/200 frames: 360448
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 24/200 frames: 376832
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 25/200 frames: 393216
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 26/200 frames: 409600
+saving next best rewards:  [184.97533]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 27/200 frames: 425984
+saving next best rewards:  [216.33374]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 247 fps step and policy inference: 244 fps total: 220 epoch: 28/200 frames: 442368
+fps step: 257 fps step and policy inference: 255 fps total: 231 epoch: 29/200 frames: 458752
+fps step: 248 fps step and policy inference: 245 fps total: 220 epoch: 30/200 frames: 475136
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 31/200 frames: 491520
+saving next best rewards:  [222.96024]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 32/200 frames: 507904
+saving next best rewards:  [243.87126]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 33/200 frames: 524288
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 34/200 frames: 540672
+fps step: 244 fps step and policy inference: 242 fps total: 217 epoch: 35/200 frames: 557056
+fps step: 257 fps step and policy inference: 255 fps total: 230 epoch: 36/200 frames: 573440
+fps step: 271 fps step and policy inference: 269 fps total: 251 epoch: 37/200 frames: 589824
+fps step: 374 fps step and policy inference: 370 fps total: 314 epoch: 38/200 frames: 606208
+fps step: 254 fps step and policy inference: 252 fps total: 225 epoch: 39/200 frames: 622592
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 40/200 frames: 638976
+saving next best rewards:  [252.91151]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 41/200 frames: 655360
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 42/200 frames: 671744
+saving next best rewards:  [272.54938]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 257 fps step and policy inference: 255 fps total: 230 epoch: 43/200 frames: 688128
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 44/200 frames: 704512
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 45/200 frames: 720896
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 46/200 frames: 737280
+fps step: 245 fps step and policy inference: 242 fps total: 217 epoch: 47/200 frames: 753664
+saving next best rewards:  [281.02106]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 244 fps step and policy inference: 242 fps total: 217 epoch: 48/200 frames: 770048
+saving next best rewards:  [291.503]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 49/200 frames: 786432
+fps step: 257 fps step and policy inference: 254 fps total: 230 epoch: 50/200 frames: 802816
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 51/200 frames: 819200
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 52/200 frames: 835584
+saving next best rewards:  [300.90952]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 53/200 frames: 851968
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 54/200 frames: 868352
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 55/200 frames: 884736
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 56/200 frames: 901120
+fps step: 257 fps step and policy inference: 255 fps total: 230 epoch: 57/200 frames: 917504
+fps step: 244 fps step and policy inference: 242 fps total: 218 epoch: 58/200 frames: 933888
+saving next best rewards:  [303.073]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 59/200 frames: 950272
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 60/200 frames: 966656
+saving next best rewards:  [310.32166]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 247 fps step and policy inference: 244 fps total: 219 epoch: 61/200 frames: 983040
+saving next best rewards:  [327.49274]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 62/200 frames: 999424
+fps step: 244 fps step and policy inference: 242 fps total: 217 epoch: 63/200 frames: 1015808
+fps step: 256 fps step and policy inference: 253 fps total: 229 epoch: 64/200 frames: 1032192
+fps step: 245 fps step and policy inference: 242 fps total: 218 epoch: 65/200 frames: 1048576
+fps step: 244 fps step and policy inference: 242 fps total: 217 epoch: 66/200 frames: 1064960
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 67/200 frames: 1081344
+fps step: 244 fps step and policy inference: 242 fps total: 217 epoch: 68/200 frames: 1097728
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 69/200 frames: 1114112
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 70/200 frames: 1130496
+fps step: 258 fps step and policy inference: 256 fps total: 231 epoch: 71/200 frames: 1146880
+fps step: 264 fps step and policy inference: 262 fps total: 245 epoch: 72/200 frames: 1163264
+fps step: 400 fps step and policy inference: 396 fps total: 334 epoch: 73/200 frames: 1179648
+fps step: 260 fps step and policy inference: 257 fps total: 229 epoch: 74/200 frames: 1196032
+saving next best rewards:  [332.71756]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 247 fps step and policy inference: 245 fps total: 219 epoch: 75/200 frames: 1212416
+fps step: 247 fps step and policy inference: 245 fps total: 220 epoch: 76/200 frames: 1228800
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 77/200 frames: 1245184
+saving next best rewards:  [334.74023]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 219 epoch: 78/200 frames: 1261568
+saving next best rewards:  [337.20398]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 257 fps step and policy inference: 255 fps total: 230 epoch: 79/200 frames: 1277952
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 80/200 frames: 1294336
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 81/200 frames: 1310720
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 82/200 frames: 1327104
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 83/200 frames: 1343488
+fps step: 245 fps step and policy inference: 242 fps total: 217 epoch: 84/200 frames: 1359872
+fps step: 246 fps step and policy inference: 243 fps total: 219 epoch: 85/200 frames: 1376256
+fps step: 258 fps step and policy inference: 255 fps total: 231 epoch: 86/200 frames: 1392640
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 87/200 frames: 1409024
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 88/200 frames: 1425408
+saving next best rewards:  [337.6432]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 247 fps step and policy inference: 244 fps total: 218 epoch: 89/200 frames: 1441792
+fps step: 246 fps step and policy inference: 244 fps total: 219 epoch: 90/200 frames: 1458176
+fps step: 246 fps step and policy inference: 244 fps total: 219 epoch: 91/200 frames: 1474560
+saving next best rewards:  [346.86288]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 246 fps step and policy inference: 244 fps total: 219 epoch: 92/200 frames: 1490944
+fps step: 258 fps step and policy inference: 255 fps total: 231 epoch: 93/200 frames: 1507328
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 94/200 frames: 1523712
+fps step: 247 fps step and policy inference: 245 fps total: 219 epoch: 95/200 frames: 1540096
+fps step: 248 fps step and policy inference: 245 fps total: 219 epoch: 96/200 frames: 1556480
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 97/200 frames: 1572864
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 98/200 frames: 1589248
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 99/200 frames: 1605632
+fps step: 258 fps step and policy inference: 255 fps total: 231 epoch: 100/200 frames: 1622016
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/last_Forge_ep_100_rew_344.85547.pth'
+fps step: 244 fps step and policy inference: 242 fps total: 217 epoch: 101/200 frames: 1638400
+saving next best rewards:  [347.63586]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 102/200 frames: 1654784
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 103/200 frames: 1671168
+saving next best rewards:  [348.36194]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 247 fps step and policy inference: 245 fps total: 219 epoch: 104/200 frames: 1687552
+fps step: 246 fps step and policy inference: 244 fps total: 219 epoch: 105/200 frames: 1703936
+saving next best rewards:  [349.74274]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 248 fps step and policy inference: 245 fps total: 220 epoch: 106/200 frames: 1720320
+fps step: 304 fps step and policy inference: 301 fps total: 279 epoch: 107/200 frames: 1736704
+fps step: 343 fps step and policy inference: 339 fps total: 293 epoch: 108/200 frames: 1753088
+fps step: 254 fps step and policy inference: 252 fps total: 224 epoch: 109/200 frames: 1769472
+fps step: 246 fps step and policy inference: 244 fps total: 219 epoch: 110/200 frames: 1785856
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 111/200 frames: 1802240
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 112/200 frames: 1818624
+fps step: 246 fps step and policy inference: 244 fps total: 219 epoch: 113/200 frames: 1835008
+fps step: 258 fps step and policy inference: 256 fps total: 231 epoch: 114/200 frames: 1851392
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 115/200 frames: 1867776
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 116/200 frames: 1884160
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 117/200 frames: 1900544
+saving next best rewards:  [355.56754]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 118/200 frames: 1916928
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 119/200 frames: 1933312
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 120/200 frames: 1949696
+fps step: 257 fps step and policy inference: 254 fps total: 230 epoch: 121/200 frames: 1966080
+fps step: 246 fps step and policy inference: 244 fps total: 219 epoch: 122/200 frames: 1982464
+fps step: 248 fps step and policy inference: 246 fps total: 220 epoch: 123/200 frames: 1998848
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 124/200 frames: 2015232
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 125/200 frames: 2031616
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 126/200 frames: 2048000
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 127/200 frames: 2064384
+fps step: 258 fps step and policy inference: 255 fps total: 231 epoch: 128/200 frames: 2080768
+fps step: 246 fps step and policy inference: 244 fps total: 219 epoch: 129/200 frames: 2097152
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 130/200 frames: 2113536
+saving next best rewards:  [356.28925]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 131/200 frames: 2129920
+fps step: 248 fps step and policy inference: 245 fps total: 220 epoch: 132/200 frames: 2146304
+saving next best rewards:  [359.73285]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 279 fps step and policy inference: 277 fps total: 257 epoch: 133/200 frames: 2162688
+fps step: 367 fps step and policy inference: 363 fps total: 310 epoch: 134/200 frames: 2179072
+fps step: 267 fps step and policy inference: 264 fps total: 238 epoch: 135/200 frames: 2195456
+fps step: 246 fps step and policy inference: 244 fps total: 219 epoch: 136/200 frames: 2211840
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 137/200 frames: 2228224
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 138/200 frames: 2244608
+saving next best rewards:  [360.18393]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 139/200 frames: 2260992
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 140/200 frames: 2277376
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 141/200 frames: 2293760
+fps step: 258 fps step and policy inference: 256 fps total: 231 epoch: 142/200 frames: 2310144
+fps step: 246 fps step and policy inference: 244 fps total: 219 epoch: 143/200 frames: 2326528
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 144/200 frames: 2342912
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 145/200 frames: 2359296
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 146/200 frames: 2375680
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 147/200 frames: 2392064
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 148/200 frames: 2408448
+fps step: 246 fps step and policy inference: 244 fps total: 222 epoch: 149/200 frames: 2424832
+fps step: 258 fps step and policy inference: 256 fps total: 231 epoch: 150/200 frames: 2441216
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 151/200 frames: 2457600
+fps step: 247 fps step and policy inference: 245 fps total: 219 epoch: 152/200 frames: 2473984
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 153/200 frames: 2490368
+fps step: 246 fps step and policy inference: 244 fps total: 219 epoch: 154/200 frames: 2506752
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 155/200 frames: 2523136
+fps step: 247 fps step and policy inference: 245 fps total: 220 epoch: 156/200 frames: 2539520
+fps step: 258 fps step and policy inference: 255 fps total: 231 epoch: 157/200 frames: 2555904
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 158/200 frames: 2572288
+fps step: 263 fps step and policy inference: 261 fps total: 232 epoch: 159/200 frames: 2588672
+fps step: 463 fps step and policy inference: 459 fps total: 376 epoch: 160/200 frames: 2605056
+fps step: 259 fps step and policy inference: 256 fps total: 228 epoch: 161/200 frames: 2621440
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 162/200 frames: 2637824
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 163/200 frames: 2654208
+fps step: 258 fps step and policy inference: 255 fps total: 231 epoch: 164/200 frames: 2670592
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 165/200 frames: 2686976
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 166/200 frames: 2703360
+fps step: 245 fps step and policy inference: 242 fps total: 217 epoch: 167/200 frames: 2719744
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 168/200 frames: 2736128
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 169/200 frames: 2752512
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 170/200 frames: 2768896
+fps step: 257 fps step and policy inference: 255 fps total: 230 epoch: 171/200 frames: 2785280
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 172/200 frames: 2801664
+fps step: 245 fps step and policy inference: 242 fps total: 217 epoch: 173/200 frames: 2818048
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 174/200 frames: 2834432
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 175/200 frames: 2850816
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 176/200 frames: 2867200
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 177/200 frames: 2883584
+fps step: 257 fps step and policy inference: 255 fps total: 230 epoch: 178/200 frames: 2899968
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 179/200 frames: 2916352
+saving next best rewards:  [362.6721]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 247 fps step and policy inference: 245 fps total: 219 epoch: 180/200 frames: 2932736
+fps step: 244 fps step and policy inference: 242 fps total: 217 epoch: 181/200 frames: 2949120
+fps step: 247 fps step and policy inference: 245 fps total: 219 epoch: 182/200 frames: 2965504
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 183/200 frames: 2981888
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 184/200 frames: 2998272
+fps step: 256 fps step and policy inference: 254 fps total: 229 epoch: 185/200 frames: 3014656
+fps step: 244 fps step and policy inference: 242 fps total: 217 epoch: 186/200 frames: 3031040
+fps step: 264 fps step and policy inference: 262 fps total: 233 epoch: 187/200 frames: 3047424
+fps step: 375 fps step and policy inference: 372 fps total: 337 epoch: 188/200 frames: 3063808
+saving next best rewards:  [364.0485]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 271 fps step and policy inference: 268 fps total: 238 epoch: 189/200 frames: 3080192
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 190/200 frames: 3096576
+fps step: 246 fps step and policy inference: 243 fps total: 218 epoch: 191/200 frames: 3112960
+fps step: 258 fps step and policy inference: 256 fps total: 231 epoch: 192/200 frames: 3129344
+fps step: 246 fps step and policy inference: 244 fps total: 219 epoch: 193/200 frames: 3145728
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 194/200 frames: 3162112
+saving next best rewards:  [365.80136]
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/Forge.pth'
+fps step: 245 fps step and policy inference: 243 fps total: 217 epoch: 195/200 frames: 3178496
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 196/200 frames: 3194880
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 197/200 frames: 3211264
+fps step: 246 fps step and policy inference: 244 fps total: 218 epoch: 198/200 frames: 3227648
+fps step: 258 fps step and policy inference: 255 fps total: 231 epoch: 199/200 frames: 3244032
+fps step: 245 fps step and policy inference: 243 fps total: 218 epoch: 200/200 frames: 3260416
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew_360.81424.pth'
+=> saving checkpoint '/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G0/seed_1/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__360.81424_.pth'
+MAX EPOCHS NUM!
+Training time: 14682.49 seconds

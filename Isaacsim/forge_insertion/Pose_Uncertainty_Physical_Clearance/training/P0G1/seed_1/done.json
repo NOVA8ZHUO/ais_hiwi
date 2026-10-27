@@ -1,0 +1,7 @@
+{
+  "manifest_sha256": "83c492a64054ffd2a4db3ea54e0f00bf19e326f75f97b97bd837ffd38ed45bb4",
+  "checkpoints": {
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G1/seed_1/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__348.5164_.pth": "c9a3b1cb65801a7782b336363a04c8ba07872b60e416ad21349f676b62a3cb8e",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P0G1/seed_1/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew_348.5164.pth": "48abae9b62a0777fa83d8faf0ffb9b8b8d40c86f80c224f209346f73362abca7"
+  }
+}

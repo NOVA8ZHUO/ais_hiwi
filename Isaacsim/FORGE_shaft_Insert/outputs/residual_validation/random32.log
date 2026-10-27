@@ -1,0 +1,150 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/apps/isaaclab.python.headless.kit
+Loading user config located at: '/home/masais/miniconda3/envs/Xinyu_isaacsim/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/masais/miniconda3/envs/Xinyu_isaacsim/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260928_103638.log
+2026-09-28T08:36:38Z [85ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-09-28T08:36:39Z [487ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-09-28T08:36:39Z [496ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.178.04    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 4090          | Yes: 0 |     | 24564   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2684      | 9a8e4354.. |
+|     |                                  |        |     |            | 1         |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 6.8.0-111-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: 13th Gen Intel(R) Core(TM) i7-13700KF
+| Bare Metal Cores: 16 | Bare Metal Logical Cores: 32
+| Available Cores:  24 
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 64158 | Free Memory: 32377
+| Total Page/Swap (MB): 31249 | Free Page/Swap: 31222
+|---------------------------------------------------------------------------------------------|
+2026-09-28T08:36:43Z [5,102ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-09-28T08:36:43Z [5,116ms] [Warning] [gpu.foundation.plugin] PCIe link generation current (1) and maximum (4) for device 0 don't match.
+2026-09-28T08:36:43Z [5,116ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+2026-09-28T08:36:44Z [5,495ms] [Warning] [isaaclab.envs.manager_based_env] Seed not set for the environment. The environment creation may not be deterministic.
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-09-28_10-36-44.log[0m
+[36m======================================================================================[0m
+
+[33m10:36:44 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.004166666666666667
+	Rendering step-size   : 0.06666666666666667
+	Environment step-size : 0.06666666666666667
+[INFO]: Time taken for scene creation : 1.449344 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 32
+	Environment spacing   : 1.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 0.850622 seconds
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++------------------------+
+|  Active Command Terms  |
++--------+-------+-------+
+| Index  | Name  |  Type |
++--------+-------+-------+
++--------+-------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-----------------------------------+
+| Active Event Terms in Mode: 'reset' |
++----------+------------------------+
+|  Index   | Name                   |
++----------+------------------------+
+|    0     | reset                  |
+|    1     | shaft_friction         |
+|    2     | base_friction          |
++----------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++---------------------+
+| Active Recorder Terms |
++-----------+---------+
+|   Index   | Name    |
++-----------+---------+
++-----------+---------+
+
+[INFO] Action Manager:  <ActionManager> contains 1 active terms.
++-----------------------------------+
+|   Active Action Terms (shape: 5)  |
++--------+-------------+------------+
+| Index  | Name        |  Dimension |
++--------+-------------+------------+
+|   0    | arm_action  |          5 |
++--------+-------------+------------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++--------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (24,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (24,)      |
++----------------+----------------+----------------+
++--------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (48,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (48,)      |
++----------------+----------------+----------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 3 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | outside_workspace   |  False   |
+|   2   | invalid_grasp_width |  False   |
++-------+---------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 5 active terms.
++-----------------------------+
+|     Active Reward Terms     |
++-------+------------+--------+
+| Index | Name       | Weight |
++-------+------------+--------+
+|   0   | keypoints  |   15.0 |
+|   1   | place      |   15.0 |
+|   2   | inserted   |   15.0 |
+|   3   | contact    |   -3.0 |
+|   4   | prediction |  -15.0 |
++-------+------------+--------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+[INFO]: Completed setting up the environment...
+GRIP_CONFIG_PASS force=20N aperture_speed=20mm/s width=35+/-5mm
+RESET_CONTRACT_PASS actor=24 critic=48; fixed base; local X/Z grasp errors; persistent XYZ hole bias
+SAMPLED_RANGES grasp [-0.007683054078370333, 0.0, -0.004315987229347229] [0.006796933710575104, 0.0, 0.00425910297781229] hole [-0.008746969513595104, -0.008901798166334629, -0.009941174648702145] [0.009625546634197235, 0.009934506379067898, 0.00891826394945383]
+RESIDUAL_CONTRACT_PASS
+RESIDUAL_STEP 0 width_mm [35.13731002807617, 35.16302490234375, 35.136688232421875, 35.155059814453125, 35.13398742675781, 35.15450668334961, 35.166255950927734, 35.156829833984375, 35.13311004638672, 35.146854400634766, 35.17903518676758, 35.136024475097656, 35.113407135009766, 35.15031051635742, 35.1446418762207, 35.14970779418945, 35.10304641723633, 35.149314880371094, 35.14078903198242, 35.116455078125, 35.14393997192383, 35.131595611572266, 35.1401252746582, 35.13602828979492, 35.15152359008789, 35.18071746826172, 35.12448501586914, 35.137901306152344, 35.13654327392578, 35.16303634643555, 35.13877487182617, 35.140254974365234] force_max 0.0 grasp_drift_mm 0.0
+RESIDUAL_STEP 30 width_mm [35.12958526611328, 35.17489242553711, 35.134159088134766, 35.153404235839844, 35.1318359375, 35.14658737182617, 35.130950927734375, 35.15064239501953, 35.20600128173828, 35.14112091064453, 35.14432144165039, 35.136871337890625, 35.121978759765625, 35.14616775512695, 35.1461296081543, 35.1386604309082, 35.12644958496094, 35.14377212524414, 35.14148712158203, 35.14657211303711, 35.144737243652344, 35.17662811279297, 35.13813781738281, 35.13086700439453, 35.13510513305664, 35.1202278137207, 35.122161865234375, 35.11338806152344, 35.1489372253418, 35.158905029296875, 35.13627243041992, 35.140865325927734] force_max 5.4548187255859375 grasp_drift_mm 26.76418423652649
+RESIDUAL_STEP 60 width_mm [35.212913513183594, 35.166969299316406, 35.15201950073242, 35.15817642211914, 35.16887283325195, 36.16472244262695, 35.13819885253906, 35.13429260253906, 35.124473571777344, 35.13290786743164, 35.204750061035156, 35.16102981567383, 35.15224075317383, 35.256324768066406, 35.141929626464844, 35.14107131958008, 35.152801513671875, 35.17921447753906, 35.12770080566406, 35.20178985595703, 35.49489212036133, 35.17258071899414, 35.14482879638672, 35.25205993652344, 35.156742095947266, 35.1947135925293, 35.135948181152344, 35.121910095214844, 35.224578857421875, 35.155853271484375, 35.16960144042969, 35.215145111083984] force_max 11.47545337677002 grasp_drift_mm 51.84295028448105
+RESIDUAL_STEP 90 width_mm [35.17491912841797, 35.17253112792969, 35.15143585205078, 35.158260345458984, 35.20380783081055, 35.12263870239258, 35.144874572753906, 35.171695709228516, 35.203060150146484, 35.14166259765625, 35.14591598510742, 35.14352798461914, 35.12053298950195, 35.14625930786133, 35.16224670410156, 35.1461296081543, 35.14400100708008, 35.156795501708984, 35.15427780151367, 35.125003814697266, 32.74303436279297, 35.14023971557617, 35.13552474975586, 35.154029846191406, 35.18427276611328, 35.17142105102539, 35.12598419189453, 35.122344970703125, 35.198421478271484, 35.145111083984375, 35.1484260559082, 35.14917755126953] force_max 3.4333877563476562 grasp_drift_mm 78.09319347143173
+RESIDUAL_STEP 120 width_mm [35.127525329589844, 35.21166229248047, 38.02388381958008, 35.11549377441406, 35.155147552490234, 35.11118698120117, 35.13042068481445, 35.17560958862305, 35.143585205078125, 35.13808822631836, 35.145782470703125, 35.155086517333984, 35.1440544128418, 35.126426696777344, 35.13965606689453, 35.11716079711914, 35.11907196044922, 35.17333984375, 35.136173248291016, 35.12299346923828, 35.14391326904297, 35.138431549072266, 35.129207611083984, 35.155948638916016, 35.12190246582031, 35.15701675415039, 35.126991271972656, 35.118995666503906, 35.95035934448242, 35.144412994384766, 35.15260314941406, 35.146202087402344] force_max 24.275291442871094 grasp_drift_mm 107.18020051717758
+RESIDUAL_STEP 150 width_mm [35.14936828613281, 35.14959716796875, 35.11155319213867, 35.15220260620117, 35.172203063964844, 35.1329345703125, 35.132972717285156, 35.1755485534668, 35.16991424560547, 35.17284393310547, 35.15449142456055, 35.131221771240234, 35.14247512817383, 35.16162109375, 35.13447952270508, 35.17437744140625, 35.1487922668457, 35.14108657836914, 35.15127182006836, 35.13484573364258, 35.149497985839844, 35.14406204223633, 35.152671813964844, 35.14786148071289, 35.12535858154297, 35.152103424072266, 35.13699722290039, 35.14099884033203, 35.12916564941406, 35.16307830810547, 35.1463623046875, 35.147705078125] force_max 0.0 grasp_drift_mm 130.89558482170105
+RESIDUAL_RESULT {'mode': 'random', 'nominal': False, 'envs': 32, 'max_contact_force': 48.88249588012695, 'max_tcp_displacement': 0.09162062406539917, 'max_settled_grasp_drift': 0.13089558482170105, 'width_range': (0.030467674136161804, 0.039912328124046326), 'max_total_closing_speed': 0.012287555262446404, 'max_finger_asymmetry': 0.019105594605207443, 'successful_steps': 0, 'terminations': {'time_out': 26, 'outside_workspace': 3, 'invalid_grasp_width': 3}}
+RESIDUAL_TEST_PASS

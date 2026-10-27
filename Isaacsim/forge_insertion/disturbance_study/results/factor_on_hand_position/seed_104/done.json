@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "condition": "factor_on_hand_position",
+    "active": [
+      "hand_position"
+    ],
+    "seed": 104,
+    "num_envs": 128,
+    "model": "zero",
+    "checkpoint_sha256": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "88d1717417ffdeb2ca6d1cf31424690ffd5389f6c0a10b274cfcea86f7d6b29b"
+  },
+  "seconds": 96.06880573928356,
+  "evaluation_sha256": "cc3c2b7d2b8248b44055794b1366409659a6542ff710b6e6bf2944159534354c"
+}

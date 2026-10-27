@@ -1,0 +1,16 @@
+{
+  "run": "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/outputs/policy_recheck/20260929_133528/model_218_seed44",
+  "completed_episodes": 130,
+  "final_scalars": {},
+  "source_snapshot_available": true,
+  "terminations": {
+    "time_out": 93,
+    "outside_workspace": 0,
+    "invalid_grasp_width": 0
+  },
+  "success_rates": {
+    "success_any": 0.3153846153846154,
+    "success_final": 0.3153846153846154,
+    "success_stable": 0.3076923076923077
+  }
+}

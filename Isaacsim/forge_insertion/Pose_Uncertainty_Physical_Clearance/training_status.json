@@ -1,0 +1,12 @@
+{
+  "state": "complete",
+  "completed_runs": 12,
+  "total_runs": 12,
+  "updated_unix": 1792676567.002631,
+  "pid": 334355,
+  "group": "P1G1",
+  "seed": 2,
+  "error": null,
+  "current_run_started_unix": 1792661818.7201016,
+  "console": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/training/P1G1/seed_2/console.log"
+}

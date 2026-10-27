@@ -1,0 +1,202 @@
+{
+  "Randomized": {
+    "run": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train",
+    "metrics": {
+      "rewards/iter": {
+        "last": 352.2146301269531,
+        "last20_mean": 348.63386993408204,
+        "last20_min": 338.675537109375,
+        "max": 354.5144958496094
+      },
+      "successes/iter": {
+        "last": 0.984375,
+        "last20_mean": 0.98671875,
+        "last20_min": 0.96875,
+        "max": 1.0,
+        "first_10record_mean_ge_0.9": 34,
+        "first_10record_mean_ge_0.95": 49,
+        "first_10record_mean_ge_0.99": 113
+      },
+      "logs_rew_curr_success/iter": {
+        "last": 0.9765625,
+        "last20_mean": 0.795703125,
+        "last20_min": 0.0,
+        "max": 1.0
+      },
+      "losses/a_loss": {
+        "last": -0.008764352649450302,
+        "last20_mean": -0.007404075935482979,
+        "last20_min": -0.00984022207558155,
+        "max": 0.0069997236132621765
+      },
+      "losses/c_loss": {
+        "last": 0.010228527709841728,
+        "last20_mean": 0.00882257343037054,
+        "last20_min": 0.003259963821619749,
+        "max": 2.8563928604125977
+      },
+      "losses/cval_loss": {
+        "last": 0.004280049353837967,
+        "last20_mean": 0.0029179531207773834,
+        "last20_min": 0.0012068415526300669,
+        "max": 2.8377721309661865
+      }
+    },
+    "nonfinite_scalars": 0,
+    "training_time_seconds": [
+      "14938.03"
+    ],
+    "success_by_20epochs": [
+      {
+        "start": 1,
+        "end": 20,
+        "mean": 0.655016447368421
+      },
+      {
+        "start": 21,
+        "end": 40,
+        "mean": 0.894921875
+      },
+      {
+        "start": 41,
+        "end": 60,
+        "mean": 0.96171875
+      },
+      {
+        "start": 61,
+        "end": 80,
+        "mean": 0.969921875
+      },
+      {
+        "start": 81,
+        "end": 100,
+        "mean": 0.976953125
+      },
+      {
+        "start": 101,
+        "end": 120,
+        "mean": 0.989453125
+      },
+      {
+        "start": 121,
+        "end": 140,
+        "mean": 0.98203125
+      },
+      {
+        "start": 141,
+        "end": 160,
+        "mean": 0.9859375
+      },
+      {
+        "start": 161,
+        "end": 180,
+        "mean": 0.983984375
+      },
+      {
+        "start": 181,
+        "end": 200,
+        "mean": 0.98671875
+      }
+    ]
+  },
+  "Zero randomization": {
+    "run": "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/runs/20261013T160124Z_train",
+    "metrics": {
+      "rewards/iter": {
+        "last": 404.23541259765625,
+        "last20_mean": 403.84207916259766,
+        "last20_min": 403.40716552734375,
+        "max": 404.23541259765625
+      },
+      "successes/iter": {
+        "last": 1.0,
+        "last20_mean": 1.0,
+        "last20_min": 1.0,
+        "max": 1.0,
+        "first_10record_mean_ge_0.9": 11,
+        "first_10record_mean_ge_0.95": 12,
+        "first_10record_mean_ge_0.99": 14
+      },
+      "logs_rew_curr_success/iter": {
+        "last": 1.0,
+        "last20_mean": 0.988671875,
+        "last20_min": 0.7890625,
+        "max": 1.0
+      },
+      "losses/a_loss": {
+        "last": -0.001974050886929035,
+        "last20_mean": -0.00047531831078231337,
+        "last20_min": -0.004966157488524914,
+        "max": 0.02949480339884758
+      },
+      "losses/c_loss": {
+        "last": 0.0008348046103492379,
+        "last20_mean": 0.000760968922986649,
+        "last20_min": 0.0005889154272153974,
+        "max": 2.3944201469421387
+      },
+      "losses/cval_loss": {
+        "last": 8.459936907456722e-06,
+        "last20_mean": 1.2432147923391312e-05,
+        "last20_min": 5.635860816255445e-06,
+        "max": 2.383697271347046
+      }
+    },
+    "nonfinite_scalars": 0,
+    "training_time_seconds": [
+      "14721.89"
+    ],
+    "success_by_20epochs": [
+      {
+        "start": 1,
+        "end": 20,
+        "mean": 0.9609375
+      },
+      {
+        "start": 21,
+        "end": 40,
+        "mean": 0.834375
+      },
+      {
+        "start": 41,
+        "end": 60,
+        "mean": 0.984765625
+      },
+      {
+        "start": 61,
+        "end": 80,
+        "mean": 0.998046875
+      },
+      {
+        "start": 81,
+        "end": 100,
+        "mean": 0.99765625
+      },
+      {
+        "start": 101,
+        "end": 120,
+        "mean": 0.996875
+      },
+      {
+        "start": 121,
+        "end": 140,
+        "mean": 0.996875
+      },
+      {
+        "start": 141,
+        "end": 160,
+        "mean": 0.9984375
+      },
+      {
+        "start": 161,
+        "end": 180,
+        "mean": 0.99921875
+      },
+      {
+        "start": 181,
+        "end": 200,
+        "mean": 1.0
+      }
+    ]
+  }
+}

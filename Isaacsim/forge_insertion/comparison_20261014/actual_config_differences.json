@@ -1,0 +1,220 @@
+{
+  "env.yaml": [
+    {
+      "path": "obs_rand.fixed_asset_pos",
+      "randomized": [
+        "0.001",
+        "0.001",
+        "0.001"
+      ],
+      "zero": [
+        "0.0",
+        "0.0",
+        "0.0"
+      ]
+    },
+    {
+      "path": "obs_rand.fingertip_rot_deg",
+      "randomized": "0.1",
+      "zero": "0.0"
+    },
+    {
+      "path": "obs_rand.ft_force",
+      "randomized": "1.0",
+      "zero": "0.0"
+    },
+    {
+      "path": "obs_rand.fingertip_pos",
+      "randomized": "0.00025",
+      "zero": "0.0"
+    },
+    {
+      "path": "ctrl.pos_threshold_noise_level",
+      "randomized": [
+        "0.25",
+        "0.25",
+        "0.25"
+      ],
+      "zero": [
+        "0.0",
+        "0.0",
+        "0.0"
+      ]
+    },
+    {
+      "path": "ctrl.rot_threshold_noise_level",
+      "randomized": [
+        "0.29",
+        "0.29",
+        "0.29"
+      ],
+      "zero": [
+        "0.0",
+        "0.0",
+        "0.0"
+      ]
+    },
+    {
+      "path": "ctrl.task_prop_gains_noise_level",
+      "randomized": [
+        "0.41",
+        "0.41",
+        "0.41",
+        "0.41",
+        "0.41",
+        "0.41"
+      ],
+      "zero": [
+        "0.0",
+        "0.0",
+        "0.0",
+        "0.0",
+        "0.0",
+        "0.0"
+      ]
+    },
+    {
+      "path": "ctrl.ema_factor_range",
+      "randomized": [
+        "0.025",
+        "0.1"
+      ],
+      "zero": [
+        "0.0625",
+        "0.0625"
+      ]
+    },
+    {
+      "path": "task.fixed_asset_init_orn_range_deg",
+      "randomized": "360.0",
+      "zero": "0.0"
+    },
+    {
+      "path": "task.fixed_asset.spawn.usd_path",
+      "randomized": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/base.usda",
+      "zero": "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/assets/cad/base.usda"
+    },
+    {
+      "path": "task.held_asset_pos_noise",
+      "randomized": [
+        "0.003",
+        "0.0",
+        "0.003"
+      ],
+      "zero": [
+        "0.0",
+        "0.0",
+        "0.0"
+      ]
+    },
+    {
+      "path": "task.held_asset.spawn.usd_path",
+      "randomized": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/shaft_large.usda",
+      "zero": "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/assets/cad/shaft_large.usda"
+    },
+    {
+      "path": "task.fixed_asset_init_pos_noise",
+      "randomized": [
+        "0.05",
+        "0.05",
+        "0.05"
+      ],
+      "zero": [
+        "0.0",
+        "0.0",
+        "0.0"
+      ]
+    },
+    {
+      "path": "task.fixed_asset_cfg.usd_path",
+      "randomized": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/base.usda",
+      "zero": "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/assets/cad/base.usda"
+    },
+    {
+      "path": "task.hand_init_orn_noise",
+      "randomized": [
+        "0.0",
+        "0.0",
+        "0.785"
+      ],
+      "zero": [
+        "0.0",
+        "0.0",
+        "0.0"
+      ]
+    },
+    {
+      "path": "task.hand_init_pos_noise",
+      "randomized": [
+        "0.02",
+        "0.02",
+        "0.01"
+      ],
+      "zero": [
+        "0.0",
+        "0.0",
+        "0.0"
+      ]
+    },
+    {
+      "path": "task.contact_penalty_threshold_range",
+      "randomized": [
+        "5.0",
+        "10.0"
+      ],
+      "zero": [
+        "7.5",
+        "7.5"
+      ]
+    },
+    {
+      "path": "task.held_asset_cfg.usd_path",
+      "randomized": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/shaft_large.usda",
+      "zero": "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/assets/cad/shaft_large.usda"
+    },
+    {
+      "path": "events.dead_zone_thresholds",
+      "randomized": {
+        "func": "isaaclab_tasks.direct.forge.forge_events:randomize_dead_zone",
+        "params": {},
+        "mode": "interval",
+        "interval_range_s": [
+          "2.0",
+          "2.0"
+        ],
+        "is_global_time": "false",
+        "min_step_count_between_reset": "0"
+      },
+      "zero": "null"
+    },
+    {
+      "path": "events.fixed_physics_material.params.static_friction_range",
+      "randomized": [
+        "0.25",
+        "1.25"
+      ],
+      "zero": [
+        "0.75",
+        "0.75"
+      ]
+    },
+    {
+      "path": "events.object_scale_mass.params.mass_distribution_params",
+      "randomized": [
+        "-0.005",
+        "0.005"
+      ],
+      "zero": [
+        "0.0",
+        "0.0"
+      ]
+    }
+  ],
+  "agent.yaml": [
+    {
+      "path": "params.config.train_dir",
+      "randomized": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train/logs/rl_games/Forge",
+      "zero": "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/runs/20261013T160124Z_train/logs/rl_games/Forge"
+    }
+  ]
+}

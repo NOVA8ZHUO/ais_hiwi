@@ -1,0 +1,371 @@
+{
+  "status": "passed",
+  "checks": {
+    "config_whitelist": true,
+    "articulation_structure": true,
+    "pose_bias_runtime": true,
+    "reset_grasp_hold": true,
+    "official_success_geometry": true,
+    "bore_and_wall_collision": true
+  },
+  "pose_xy_sigma_m": 0.001,
+  "clearance_mm": 2.0,
+  "full_randomized_baseline_diff": [
+    {
+      "path": "task.fixed_asset_cfg.usd_path",
+      "official": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/base.usda",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/assets/base_clearance_2mm.usda"
+    },
+    {
+      "path": "task.fixed_asset_cfg.diameter",
+      "official": "0.026",
+      "cad": "0.027"
+    },
+    {
+      "path": "task.fixed_asset.spawn.usd_path",
+      "official": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/base.usda",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/assets/base_clearance_2mm.usda"
+    }
+  ],
+  "configuration_diff": [
+    {
+      "path": "task.held_asset.spawn.mass_props.mass",
+      "official": "0.019",
+      "cad": "0.0175"
+    },
+    {
+      "path": "task.held_asset.spawn.usd_path",
+      "official": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_peg_8mm.usd",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/shaft_large.usda"
+    },
+    {
+      "path": "task.hand_init_pos",
+      "official": "[0.0, 0.0, 0.047]",
+      "cad": "[0.0, 0.0, 0.08]"
+    },
+    {
+      "path": "task.fixed_asset_cfg.usd_path",
+      "official": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_hole_8mm.usd",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/assets/base_clearance_2mm.usda"
+    },
+    {
+      "path": "task.fixed_asset_cfg.diameter",
+      "official": "0.0081",
+      "cad": "0.027"
+    },
+    {
+      "path": "task.fixed_asset_cfg.height",
+      "official": "0.025",
+      "cad": "0.047"
+    },
+    {
+      "path": "task.held_asset_cfg.usd_path",
+      "official": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_peg_8mm.usd",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/assets/cad/shaft_large.usda"
+    },
+    {
+      "path": "task.held_asset_cfg.diameter",
+      "official": "0.007986",
+      "cad": "0.035"
+    },
+    {
+      "path": "task.held_asset_cfg.mass",
+      "official": "0.019",
+      "cad": "0.0175"
+    },
+    {
+      "path": "task.held_asset_cfg.height",
+      "official": "0.05",
+      "cad": "0.083"
+    },
+    {
+      "path": "task.fixed_asset.spawn.usd_path",
+      "official": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_hole_8mm.usd",
+      "cad": "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/assets/base_clearance_2mm.usda"
+    }
+  ],
+  "resets": [
+    {
+      "finger_joints_m": [
+        [
+          0.017584724351763725,
+          0.01758546754717827
+        ],
+        [
+          0.01758497580885887,
+          0.017584338784217834
+        ],
+        [
+          0.01758386939764023,
+          0.017584659159183502
+        ],
+        [
+          0.01759462244808674,
+          0.017593804746866226
+        ]
+      ],
+      "shaft_tip_m": [
+        [
+          0.6123895645141602,
+          0.037266433238983154,
+          0.1513073593378067
+        ],
+        [
+          0.6020787954330444,
+          0.022360920906066895,
+          0.10036344826221466
+        ],
+        [
+          0.5719648599624634,
+          0.051307618618011475,
+          0.15586979687213898
+        ],
+        [
+          0.6484224796295166,
+          -0.03383791446685791,
+          0.06962138414382935
+        ]
+      ],
+      "hole_entry_m": [
+        [
+          0.6089493036270142,
+          0.03242415189743042,
+          0.1292368471622467
+        ],
+        [
+          0.5942327976226807,
+          0.009916543960571289,
+          0.08157676458358765
+        ],
+        [
+          0.5724515914916992,
+          0.03821378946304321,
+          0.14262676239013672
+        ],
+        [
+          0.6483581066131592,
+          -0.03670001029968262,
+          0.05789542943239212
+        ]
+      ],
+      "shaft_tip_clearance_m": [
+        0.022070512175559998,
+        0.018786683678627014,
+        0.013243034482002258,
+        0.011725954711437225
+      ],
+      "mass_kg": [
+        [
+          0.015499886125326157
+        ],
+        [
+          0.01896442100405693
+        ],
+        [
+          0.017728015780448914
+        ],
+        [
+          0.0129914041608572
+        ]
+      ],
+      "hole_estimate_bias_m": [
+        [
+          0.00022698339307680726,
+          -0.001839155680499971,
+          0.000889859045855701
+        ],
+        [
+          -0.0008111015195026994,
+          0.0009492608951404691,
+          0.0004672652285080403
+        ],
+        [
+          4.039073610329069e-05,
+          0.0019845946226269007,
+          5.471817348734476e-05
+        ],
+        [
+          4.882472694589524e-06,
+          0.000447386089945212,
+          0.0011268642265349627
+        ]
+      ],
+      "hold_relative_translation_m": [
+        0.0013531794538721442,
+        0.0015462005976587534,
+        0.0011674303095787764,
+        0.0018971727695316076
+      ],
+      "fixed_motion_m": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "finger_joints_m": [
+        [
+          0.017584841698408127,
+          0.017584657296538353
+        ],
+        [
+          0.01758422888815403,
+          0.0175839364528656
+        ],
+        [
+          0.017586447298526764,
+          0.01758703961968422
+        ],
+        [
+          0.017584117129445076,
+          0.017584726214408875
+        ]
+      ],
+      "shaft_tip_m": [
+        [
+          0.6177594661712646,
+          0.008798301219940186,
+          0.09953941404819489
+        ],
+        [
+          0.6065500974655151,
+          -0.049893081188201904,
+          0.10083653032779694
+        ],
+        [
+          0.6166070699691772,
+          -0.04427218437194824,
+          0.10622352361679077
+        ],
+        [
+          0.596603274345398,
+          0.015597105026245117,
+          0.13966670632362366
+        ]
+      ],
+      "hole_entry_m": [
+        [
+          0.597352147102356,
+          0.018126308917999268,
+          0.091384656727314
+        ],
+        [
+          0.6168756484985352,
+          -0.04618769884109497,
+          0.09076082706451416
+        ],
+        [
+          0.6084535121917725,
+          -0.03147315979003906,
+          0.09741602092981339
+        ],
+        [
+          0.6045941114425659,
+          0.01789546012878418,
+          0.1262056827545166
+        ]
+      ],
+      "shaft_tip_clearance_m": [
+        0.00815475732088089,
+        0.010075703263282776,
+        0.008807502686977386,
+        0.013461023569107056
+      ],
+      "mass_kg": [
+        [
+          0.014199656434357166
+        ],
+        [
+          0.021672919392585754
+        ],
+        [
+          0.017768722027540207
+        ],
+        [
+          0.01987108215689659
+        ]
+      ],
+      "hole_estimate_bias_m": [
+        [
+          -0.0017373142763972282,
+          0.0017796328756958246,
+          -0.0002511262136977166
+        ],
+        [
+          -0.00019851108663715422,
+          0.0008123886655084789,
+          0.0008461872930638492
+        ],
+        [
+          0.0017392849549651146,
+          -0.0014550420455634594,
+          -0.0009624173981137574
+        ],
+        [
+          -0.002018503611907363,
+          -0.000723907258361578,
+          0.0016587474383413792
+        ]
+      ],
+      "hold_relative_translation_m": [
+        0.002242403570562601,
+        0.0015084120677784085,
+        0.0008980995044112206,
+        0.001775803742930293
+      ],
+      "fixed_motion_m": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "success_depth_min_m": 0.04512,
+  "collision_probe": [
+    {
+      "lateral_offset_m": 0.0,
+      "displacement_m": [
+        2.9802322387695312e-08,
+        4.470348358154297e-08,
+        5.21540641784668e-08,
+        5.960464477539063e-08
+      ]
+    },
+    {
+      "lateral_offset_m": 0.025,
+      "displacement_m": [
+        0.0051945652812719345,
+        0.005235748365521431,
+        0.004971060901880264,
+        0.004710337147116661
+      ]
+    },
+    {
+      "lateral_offset_m": 0.0005,
+      "displacement_m": [
+        2.9802322387695312e-08,
+        4.470348358154297e-08,
+        5.21540641784668e-08,
+        5.960464477539063e-08
+      ]
+    },
+    {
+      "lateral_offset_m": 0.0015,
+      "displacement_m": [
+        0.0010861881310120225,
+        0.001086942502297461,
+        0.001085244002752006,
+        0.0010863154893741012
+      ]
+    }
+  ],
+  "small_clearance_contact_check": {
+    "free_offset_m": 0.0005,
+    "free_displacement_max_m": 5.960464477539063e-08,
+    "overlap_offset_m": 0.0015,
+    "overlap_displacement_min_m": 0.001085244002752006,
+    "note": "20-step dynamic probe; does not certify machining clearance or SDF error bound"
+  }
+}

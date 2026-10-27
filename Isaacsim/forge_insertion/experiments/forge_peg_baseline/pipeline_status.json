@@ -1,0 +1,22 @@
+{
+  "pid": 1686957,
+  "started_utc": "2026-10-12T12:44:21.258632+00:00",
+  "stage": "complete",
+  "status": "complete",
+  "updated_utc": "2026-10-12T20:38:05.993283+00:00",
+  "train_directory": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_peg_baseline/logs/20261012T124421_296458Z_train",
+  "train_exit_code": 0,
+  "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_peg_baseline/logs/20261012T124421_296458Z_train/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__336.2282_.pth",
+  "evaluate_directory": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_peg_baseline/logs/20261012T203505_391561Z_evaluate",
+  "evaluate_exit_code": 0,
+  "evaluation_summary": {
+    "protocol": "auxiliary fixed-seed evaluation; not verified paper protocol",
+    "seed": 0,
+    "checkpoint": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_peg_baseline/logs/20261012T124421_296458Z_train/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__336.2282_.pth",
+    "episodes": 128,
+    "success_rate_any": 0.953125,
+    "success_rate_final": 0.953125,
+    "mean_episode_reward": 337.90671218186617,
+    "force_definition": "L2 norm of smoothed wrist force, sampled at control rate"
+  }
+}

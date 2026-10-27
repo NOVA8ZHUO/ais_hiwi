@@ -1,0 +1,108 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/apps/isaaclab.python.headless.kit
+Loading user config located at: '/home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20261013_134102.log
+2026-10-13T11:41:02Z [68ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-10-13T11:41:02Z [427ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-10-13T11:41:02Z [433ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.178.04    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 4090          | Yes: 0 |     | 24564   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2684      | 9a8e4354.. |
+|     |                                  |        |     |            | 1         |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 6.8.0-111-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: 13th Gen Intel(R) Core(TM) i7-13700KF
+| Bare Metal Cores: 16 | Bare Metal Logical Cores: 32
+| Available Cores:  24 
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 64158 | Free Memory: 46464
+| Total Page/Swap (MB): 31249 | Free Page/Swap: 15417
+|---------------------------------------------------------------------------------------------|
+2026-10-13T11:41:07Z [5,221ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-10-13T11:41:07Z [5,232ms] [Warning] [gpu.foundation.plugin] PCIe link generation current (1) and maximum (4) for device 0 don't match.
+2026-10-13T11:41:07Z [5,232ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-10-13_13-41-08.log[0m
+[36m======================================================================================[0m
+
+[33m13:41:08 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 0
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.008333333333333333
+	Environment step-size : 0.06666666666666667
+[33m13:41:08 [direct_rl_env.py] WARNING: The render interval (1) is smaller than the decimation (8). Multiple render calls will happen for each environment step.If this is not intended, set the render interval to be equal to the decimation.[0m
+2026-10-13T11:41:10Z [7,625ms] [Warning] [omni.fabric.plugin] Warning: input prim:attr `/World/envs/env_0:omni:rtx:skip` has no valid data.
+
+[INFO]: Time taken for scene creation : 1.948001 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 4
+	Environment spacing   : 2.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 1.150679 seconds
+[INFO] Event Manager:  <EventManager> contains 3 active terms.
++------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++---------+--------------------------+
+|  Index  | Name                     |
++---------+--------------------------+
+|    0    | object_scale_mass        |
++---------+--------------------------+
++----------------------------------------+
+| Active Event Terms in Mode: 'startup'  |
++---------+------------------------------+
+|  Index  | Name                         |
++---------+------------------------------+
+|    0    | held_physics_material        |
+|    1    | fixed_physics_material       |
+|    2    | robot_physics_material       |
++---------+------------------------------+
++--------------------------------------------------------+
+|         Active Event Terms in Mode: 'interval'         |
++-------+----------------------+-------------------------+
+| Index | Name                 | Interval time range (s) |
++-------+----------------------+-------------------------+
+|   0   | dead_zone_thresholds |        (2.0, 2.0)       |
++-------+----------------------+-------------------------+
+
+[INFO]: Completed setting up the environment...
+Reset/grasp/hold check 0 {'finger_joints_m': [[0.017584724351763725, 0.01758546754717827], [0.01758333295583725, 0.01758410781621933], [0.01758420281112194, 0.017584163695573807], [0.01759462244808674, 0.017593804746866226]], 'shaft_tip_m': [[0.6123895645141602, 0.037266433238983154, 0.1513073593378067], [0.6020818948745728, 0.022365212440490723, 0.10036532580852509], [0.5719654560089111, 0.05130738019943237, 0.15587027370929718], [0.6484224796295166, -0.03383791446685791, 0.06962138414382935]], 'hole_entry_m': [[0.6089493036270142, 0.03242415189743042, 0.1292368471622467], [0.5942327976226807, 0.009916543960571289, 0.08157677948474884], [0.5724515914916992, 0.03821384906768799, 0.14262676239013672], [0.6483581066131592, -0.03670001029968262, 0.05789543688297272]], 'shaft_tip_clearance_m': [0.022070512175559998, 0.018788546323776245, 0.013243511319160461, 0.011725947260856628], 'mass_kg': [[0.015499886125326157], [0.01896442100405693], [0.017728015780448914], [0.0129914041608572]], 'hold_relative_translation_m': [0.0013531794538721442, 0.0015059924917295575, 0.001171257346868515, 0.0019073637668043375], 'fixed_motion_m': [0.0, 0.0, 0.0, 0.0]}
+Traceback (most recent call last):
+  File "/home/masais/Xinyu/Isaacsim/forge_insertion/scripts/validate_cad.py", line 61, in <module>
+    obs, _ = env.reset()
+             ^^^^^^^^^^^
+  File "/home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 400, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/masais/miniconda3/envs/env_jingyun/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab/isaaclab/envs/direct_rl_env.py", line 315, in reset
+    self._reset_idx(indices)
+  File "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab_tasks/isaaclab_tasks/direct/forge/forge_env.py", line 274, in _reset_idx
+    super()._reset_idx(env_ids)
+  File "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab_tasks/isaaclab_tasks/direct/factory/factory_env.py", line 492, in _reset_idx
+    self._set_assets_to_default_pose(env_ids)
+  File "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab_tasks/isaaclab_tasks/direct/factory/factory_env.py", line 503, in _set_assets_to_default_pose
+    self._held_asset.write_root_pose_to_sim(held_state[:, 0:7], env_ids=env_ids)
+  File "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab/isaaclab/assets/articulation/articulation.py", line 408, in write_root_pose_to_sim
+    self.write_root_link_pose_to_sim(root_pose, env_ids=env_ids)
+  File "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/source/isaaclab/isaaclab/assets/articulation/articulation.py", line 427, in write_root_link_pose_to_sim
+    self._data.root_link_pose_w[env_ids] = root_pose.clone()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+RuntimeError: Inplace update to inference tensor outside InferenceMode is not allowed.You can make a clone to get a normal tensor before doing inplace update.See https://github.com/pytorch/rfcs/pull/17 for more details.
+
+2026-10-13T11:41:33Z [30,918ms] [Warning] [omni.usd] Unexpected reference count of 2 for UsdStage 'anon:0x55794e29c550:World0.usd' while being closed in UsdContext (this may indicate it is still resident in memory).

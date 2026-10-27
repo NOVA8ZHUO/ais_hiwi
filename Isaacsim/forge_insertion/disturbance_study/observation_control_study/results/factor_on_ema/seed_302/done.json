@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "condition": "factor_on_ema",
+    "active": [
+      "ema"
+    ],
+    "seed": 302,
+    "num_envs": 128,
+    "model": "zero",
+    "checkpoint_sha256": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "62ee5f0132a305e5485f88bb3cbe0ca5a2a37435faded47d0249591783c1bd34"
+  },
+  "seconds": 95.87588466797024,
+  "evaluation_sha256": "75c2c63f788534c8bca20e1ed76a7c1ef4556aa5665a39ccf245df9e3a1e90e6"
+}

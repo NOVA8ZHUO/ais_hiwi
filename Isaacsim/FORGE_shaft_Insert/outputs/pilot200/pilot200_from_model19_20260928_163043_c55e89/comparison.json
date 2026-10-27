@@ -1,0 +1,186 @@
+[
+  {
+    "label": "model_19\u57fa\u51c6",
+    "folder": "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/outputs/policy_baseline/model19_seed42_32x4",
+    "summary": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_release25/2026-09-28_15-34-34_release25_gui_20260928_152608/model_19.pt",
+      "checkpoint_sha256": "071c17f0d60e4de4b22eec5d13c0e266233421e5de43786b101ad98962c7da7a",
+      "deterministic": true,
+      "training": false,
+      "policy_state_unchanged": true,
+      "task_source_matches_training": true,
+      "seed": 42,
+      "num_envs": 32,
+      "episodes_per_env": 4,
+      "completed_episodes": 128,
+      "raw_completed_episodes": 132,
+      "control_steps": 1200,
+      "elapsed_s": 778.5337104920764,
+      "rates": {
+        "success_any": 0.203125,
+        "success_final": 0.203125,
+        "success_stable": 0.203125,
+        "fully_seated_final": 0.203125,
+        "seated_depth_final": 0.203125
+      },
+      "success_final_wilson95": [
+        0.14255643643579252,
+        0.28099424862870914
+      ],
+      "terminations": {
+        "time_out": 102,
+        "outside_workspace": 0,
+        "invalid_grasp_width": 0,
+        "release_complete": 26
+      },
+      "mean_episode_force_p95_N": 3.761157473549247,
+      "peak_force_N": 11.221794128417969,
+      "mean_episode_action_saturation": 0.00031120358397032665,
+      "mean_episode_duration_s": 18.568749999999998,
+      "protocol": "First four episodes per environment by default; all environmental randomization retained, policy mean actions, no randomized initial episode lengths. Raw CSV includes unselected extra episodes of faster environments; evaluation_episodes.csv is the benchmark denominator."
+    },
+    "motion": {
+      "max_physics_tcp_speed_mm_s": 61.53453141450882,
+      "max_gripped_tilt_deg": 54.607881812993334,
+      "shallow_stalls_2_to_25mm": 12
+    }
+  },
+  {
+    "label": "\u65b0\u589e52\u8f6e/model_70",
+    "folder": "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/outputs/pilot200/pilot200_from_model19_20260928_163043_c55e89/eval_model_70",
+    "summary": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_release25/2026-09-28_16-30-50_pilot200_from_model19_20260928_163043_c55e89/model_70.pt",
+      "checkpoint_sha256": "917940cce9f263975a7528f0e552e1980f285f0c745a016eeacfa55e7a79d1fb",
+      "deterministic": true,
+      "training": false,
+      "policy_state_unchanged": true,
+      "task_source_matches_training": true,
+      "seed": 42,
+      "num_envs": 32,
+      "episodes_per_env": 4,
+      "completed_episodes": 128,
+      "raw_completed_episodes": 140,
+      "control_steps": 1200,
+      "elapsed_s": 742.5258534140885,
+      "rates": {
+        "success_any": 0.3828125,
+        "success_final": 0.3828125,
+        "success_stable": 0.3671875,
+        "fully_seated_final": 0.375,
+        "seated_depth_final": 0.375
+      },
+      "success_final_wilson95": [
+        0.3031848964440972,
+        0.46926932134452193
+      ],
+      "terminations": {
+        "time_out": 84,
+        "outside_workspace": 0,
+        "invalid_grasp_width": 0,
+        "release_complete": 45
+      },
+      "mean_episode_force_p95_N": 3.0209418610902503,
+      "peak_force_N": 10.111231803894043,
+      "mean_episode_action_saturation": 3.426535087719298e-05,
+      "mean_episode_duration_s": 17.3984375,
+      "protocol": "First four episodes per environment by default; all environmental randomization retained, policy mean actions, no randomized initial episode lengths. Raw CSV includes unselected extra episodes of faster environments; evaluation_episodes.csv is the benchmark denominator."
+    },
+    "motion": {
+      "max_physics_tcp_speed_mm_s": 53.45955118536949,
+      "max_gripped_tilt_deg": 30.805013305851432,
+      "shallow_stalls_2_to_25mm": 9
+    }
+  },
+  {
+    "label": "\u65b0\u589e102\u8f6e/model_120",
+    "folder": "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/outputs/pilot200/pilot200_from_model19_20260928_163043_c55e89/eval_model_120",
+    "summary": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_release25/2026-09-28_16-30-50_pilot200_from_model19_20260928_163043_c55e89/model_120.pt",
+      "checkpoint_sha256": "28aa8d2b8af9c8acdeb06f3a9add255be66ec33db5a3efcbabb316634501534b",
+      "deterministic": true,
+      "training": false,
+      "policy_state_unchanged": true,
+      "task_source_matches_training": true,
+      "seed": 42,
+      "num_envs": 32,
+      "episodes_per_env": 4,
+      "completed_episodes": 128,
+      "raw_completed_episodes": 131,
+      "control_steps": 1200,
+      "elapsed_s": 848.2217074399814,
+      "rates": {
+        "success_any": 0.2578125,
+        "success_final": 0.2578125,
+        "success_stable": 0.2421875,
+        "fully_seated_final": 0.2578125,
+        "seated_depth_final": 0.2578125
+      },
+      "success_final_wilson95": [
+        0.18986792282559609,
+        0.33987079393755004
+      ],
+      "terminations": {
+        "time_out": 102,
+        "outside_workspace": 0,
+        "invalid_grasp_width": 0,
+        "release_complete": 26
+      },
+      "mean_episode_force_p95_N": 3.40179993561469,
+      "peak_force_N": 8.965177536010742,
+      "mean_episode_action_saturation": 8.960712512413108e-05,
+      "mean_episode_duration_s": 18.61354166666667,
+      "protocol": "First four episodes per environment by default; all environmental randomization retained, policy mean actions, no randomized initial episode lengths. Raw CSV includes unselected extra episodes of faster environments; evaluation_episodes.csv is the benchmark denominator."
+    },
+    "motion": {
+      "max_physics_tcp_speed_mm_s": 47.88347706198692,
+      "max_gripped_tilt_deg": 33.87121334394081,
+      "shallow_stalls_2_to_25mm": 12
+    }
+  },
+  {
+    "label": "\u65b0\u589e200\u8f6e/model_218",
+    "folder": "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/outputs/pilot200/pilot200_from_model19_20260928_163043_c55e89/eval_model_218",
+    "summary": {
+      "checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_release25/2026-09-28_16-30-50_pilot200_from_model19_20260928_163043_c55e89/model_218.pt",
+      "checkpoint_sha256": "37b4e32b3aefaf984826e50789448dc669b63d1963e7754bce8a4e70864a76c3",
+      "deterministic": true,
+      "training": false,
+      "policy_state_unchanged": true,
+      "task_source_matches_training": true,
+      "seed": 42,
+      "num_envs": 32,
+      "episodes_per_env": 4,
+      "completed_episodes": 128,
+      "raw_completed_episodes": 131,
+      "control_steps": 1200,
+      "elapsed_s": 848.3596909178887,
+      "rates": {
+        "success_any": 0.328125,
+        "success_final": 0.328125,
+        "success_stable": 0.3203125,
+        "fully_seated_final": 0.328125,
+        "seated_depth_final": 0.328125
+      },
+      "success_final_wilson95": [
+        0.25282858521157203,
+        0.41343760087840264
+      ],
+      "terminations": {
+        "time_out": 90,
+        "outside_workspace": 0,
+        "invalid_grasp_width": 0,
+        "release_complete": 38
+      },
+      "mean_episode_force_p95_N": 3.4358695385744795,
+      "peak_force_N": 12.85450267791748,
+      "mean_episode_action_saturation": 0.030700675159587427,
+      "mean_episode_duration_s": 18.420833333333334,
+      "protocol": "First four episodes per environment by default; all environmental randomization retained, policy mean actions, no randomized initial episode lengths. Raw CSV includes unselected extra episodes of faster environments; evaluation_episodes.csv is the benchmark denominator."
+    },
+    "motion": {
+      "max_physics_tcp_speed_mm_s": 59.17574465274811,
+      "max_gripped_tilt_deg": 41.656180739097955,
+      "shallow_stalls_2_to_25mm": 19
+    }
+  }
+]

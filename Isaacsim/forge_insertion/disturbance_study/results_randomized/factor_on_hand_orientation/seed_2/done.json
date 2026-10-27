@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "condition": "factor_on_hand_orientation",
+    "active": [
+      "hand_orientation"
+    ],
+    "seed": 2,
+    "num_envs": 128,
+    "model": "randomized",
+    "checkpoint_sha256": "57ae61f09be156e0c07aa250e0c58d164251e0efc36f2b56b2a76ee21e3f24ed",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "62f19e9cc94804746390c9ad2a9f199998caff2bc3e62f33e2e833fa825e83eb"
+  },
+  "seconds": 96.71744564501569,
+  "evaluation_sha256": "66ee96d993ff38d3c3c6776008eea8e75ef8e9bedf634a4ff6bb970e77cb2dc0"
+}

@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "condition": "factor_on_grasp_offset",
+    "active": [
+      "grasp_offset"
+    ],
+    "seed": 100,
+    "num_envs": 128,
+    "model": "zero",
+    "checkpoint_sha256": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "9ff138a7f23749504dfab01bfa4fe1ba10bfe8c465d0c24b3c67819865a0678e"
+  },
+  "seconds": 96.67050626780838,
+  "evaluation_sha256": "60e6c5fda47c10e91ebbf75c845c1e3ee274c0c2638c49f06c6a1e13416bfa7d"
+}

@@ -1,0 +1,19 @@
+{
+  "state": "complete",
+  "completed": 1440,
+  "total": 1440,
+  "error": null,
+  "updated": 1793081094.1602511,
+  "pid": 3824079,
+  "training_state": "training",
+  "training_group": "P0G0",
+  "training_seed": 0,
+  "training_finished": 0,
+  "current": {
+    "clearance": 2.0,
+    "error": 4.0,
+    "eval_seed": 604,
+    "model": "P1G1_seed2"
+  },
+  "remaining_seconds": 0
+}

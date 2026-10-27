@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "pid": 2559960,
+  "completed": 200,
+  "total": 200,
+  "updated": 1792437200.9875762,
+  "current": {
+    "clearance_mm": 2.0,
+    "error_mm": 4.0,
+    "seed": 404,
+    "model": "randomized"
+  },
+  "estimated_remaining_seconds": 120.45828257931862
+}

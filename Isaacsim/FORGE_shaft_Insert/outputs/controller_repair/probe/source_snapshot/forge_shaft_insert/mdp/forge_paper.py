@@ -1,0 +1,320 @@
+"""FORGE insertion terms, separate from the validated stage-1 diagnostics.
+
+The control point is a virtual TCP at the nominal held-shaft bottom. Its
+transform is fixed, so actor observations never use the true held-object pose.
+"""
+import torch
+
+from isaaclab.managers import ActionTerm
+from isaaclab.utils.math import (
+    quat_apply, quat_apply_inverse, quat_from_euler_xyz, compute_pose_error, skew_symmetric_matrix,
+)
+from .events import reset_grasp_state
+from .observations import hole_target_position_w
+from .forge_math import logistic_kernel, force_excess, dead_zone, bounded_reference, pitch_cost
+
+
+class ForgeImpedanceAction(ActionTerm):
+    """Residual xyz/yaw over a nominal insertion, plus success prediction."""
+
+    def __init__(self, cfg, env):
+        super().__init__(cfg, env)
+        self.joints, _ = self._asset.find_joints('panda_joint[1-7]', preserve_order=True)
+        self.body = self._asset.find_bodies('panda_hand')[0][0]
+        self.fingers, _ = self._asset.find_joints('panda_finger_joint[1-2]', preserve_order=True)
+        self._raw = torch.zeros(self.num_envs, 5, device=self.device)
+        self.elapsed_steps = torch.zeros(self.num_envs, dtype=torch.long, device=self.device)
+        self.target = torch.zeros(self.num_envs, 3, device=self.device)
+        self.target_quat = torch.zeros(self.num_envs, 4, device=self.device)
+        self.target_quat[:, 1] = 1.0
+        self.kp = torch.full((self.num_envs, 1), 600.0, device=self.device)
+        self.limit = torch.full_like(self.kp, 0.02)
+        self.deadzone = torch.zeros(self.num_envs, 3, device=self.device)
+        self.threshold = torch.full((self.num_envs,), 7.5, device=self.device)
+        self.hole_bias = torch.zeros_like(self.target)
+        self.grasp_offset_hand = torch.zeros_like(self.target)
+        self.reset_target = torch.zeros_like(self.target)
+        self.reset_hand_quaternion = torch.tensor(env.cfg.task.reset_hand_quaternion, device=self.device)
+        self.reset_hand_quaternion /= self.reset_hand_quaternion.norm()
+        hand_position = torch.tensor(env.cfg.task.reset_hand_position, device=self.device)
+        control_offset = torch.tensor(env.cfg.task.control_point_in_hand, device=self.device)
+        self.reset_target[:] = env.scene.env_origins + hand_position + quat_apply(
+            self.reset_hand_quaternion[None], control_offset[None])
+        self.reference_position = self.reset_target.clone()
+        self.reference_velocity = torch.zeros_like(self.target)
+        self.reference_yaw = torch.zeros(self.num_envs, 1, device=self.device)
+        self.reference_yaw_velocity = torch.zeros_like(self.reference_yaw)
+        self.yaw_goal = torch.zeros_like(self.reference_yaw)
+        self.commanded_force = torch.zeros_like(self.target)
+        self.rotation_damping = torch.full((self.num_envs, 1), env.cfg.task.rotation_damping, device=self.device)
+        self.max_physics_speed = torch.zeros(self.num_envs, device=self.device)
+        self.prev_noisy_position = torch.zeros_like(self.target)
+        self.obs = None
+        self.obs_step = -1
+        self.fresh = torch.ones(self.num_envs, dtype=torch.bool, device=self.device)
+
+    @property
+    def action_dim(self):
+        return 5
+
+    @property
+    def raw_actions(self):
+        return self._raw
+
+    @property
+    def processed_actions(self):
+        return torch.cat((self.target, self._raw[:, 3:]), dim=-1)
+
+    def frame(self):
+        robot = self._asset
+        q = robot.data.body_link_quat_w[:, self.body]
+        offset = torch.tensor(self._env.cfg.task.control_point_in_hand, device=self.device).expand(self.num_envs, -1)
+        r = quat_apply(q, offset)
+        p = robot.data.body_link_pos_w[:, self.body] + r
+        # PhysX geometric Jacobians use link origins; shift linear rows to TCP.
+        jac = robot.root_physx_view.get_jacobians()[:, self.body - 1, :, self.joints].clone()
+        jac[:, :3] -= torch.bmm(skew_symmetric_matrix(r), jac[:, 3:])
+        velocity = torch.bmm(jac, robot.data.joint_vel[:, self.joints, None]).squeeze(-1)
+        return p, q, jac, velocity
+
+    def process_actions(self, actions):
+        self._raw[:] = actions.clamp(-1.0, 1.0)
+        current, _, _, _ = self.frame()
+        task = self._env.cfg.task
+        scale = torch.tensor(task.residual_position_scale, device=self.device)
+        desired = nominal_target(self._env) + self._raw[:, :3] * scale
+        ready = insertion_enabled(self._env)
+        desired = torch.where(ready[:, None], desired, self.reset_target)
+        self.target[:] = current + (desired - current).clamp(-self.limit, self.limit)
+        zero = torch.zeros(self.num_envs, device=self.device)
+        yaw = torch.where(ready, self._raw[:, 3] * task.yaw_bound, zero)
+        self.yaw_goal[:, 0] = yaw
+        self.elapsed_steps += 1
+
+    def apply_actions(self):
+        p, q, jac, velocity = self.frame()
+        self.max_physics_speed[:] = torch.maximum(self.max_physics_speed, velocity[:, :3].norm(dim=-1))
+        task = self._env.cfg.task
+        dt = self._env.physics_dt
+        self.reference_position[:], self.reference_velocity[:] = bounded_reference(
+            self.reference_position, self.reference_velocity, self.target, dt,
+            task.reference_speed, task.reference_acceleration)
+        self.reference_yaw[:], self.reference_yaw_velocity[:] = bounded_reference(
+            self.reference_yaw, self.reference_yaw_velocity, self.yaw_goal, dt,
+            task.reference_yaw_speed, task.reference_yaw_acceleration)
+        zero = torch.zeros(self.num_envs, device=self.device)
+        self.target_quat[:] = quat_from_euler_xyz(zero + torch.pi, zero, self.reference_yaw[:, 0])
+        position_error, rotation_error = compute_pose_error(p, q, self.reference_position, self.target_quat, rot_error_type='axis_angle')
+        force = dead_zone(self.kp * position_error - 2 * self.kp.sqrt() * velocity[:, :3], self.deadzone)
+        force *= (task.translation_force_cap / force.norm(dim=-1, keepdim=True).clamp_min(1e-9)).clamp(max=1.)
+        self.commanded_force[:] = force
+        rot_kp = self._env.cfg.task.rotation_stiffness
+        torque = rot_kp * rotation_error - self.rotation_damping * velocity[:, 3:]
+        wrench = torch.cat((force, torque), dim=-1)
+        effort = torch.bmm(jac.transpose(1, 2), wrench.unsqueeze(-1)).squeeze(-1)
+        effort += self._asset.root_physx_view.get_gravity_compensation_forces()[:, self.joints]
+        self._asset.set_joint_effort_target(effort, joint_ids=self.joints)
+        self.hold_gripper()
+
+    def hold_gripper(self, env_ids=None):
+        """Always close with force: width acceptance never switches this off."""
+        count = self.num_envs if env_ids is None else len(env_ids)
+        effort = torch.full((count, len(self.fingers)), -self._env.cfg.task.gripper_force, device=self.device)
+        self._asset.set_joint_effort_target(effort, joint_ids=self.fingers, env_ids=env_ids)
+
+    def reset(self, env_ids=None):
+        ids = slice(None) if env_ids is None else env_ids
+        self.reference_position[ids] = self.reset_target[ids]
+        self.reference_velocity[ids] = 0
+        self.reference_yaw[ids] = 0
+        self.reference_yaw_velocity[ids] = 0
+        self.yaw_goal[ids] = 0
+        self.commanded_force[ids] = 0
+        self.max_physics_speed[ids] = 0
+        self._raw[ids] = 0
+        self.elapsed_steps[ids] = 0
+        self.fresh[ids] = True
+        self.obs_step = -1
+        self.hold_gripper(env_ids)
+
+
+def action_term(env):
+    return env.action_manager.get_term('arm_action')
+
+
+def reset_paper(env, env_ids):
+    reset_grasp_state(env, env_ids, gripper_command=env.cfg.task.gripper_expected_width / 2.0)
+    task = env.cfg.task
+    base = env.scene['base']
+    state = base.data.default_root_state[env_ids].clone()
+    state[:, :3] += env.scene.env_origins[env_ids]
+    # Fixed base: reset is already above hole_large; no pickup-to-hole travel.
+    base.write_root_pose_to_sim(state[:, :7], env_ids=env_ids)
+    base.write_root_velocity_to_sim(torch.zeros_like(state[:, 7:]), env_ids=env_ids)
+    term = action_term(env)
+    for target, bounds in ((term.kp, task.kp_range), (term.limit, task.action_limit_range),
+                           (term.deadzone, task.deadzone_range), (term.threshold, task.force_threshold_range)):
+        target[env_ids] = torch.empty_like(target[env_ids]).uniform_(*bounds)
+    hole_range = torch.tensor(task.hole_position_error, device=env.device)
+    term.hole_bias[env_ids] = (2 * torch.rand(len(env_ids), 3, device=env.device) - 1) * hole_range
+    grasp_range = torch.tensor(task.grasp_position_error, device=env.device)
+    term.grasp_offset_hand[env_ids] = (2 * torch.rand(len(env_ids), 3, device=env.device) - 1) * grasp_range
+    shaft = env.scene['shaft']
+    shaft_state = shaft.data.default_root_state[env_ids].clone()
+    shaft_state[:, :3] += env.scene.env_origins[env_ids]
+    quaternion = term.reset_hand_quaternion.expand(len(env_ids), -1)
+    shaft_state[:, :3] += quat_apply(quaternion, term.grasp_offset_hand[env_ids])
+    shaft_state[:, 7:] = 0.0
+    shaft.write_root_pose_to_sim(shaft_state[:, :7], env_ids=env_ids)
+    shaft.write_root_velocity_to_sim(shaft_state[:, 7:], env_ids=env_ids)
+    term.fresh[env_ids] = True
+    term.obs_step = -1
+
+
+def gripper_width(env):
+    term = action_term(env)
+    return env.scene['robot'].data.joint_pos[:, term.fingers].sum(dim=-1)
+
+
+def grasp_width_valid(env):
+    task = env.cfg.task
+    return (gripper_width(env) - task.gripper_expected_width).abs() <= task.gripper_width_tolerance
+
+
+def insertion_phase(env):
+    task = env.cfg.task
+    elapsed = (action_term(env).elapsed_steps * env.step_dt - task.gripper_settle_s).clamp_min(0)
+    distance = task.approach_height + task.insertion_depth
+    return (elapsed * task.insertion_speed / distance).clamp(0, 1)
+
+
+def insertion_enabled(env):
+    return (action_term(env).elapsed_steps * env.step_dt >= env.cfg.task.gripper_settle_s) & grasp_width_valid(env)
+
+
+def nominal_target(env):
+    task = env.cfg.task
+    term = action_term(env)
+    desired = hole_target_position_w(env) + term.hole_bias
+    desired[:, 2] += task.approach_height - insertion_phase(env) * (task.approach_height + task.insertion_depth)
+    return torch.where(insertion_enabled(env)[:, None], desired, term.reset_target)
+
+
+def invalid_grasp_width(env):
+    # Width is a hardware-style grasp check, not proof of force or zero slip.
+    elapsed = action_term(env).elapsed_steps * env.step_dt
+    return (elapsed >= env.cfg.task.gripper_check_delay_s) & ~grasp_width_valid(env)
+
+
+def contact_force(env):
+    """Shaft-on-base external contact proxy; excludes finger squeeze contacts."""
+    matrix = env.scene['insertion_contact'].data.force_matrix_w
+    if matrix is None:
+        raise RuntimeError('FORGE requires the shaft-to-base filtered contact sensor.')
+    return matrix.sum(dim=(1, 2))
+
+
+def actor_state(env):
+    term = action_term(env)
+    # ObservationManager probes shapes before the first reset. Cache one noisy
+    # sample per policy step so repeated reads cannot change finite differences.
+    if term.obs_step == env.common_step_counter and term.obs is not None:
+        return term.obs
+    p, q, _, vel = term.frame()
+    noisy = p + torch.randn_like(p) * env.cfg.task.ee_position_noise_std
+    linear = (noisy - term.prev_noisy_position) / env.step_dt
+    linear[term.fresh] = 0
+    term.prev_noisy_position[:] = noisy
+    term.fresh[:] = False
+    force = contact_force(env) + torch.randn_like(p) * env.cfg.task.force_noise_std
+    relative = noisy - hole_target_position_w(env) - term.hole_bias
+    term.obs = torch.cat((relative, q, linear, vel[:, 3:], force,
+                          term.threshold[:, None], term.raw_actions,
+                          insertion_phase(env)[:, None], gripper_width(env)[:, None]), dim=-1)
+    term.obs_step = env.common_step_counter
+    return term.obs
+
+
+def tip_and_axis(env):
+    shaft = env.scene['shaft']
+    axis_local = torch.zeros(env.num_envs, 3, device=env.device)
+    axis_local[:, 2] = 1
+    axis = quat_apply(shaft.data.root_quat_w, axis_local)
+    tip = shaft.data.root_pos_w + axis * env.cfg.task.shaft_bottom_offset
+    return tip, axis
+
+
+def insertion_success(env):
+    tip, axis = tip_and_axis(env)
+    error = tip - hole_target_position_w(env)
+    depth = -error[:, 2]
+    return ((error[:, :2].norm(dim=-1) <= env.cfg.task.success_xy_tolerance)
+            & (depth >= env.cfg.task.insertion_depth - env.cfg.task.depth_tolerance)
+            & (depth <= env.cfg.task.insertion_depth + env.cfg.task.depth_tolerance)
+            & (axis[:, 2] >= env.cfg.task.success_axis_cos))
+
+
+def keypoint_reward(env):
+    tip, axis = tip_and_axis(env)
+    target = hole_target_position_w(env).clone()
+    target[:, 2] -= env.cfg.task.insertion_depth
+    offsets = torch.tensor(env.cfg.task.keypoint_offsets, device=env.device)
+    actual_points = tip[:, None, :] + axis[:, None, :] * offsets[None, :, None]
+    goal_points = target[:, None, :].repeat(1, len(offsets), 1)
+    goal_points[:, :, 2] += offsets
+    distance = (actual_points - goal_points).norm(dim=-1).mean(dim=-1)
+    task = env.cfg.task
+    return logistic_kernel(distance, *task.coarse_kernel) + logistic_kernel(distance, *task.fine_kernel)
+
+
+def place_bonus(env):
+    tip, axis = tip_and_axis(env)
+    error = tip - hole_target_position_w(env)
+    # A centred approach or valid inserted state; deep interpenetration fails.
+    return ((error[:, :2].norm(dim=-1) <= env.cfg.task.place_distance)
+            & (error[:, 2] <= env.cfg.task.place_distance)
+            & (error[:, 2] >= -env.cfg.task.insertion_depth - env.cfg.task.depth_tolerance)
+            & (axis[:, 2] >= env.cfg.task.success_axis_cos)).float()
+
+
+def inserted_bonus(env):
+    return insertion_success(env).float()
+
+
+def excessive_force(env):
+    return force_excess(contact_force(env), action_term(env).threshold)
+
+
+def prediction_error(env):
+    prediction = (action_term(env).raw_actions[:, 4] + 1) * 0.5
+    return (prediction - insertion_success(env).float()).abs()
+
+
+def critic_state(env):
+    term = action_term(env)
+    p, q, _, vel = term.frame()
+    shaft = env.scene['shaft']
+    hole = hole_target_position_w(env)
+    return torch.cat((p-hole, q, vel, shaft.data.root_pos_w-hole,
+                      shaft.data.root_quat_w, shaft.data.root_vel_w, contact_force(env),
+                      term.kp, term.limit, term.deadzone, term.threshold[:, None], term.raw_actions,
+                      insertion_phase(env)[:, None], gripper_width(env)[:, None],
+                      term.hole_bias, term.grasp_offset_hand), dim=-1)
+
+
+def failed_workspace(env):
+    tip, _ = tip_and_axis(env)
+    error = tip - hole_target_position_w(env)
+    return ((error[:, :2].norm(dim=-1) > env.cfg.task.workspace_xy_limit)
+            | (error[:, 2] < -env.cfg.task.insertion_depth - 0.01)
+            | (error[:, 2] > 0.10))
+
+
+def shaft_pitch_penalty(env):
+    """Soft Y-axis tilt relative to the gripper; nominal shaft direction is hand -Z."""
+    term = action_term(env)
+    _, axis = tip_and_axis(env)
+    hand_q = env.scene['robot'].data.body_link_quat_w[:, term.body]
+    local_axis = quat_apply_inverse(hand_q, axis)
+    pitch = torch.atan2(local_axis[:, 0], -local_axis[:, 2])
+    return pitch_cost(pitch, env.cfg.task.shaft_pitch_tolerance, env.cfg.task.shaft_pitch_scale)

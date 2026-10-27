@@ -1,0 +1,12 @@
+START P1_clearance_1mm
+DONE P1_clearance_1mm passed
+START P0_clearance_1mm
+DONE P0_clearance_1mm passed
+START P1_clearance_0.5mm
+DONE P1_clearance_0.5mm passed
+START P0_clearance_0.5mm
+DONE P0_clearance_0.5mm passed
+START P1_clearance_0.25mm
+DONE P1_clearance_0.25mm passed
+START P0_clearance_0.25mm
+DONE P0_clearance_0.25mm passed

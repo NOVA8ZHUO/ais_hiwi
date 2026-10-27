@@ -1,0 +1,23 @@
+{
+  "inspect": {
+    "run": "forge_insertion/experiments/forge_peg_baseline/logs/20261012T123257_592272Z_inspect",
+    "exit_code": 0,
+    "commit": "37ddf626871758333d6ed89cf64ad702aef127d0"
+  },
+  "smoke": {
+    "run": "forge_insertion/experiments/forge_peg_baseline/logs/20261012T123303_574987Z_smoke",
+    "exit_code": 0,
+    "commit": "37ddf626871758333d6ed89cf64ad702aef127d0"
+  },
+  "short": {
+    "run": "forge_insertion/experiments/forge_peg_baseline/logs/20261012T123556_559314Z_short",
+    "exit_code": 0,
+    "commit": "37ddf626871758333d6ed89cf64ad702aef127d0"
+  },
+  "checkpoint_reload": {
+    "run": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_peg_baseline/logs/20261012T124038_597456Z_evaluate",
+    "exit_code": 0,
+    "episodes": 4,
+    "purpose": "pipeline validation, not baseline performance"
+  }
+}

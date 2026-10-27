@@ -1,0 +1,63 @@
+{
+  "hold8": {
+    "mode": "hold",
+    "nominal": false,
+    "envs": 8,
+    "max_contact_force": 0.0,
+    "max_tcp_displacement": 0.004184826742857695,
+    "max_settled_grasp_drift": 0.011007672175765038,
+    "width_range": [
+      0.035121217370033264,
+      0.035224393010139465
+    ],
+    "max_total_closing_speed": 0.008684267289936543,
+    "max_finger_asymmetry": 0.02307826280593872,
+    "successful_steps": 0,
+    "terminations": {
+      "time_out": 8,
+      "outside_workspace": 0,
+      "invalid_grasp_width": 0
+    }
+  },
+  "random32": {
+    "mode": "random",
+    "nominal": false,
+    "envs": 32,
+    "max_contact_force": 48.88249588012695,
+    "max_tcp_displacement": 0.09162062406539917,
+    "max_settled_grasp_drift": 0.13089558482170105,
+    "width_range": [
+      0.030467674136161804,
+      0.039912328124046326
+    ],
+    "max_total_closing_speed": 0.012287555262446404,
+    "max_finger_asymmetry": 0.019105594605207443,
+    "successful_steps": 0,
+    "terminations": {
+      "time_out": 26,
+      "outside_workspace": 3,
+      "invalid_grasp_width": 3
+    }
+  },
+  "continuous_grip": {
+    "mode": "hold",
+    "nominal": false,
+    "envs": 4,
+    "max_contact_force": 0.0,
+    "max_tcp_displacement": 0.0013878113823011518,
+    "max_settled_grasp_drift": 0.0005518237012438476,
+    "width_range": [
+      0.03512529283761978,
+      0.035187773406505585
+    ],
+    "max_total_closing_speed": 0.0,
+    "max_finger_asymmetry": 0.00207597017288208,
+    "successful_steps": 0,
+    "constant_width_force_steps": 75,
+    "terminations": {
+      "time_out": 0,
+      "outside_workspace": 0,
+      "invalid_grasp_width": 0
+    }
+  }
+}

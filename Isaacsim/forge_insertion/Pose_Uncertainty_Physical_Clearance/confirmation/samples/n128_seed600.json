@@ -1,0 +1,135 @@
+{
+  "seed": 600,
+  "num_envs": 128,
+  "sha256": "e402484015aa79200e79e3208ba241c965584ffca77f400c78b4f28b636edf84",
+  "stream_sha256": {
+    "base_position": "b24249e45624d843be2fe636a2a9144a80f5b479c74fe3f611ddc6a9de2ae5de",
+    "base_yaw": "9f0ebfbb96017cda61cac722ae66b7d186ba2ce61ad55f41e3b5aed2e718daa1",
+    "grasp_offset": "2a6ea397d0344c2dc1af0de0e725aefacbdd2848784b1dc709ce2fbb2519f28d",
+    "hole_observation": "98a59525335b31adb0e33074cc450703b9940135770b0f147d7282279f05e62d",
+    "hand_position": "0796e7c0c886381172b11cb2f110c5e42d243983dec065891fbef1e398a9cc0e",
+    "hand_orientation": "a11e423de45eaa191709d6b0604229405ea75366f26a167b63e09f801cd0ed8a",
+    "gains_magnitude": "6d95dc7d642a8e62a54707bfda6e365124f27986b530e9a09566c25c03172cf7",
+    "gains_direction": "0be88b1327d75788900d7347678cb73ea59bb4db738e662b87580e40625fafac",
+    "position_threshold_magnitude": "5944d3a99b25848f03c163a84d49765e4d6494a0a8b52dc35b3405d4b95c2628",
+    "position_threshold_direction": "ae920df2b7e9a4c0a08699309e7b0d552070570f51384e03f05a21cb9a51a703",
+    "rotation_threshold_magnitude": "48c1ff4170493bc7a74df9012d05be3536f456574a8206412d4e9ba0a9d4f912",
+    "rotation_threshold_direction": "99eace9e6c945c76c6adcee57e0f4994ad852fb651be18171a934716c29e05d5",
+    "ema": "c3bdbf62465672f78f8f5a5fea56958e9ac0bb9810cbf5b82593d38ce367cc7d",
+    "contact_threshold": "c2e31b932b91c48528857b2f8b1e71e51a1250031d8885947a09516200178fdd",
+    "quaternion_sign": "f9f75a18e39c12d07ee2d85a461becae84c5acc33aaa9dce37c1f386e2d3da56",
+    "dead_zone": "84bb8dc7c7a0ad3dd3efc3926dc8814d1b5a5e186775a1caa80c274be29ad9d2",
+    "mass": "a9f4df7210335c632a75f40d91f96db01f307365f9e2d18945e4cdf3490f7082",
+    "friction_buckets": "af0950ac7c3eb713a6bdff2673ac847970a1b9939b77e23b3a42c08ea6f8bd85",
+    "friction_ids": "7c2c90eef132205cf432a273715d2e487d61f63731b8e31b3603983e5a39241b",
+    "tip_position_noise": "722965a812b53c4b7a32416f8185b65ede6a07fda59024e60f63071110d09445",
+    "rotation_axis": "bdeec887ca3d2da0b237ab41c707be8c9f86ef18e862666f9d46a03162165931",
+    "rotation_angle": "dcc036a4de3b70732630f353ca8573a712eb682d226b0f635385a48c63fdb8c3",
+    "force_noise": "bc8bbc1b0f5f37bd08d2e59f84d234ba22355e51aaab1a01e651dc3f9a489b56",
+    "policy": "b0fb95630ae350440a1a6f530a2cbcf2a7f61ba1d9030465727f23f6fdb39555"
+  },
+  "shapes": {
+    "base_position": [
+      128,
+      3
+    ],
+    "base_yaw": [
+      128,
+      3
+    ],
+    "grasp_offset": [
+      128,
+      3
+    ],
+    "hole_observation": [
+      128,
+      3
+    ],
+    "hand_position": [
+      32,
+      128,
+      3
+    ],
+    "hand_orientation": [
+      32,
+      128,
+      3
+    ],
+    "gains_magnitude": [
+      128,
+      6
+    ],
+    "gains_direction": [
+      128,
+      6
+    ],
+    "position_threshold_magnitude": [
+      128,
+      3
+    ],
+    "position_threshold_direction": [
+      128,
+      3
+    ],
+    "rotation_threshold_magnitude": [
+      128,
+      3
+    ],
+    "rotation_threshold_direction": [
+      128,
+      3
+    ],
+    "ema": [
+      128,
+      1
+    ],
+    "contact_threshold": [
+      128
+    ],
+    "quaternion_sign": [
+      128
+    ],
+    "dead_zone": [
+      8,
+      128,
+      6
+    ],
+    "mass": [
+      128,
+      1
+    ],
+    "friction_buckets": [
+      128,
+      3
+    ],
+    "friction_ids": [
+      128,
+      16
+    ],
+    "tip_position_noise": [
+      2210,
+      128,
+      3
+    ],
+    "rotation_axis": [
+      2210,
+      128,
+      3
+    ],
+    "rotation_angle": [
+      2210,
+      128,
+      1
+    ],
+    "force_noise": [
+      2210,
+      128,
+      3
+    ],
+    "policy": [
+      160,
+      128,
+      7
+    ]
+  }
+}

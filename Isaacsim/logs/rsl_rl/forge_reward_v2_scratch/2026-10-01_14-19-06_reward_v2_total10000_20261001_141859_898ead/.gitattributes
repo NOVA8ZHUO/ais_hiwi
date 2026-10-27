@@ -1,0 +1,7 @@
+
+# Full backup: preserve large files with Git LFS.
+"/episode_metrics.csv" filter=lfs diff=lfs merge=lfs -text
+"/episode_metrics_control_trace.csv" filter=lfs diff=lfs merge=lfs -text
+"/events.out.tfevents.1790857148.masais-MS-7D31.1212586.0" filter=lfs diff=lfs merge=lfs -text
+"/metrics_scalars.csv" filter=lfs diff=lfs merge=lfs -text
+"/training_console.log" filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,4 @@
+[console_scripts]
+isaaclab = isaaclab.cli:cli
+play = isaaclab.cli:play
+train = isaaclab.cli:train

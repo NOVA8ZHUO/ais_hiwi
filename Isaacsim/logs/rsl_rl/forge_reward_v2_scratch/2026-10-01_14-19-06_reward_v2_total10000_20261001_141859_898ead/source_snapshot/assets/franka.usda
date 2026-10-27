@@ -1,0 +1,69 @@
+#usda 1.0
+(
+    defaultPrim = "Robot"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Robot" (
+    prepend references = @/home/masais/Xinyu/USD_files/shaft_insertion.usd@</Franka>
+)
+{
+    # Disable the old RealSense from the original shaft_insertion.usd.
+    over "Realsense" (
+        active = false
+        delete references = @https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Sensors/Intel/RealSense/rsd455.usd@
+    )
+    {
+    }
+
+    over "panda_hand"
+    {
+        # Old fixed joint only belonged to the old RealSense.
+        over "FixedJoint" (
+            active = false
+        )
+        {
+        }
+
+        # ------------------------------------------------------------
+        # New calibrated camera optical frame
+        #
+        # Hand-eye calibration:
+        # panda_hand -> camera_color_optical_frame
+        # ------------------------------------------------------------
+        def Xform "camera_color_optical_frame"
+        {
+            double3 xformOp:translate = (
+                0.045169476722836145,
+               -0.000694838721466207,
+                0.029314338772359366
+            )
+
+            quatf xformOp:orient = (
+                0.69916908,
+                0.06152037,
+               -0.05819856,
+               -0.70992308
+            )
+
+            uniform token[] xformOpOrder = [
+                "xformOp:translate",
+                "xformOp:orient"
+            ]
+        }
+
+        # Isaac Sim 5.1 compatibility patch for finger 2.
+        over "panda_finger_joint2" (
+            delete apiSchemas = ["PhysxMimicJointAPI:rotY"]
+            prepend apiSchemas = ["PhysicsDriveAPI:linear"]
+        )
+        {
+            float drive:linear:physics:damping = 100
+            float drive:linear:physics:maxForce = 200
+            float drive:linear:physics:stiffness = 2000
+            float drive:linear:physics:targetPosition = 0
+            float drive:linear:physics:targetVelocity = 0
+        }
+    }
+}

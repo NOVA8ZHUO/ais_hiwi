@@ -1,0 +1,47 @@
+{
+  "run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_coupled_release25/2026-09-29_14-55-55_coupled200_from_model19_20260929_145548_bddcdd",
+  "completed_episodes": 2940,
+  "final_scalars": {
+    "Episode_Reward/keypoints": 3.3305132389068604,
+    "Episode_Reward/place": 1.5070313215255737,
+    "Episode_Reward/inserted": 0.2421875,
+    "Episode_Reward/contact": 0.0,
+    "Episode_Reward/shaft_pitch": -0.31662383675575256,
+    "Episode_Reward/prediction": -0.08443927764892578,
+    "Episode_Termination/time_out": 0.856201171875,
+    "Episode_Termination/outside_workspace": 0.0,
+    "Episode_Termination/invalid_grasp_width": 0.0,
+    "Episode_Termination/release_complete": 0.143798828125,
+    "Metrics_cumulative/completed_episodes": 2940.0,
+    "Metrics_cumulative/success_any": 0.20374149084091187,
+    "Metrics_cumulative/success_final": 0.20374149084091187,
+    "Metrics_cumulative/success_stable": 0.2013605386018753,
+    "Metrics_cumulative/force_p95_N": 3.5894408226013184,
+    "Metrics_cumulative/force_peak_N": 5.152219772338867,
+    "Metrics_cumulative/action_saturation": 0.099843829870224,
+    "Metrics_cumulative/longest_success_s": 0.4086167812347412,
+    "Loss/value_function": 20.71889877319336,
+    "Loss/surrogate": -0.0009645821410231292,
+    "Loss/entropy": 3.4498448371887207,
+    "Loss/learning_rate": 0.0002562890585977584,
+    "Policy/mean_noise_std": 0.48261919617652893,
+    "Perf/total_fps": 724.0,
+    "Perf/collection time": 5.551399230957031,
+    "Perf/learning_time": 0.1030125617980957,
+    "Train/mean_reward": 70.50811767578125,
+    "Train/mean_episode_length": 285.1300048828125,
+    "Train/mean_reward/time": 70.50811767578125,
+    "Train/mean_episode_length/time": 285.1300048828125
+  },
+  "source_snapshot_available": true,
+  "terminations": {
+    "time_out": 2383,
+    "outside_workspace": 0,
+    "invalid_grasp_width": 0
+  },
+  "success_rates": {
+    "success_any": 0.20374149659863947,
+    "success_final": 0.20374149659863947,
+    "success_stable": 0.20136054421768707
+  }
+}

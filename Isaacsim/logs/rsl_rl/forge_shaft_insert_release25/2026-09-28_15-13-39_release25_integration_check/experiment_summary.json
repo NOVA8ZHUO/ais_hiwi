@@ -1,0 +1,47 @@
+{
+  "run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_release25/2026-09-28_15-13-39_release25_integration_check",
+  "completed_episodes": 1,
+  "final_scalars": {
+    "Episode_Reward/keypoints": 0.04570377990603447,
+    "Episode_Reward/place": 0.0,
+    "Episode_Reward/inserted": 0.0,
+    "Episode_Reward/contact": 0.0,
+    "Episode_Reward/shaft_pitch": 0.0,
+    "Episode_Reward/prediction": -0.17846500873565674,
+    "Episode_Termination/time_out": 0.03125,
+    "Episode_Termination/outside_workspace": 0.0,
+    "Episode_Termination/invalid_grasp_width": 0.0,
+    "Episode_Termination/release_complete": 0.0,
+    "Metrics_cumulative/completed_episodes": 1.0,
+    "Metrics_cumulative/success_any": 0.0,
+    "Metrics_cumulative/success_final": 0.0,
+    "Metrics_cumulative/success_stable": 0.0,
+    "Metrics_cumulative/force_p95_N": 0.0,
+    "Metrics_cumulative/force_peak_N": 0.0,
+    "Metrics_cumulative/action_saturation": 0.032608695328235626,
+    "Metrics_cumulative/longest_success_s": 0.0,
+    "Loss/value_function": 6.965447902679443,
+    "Loss/surrogate": -0.02158842608332634,
+    "Loss/entropy": 3.6222519874572754,
+    "Loss/learning_rate": 0.00044999999227002263,
+    "Policy/mean_noise_std": 0.49856406450271606,
+    "Perf/total_fps": 5.0,
+    "Perf/collection time": 21.556970596313477,
+    "Perf/learning_time": 0.2876911163330078,
+    "Train/mean_reward": -21.241792678833008,
+    "Train/mean_episode_length": 61.0,
+    "Train/mean_reward/time": -21.241792678833008,
+    "Train/mean_episode_length/time": 61.0
+  },
+  "source_snapshot_available": true,
+  "terminations": {
+    "time_out": 1,
+    "outside_workspace": 0,
+    "invalid_grasp_width": 0
+  },
+  "success_rates": {
+    "success_any": 0.0,
+    "success_final": 0.0,
+    "success_stable": 0.0
+  }
+}

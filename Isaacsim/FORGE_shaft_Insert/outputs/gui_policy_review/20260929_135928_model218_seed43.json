@@ -1,0 +1,16 @@
+{
+  "checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_release25/2026-09-28_16-30-50_pilot200_from_model19_20260928_163043_c55e89/model_218.pt",
+  "seed": 43,
+  "deterministic": true,
+  "settings": "Current task settings; not a reconstruction of historical trajectories",
+  "metrics": {
+    "completed_episodes": 8,
+    "success_any": 0.25,
+    "success_final": 0.25,
+    "success_stable": 0.25,
+    "force_p95_N": 3.6553784608840942,
+    "force_peak_N": 4.5789214968681335,
+    "action_saturation": 0.042290300875341066,
+    "longest_success_s": 0.5166666666666666
+  }
+}

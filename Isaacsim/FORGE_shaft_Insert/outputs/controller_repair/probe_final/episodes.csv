@@ -1,0 +1,4 @@
+env_id,steps,duration_s,success_any,success_final,success_stable,longest_success_s,final_success_streak_s,force_p95_N,force_peak_N,action_saturation,active_action_steps,time_out,outside_workspace,invalid_grasp_width,episode_index
+2,28,1.8666666666666667,0,0,0,0.0,0.0,0.0,0.0,0.0,13,0,1,0,1
+2,28,1.8666666666666667,0,0,0,0.0,0.0,0.0,0.0,0.0,13,0,1,0,2
+2,28,1.8666666666666667,0,0,0,0.0,0.0,0.0,0.0,0.0,13,0,1,0,3

@@ -1,0 +1,202 @@
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-09-28_15-13-40.log[0m
+[36m======================================================================================[0m
+
+[33m15:13:40 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 42
+	Physics step-size     : 0.004166666666666667
+	Rendering step-size   : 0.06666666666666667
+	Environment step-size : 0.06666666666666667
+[INFO]: Time taken for scene creation : 1.378687 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 4
+	Environment spacing   : 1.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 0.698226 seconds
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++------------------------+
+|  Active Command Terms  |
++--------+-------+-------+
+| Index  | Name  |  Type |
++--------+-------+-------+
++--------+-------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-----------------------------------+
+| Active Event Terms in Mode: 'reset' |
++----------+------------------------+
+|  Index   | Name                   |
++----------+------------------------+
+|    0     | reset                  |
+|    1     | shaft_friction         |
+|    2     | base_friction          |
++----------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++---------------------+
+| Active Recorder Terms |
++-----------+---------+
+|   Index   | Name    |
++-----------+---------+
++-----------+---------+
+
+[INFO] Action Manager:  <ActionManager> contains 1 active terms.
++-----------------------------------+
+|   Active Action Terms (shape: 5)  |
++--------+-------------+------------+
+| Index  | Name        |  Dimension |
++--------+-------------+------------+
+|   0    | arm_action  |          5 |
++--------+-------------+------------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++--------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (29,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (29,)      |
++----------------+----------------+----------------+
++--------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (53,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (53,)      |
++----------------+----------------+----------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 4 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | outside_workspace   |  False   |
+|   2   | invalid_grasp_width |  False   |
+|   3   | release_complete    |  False   |
++-------+---------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 6 active terms.
++------------------------------+
+|     Active Reward Terms      |
++-------+-------------+--------+
+| Index | Name        | Weight |
++-------+-------------+--------+
+|   0   | keypoints   |   15.0 |
+|   1   | place       |   15.0 |
+|   2   | inserted    |   15.0 |
+|   3   | contact     |  -3.75 |
+|   4   | shaft_pitch |  -3.75 |
+|   5   | prediction  |  -15.0 |
++-------+-------------+--------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+[INFO]: Completed setting up the environment...
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 policy :  ['policy']
+	 critic :  ['critic']
+--------------------------------------------------------------------------------
+Actor RNN: Memory(
+  (rnn): LSTM(29, 128)
+)
+Actor MLP: MLP(
+  (0): Linear(in_features=128, out_features=128, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=128, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=5, bias=True)
+)
+Critic RNN: Memory(
+  (rnn): LSTM(53, 128)
+)
+Critic MLP: MLP(
+  (0): Linear(in_features=128, out_features=128, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=128, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=1, bias=True)
+)
+################################################################################
+                        [1m Learning iteration 0/2 [0m                        
+
+                       Computation: 5 steps/s (collection: 22.227s, learning 0.390s)
+             Mean action noise std: 0.50
+                    value_function: 14.1168
+                         surrogate: -0.0494
+                           entropy: 3.6294
+          Episode_Reward/keypoints: 0.0000
+              Episode_Reward/place: 0.0000
+           Episode_Reward/inserted: 0.0000
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: 0.0000
+      Episode_Termination/time_out: 0.0000
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.0000
+Metrics_cumulative/completed_episodes: 0.0000
+    Metrics_cumulative/success_any: 0.0000
+  Metrics_cumulative/success_final: 0.0000
+ Metrics_cumulative/success_stable: 0.0000
+    Metrics_cumulative/force_p95_N: 0.0000
+   Metrics_cumulative/force_peak_N: 0.0000
+Metrics_cumulative/action_saturation: 0.0000
+Metrics_cumulative/longest_success_s: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 128
+                    Iteration time: 22.62s
+                      Time elapsed: 00:00:22
+                               ETA: 00:00:45
+
+Could not find git repository in /home/masais/miniconda3/envs/Xinyu_isaacsim/lib/python3.11/site-packages/rsl_rl/__init__.py. Skipping.
+Storing git diff for 'IsaacLab_2_3_2' in: /home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_release25/2026-09-28_15-13-39_release25_integration_check/git/IsaacLab_2_3_2.diff
+################################################################################
+                        [1m Learning iteration 1/2 [0m                        
+
+                       Computation: 5 steps/s (collection: 21.557s, learning 0.288s)
+             Mean action noise std: 0.50
+          Mean value_function loss: 6.9654
+               Mean surrogate loss: -0.0216
+                 Mean entropy loss: 3.6223
+                       Mean reward: -21.24
+               Mean episode length: 61.00
+          Episode_Reward/keypoints: 0.0457
+              Episode_Reward/place: 0.0000
+           Episode_Reward/inserted: 0.0000
+            Episode_Reward/contact: 0.0000
+        Episode_Reward/shaft_pitch: 0.0000
+         Episode_Reward/prediction: -0.1785
+      Episode_Termination/time_out: 0.0312
+Episode_Termination/outside_workspace: 0.0000
+Episode_Termination/invalid_grasp_width: 0.0000
+Episode_Termination/release_complete: 0.0000
+Metrics_cumulative/completed_episodes: 1.0000
+    Metrics_cumulative/success_any: 0.0000
+  Metrics_cumulative/success_final: 0.0000
+ Metrics_cumulative/success_stable: 0.0000
+    Metrics_cumulative/force_p95_N: 0.0000
+   Metrics_cumulative/force_peak_N: 0.0000
+Metrics_cumulative/action_saturation: 0.0326
+Metrics_cumulative/longest_success_s: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 256
+                    Iteration time: 21.84s
+                      Time elapsed: 00:00:44
+                               ETA: 00:00:22
+
+Training time: 44.97 seconds

@@ -1,0 +1,14 @@
+{
+  "identity": {
+    "condition": "mass_only",
+    "active": [
+      "mass"
+    ],
+    "seed": 4321,
+    "num_envs": 4,
+    "checkpoint_sha256": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897",
+    "lock_sha256": "5a5cbd98e133c7711970c3dfdf88a93c619a046c42cc7dc6d4130f1365f7e033",
+    "sample_sha256": "fb1accb697765f70d79c965c2876557be4794df58731af3d8f6c69818204580c"
+  },
+  "seconds": 97.77118111494929
+}

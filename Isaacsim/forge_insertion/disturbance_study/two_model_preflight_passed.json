@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checks": [
+    "both epoch-200 checkpoints loaded",
+    "same environmental and policy sample tapes",
+    "same applied reset perturbations"
+  ],
+  "episodes_per_model": 4,
+  "checkpoint_sha256": {
+    "zero": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897",
+    "randomized": "57ae61f09be156e0c07aa250e0c58d164251e0efc36f2b56b2a76ee21e3f24ed"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "status": "UNCONFIGURED_TEMPLATE_NOT_FOR_ROBOT_MOTION",
+  "model": {
+    "actor_path": "policy_actor.ts",
+    "checkpoint": "model_8000.pt",
+    "checkpoint_sha256": "f025e808a8d677b3c9ab365e6e796bd5da99215cf671c0a668a9975a8683aafc",
+    "device": "cpu",
+    "policy_hz": 15,
+    "observation_dimension": 29,
+    "action_dimension": 5,
+    "normalization_in_actor": true
+  },
+  "hardware": {
+    "driver": null,
+    "robot_address": null,
+    "control_interface": null,
+    "control_hz": null,
+    "state_source": null,
+    "gripper_driver": null,
+    "gravity_compensation_owner": null,
+    "stop_behavior": null
+  },
+  "calibration": {
+    "T_W_B": null,
+    "T_driver_EE_H": null,
+    "hand_to_virtual_TCP_translation_m": null,
+    "hole_mouth_position_W_m": null,
+    "force_frame": null,
+    "force_sign": null,
+    "force_bias": null,
+    "tool_mass_kg": null,
+    "tool_com_m": null,
+    "force_compensation_owner": null,
+    "timestamp_source": null
+  },
+  "controller_real_values_required": {
+    "kp_N_per_m": null,
+    "xy_deadzone_N": null,
+    "target_error_limit_m": null,
+    "force_threshold_observation_N": null
+  },
+  "deployment_choices": {
+    "episode_timeout_s": null,
+    "timeout_reference": "20s full benchmark;25s candidate rescued6/8 targeted failures;keep original phase formula",
+    "release_depth_source": null,
+    "manual_release_confirmation": null,
+    "initial_pose_plan": null
+  },
+  "hardware_limits_required": {
+    "workspace": null,
+    "joint_limits": null,
+    "max_feedback_age_s": null,
+    "force_stop_N": null,
+    "velocity_limits": null,
+    "watchdog_behavior": null
+  },
+  "gripper_user_request": {
+    "force_N": 20,
+    "expected_width_m": 0.035,
+    "width_tolerance_m": 0.005,
+    "total_closing_speed_m_s": 0.02,
+    "continuous_force_hold": true,
+    "release_width_m": 0.06
+  },
+  "notes": [
+    "Fill nulls from actual hardware; do not substitute zero.",
+    "Controller limits and full control equations are in DEPLOYMENT_HANDOFF.md and source_snapshot.",
+    "This JSON is an interface planning template, not a ready driver configuration.",
+    "Retain measured vs selected parameter provenance in a separate calibration record."
+  ]
+}

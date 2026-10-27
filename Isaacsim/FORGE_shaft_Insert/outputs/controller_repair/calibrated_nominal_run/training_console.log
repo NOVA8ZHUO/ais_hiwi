@@ -1,0 +1,120 @@
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-09-28_14-41-43.log[0m
+[36m======================================================================================[0m
+
+[33m14:41:43 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.004166666666666667
+	Rendering step-size   : 0.06666666666666667
+	Environment step-size : 0.06666666666666667
+[INFO]: Time taken for scene creation : 1.489893 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 4
+	Environment spacing   : 1.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 0.643701 seconds
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++------------------------+
+|  Active Command Terms  |
++--------+-------+-------+
+| Index  | Name  |  Type |
++--------+-------+-------+
++--------+-------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-----------------------------------+
+| Active Event Terms in Mode: 'reset' |
++----------+------------------------+
+|  Index   | Name                   |
++----------+------------------------+
+|    0     | reset                  |
+|    1     | shaft_friction         |
+|    2     | base_friction          |
++----------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++---------------------+
+| Active Recorder Terms |
++-----------+---------+
+|   Index   | Name    |
++-----------+---------+
++-----------+---------+
+
+[INFO] Action Manager:  <ActionManager> contains 1 active terms.
++-----------------------------------+
+|   Active Action Terms (shape: 5)  |
++--------+-------------+------------+
+| Index  | Name        |  Dimension |
++--------+-------------+------------+
+|   0    | arm_action  |          5 |
++--------+-------------+------------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++--------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (28,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (28,)      |
++----------------+----------------+----------------+
++--------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (52,)) |
++----------------+----------------+----------------+
+|     Index      | Name           |     Shape      |
++----------------+----------------+----------------+
+|       0        | state          |     (52,)      |
++----------------+----------------+----------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 3 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | outside_workspace   |  False   |
+|   2   | invalid_grasp_width |  False   |
++-------+---------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 6 active terms.
++------------------------------+
+|     Active Reward Terms      |
++-------+-------------+--------+
+| Index | Name        | Weight |
++-------+-------------+--------+
+|   0   | keypoints   |   15.0 |
+|   1   | place       |   15.0 |
+|   2   | inserted    |   15.0 |
+|   3   | contact     |  -3.75 |
+|   4   | shaft_pitch |  -3.75 |
+|   5   | prediction  |  -15.0 |
++-------+-------------+--------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+[INFO]: Completed setting up the environment...
+GRIP_CONFIG_PASS force=20N aperture_speed=20mm/s width=35+/-5mm
+RESET_CONTRACT_PASS actor=28 critic=52; fixed base; local X/Z grasp errors; persistent XYZ hole bias
+SAMPLED_RANGES grasp [0.0, 0.0, -0.0] [0.0, 0.0, -0.0] hole [-0.0, -0.0, 0.0] [-0.0, -0.0, 0.0]
+RESIDUAL_CONTRACT_PASS
+RESIDUAL_STEP 0 width_mm [35.105533599853516, 35.10683059692383, 35.10686111450195, 35.106815338134766] force_max 0.0 grasp_drift_mm 0.0
+RESIDUAL_STEP 30 width_mm [35.10809326171875, 35.10684585571289, 35.106807708740234, 35.106842041015625] force_max 0.0 grasp_drift_mm 2.1689748391509056
+RESIDUAL_STEP 60 width_mm [35.12710189819336, 35.12374496459961, 35.11980056762695, 35.11648178100586] force_max 3.2932279109954834 grasp_drift_mm 5.14966482296586
+RESIDUAL_STEP 90 width_mm [35.124549865722656, 35.12249755859375, 35.137474060058594, 35.12555694580078] force_max 2.3741445541381836 grasp_drift_mm 8.51673074066639
+RESIDUAL_STEP 120 width_mm [35.149375915527344, 35.13323974609375, 35.135581970214844, 35.14652633666992] force_max 3.758635997772217 grasp_drift_mm 12.079310603439808
+RESIDUAL_STEP 150 width_mm [35.14134216308594, 35.11664962768555, 35.105159759521484, 35.10822296142578] force_max 0.0 grasp_drift_mm 15.369665808975697
+RESIDUAL_RESULT {'mode': 'directed', 'nominal': True, 'envs': 4, 'max_contact_force': 4.2821855545043945, 'max_tcp_displacement': 0.025181125849485397, 'max_settled_grasp_drift': 0.015369665808975697, 'width_range': (0.035106316208839417, 0.03515242785215378), 'max_total_closing_speed': 0.008657822385430336, 'max_finger_asymmetry': 0.03296973183751106, 'successful_steps': 0, 'constant_width_force_steps': 621, 'terminations': {'time_out': 4, 'outside_workspace': 0, 'invalid_grasp_width': 0}}
+EPISODE_METRICS {"completed_episodes": 4, "success_any": 0.0, "success_final": 0.0, "success_stable": 0.0, "force_p95_N": 3.6887835264205933, "force_peak_N": 4.165314078330994, "action_saturation": 0.0, "longest_success_s": 0.0}
+RESIDUAL_TEST_PASS

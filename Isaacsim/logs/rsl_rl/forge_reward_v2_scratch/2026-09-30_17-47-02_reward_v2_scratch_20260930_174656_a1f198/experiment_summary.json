@@ -1,0 +1,52 @@
+{
+  "run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_reward_v2_scratch/2026-09-30_17-47-02_reward_v2_scratch_20260930_174656_a1f198",
+  "completed_episodes": 53854,
+  "final_scalars": {
+    "Episode_Reward/keypoints": 0.3158436417579651,
+    "Episode_Reward/place": 0.15398433804512024,
+    "Episode_Reward/inserted": 5.328125953674316,
+    "Episode_Reward/contact": -0.012542645446956158,
+    "Episode_Reward/shaft_pitch": -1.9120874404907227,
+    "Episode_Reward/prediction": -0.12288873642683029,
+    "Episode_Reward/depth_progress": 2.037189483642578,
+    "Episode_Reward/insertion_stall": -0.13875019550323486,
+    "Episode_Reward/lateral_stall": -0.04355058819055557,
+    "Episode_Reward/outside_descent": 0.0,
+    "Episode_Reward/release_seated": 0.3437500596046448,
+    "Episode_Termination/time_out": 0.31201171875,
+    "Episode_Termination/outside_workspace": 0.0,
+    "Episode_Termination/invalid_grasp_width": 0.0,
+    "Episode_Termination/release_complete": 0.68798828125,
+    "Metrics_cumulative/completed_episodes": 53854.0,
+    "Metrics_cumulative/success_any": 0.610929548740387,
+    "Metrics_cumulative/success_final": 0.610929548740387,
+    "Metrics_cumulative/success_stable": 0.6055817604064941,
+    "Metrics_cumulative/force_p95_N": 2.9645092487335205,
+    "Metrics_cumulative/force_peak_N": 4.625527381896973,
+    "Metrics_cumulative/action_saturation": 0.15340545773506165,
+    "Metrics_cumulative/longest_success_s": 1.2377997636795044,
+    "Loss/value_function": 109.61026763916016,
+    "Loss/surrogate": -0.0023566982708871365,
+    "Loss/entropy": -2.780353307723999,
+    "Loss/learning_rate": 1.4999999621068127e-05,
+    "Policy/mean_noise_std": 0.17204754054546356,
+    "Perf/total_fps": 759.0,
+    "Perf/collection time": 5.286462783813477,
+    "Perf/learning_time": 0.10437846183776855,
+    "Train/mean_reward": 159.84066772460938,
+    "Train/mean_episode_length": 200.7100067138672,
+    "Train/mean_reward/time": 159.84066772460938,
+    "Train/mean_episode_length/time": 200.7100067138672
+  },
+  "source_snapshot_available": true,
+  "terminations": {
+    "time_out": 22330,
+    "outside_workspace": 0,
+    "invalid_grasp_width": 3
+  },
+  "success_rates": {
+    "success_any": 0.6109295502655328,
+    "success_final": 0.6109295502655328,
+    "success_stable": 0.6055817580866788
+  }
+}

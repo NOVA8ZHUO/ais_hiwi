@@ -1,0 +1,16 @@
+{
+  "checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_shaft_insert_residual/2026-09-28_13-56-27_gentle_search_gui/model_19.pt",
+  "seed": 42,
+  "deterministic": true,
+  "settings": "Current task settings; not a reconstruction of historical trajectories",
+  "metrics": {
+    "completed_episodes": 11,
+    "success_any": 0.0,
+    "success_final": 0.0,
+    "success_stable": 0.0,
+    "force_p95_N": 0.0,
+    "force_peak_N": 0.0,
+    "action_saturation": 0.0010822510822510823,
+    "longest_success_s": 0.0
+  }
+}

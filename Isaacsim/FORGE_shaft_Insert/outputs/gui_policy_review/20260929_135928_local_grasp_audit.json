@@ -1,0 +1,68 @@
+[
+  {
+    "env": 0,
+    "episode": 1,
+    "local_relative_change_mm": [
+      -0.025279383577888365,
+      -15.338967262767792,
+      -0.07584981724768294
+    ],
+    "local_xy_change_mm": 15.33898809359653,
+    "finger_center_shift_mm": 15.368975466117263
+  },
+  {
+    "env": 1,
+    "episode": 1,
+    "local_relative_change_mm": [
+      1.8125759014143368,
+      -16.566596048746103,
+      -0.1361332275411093
+    ],
+    "local_xy_change_mm": 16.665459370827975,
+    "finger_center_shift_mm": 16.472566312586423
+  },
+  {
+    "env": 2,
+    "episode": 1,
+    "local_relative_change_mm": [
+      0.10637356712762773,
+      -13.949288268941112,
+      -0.050890686195867105
+    ],
+    "local_xy_change_mm": 13.949693851328838,
+    "finger_center_shift_mm": 14.023002702742815
+  },
+  {
+    "env": 3,
+    "episode": 1,
+    "local_relative_change_mm": [
+      -0.6608997074031971,
+      -15.793470002364591,
+      -0.12021336063947063
+    ],
+    "local_xy_change_mm": 15.807292087477723,
+    "finger_center_shift_mm": 15.814838116057217
+  },
+  {
+    "env": 0,
+    "episode": 2,
+    "local_relative_change_mm": [
+      0.0846573941755635,
+      -15.358762437517662,
+      -0.04992627948561222
+    ],
+    "local_xy_change_mm": 15.358995751236213,
+    "finger_center_shift_mm": 15.250655240379274
+  },
+  {
+    "env": 2,
+    "episode": 2,
+    "local_relative_change_mm": [
+      0.3463061462593655,
+      -15.422179795382773,
+      -0.10369570798776218
+    ],
+    "local_xy_change_mm": 15.42606746996945,
+    "finger_center_shift_mm": 15.376065974123776
+  }
+]

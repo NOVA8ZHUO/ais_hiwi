@@ -1,0 +1,29 @@
+{
+  "nominal_cap12": {
+    "force_command_cap_N": 12,
+    "completed_episodes": 4,
+    "success_any": 4,
+    "success_final": 4,
+    "success_stable": 4,
+    "width_failures": 0,
+    "max_sampled_contact_N": 11.57327651977539
+  },
+  "random_cap12": {
+    "force_command_cap_N": 12,
+    "completed_episodes": 0,
+    "success_any": 0,
+    "success_final": 0,
+    "success_stable": 0,
+    "width_failures": 0,
+    "max_sampled_contact_N": null
+  },
+  "nominal_cap10": {
+    "force_command_cap_N": 10,
+    "completed_episodes": 4,
+    "success_any": 4,
+    "success_final": 3,
+    "success_stable": 3,
+    "width_failures": 2,
+    "max_sampled_contact_N": 17.498310089111328
+  }
+}

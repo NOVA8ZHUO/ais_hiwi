@@ -1,0 +1,17 @@
+{
+  "baseline_lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+  "baseline_sources_verified": true,
+  "files": {
+    "prepare.py": "bffd7a5229cc318e37ee5a61fb8fd85ecc8152006885cf4f210140443fcc9ac2",
+    "validate_runtime.py": "6980a6b5e676a06ba06a2cd583decc68e17f1bdca8728929eb1851d5ac114865",
+    "run_validation.py": "afcc194012d2d26e1dfb10101e6e8329310cd51b8e375b2ced6ce4ca13418e64",
+    "EXPERIMENT.md": "18a19cb563b4071779e89cf70c8cea0c6ae95cff79ab5ad7e406add689407869",
+    "experiment_plan.json": "f031a14e2918b40a02f34cd103948e125f646199324343eab296cb4db2d961ea",
+    "geometry_audit.json": "7b9178dea15a2cdb624c9c9c4a4fe225e82e53179f57219449216dcbfb3e461e",
+    "pose_path_audit.json": "cbb275134e44b1e2ee1ded4cc088d0099e91d3ac55cb8fb2178abd4ed482aa26",
+    "assets/base_clearance_0.25mm.usda": "3cfdcda449230277b19ae4acf17d44795f38352c63983c88f2f81913f7597eda",
+    "assets/base_clearance_1mm.usda": "961d548ec7f8749387f6712149b00d1e428d3362397aa208987554dd951995d5",
+    "assets/base_clearance_0.5mm.usda": "d06973dd594eae3c4ee6246b1815b253adaab12a0a2c10b7d78f28859308d7a5",
+    "assets/base_clearance_2mm.usda": "7803e80c8d5ee204d8760ab7d4f97d40c0c5333e5e4c79d50464a8f124f4e2d1"
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "mode": "DRY RUN; no simulator or training launched",
+  "runs": 12,
+  "epochs_per_run": 200,
+  "envs": 128,
+  "jobs": [
+    {
+      "group": "P0G0",
+      "seed": 0,
+      "command": [
+        "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+        "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+        "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+        "--task",
+        "Isaac-Forge-CAD-PG-P0G0-Direct-v0",
+        "--num_envs",
+        "128",
+        "--max_iterations",
+        "200",
+        "--seed",
+        "0",
+        "--headless"
+      ]
+    },
+    {
+      "group": "P1G0",
+      "seed": 0,
+      "command": [
+        "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+        "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+        "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+        "--task",
+        "Isaac-Forge-CAD-PG-P1G0-Direct-v0",
+        "--num_envs",
+        "128",
+        "--max_iterations",
+        "200",
+        "--seed",
+        "0",
+        "--headless"
+      ]
+    },
+    {
+      "group": "P0G1",
+      "seed": 0,
+      "command": [
+        "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+        "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+        "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+        "--task",
+        "Isaac-Forge-CAD-PG-P0G1-Direct-v0",
+        "--num_envs",
+        "128",
+        "--max_iterations",
+        "200",
+        "--seed",
+        "0",
+        "--headless"
+      ]
+    },
+    {
+      "group": "P1G1",
+      "seed": 0,
+      "command": [
+        "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+        "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+        "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+        "--task",
+        "Isaac-Forge-CAD-PG-P1G1-Direct-v0",
+        "--num_envs",
+        "128",
+        "--max_iterations",
+        "200",
+        "--seed",
+        "0",
+        "--headless"
+      ]
+    },
+    {
+      "group": "P0G0",
+      "seed": 1,
+      "command": [
+        "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+        "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+        "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+        "--task",
+        "Isaac-Forge-CAD-PG-P0G0-Direct-v0",
+        "--num_envs",
+        "128",
+        "--max_iterations",
+        "200",
+        "--seed",
+        "1",
+        "--headless"
+      ]
+    },
+    {
+      "group": "P1G0",
+      "seed": 1,
+      "command": [
+        "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+        "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+        "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+        "--task",
+        "Isaac-Forge-CAD-PG-P1G0-Direct-v0",
+        "--num_envs",
+        "128",
+        "--max_iterations",
+        "200",
+        "--seed",
+        "1",
+        "--headless"
+      ]
+    },
+    {
+      "group": "P0G1",
+      "seed": 1,
+      "command": [
+        "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+        "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+        "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+        "--task",
+        "Isaac-Forge-CAD-PG-P0G1-Direct-v0",
+        "--num_envs",
+        "128",
+        "--max_iterations",
+        "200",
+        "--seed",
+        "1",
+        "--headless"
+      ]
+    },
+    {
+      "group": "P1G1",
+      "seed": 1,
+      "command": [
+        "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+        "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+        "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+        "--task",
+        "Isaac-Forge-CAD-PG-P1G1-Direct-v0",
+        "--num_envs",
+        "128",
+        "--max_iterations",
+        "200",
+        "--seed",
+        "1",
+        "--headless"
+      ]
+    },
+    {
+      "group": "P0G0",
+      "seed": 2,
+      "command": [
+        "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+        "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+        "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+        "--task",
+        "Isaac-Forge-CAD-PG-P0G0-Direct-v0",
+        "--num_envs",
+        "128",
+        "--max_iterations",
+        "200",
+        "--seed",
+        "2",
+        "--headless"
+      ]
+    },
+    {
+      "group": "P1G0",
+      "seed": 2,
+      "command": [
+        "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+        "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+        "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+        "--task",
+        "Isaac-Forge-CAD-PG-P1G0-Direct-v0",
+        "--num_envs",
+        "128",
+        "--max_iterations",
+        "200",
+        "--seed",
+        "2",
+        "--headless"
+      ]
+    },
+    {
+      "group": "P0G1",
+      "seed": 2,
+      "command": [
+        "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+        "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+        "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+        "--task",
+        "Isaac-Forge-CAD-PG-P0G1-Direct-v0",
+        "--num_envs",
+        "128",
+        "--max_iterations",
+        "200",
+        "--seed",
+        "2",
+        "--headless"
+      ]
+    },
+    {
+      "group": "P1G1",
+      "seed": 2,
+      "command": [
+        "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+        "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/train_entry.py",
+        "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+        "--task",
+        "Isaac-Forge-CAD-PG-P1G1-Direct-v0",
+        "--num_envs",
+        "128",
+        "--max_iterations",
+        "200",
+        "--seed",
+        "2",
+        "--headless"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "218": {
+    "seed": 43,
+    "complete": 8,
+    "success": 2,
+    "full_release": 2,
+    "seat": 2,
+    "timeouts": 6,
+    "p95_mean": 3.6553784608840942,
+    "peak_force_all": 5.243091610709433,
+    "max_tilt_gripped": 1.8398367518481784,
+    "max_physics_speed_mm_s": 27.744488790631294,
+    "mean_episode_saturation": 0.042290300875341066,
+    "tilt_above10_samples": 0,
+    "tilted_insert_down_samples": 0,
+    "tracks": [
+      {
+        "env": 0,
+        "episode": 1,
+        "complete": true,
+        "max_tilt": 0.1988101655906956,
+        "max_gripped_depth_mm": 0.01598149538040161,
+        "last_stage": 2,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 1,
+        "episode": 1,
+        "complete": true,
+        "max_tilt": 1.8398367518481784,
+        "max_gripped_depth_mm": 0.03229081630706787,
+        "last_stage": 2,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 2,
+        "episode": 1,
+        "complete": true,
+        "max_tilt": 0.24787221470538592,
+        "max_gripped_depth_mm": 0.0346451997756958,
+        "last_stage": 2,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 3,
+        "episode": 1,
+        "complete": true,
+        "max_tilt": 0.654317752198451,
+        "max_gripped_depth_mm": -0.00095367431640625,
+        "last_stage": 2,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 0,
+        "episode": 2,
+        "complete": true,
+        "max_tilt": 0.26466991865372924,
+        "max_gripped_depth_mm": -0.004310160875320435,
+        "last_stage": 2,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 1,
+        "episode": 2,
+        "complete": true,
+        "max_tilt": 1.7669110529807484,
+        "max_gripped_depth_mm": 25.32854676246643,
+        "last_stage": 0,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 2,
+        "episode": 2,
+        "complete": true,
+        "max_tilt": 0.46097648115446577,
+        "max_gripped_depth_mm": 0.010035932064056396,
+        "last_stage": 1,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 3,
+        "episode": 2,
+        "complete": true,
+        "max_tilt": 0.9251385787240257,
+        "max_gripped_depth_mm": 25.046449154615402,
+        "last_stage": 0,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 3,
+        "episode": 3,
+        "complete": false,
+        "max_tilt": 0.3115330002733851,
+        "max_gripped_depth_mm": 0.3410130739212036,
+        "last_stage": 2,
+        "stalled_insert_sample_seconds": 0.0
+      }
+    ]
+  },
+  "70": {
+    "seed": 44,
+    "complete": 9,
+    "success": 3,
+    "full_release": 2,
+    "seat": 3,
+    "timeouts": 7,
+    "p95_mean": 2.8356698387198978,
+    "peak_force_all": 6.983962535858475,
+    "max_tilt_gripped": 7.325657809117613,
+    "max_physics_speed_mm_s": 23.88952299952507,
+    "mean_episode_saturation": 0.0,
+    "tilt_above10_samples": 0,
+    "tilted_insert_down_samples": 0,
+    "tracks": [
+      {
+        "env": 0,
+        "episode": 1,
+        "complete": true,
+        "max_tilt": 0.8780415041471656,
+        "max_gripped_depth_mm": 0.09721890091896057,
+        "last_stage": 1,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 1,
+        "episode": 1,
+        "complete": true,
+        "max_tilt": 4.28336019983012,
+        "max_gripped_depth_mm": 0.6708130240440369,
+        "last_stage": 2,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 2,
+        "episode": 1,
+        "complete": true,
+        "max_tilt": 5.873562391077979,
+        "max_gripped_depth_mm": 13.943701982498169,
+        "last_stage": 1,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 3,
+        "episode": 1,
+        "complete": true,
+        "max_tilt": 0.4977151984760114,
+        "max_gripped_depth_mm": 25.35269409418106,
+        "last_stage": 3,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 0,
+        "episode": 2,
+        "complete": true,
+        "max_tilt": 0.8086666109849003,
+        "max_gripped_depth_mm": -0.071696937084198,
+        "last_stage": 2,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 1,
+        "episode": 2,
+        "complete": true,
+        "max_tilt": 6.231681811474359,
+        "max_gripped_depth_mm": 0.1532137393951416,
+        "last_stage": 1,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 2,
+        "episode": 2,
+        "complete": true,
+        "max_tilt": 7.325657809117613,
+        "max_gripped_depth_mm": -0.6469748914241791,
+        "last_stage": 1,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 3,
+        "episode": 2,
+        "complete": true,
+        "max_tilt": 0.20558422779686011,
+        "max_gripped_depth_mm": 25.227148085832596,
+        "last_stage": 0,
+        "stalled_insert_sample_seconds": 0.0
+      },
+      {
+        "env": 3,
+        "episode": 3,
+        "complete": true,
+        "max_tilt": 0.24787221470538592,
+        "max_gripped_depth_mm": 25.054216384887695,
+        "last_stage": 0,
+        "stalled_insert_sample_seconds": 0.0
+      }
+    ]
+  }
+}

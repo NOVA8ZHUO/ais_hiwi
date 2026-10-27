@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "condition": "factor_on_tip_position_noise",
+    "active": [
+      "tip_position_noise"
+    ],
+    "seed": 304,
+    "num_envs": 128,
+    "model": "zero",
+    "checkpoint_sha256": "d29483d4d8d304c97d466096ec7373512ed40fd1cb61fe7aa7af3c84f90a9897",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "392c723a74cd9c55f1ba5dbc9ac4bd2edb2cb3fa8621e8c06d7456e5ef775ad1"
+  },
+  "seconds": 96.36935324920341,
+  "evaluation_sha256": "1f9c070ce9bfa5b4d35f9c9617176a715496b14c050f7564238a2269e6554ff6"
+}

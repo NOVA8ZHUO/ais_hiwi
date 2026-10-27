@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "group": "P1G1",
+  "config_diff": [
+    "task.fixed_asset.spawn.usd_path",
+    "task.fixed_asset.spawn.func",
+    "task.fixed_asset.spawn.random_choice",
+    "scene.replicate_physics",
+    "scene.clone_in_fabric"
+  ],
+  "clearances_mm": [
+    0.24998411536216736,
+    0.4999827593564987,
+    0.9999819099903107,
+    1.999983936548233
+  ],
+  "training_updates": 0
+}

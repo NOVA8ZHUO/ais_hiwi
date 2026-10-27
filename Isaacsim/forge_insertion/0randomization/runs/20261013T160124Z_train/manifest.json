@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/entry.py",
+    "/home/masais/Xinyu/Isaacsim/IsaacLab_2_3_2/scripts/reinforcement_learning/rl_games/train.py",
+    "--task",
+    "Isaac-Forge-ShaftLarge-ZeroRand-Direct-v0",
+    "--headless",
+    "--seed",
+    "0",
+    "--num_envs",
+    "128",
+    "--max_iterations",
+    "200"
+  ],
+  "reference_run": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train",
+  "status": "passed",
+  "exit_code": 0
+}

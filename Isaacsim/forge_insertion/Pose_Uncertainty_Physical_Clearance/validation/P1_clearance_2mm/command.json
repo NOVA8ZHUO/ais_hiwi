@@ -1,0 +1,1 @@
+["/home/masais/miniconda3/envs/env_jingyun/bin/python", "/home/masais/Xinyu/Isaacsim/forge_insertion/Pose_Uncertainty_Physical_Clearance/validate_runtime.py", "--clearance", "2.0", "--pose", "1", "--num_envs", "4", "--headless"]

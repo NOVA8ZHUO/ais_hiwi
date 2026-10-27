@@ -1,0 +1,19 @@
+{
+  "identity": {
+    "condition": "group_on_observation",
+    "active": [
+      "force_noise",
+      "hole_observation",
+      "tip_position_noise",
+      "tip_rotation_noise"
+    ],
+    "seed": 201,
+    "num_envs": 128,
+    "model": "randomized",
+    "checkpoint_sha256": "57ae61f09be156e0c07aa250e0c58d164251e0efc36f2b56b2a76ee21e3f24ed",
+    "lock_sha256": "6716cd3cb46c8a84facf101fa00d6d7b30f825726e1eaccb6d32d0b837a6034c",
+    "sample_sha256": "ce26b168257d2924ff1a762ac1a04c813f86d4e01e55f4ee38f30fcb3877c245"
+  },
+  "seconds": 97.4785846886225,
+  "evaluation_sha256": "75618842868fe914b75608d53d35c877bf1d7b622f0160f0ec6fb6114acdcb4e"
+}

@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "train_command": [
+    "/home/masais/miniconda3/envs/Xinyu_isaacsim/bin/python",
+    "/home/masais/Xinyu/Isaacsim/FORGE_shaft_Insert/scripts/train.py",
+    "--task",
+    "FORGE-Shaft-Insert-Paper-v0",
+    "--headless",
+    "--num_envs",
+    "128",
+    "--max_iterations",
+    "6000",
+    "--seed",
+    "42",
+    "--run_name",
+    "reward_v2_total10000_20261001_141859_898ead",
+    "agent.experiment_name=forge_reward_v2_scratch",
+    "--resume",
+    "--load_run",
+    "preserved_reward_v2_model3998",
+    "--checkpoint",
+    "model_3998.pt",
+    "agent.num_steps_per_env=32",
+    "agent.algorithm.num_mini_batches=4",
+    "agent.save_interval=100"
+  ],
+  "resume": true,
+  "updates": 6000,
+  "cumulative_updates": 10000,
+  "previous_updates": 4000,
+  "initial_checkpoint": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_reward_v2_scratch/preserved_reward_v2_model3998/model_3998.pt",
+  "initial_sha256": "40d47d79917aa3106d9148961280a39c2d213bb856add899800ae16a64c41b7e",
+  "training_run": "/home/masais/Xinyu/Isaacsim/logs/rsl_rl/forge_reward_v2_scratch/2026-10-01_14-19-06_reward_v2_total10000_20261001_141859_898ead",
+  "previous_errors": [
+    "FileNotFoundError(2, 'No such file or directory')"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+    "/home/masais/Xinyu/Isaacsim/forge_insertion/0randomization/verify.py",
+    "--headless",
+    "--mode",
+    "validate"
+  ],
+  "reference_run": "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train",
+  "status": "failed",
+  "exit_code": 1
+}

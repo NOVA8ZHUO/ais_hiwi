@@ -1,0 +1,15 @@
+[
+  "/home/masais/miniconda3/envs/env_jingyun/bin/python",
+  "/home/masais/Xinyu/Isaacsim/forge_insertion/disturbance_study/rollout.py",
+  "--task",
+  "Isaac-Forge-ShaftLarge-Paired-Direct-v0",
+  "--seed",
+  "2",
+  "--num_envs",
+  "128",
+  "--episodes",
+  "128",
+  "--checkpoint",
+  "/home/masais/Xinyu/Isaacsim/forge_insertion/experiments/forge_cad_baseline/logs/20261013T115201_931054Z_train/logs/rl_games/Forge/test/nn/last_Forge_ep_200_rew__341.10693_.pth",
+  "--headless"
+]

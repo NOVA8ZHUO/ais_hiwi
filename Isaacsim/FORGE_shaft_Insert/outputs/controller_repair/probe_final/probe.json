@@ -1,0 +1,30 @@
+{
+  "hold_old_damping": {
+    "peak_tcp_displacement_m": 0.08764363080263138,
+    "peak_sampled_speed_m_s": 0.5867382287979126,
+    "peak_grasp_relative_shift_m": 0.007011939771473408,
+    "peak_world_tilt_deg": 0.3483045995235443,
+    "resets": 0
+  },
+  "hold_low_damping": {
+    "peak_tcp_displacement_m": 0.0016064560040831566,
+    "peak_sampled_speed_m_s": 0.004291514866054058,
+    "peak_grasp_relative_shift_m": 0.0045314570888876915,
+    "peak_world_tilt_deg": 0.18451747298240662,
+    "resets": 0
+  },
+  "yaw_old_damping": {
+    "peak_tcp_displacement_m": 0.08472210168838501,
+    "peak_sampled_speed_m_s": 0.5308223962783813,
+    "peak_grasp_relative_shift_m": 0.0015312803443521261,
+    "peak_world_tilt_deg": 0.2907401919364929,
+    "resets": 3
+  },
+  "yaw_low_damping": {
+    "peak_tcp_displacement_m": 0.0014899206580594182,
+    "peak_sampled_speed_m_s": 0.007438268978148699,
+    "peak_grasp_relative_shift_m": 0.004332544282078743,
+    "peak_world_tilt_deg": 0.18451747298240662,
+    "resets": 0
+  }
+}
